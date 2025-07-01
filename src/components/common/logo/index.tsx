@@ -1,20 +1,20 @@
-import * as React from "react";
+import * as React from 'react';
 
-type Size = "xs" | "sm" | "md";
+type Size = 'xs' | 'sm' | 'md';
 
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
   size?: Size;
 }
 
 const sizeStyles: Record<Size, string> = {
-  xs: "w-4 h-4",
-  sm: "w-6 h-6",
-  md: "w-8 h-8",
+  xs: 'w-4 h-4',
+  sm: 'w-6 h-6',
+  md: 'w-8 h-8'
 };
 
 const Logo: React.FC<LogoProps> = ({
-  size = "sm",
-  className = "",
+  size = 'sm',
+  className = '',
   ...props
 }) => {
   const sizeClass = sizeStyles[size];

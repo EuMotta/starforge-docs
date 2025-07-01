@@ -1,7 +1,7 @@
-import Logo from "@/components/common/logo";
-import { siteConfig } from "@/settings";
-import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
-import { Home } from "lucide-react";
+import Logo from '@/components/common/logo';
+import { siteConfig } from '@/settings';
+import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import { Home } from 'lucide-react';
 
 /**
  * Shared layout configurations
@@ -17,15 +17,15 @@ export const baseOptions: BaseLayoutProps = {
         <Logo />
         {siteConfig.site.name}
       </>
-    ),
+    )
   },
   // see https://fumadocs.dev/docs/ui/navigation/links
   links: [
     {
-      text: "Home",
-      url: "/",
-      active: "nested-url",
-      icon: <Home />,
-    },
-  ],
+      text: 'Home',
+      url: '/',
+      active: 'nested-url',
+      icon: <Home />
+    }
+  ]
 };

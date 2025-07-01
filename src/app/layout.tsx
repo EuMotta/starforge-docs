@@ -1,33 +1,34 @@
-import { siteConfig } from "@/settings";
-import "./global.css";
-import { RootProvider } from "fumadocs-ui/provider";
-import { Inter } from "next/font/google";
-import type { ReactNode } from "react";
-import { Metadata } from "next";
+import { siteConfig } from '@/settings';
+import './global.css';
+import { RootProvider } from 'fumadocs-ui/provider';
+
+import { Inter } from 'next/font/google';
+import type { ReactNode } from 'react';
+import { Metadata } from 'next';
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ['latin']
 });
 
 export const metadata: Metadata = {
   title: siteConfig.site.name,
   description: siteConfig.site.description,
   keywords: [
-    "ShadCNUI",
-    "UI components",
-    "UI",
-    "Tailwind CSS",
-    "React.js",
-    "Components",
-    "Next.js",
-    "Open Source",
+    'ShadCNUI',
+    'UI components',
+    'UI',
+    'Tailwind CSS',
+    'React.js',
+    'Components',
+    'Next.js',
+    'Open Source'
   ],
   authors: [{ name: siteConfig.personalInfo.name }],
   creator: siteConfig.personalInfo.name,
   publisher: siteConfig.personalInfo.name,
-  metadataBase: new URL(process.env.SITE_URL || ""),
+  metadataBase: new URL(process.env.SITE_URL || ''),
   alternates: {
-    canonical: siteConfig.site.url,
+    canonical: siteConfig.site.url
   },
   openGraph: {
     title: siteConfig.site.name,
@@ -36,21 +37,21 @@ export const metadata: Metadata = {
     siteName: siteConfig.site.name,
     images: [
       {
-        url: "",
+        url: '',
         width: 600,
         height: 600,
-        alt: "",
-      },
+        alt: ''
+      }
     ],
-    locale: "pt_BR",
-    type: "website",
+    locale: 'pt_BR',
+    type: 'website'
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteConfig.site.name,
     description: siteConfig.site.description,
-    creator: "",
-    images: [""],
+    creator: '',
+    images: ['']
   },
   robots: {
     follow: true,
@@ -58,17 +59,17 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1
+    }
+  }
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body className="flex flex-col min-h-screen">
+      <body className="flex min-h-screen flex-col">
         <RootProvider>{children}</RootProvider>
       </body>
     </html>

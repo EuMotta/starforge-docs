@@ -24,14 +24,14 @@ export const siteConfig = {
       'Prototyping',
       'Responsive Layouts',
       'Headless UI',
-      'Modern Interfaces',
+      'Modern Interfaces'
     ],
     description: 'UI components library.',
     locale: 'pt-BR',
     links: {
       linkedin: '',
-      github: 'https://github.com/EuMotta/star-forge',
-    },
+      github: 'https://github.com/EuMotta/star-forge'
+    }
   },
   personalInfo: {
     name: 'José Antonio Motta',
@@ -42,9 +42,9 @@ export const siteConfig = {
     socialMedia: {
       linkedin:
         'https://www.linkedin.com/in/jos%C3%A9-antonio-bueno-motta-61006a26b/',
-      github: 'https://github.com/EuMotta',
-    },
-  },
+      github: 'https://github.com/EuMotta'
+    }
+  }
 };
 
 export type SiteConfig = typeof siteConfig;

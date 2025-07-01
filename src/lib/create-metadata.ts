@@ -30,12 +30,12 @@ export function createMetadata(override: Metadata): Metadata {
           url: siteConfig.site.ogImage,
           width: 1200,
           height: 630,
-          alt: String(titleStr),
-        },
+          alt: String(titleStr)
+        }
       ],
       siteName: siteConfig.site.name,
       locale: siteConfig.site.locale,
-      ...(override.openGraph || {}),
+      ...(override.openGraph || {})
     },
     creator: 'Motta',
     twitter: {
@@ -44,7 +44,7 @@ export function createMetadata(override: Metadata): Metadata {
       description: descriptionStr,
       creator: 'Motta',
       images: [siteConfig.site.ogImage],
-      ...(override.twitter || {}),
+      ...(override.twitter || {})
     },
     robots: {
       index: true,
@@ -54,10 +54,10 @@ export function createMetadata(override: Metadata): Metadata {
         follow: true,
         'max-video-preview': -1,
         'max-image-preview': 'large',
-        'max-snippet': -1,
+        'max-snippet': -1
       },
-      ...((override.robots as object) || {}),
-    },
+      ...((override.robots as object) || {})
+    }
   };
 }
 

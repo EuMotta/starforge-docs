@@ -1,13 +1,14 @@
-import { source } from "@/lib/source";
+import { notFound } from 'next/navigation';
+
+import { source } from '@/lib/source';
+import { getMDXComponents } from '@/mdx-components';
+import { createRelativeLink } from 'fumadocs-ui/mdx';
 import {
   DocsPage,
   DocsBody,
   DocsDescription,
-  DocsTitle,
-} from "fumadocs-ui/page";
-import { notFound } from "next/navigation";
-import { createRelativeLink } from "fumadocs-ui/mdx";
-import { getMDXComponents } from "@/mdx-components";
+  DocsTitle
+} from 'fumadocs-ui/page';
 
 export default async function Page(props: {
   params: Promise<{ slug?: string[] }>;
@@ -22,9 +23,9 @@ export default async function Page(props: {
     <DocsPage
       toc={page.data.toc}
       full={page.data.full}
-      tableOfContent={{ footer, single: false, style: "clerk" }}
+      tableOfContent={{ footer, single: false, style: 'clerk' }}
       article={{
-        className: "max-w-6xl max-sm:pb-16",
+        className: 'max-w-6xl max-sm:pb-16'
       }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
@@ -33,7 +34,7 @@ export default async function Page(props: {
         <MDXContent
           components={getMDXComponents({
             // this allows you to link to other pages with relative file paths
-            a: createRelativeLink(source, page),
+            a: createRelativeLink(source, page)
           })}
         />
       </DocsBody>
@@ -54,6 +55,6 @@ export async function generateMetadata(props: {
 
   return {
     title: page.data.title,
-    description: page.data.description,
+    description: page.data.description
   };
 }

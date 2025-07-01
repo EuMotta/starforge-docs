@@ -1,0 +1,26 @@
+---
+title: Text
+description: A collection of Text component, featuring various layouts for showcasing content
+---
+
+import { ComponentPreview } from '@/components/common/preview/component-preview';
+import { extractSourceCode } from '@/lib/code';
+
+## Text Component
+
+<ComponentPreview
+  name="text"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('text')).code}
+  lang="tsx"
+/>
+
+## Text Variant
+
+<ComponentPreview
+  name="text-variant"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('text-variant')).code}
+  lang="tsx"
+/>
+
