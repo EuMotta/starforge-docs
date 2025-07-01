@@ -1,4 +1,7 @@
-import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
+import Logo from "@/components/common/logo";
+import { siteConfig } from "@/settings";
+import type { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
+import { Home } from "lucide-react";
 
 /**
  * Shared layout configurations
@@ -11,18 +14,18 @@ export const baseOptions: BaseLayoutProps = {
   nav: {
     title: (
       <>
-        <svg
-          width="24"
-          height="24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-label="Logo"
-        >
-          <circle cx={12} cy={12} r={12} fill="currentColor" />
-        </svg>
-        My App
+        <Logo />
+        {siteConfig.site.name}
       </>
     ),
   },
   // see https://fumadocs.dev/docs/ui/navigation/links
-  links: [],
+  links: [
+    {
+      text: "Home",
+      url: "/",
+      active: "nested-url",
+      icon: <Home />,
+    },
+  ],
 };

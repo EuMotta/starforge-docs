@@ -1,0 +1,57 @@
+import * as React from "react";
+
+type Size = "xs" | "sm" | "md";
+
+interface LogoProps extends React.SVGProps<SVGSVGElement> {
+  size?: Size;
+}
+
+const sizeStyles: Record<Size, string> = {
+  xs: "w-4 h-4",
+  sm: "w-6 h-6",
+  md: "w-8 h-8",
+};
+
+const Logo: React.FC<LogoProps> = ({
+  size = "sm",
+  className = "",
+  ...props
+}) => {
+  const sizeClass = sizeStyles[size];
+
+  return (
+    <svg
+      className={`${sizeClass} ${className}`}
+      viewBox="0 0 101 102"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path
+        d="M86.5752 55.8708V13.5731L64.1089 0.814453H41.7812L75.4807 19.9524V39.2291V62.2501L86.5752 55.8708Z"
+        fill="#49BEB7"
+      />
+      <path
+        d="M28.3291 79.8622L64.1088 100.664H63.9701L64.5248 101.08L87.5458 87.767L98.6403 68.4903L64.8022 88.183L28.3291 67.1035V79.8622Z"
+        fill="#49BEB7"
+      />
+      <path
+        d="M72.9847 67.3821H73.1234L53.1533 78.754L64.1091 85.1333L100.444 63.9151V37.1497L89.349 17.873V57.3971L72.9847 67.3821Z"
+        fill="#49BEB7"
+      />
+      <path
+        d="M72.7067 21.4779L36.3723 0.398438L13.3513 13.7118L2.25684 33.1271L36.6497 13.2958L53.2914 23.0034H53.014L72.7067 34.3753V21.4779Z"
+        fill="#49BEB7"
+      />
+      <path
+        d="M36.9272 16.4863L0.592773 37.7045V64.3312L11.6872 83.6079V44.0838L28.0516 34.3762L48.0216 22.8656L36.9272 16.4863Z"
+        fill="#49BEB7"
+      />
+      <path
+        d="M14.4609 45.6078V87.9055L36.9272 100.664H59.3935L25.5554 81.5262V62.2495V39.2285L14.4609 45.6078Z"
+        fill="#49BEB7"
+      />
+    </svg>
+  );
+};
+export default Logo;

@@ -1,0 +1,143 @@
+---
+title: Instalação
+description: Instalando e configurando os componentes da Star Forge
+icon: Rocket
+display:
+  order: 2
+---
+
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { Callout } from "fumadocs-ui/components/callout";
+
+## Configurar o Next.js
+
+### Requisitos do Sistema
+
+- [Node.js 18.18](https://nodejs.org/) ou superior.
+- Suporte para macOS, Windows (incluindo WSL) e Linux.
+
+### Instalação Automática
+
+Recomendamos iniciar um novo projeto Next.js usando o [`create-next-app`](/docs/app/api-reference/cli/create-next-app), que configura tudo automaticamente. Para criar um projeto, execute:
+
+```bash filename="Terminal"
+npx create-next-app@latest
+```
+
+Durante a instalação, você verá os seguintes prompts:
+
+```txt filename="Terminal"
+What is your project named? my-app
+Would you like to use TypeScript? No / Yes
+Would you like to use ESLint? No / Yes
+Would you like to use Tailwind CSS? No / Yes
+Would you like your code inside a `src/` directory? No / Yes
+Would you like to use App Router? (recommended) No / Yes
+Would you like to use Turbopack for `next dev`? No / Yes
+Would you like to customize the import alias (`@/*` by default)? No / Yes
+What import alias would you like configured? @/*
+```
+
+Após responder aos prompts, o [`create-next-app`](/docs/app/api-reference/cli/create-next-app) criará uma pasta com o nome do seu projeto e instalará as dependências necessárias.
+
+## Instalar a Star Forge
+
+### Para Projetos Next.js
+
+<Steps>
+
+<Step>
+### Inicializar o Projeto
+
+Execute o comando `init` para configurar a Star Forge em um projeto Next.js novo ou existente:
+
+```bash
+npx starforge-ui@latest init
+```
+
+<Callout className="mt-4">
+
+Você pode usar a flag `-d` para usar configurações padrão, como o estilo `new-york`, a cor base `zinc` e suporte a variáveis CSS.
+
+```bash
+npx starforge-ui@latest init -d
+```
+
+</Callout>
+</Step>
+
+<Step>
+### Configurar components.json
+
+Você será guiado por algumas perguntas para configurar o arquivo `components.json`:
+
+```txt showLineNumbers
+Which style would you like to use? › New York
+Which color would you like to use as base color? › Zinc
+Do you want to use CSS variables for colors? › no / yes
+```
+
+Este arquivo será criado no diretório raiz do seu projeto e definirá as preferências de estilo e tema para os componentes da Star Forge.
+</Step>
+
+<Step>
+### Adicionar Componentes
+
+Com a configuração concluída, você pode começar a adicionar componentes ao seu projeto:
+
+```bash
+npx starforge-ui@latest add button
+```
+
+O comando acima adicionará o componente `Button` ao diretório `components/ui`. Você pode importá-lo assim:
+
+```tsx title="index.tsx"
+import { Button } from "@/components/ui/button";
+
+export default function Home() {
+  return (
+    <div>
+      <Button variant="primary">Clique aqui</Button>
+    </div>
+  );
+}
+```
+
+</Step>
+
+<Step>
+### Personalizar o Tema
+
+Ajuste as variáveis CSS no arquivo `src/app/globals.css` para alinhar os componentes ao seu sistema de design:
+
+```css title="globals.css"
+:root {
+  --background: 0 0% 100%;
+  --primary: 222.2 47.4% 11.2%;
+  --radius: 0.5rem;
+}
+```
+
+</Step>
+
+<Step>
+### Pronto para Usar
+
+Você está pronto para forjar interfaces incríveis com a Star Forge! Explore a [documentação de componentes](#) para adicionar mais elementos e personalizá-los conforme necessário.
+</Step>
+
+</Steps>
+
+## Dependências Adicionais
+
+A Star Forge depende das seguintes bibliotecas, que são instaladas automaticamente pelo comando `npx shadcn@latest init`:
+
+- **Tailwind CSS**: Para estilização rápida e flexível dos componentes.
+- **Radix UI**: Para garantir acessibilidade e comportamento robusto dos componentes.
+- **Class Variance Authority (CVA)**: Para gerenciar variantes de estilo de forma eficiente.
+
+Se você iniciou o projeto com o `create-next-app` e selecionou Tailwind CSS, ele já estará configurado. Caso contrário, siga as [instruções de instalação do Tailwind CSS](https://tailwindcss.com/docs/installation) para configurá-lo manualmente.
+
+---
+
+Para feedback ou contribuições, acesse nosso [repositório no GitHub](https://github.com/seu-usuario/starforge-ui). Junte-se à comunidade e ajude a moldar a Star Forge! 🌟
