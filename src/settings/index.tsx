@@ -30,7 +30,7 @@ export const siteConfig = {
     locale: 'pt-BR',
     links: {
       linkedin: '',
-      github: 'https://github.com/EuMotta/star-forge'
+      github: 'https://github.com/EuMotta/starforge-docs'
     }
   },
   personalInfo: {

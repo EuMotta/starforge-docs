@@ -51,7 +51,7 @@ Após responder aos prompts, o [`create-next-app`](/docs/app/api-reference/cli/c
 Execute o comando `init` para configurar a Star Forge em um projeto Next.js novo ou existente:
 
 ```bash
-npx starforge-ui@latest init
+npx shadcn@latest init
 ```
 
 <Callout className="mt-4">
@@ -59,7 +59,7 @@ npx starforge-ui@latest init
 Você pode usar a flag `-d` para usar configurações padrão, como o estilo `new-york`, a cor base `zinc` e suporte a variáveis CSS.
 
 ```bash
-npx starforge-ui@latest init -d
+npx shadcn@latest init -d
 ```
 
 </Callout>
@@ -85,19 +85,19 @@ Este arquivo será criado no diretório raiz do seu projeto e definirá as prefe
 Com a configuração concluída, você pode começar a adicionar componentes ao seu projeto:
 
 ```bash
-npx starforge-ui@latest add button
+npx shadcn@latest add https://star-forge-components.vercel.app/projects/r/text.json
 ```
 
-O comando acima adicionará o componente `Button` ao diretório `components/ui`. Você pode importá-lo assim:
+O comando acima adicionará o componente `Text` ao diretório `components/star-forge`. Você pode importá-lo assim:
 
 ```tsx title="index.tsx"
-import { Button } from "@/components/ui/button";
+import { Text } from '@/components/star-forge/text';
 
 export default function Home() {
   return (
-    <div>
-      <Button variant="primary">Clique aqui</Button>
-    </div>
+    <>
+      <Text.H1> Hello World </Text.H1>
+    </>
   );
 }
 ```

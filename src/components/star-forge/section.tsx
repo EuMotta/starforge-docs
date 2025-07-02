@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { BsChevronDoubleRight } from 'react-icons/bs';
 
-import { cn } from '@/lib/utils';
+import { Text } from '@/components/star-forge/text';
 
-import { Text } from './text';
+import { cn } from '@/lib/utils';
 
 const Section = {
   Root: React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(

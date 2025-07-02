@@ -4,13 +4,13 @@ import React, { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { getComponentByName } from '@/registry';
+import { siteConfig } from '@/settings';
 import { AlertCircle, ArrowLeft, RefreshCw, RotateCw } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
 import { AuthorBadge } from '../../ui/author-badge';
 import { Card, CardContent, CardFooter, CardHeader } from '../../ui/card';
-import { siteConfig } from '@/settings';
 
 type ComponentLoaderProps = {
   name: string;
@@ -67,7 +67,7 @@ export function ComponentLoader({
         <div className="bg-background flex min-h-screen flex-col items-center justify-center p-4">
           <Card className="mx-auto max-w-md shadow-lg">
             <CardHeader className="flex flex-col items-center space-y-1 pb-2 text-center">
-              <div className="rounded-full bg-red-100 p-3 dark:bg-red-900/0">
+              <div className="bg-destructive rounded-full p-3 dark:bg-red-900/0">
                 <AlertCircle className="h-6 w-6 text-red-600 dark:text-red-400" />
               </div>
               <h1 className="text-foreground mt-4 text-2xl font-bold tracking-tight">

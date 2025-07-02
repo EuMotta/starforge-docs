@@ -4,6 +4,7 @@ description: A collection of Text component, featuring various layouts for showc
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { extractSourceCode } from '@/lib/code';
 
 ## Text Component
@@ -15,6 +16,13 @@ import { extractSourceCode } from '@/lib/code';
   lang="tsx"
 />
 
+## Código Fonte
+
+<DynamicCodeBlock
+  lang="tsx"
+  code={(await extractSourceCode('text')).sourceCode}
+/>
+
 ## Text Variant
 
 <ComponentPreview
@@ -24,3 +32,9 @@ import { extractSourceCode } from '@/lib/code';
   lang="tsx"
 />
 
+## Código Fonte
+
+<DynamicCodeBlock
+  lang="tsx"
+  code={(await extractSourceCode('text-variant')).sourceCode}
+/>

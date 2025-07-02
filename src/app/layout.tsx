@@ -1,3 +1,4 @@
+/* eslint-disable import-helpers/order-imports */
 import { siteConfig } from '@/settings';
 import './global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
