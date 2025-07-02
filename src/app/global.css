@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 @import 'fumadocs-ui/css/black.css';
 @import 'fumadocs-ui/css/preset.css';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -118,5 +118,44 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.detail-dot {
+  fill: #fff;
+  opacity: 0;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes underline-grow {
+  to {
+    width: 100%;
+  }
+}
+
+.floating-element {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.2;
+  }
+
+  25% {
+    transform: translateY(-10px) translateX(5px);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: translateY(-5px) translateX(-3px);
+    opacity: 0.4;
+  }
+
+  75% {
+    transform: translateY(-15px) translateX(7px);
+    opacity: 0.8;
   }
 }

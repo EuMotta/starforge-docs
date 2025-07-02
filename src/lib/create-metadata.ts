@@ -18,9 +18,9 @@ export function createMetadata(override: Metadata): Metadata {
     ...override,
     title: titleStr,
     description: descriptionStr,
-    authors: [{ name: 'Motta' }],
+    authors: [{ name: 'EuMotta' }],
     keywords: siteConfig.site.keywords,
-    publisher: 'Motta',
+    publisher: 'EuMotta',
     openGraph: {
       title: titleStr,
       description: descriptionStr,
