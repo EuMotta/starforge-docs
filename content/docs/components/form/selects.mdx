@@ -8,7 +8,10 @@ import { extractSourceCode } from '@/lib/code';
 import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
 
-## Custom select 1
+
+## Custom Select
+
+Este é o componente de seleção básico, sem integração com formulários.
 
 <ComponentPreview
   name="select-1"
@@ -16,3 +19,38 @@ import { Callout } from 'fumadocs-ui/components/callout';
   code={(await extractSourceCode('select-1')).code}
   lang="tsx"
 />
+
+## Custom Select (react-hook-form)
+
+Este exemplo mostra o componente de seleção integrado ao `react-hook-form` para gerenciamento de formulários.
+
+<ComponentPreview
+  name="select-1-form"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('select-1-form')).code}
+  lang="tsx"
+/>
+
+### Como usar com React Hook Form
+
+<Steps>
+  <Step>
+    **Instale as dependências**
+    Certifique-se de ter o `react-hook-form` instalado:
+    ```bash
+    npm install react-hook-form
+    ```
+  </Step>
+  <Step>
+    **Configure o formulário**
+    Importe o `useForm` do `react-hook-form` e configure o componente de seleção com o `Controller` para gerenciar o estado.
+  </Step>
+  <Step>
+    **Integre o componente**
+    Passe o `control` e o `name` para o componente de seleção, conforme mostrado no código do exemplo `select-2`.
+  </Step>
+</Steps>
+
+<Callout title="Nota">
+  O componente com `react-hook-form` requer a configuração correta do `Controller` para funcionar adequadamente. Consulte a [documentação oficial do React Hook Form](https://react-hook-form.com/) para mais detalhes.
+</Callout>

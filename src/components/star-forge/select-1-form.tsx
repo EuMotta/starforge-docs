@@ -1,22 +1,27 @@
 'use client';
 
-import React from 'react';
+import { useFormContext } from 'react-hook-form';
 
 import {
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage
+} from '@/components/ui/form';
+import {
   Select,
-  SelectTrigger,
-  SelectValue,
   SelectContent,
   SelectGroup,
-  SelectItem
+  SelectItem,
+  SelectTrigger,
+  SelectValue
 } from '@/components/ui/select';
-
-import { Label } from '../ui/label';
 
 interface CustomSelectProps {
   formName: string;
   label?: string;
-  existingValues?: string;
+  existingValues?: string[];
 }
 interface CustomSelectContentProps {
   image: string;
@@ -25,7 +30,6 @@ interface CustomSelectContentProps {
   status: string;
   email: string;
 }
-
 const localUsers = [
   {
     id: '1',
@@ -33,6 +37,7 @@ const localUsers = [
     role: 'Senior Developer',
     email: 'john@company.com',
     status: 'online',
+
     image:
       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face&auto=format'
   },
@@ -42,6 +47,7 @@ const localUsers = [
     role: 'UX Designer',
     email: 'sarah@company.com',
     status: 'away',
+
     image:
       'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=40&h=40&fit=crop&crop=face&auto=format'
   },
@@ -51,6 +57,7 @@ const localUsers = [
     role: 'Product Manager',
     email: 'michael@company.com',
     status: 'busy',
+
     image:
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face&auto=format'
   },
@@ -60,6 +67,7 @@ const localUsers = [
     role: 'Marketing Lead',
     email: 'emily@company.com',
     status: 'online',
+
     image:
       'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face&auto=format'
   }
@@ -96,6 +104,7 @@ const CustomSelectContent = ({
   email
 }: CustomSelectContentProps) => {
   const colors = statusColors[status as keyof typeof statusColors];
+
   return (
     <div className="hover:bg-primary-50 group/item flex cursor-pointer items-center space-x-3 rounded-lg p-2 transition-colors duration-150">
       <img
@@ -119,57 +128,69 @@ const CustomSelectContent = ({
     </div>
   );
 };
-
 const CustomSelect = ({
   formName,
   label = 'Usuários',
-  existingValues = ''
+  existingValues = []
 }: CustomSelectProps) => {
-  const [selected, setSelected] = React.useState(existingValues);
-
-  const selectedUser = localUsers.find((user) => user.id === selected);
+  const form = useFormContext();
 
   return (
     <div className="space-y-1.5">
-      {label && (
-        <Label htmlFor={formName} className="text-sm font-medium text-gray-700">
-          {label}
-        </Label>
-      )}
-      <Select value={selected} onValueChange={setSelected}>
-        <SelectTrigger
-          id={formName}
-          className="w-full py-5"
-          aria-describedby={`${formName}-error`}
-        >
-          {selectedUser ? (
-            <div className="flex items-center space-x-3 py-1.5">
-              <img
-                src={selectedUser.image}
-                alt={selectedUser.name}
-                className="border-primary-200 h-8 w-8 rounded-full border-2 object-cover"
-              />
-              <div className="text-left">
-                <p className="text-sm font-medium">{selectedUser.name}</p>
-                <p className="text-muted-foreground text-xs">
-                  {selectedUser.role}
-                </p>
-              </div>
-            </div>
-          ) : (
-            <SelectValue placeholder="Selecione um usuário" />
-          )}
-        </SelectTrigger>
-        <SelectContent>
-          <SelectGroup>
-            {localUsers.map((user) => (
-              <SelectItem key={user.id} value={user.id} className="py-2">
-                <CustomSelectContent {...user} />
-              </SelectItem>
-            ))}
-          </SelectGroup>
-        </SelectContent>
-      </Select>
+      <FormField
+        name={formName}
+        control={form.control}
+        render={({ field }) => {
+          const selected = localUsers.find((s) => s.id === field.value);
+
+          return (
+            <FormItem>
+              <FormLabel>{label}</FormLabel>
+              <FormControl>
+                <Select
+                  value={field.value || existingValues[0]}
+                  onValueChange={field.onChange}
+                  aria-describedby={`${formName}-error`}
+                >
+                  <SelectTrigger className="w-full py-5">
+                    {selected ? (
+                      <div className="flex items-center space-x-3 py-1.5">
+                        <img
+                          src={selected.image}
+                          alt={selected.name}
+                          className="border-primary-200 h-8 w-8 rounded-full border-2 object-cover"
+                        />
+                        <div className="text-left">
+                          <p className="text-sm font-medium">{selected.name}</p>
+                          <p className="text-muted-foreground text-xs">
+                            {selected.role}
+                          </p>
+                        </div>
+                      </div>
+                    ) : (
+                      <SelectValue placeholder="Selecione um usuário" />
+                    )}
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectGroup>
+                      {localUsers.map((user) => (
+                        <SelectItem
+                          key={user.id}
+                          value={user.id}
+                          className="py-2"
+                        >
+                          <CustomSelectContent {...user} />
+                        </SelectItem>
+                      ))}
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          );
+        }}
+      />
     </div>
   );
 };

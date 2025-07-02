@@ -65,8 +65,8 @@ export const ui: Registry = [
     name: 'select-1',
     author: 'EuMotta',
     type: 'registry:component',
-    registryDependencies: ['form', 'select'],
-    dependencies: ['react-hook-form'],
+    registryDependencies: ['select'],
+    dependencies: [],
     description: 'Custom select-1 component',
     files: [
       {
@@ -77,6 +77,28 @@ export const ui: Registry = [
     example: 'src/components/star-forge-preview/selects/select-1.tsx',
     component: React.lazy(() =>
       import('@/components/star-forge-preview/selects/select-1').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'select-1-form',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['form', 'select'],
+    dependencies: ['react-hook-form'],
+    description: 'Custom select-1-form component',
+    files: [
+      {
+        path: 'src/components/star-forge/select-1-form.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge-preview/selects/select-1-form.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/selects/select-1-form').then(
         (mod) => ({
           default: mod.default
         })
