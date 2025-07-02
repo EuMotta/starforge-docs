@@ -121,6 +121,9 @@
   }
 }
 
+button {
+  cursor: pointer;
+}
 .detail-dot {
   fill: #fff;
   opacity: 0;

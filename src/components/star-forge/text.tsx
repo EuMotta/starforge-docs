@@ -39,7 +39,7 @@ export const Text = {
     ({ children, className, ...props }, ref) => (
       <h2
         ref={ref}
-        className={cx('flex text-2xl font-extralight lg:mb-2', className)}
+        className={cx('text-2xl font-extralight lg:mb-2', className)}
         {...props}
       >
         {children}

@@ -22,47 +22,59 @@ import '../registry/';
 
 export async function extractSourceCode(
   componentName: string
-): Promise<{ code: string }> {
+): Promise<{ code: string; sourceCode: string }> {
   const basePath = path.join(process.cwd());
 
   const component = getComponentByName(componentName);
 
   if (!component) {
-    const errorMsg = '// Component not found in registry';
+    const errorMsg = '// Example Component not found in registry';
+    const sourceErrorMsg = '// Source Component not found in registry';
     return {
-      code: errorMsg
+      code: errorMsg,
+      sourceCode: sourceErrorMsg
     };
   }
 
   if (!component.files || component.files.length === 0) {
-    const errorMsg = '// No source files defined for this component';
+    const errorMsg = '// No example files defined for this component';
+
+    const sourceErrorMsg = '// No source files defined for this component';
+
     return {
-      code: errorMsg
+      code: errorMsg,
+      sourceCode: sourceErrorMsg
     };
   }
 
-  const componentFile = component.example;
+  const exampleComponentFile = component.example;
+  const sourceComponentFile = component.files[0].path;
 
-  if (!componentFile) {
+  if (!exampleComponentFile) {
     const errorMsg = '// No valid source file found for this component';
     return {
-      code: errorMsg
+      code: errorMsg,
+      sourceCode: ''
     };
   }
 
-  const sanitizedFilePath = componentFile.replace(/^@/, '');
+  const exampleSanitizedFilePath = exampleComponentFile.replace(/^@/, '');
+  const sourceSanitizedFilePath = sourceComponentFile.replace(/^@/, '');
 
-  const fullPath = path.join(basePath, sanitizedFilePath);
+  const fullExamplePath = path.join(basePath, exampleSanitizedFilePath);
+  const fullSourcePath = path.join(basePath, sourceSanitizedFilePath);
 
   try {
-    const code = await fs.readFile(fullPath, 'utf8');
-    return { code };
+    const code = await fs.readFile(fullExamplePath, 'utf8');
+    const sourceCode = await fs.readFile(fullSourcePath, 'utf8');
+    return { code, sourceCode };
   } catch (error) {
-    const errorMsg = `// Failed to read source code for ${componentName}\n// Path attempted: ${fullPath}\n// Error: ${
+    const errorMsg = `// Failed to read source code for ${componentName}\n// Path attempted: ${fullExamplePath}\n// Error: ${
       error instanceof Error ? error.message : 'Unknown error'
     }`;
     return {
-      code: errorMsg
+      code: errorMsg,
+      sourceCode: ''
     };
   }
 }

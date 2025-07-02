@@ -5,6 +5,7 @@ description: Uma coleção de componentes de seleção, com diferentes layouts p
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
 import { extractSourceCode } from '@/lib/code';
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
 
@@ -20,6 +21,13 @@ Este é o componente de seleção básico, sem integração com formulários.
   lang="tsx"
 />
 
+## Código Fonte
+
+<DynamicCodeBlock
+  lang="tsx"
+  code={(await extractSourceCode('select-1')).sourceCode}
+/>
+
 ## Custom Select (react-hook-form)
 
 Este exemplo mostra o componente de seleção integrado ao `react-hook-form` para gerenciamento de formulários.
@@ -29,6 +37,13 @@ Este exemplo mostra o componente de seleção integrado ao `react-hook-form` par
   classNameComponentContainer="min-h-[600px]"
   code={(await extractSourceCode('select-1-form')).code}
   lang="tsx"
+/>
+
+## Código Fonte
+
+<DynamicCodeBlock
+  lang="tsx"
+  code={(await extractSourceCode('select-1-form')).sourceCode}
 />
 
 ### Como usar com React Hook Form
@@ -43,11 +58,11 @@ Este exemplo mostra o componente de seleção integrado ao `react-hook-form` par
   </Step>
   <Step>
     **Configure o formulário**
-    Importe o `useForm` do `react-hook-form` e configure o componente de seleção com o `Controller` para gerenciar o estado.
+    Importe o `useForm` do `react-hook-form` e configure o componente de seleção com o `FormField` para gerenciar o estado.
   </Step>
   <Step>
     **Integre o componente**
-    Passe o `control` e o `name` para o componente de seleção, conforme mostrado no código do exemplo `select-2`.
+    Passe o `control` e o `formName` para o componente de seleção, conforme mostrado no código do exemplo `select-2`.
   </Step>
 </Steps>
 
