@@ -2,7 +2,7 @@
 
 import CustomSelect from '@/components/star-forge/select-1';
 
-const WelcomeSection = () => {
+const CustomSelectComponent = () => {
   return (
     <section>
       <CustomSelect formName="user" label="Selecionar Usuário" />
@@ -10,4 +10,4 @@ const WelcomeSection = () => {
   );
 };
 
-export default WelcomeSection;
+export default CustomSelectComponent;
