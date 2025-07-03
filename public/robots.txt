@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://starforge-docs.vercel.app/
+
+# Sitemaps
+Sitemap: https://starforge-docs.vercel.app/sitemap.xml

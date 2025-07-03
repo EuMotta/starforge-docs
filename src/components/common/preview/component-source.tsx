@@ -15,7 +15,6 @@ export function ComponentSource({
   className,
   code,
   expandButtonTitle = 'Expand',
-  highlightedCode,
   maxHeight = '550px',
   ...props
 }: {

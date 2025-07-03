@@ -1,10 +1,10 @@
-import Logo from '@/components/common/logo';
-import { Button } from '@/components/star-forge-preview/button';
-import { Text } from '@/components/star-forge/text';
-import { siteConfig } from '@/settings';
+import Image from 'next/image';
 import Link from 'next/link';
 import { BsGithub } from 'react-icons/bs';
 import { MdOutlineDocumentScanner } from 'react-icons/md';
+
+import { Text } from '@/components/star-forge/text';
+import { siteConfig } from '@/settings';
 
 export default function HomePage() {
   return (
@@ -18,12 +18,13 @@ export default function HomePage() {
         backgroundRepeat: 'no-repeat'
       }}
     >
-      <div className="space-y-10 text-center">
-        <Text.H1 className="text-8xl !font-bold">
-          StarF
-          <Logo size="xl" className="mt-auto mb-2" />
-          rge
-        </Text.H1>
+      <div className="space-y-10 text-center text-white">
+        <Image
+          src={'/logo-extended-white.svg'}
+          width={700}
+          height={700}
+          alt="logo"
+        />
         <Text.H2>Componentes reutilizáveis</Text.H2>
         <div className="mt-20 flex justify-evenly gap-5">
           <Link

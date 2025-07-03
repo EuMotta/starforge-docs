@@ -32,7 +32,7 @@ interface CustomSelectContentProps {
 }
 const localUsers = [
   {
-    id: '1',
+    id: 'userid-1',
     name: 'John Anderson',
     role: 'Senior Developer',
     email: 'john@company.com',
@@ -42,7 +42,7 @@ const localUsers = [
       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face&auto=format'
   },
   {
-    id: '2',
+    id: 'userid-2',
     name: 'Sarah Wilson',
     role: 'UX Designer',
     email: 'sarah@company.com',
@@ -52,7 +52,7 @@ const localUsers = [
       'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=40&h=40&fit=crop&crop=face&auto=format'
   },
   {
-    id: '3',
+    id: 'userid-3',
     name: 'Michael Chen',
     role: 'Product Manager',
     email: 'michael@company.com',
@@ -62,7 +62,7 @@ const localUsers = [
       'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face&auto=format'
   },
   {
-    id: '4',
+    id: 'userid-4',
     name: 'Emily Rodriguez',
     role: 'Marketing Lead',
     email: 'emily@company.com',
@@ -128,11 +128,7 @@ const CustomSelectContent = ({
     </div>
   );
 };
-const CustomSelect = ({
-  formName,
-  label = 'Usuários',
-  existingValues = []
-}: CustomSelectProps) => {
+const CustomSelect = ({ formName, label = 'Usuários' }: CustomSelectProps) => {
   const form = useFormContext();
 
   return (
@@ -148,7 +144,7 @@ const CustomSelect = ({
               <FormLabel>{label}</FormLabel>
               <FormControl>
                 <Select
-                  value={field.value || existingValues[0]}
+                  value={field.value}
                   onValueChange={field.onChange}
                   aria-describedby={`${formName}-error`}
                 >
