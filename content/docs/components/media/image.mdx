@@ -1,9 +1,11 @@
 ---
-title: Background Components
-description: Explore uma coleção de componentes de fundo personalizáveis com diferentes layouts para destacar seu conteúdo de forma elegante.
+title: Image
+description: Image
+under_construction: true
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
+import EmptyState from '@/components/common/empty-state';
 import { extractSourceCode } from '@/lib/code';
 import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
@@ -15,18 +17,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
   CSS. Certifique-se de ter o Tailwind configurado em seu projeto para usá-los.
 </Callout>
 
-## Visualização do Componente
-
-<ComponentPreview
-  name="background-1"
-  classNameComponentContainer="min-h-[600px] w-full flex items-center justify-center"
-  code={(await extractSourceCode('background-1')).code}
-  lang="tsx"
-/>
-
-## Código Fonte
-
-<DynamicCodeBlock
-  lang="tsx"
-  code={(await extractSourceCode('background-1')).sourceCode}
+<EmptyState
+  title="Em construção"
+  subtitle="Este componente ainda está em construção."
 />
