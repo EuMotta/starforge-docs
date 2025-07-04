@@ -124,5 +124,25 @@ export const ui: Registry = [
         default: mod.default
       }))
     )
+  },
+  {
+    name: 'container',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: ['class-variance-authority'],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/container.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge-preview/container.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/container').then((mod) => ({
+        default: mod.default
+      }))
+    )
   }
 ];

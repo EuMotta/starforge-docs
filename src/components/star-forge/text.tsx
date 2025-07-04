@@ -14,7 +14,7 @@ export const Text = {
       <h1
         ref={ref}
         className={cx(
-          'mb-3 flex flex-col gap-6 text-4xl font-extralight lg:mb-4 lg:gap-8',
+          'mb-3 gap-6 text-4xl font-extralight lg:mb-4 lg:gap-8',
           className
         )}
         {...props}
@@ -27,7 +27,7 @@ export const Text = {
     ({ children, className, ...props }, ref) => (
       <h1
         ref={ref}
-        className={cx('flex text-3xl font-extralight lg:mb-2', className)}
+        className={cx('text-3xl font-extralight lg:mb-2', className)}
         {...props}
       >
         {children}
@@ -49,7 +49,7 @@ export const Text = {
     ({ children, className, ...props }, ref) => (
       <h3
         ref={ref}
-        className={cx('flex text-xl font-extralight lg:mb-2', className)}
+        className={cx('text-xl font-extralight lg:mb-2', className)}
         {...props}
       >
         {children}
