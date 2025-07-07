@@ -144,5 +144,250 @@ export const ui: Registry = [
         default: mod.default
       }))
     )
+  },
+  {
+    name: 'text-animation-1',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: ['class-variance-authority'],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/text-animation-1.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge-preview/texts/text-animation-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/texts/text-animation-1').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'text-animation-2',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: ['class-variance-authority'],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/text-animation-2.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge-preview/texts/text-animation-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/texts/text-animation-2').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'avatar-1',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-1.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-2',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-2.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-2').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+
+  {
+    name: 'avatar-3',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-3.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-3.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-3').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-4',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-4.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-4.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-4').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-5',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-5.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-5.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-5').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-6',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-6.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-6.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-6').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-7',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-7.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-7.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-7').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-8',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-8.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-8.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-8').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-9',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-9.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-9.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-9').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-10',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['avatar'],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar-10.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/avatar-10.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar-10').then((mod) => ({
+        default: mod.default
+      }))
+    )
   }
 ];

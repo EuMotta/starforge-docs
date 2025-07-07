@@ -1,0 +1,79 @@
+---
+title: Avatar
+description: Avatar
+new: true
+---
+
+import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
+import EmptyState from '@/components/common/empty-state';
+import { extractSourceCode } from '@/lib/code';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Callout title="Nota">
+  Todos os componentes apresentados são responsivos e compatíveis com Tailwind
+  CSS. Certifique-se de ter o Tailwind configurado em seu projeto para usá-los.
+</Callout>
+
+<div className="grid gap-5 gap-y-8 md:grid-cols-2 xl:grid-cols-3">
+<DrawerCodePreview
+  name="avatar-1"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('avatar-1')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="avatar-2"
+  code={(await extractSourceCode('avatar-2')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="avatar-3"
+  isImproved
+  code={(await extractSourceCode('avatar-3')).code}
+  lang="tsx"
+/>
+<DrawerCodePreview
+  name="avatar-4"
+  isImproved
+  code={(await extractSourceCode('avatar-4')).code}
+  lang="tsx"
+/>
+<DrawerCodePreview
+  name="avatar-5"
+  code={(await extractSourceCode('avatar-5')).code}
+  lang="tsx"
+/>
+<DrawerCodePreview
+  name="avatar-6"
+  isImproved
+  code={(await extractSourceCode('avatar-6')).code}
+  lang="tsx"
+/>
+<DrawerCodePreview
+  name="avatar-7"
+  code={(await extractSourceCode('avatar-7')).code}
+  lang="tsx"
+/>
+<DrawerCodePreview
+  name="avatar-8"
+  isImproved
+  code={(await extractSourceCode('avatar-8')).code}
+  lang="tsx"
+/>
+<DrawerCodePreview
+  name="avatar-9"
+  code={(await extractSourceCode('avatar-9')).code}
+  lang="tsx"
+/>
+<DrawerCodePreview
+  name="avatar-10"
+  isImproved
+  code={(await extractSourceCode('avatar-10')).code}
+  lang="tsx"
+/>
+</div>

@@ -1,0 +1,42 @@
+---
+title: Text Animations
+description: Animações de texto.
+new: true
+---
+
+import { ComponentPreview } from '@/components/common/preview/component-preview';
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+import { extractSourceCode } from '@/lib/code';
+
+## Text Component
+
+<ComponentPreview
+  name="text-animation-1"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('text-animation-1')).code}
+  lang="tsx"
+  hasReTrigger
+/>
+
+## Código Fonte
+
+<DynamicCodeBlock
+  lang="tsx"
+  code={(await extractSourceCode('text-animation-1')).sourceCode}
+/>
+
+## Text Variant
+
+<ComponentPreview
+  name="text-animation-2"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('text-animation-2')).code}
+  lang="tsx"
+/>
+
+## Código Fonte
+
+<DynamicCodeBlock
+  lang="tsx"
+  code={(await extractSourceCode('text-animation-2')).sourceCode}
+/>

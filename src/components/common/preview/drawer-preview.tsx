@@ -14,7 +14,7 @@ import {
 import { siteConfig } from '@/settings';
 import { motion, AnimatePresence } from 'framer-motion';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
-import { CheckCheck, Code, Terminal, X } from 'lucide-react';
+import { CheckCheck, Code, DiamondPlus, Terminal, X } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -23,6 +23,7 @@ import { ComponentLoader } from './component-loader';
 type DrawerCodePreviewProps = {
   name: string;
   code: string;
+  isImproved: boolean;
   lang?: string;
   classNameComponentContainer?: string;
   hasReTrigger?: boolean;
@@ -34,6 +35,7 @@ type DrawerCodePreviewProps = {
 export function DrawerCodePreview({
   name,
   code,
+  isImproved,
   lang = 'tsx',
   classNameComponentContainer,
   hasReTrigger = false,
@@ -58,6 +60,13 @@ export function DrawerCodePreview({
 
   return (
     <Card className="not-prose relative overflow-hidden border shadow-md">
+      {isImproved && (
+        <div className="absolute top-0 left-0 z-20 flex items-center justify-start p-3">
+          <div className="text-destructive h-8 gap-1.5 text-xs">
+            <DiamondPlus />
+          </div>
+        </div>
+      )}
       <div className="absolute top-0 right-0 z-20 flex items-center justify-end p-3">
         <div className="flex items-center gap-2">
           <Button
@@ -66,7 +75,7 @@ export function DrawerCodePreview({
             className="h-8 gap-1.5 text-xs"
             onClick={handleCopy}
           >
-            <Terminal className="h-3.5 w-3.5" />
+            <Terminal className="size-3.5" />
             <span className="font-mono">CLI</span>
             <AnimatePresence mode="wait">
               <motion.div
@@ -77,9 +86,7 @@ export function DrawerCodePreview({
                 transition={{ duration: 0.15 }}
                 className="ml-1"
               >
-                {copied && (
-                  <CheckCheck className="h-3.5 w-3.5 text-green-500" />
-                )}
+                {copied && <CheckCheck className="size-3.5 text-green-500" />}
               </motion.div>
             </AnimatePresence>
           </Button>
@@ -94,11 +101,10 @@ export function DrawerCodePreview({
                 <Code className="h-3.5 w-3.5" />
               </Button>
             </DialogTrigger>
-            <DialogContent className="not-prose flex max-h-[80vh] w-full max-w-4xl flex-col overflow-auto p-0">
+            <DialogContent className="not-prose flex max-h-[80vh] !w-full !max-w-4xl flex-col overflow-auto p-0">
               <DialogHeader className="bg-background sticky top-0 z-10 border-b px-6 py-4">
                 <DialogTitle className="flex items-center justify-between text-lg font-semibold">
                   <span>{formattedName}</span>
-                  {/* Cross button */}
                   <Button
                     variant="ghost"
                     size="icon"
@@ -131,7 +137,7 @@ export function DrawerCodePreview({
         </div>
       </div>
 
-      <CardContent className="h-full p-0">
+      <CardContent className="h-full min-h-64 p-0">
         <div className="component-preview from-background to-muted/30 flex h-full items-center justify-center bg-gradient-to-br shadow-[0px_2px_10px_0px_rgba(255,255,255,0.1)_inset]">
           <div
             className={cn(
