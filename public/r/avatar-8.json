@@ -1,0 +1,16 @@
+{
+  "name": "avatar-8",
+  "type": "registry:block",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "type": "registry:block",
+      "content": "import React from 'react';\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';\r\nimport { ShieldCheck } from 'lucide-react';\r\n\r\nfunction getInitialsCharacters(name: string) {\r\n  const splitName = name.split(' ');\r\n  const initials = splitName\r\n    .map((namePart) => namePart.charAt(0))\r\n    .join('')\r\n    .replace(/[^A-Z]/g, '')\r\n    .slice(0, 2)\r\n    .toUpperCase();\r\n  return initials;\r\n}\r\n\r\ninterface User {\r\n  name: string;\r\n  avatar: string;\r\n  verified: boolean;\r\n  status: 0 | 1 | 2 | 3;\r\n}\r\n\r\nconst Component = () => {\r\n  const user: User = {\r\n    name: 'John Doe',\r\n    avatar: 'https://i.pravatar.cc/150?img=52',\r\n    verified: true,\r\n    status: 2\r\n  };\r\n  const status: Record<User['status'], { label: string; color: string }> = {\r\n    0: { label: 'Offline', color: 'bg-gray-400' },\r\n    1: { label: 'Online', color: 'bg-emerald-400' },\r\n    2: { label: 'Away', color: 'bg-yellow-400' },\r\n    3: { label: 'Busy', color: 'bg-red-500' }\r\n  };\r\n  return (\r\n    <div className=\"relative\">\r\n      <Avatar className=\"size-14\">\r\n        <AvatarImage src={user.avatar} alt={user.name} />\r\n        <AvatarFallback>{getInitialsCharacters(user.name)}</AvatarFallback>\r\n      </Avatar>\r\n      <span\r\n        className={`border-background absolute -end-0.5 -bottom-0.5 size-4 rounded-full border-3 ${status[user.status].color}`}\r\n      >\r\n        <span className=\"sr-only\">{status[user.status].label}</span>\r\n      </span>\r\n      {user.verified && (\r\n        <span className=\"absolute -end-1.5 -top-1.5 text-emerald-300\">\r\n          <span className=\"sr-only\">Verified</span>\r\n          <ShieldCheck className=\"size-5\" />\r\n        </span>\r\n      )}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
+      "path": "/components/star-forge/avatar-8.tsx",
+      "target": "/components/star-forge/avatar-8.tsx"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "text-animation-1",
+  "type": "registry:block",
+  "dependencies": [
+    "class-variance-authority"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "type": "registry:block",
+      "content": "'use client';\r\nimport React from 'react';\r\n\r\nimport { cva, type VariantProps } from 'class-variance-authority';\r\nimport { HTMLMotionProps, motion } from 'framer-motion';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\nconst textAnimationVariants = cva('inline', {\r\n  variants: {\r\n    variant: {\r\n      default: 'text-foreground',\r\n      primary: 'text-primary',\r\n      secondary: 'text-secondary'\r\n    }\r\n  },\r\n  defaultVariants: {\r\n    variant: 'default'\r\n  }\r\n});\r\n\r\ninterface TextAnimationProps\r\n  extends HTMLMotionProps<'span'>,\r\n    VariantProps<typeof textAnimationVariants> {\r\n  text: string;\r\n}\r\n\r\nconst TextAnimation = React.forwardRef<HTMLSpanElement, TextAnimationProps>(\r\n  ({ text, variant, className, ...props }, ref) => {\r\n    const characters = text.split('');\r\n\r\n    const letterVariants = {\r\n      hidden: { opacity: 0, y: -20 },\r\n      visible: (i: number) => ({\r\n        opacity: 1,\r\n        y: 0,\r\n        transition: {\r\n          delay: i * 0.05,\r\n          duration: 0.3\r\n        }\r\n      })\r\n    };\r\n\r\n    return (\r\n      <span aria-label={text} className=\"inline-flex flex-wrap\">\r\n        {characters.map((char, index) => (\r\n          <motion.span\r\n            key={index}\r\n            custom={index}\r\n            variants={letterVariants}\r\n            initial=\"hidden\"\r\n            animate=\"visible\"\r\n            className={cn(textAnimationVariants({ variant }), className)}\r\n            aria-hidden=\"true\"\r\n            {...props}\r\n            ref={ref}\r\n          >\r\n            {char === ' ' ? '\\u00A0' : char}\r\n          </motion.span>\r\n        ))}\r\n      </span>\r\n    );\r\n  }\r\n);\r\n\r\nTextAnimation.displayName = 'TextAnimation';\r\n\r\nexport default TextAnimation;\r\n",
+      "path": "/components/star-forge/text-animation-1.tsx",
+      "target": "/components/star-forge/text-animation-1.tsx"
+    }
+  ]
+}

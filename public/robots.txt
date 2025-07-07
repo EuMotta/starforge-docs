@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://starforge-docs.vercel.app/
+Host: http://localhost:3000
 
 # Sitemaps
-Sitemap: https://starforge-docs.vercel.app/sitemap.xml
+Sitemap: http://localhost:3000/sitemap.xml

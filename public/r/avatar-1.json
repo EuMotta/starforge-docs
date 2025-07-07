@@ -1,0 +1,16 @@
+{
+  "name": "avatar-1",
+  "type": "registry:block",
+  "dependencies": [],
+  "registryDependencies": [
+    "avatar"
+  ],
+  "files": [
+    {
+      "type": "registry:block",
+      "content": "import React from 'react';\r\n\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';\r\n\r\nfunction getInitialsCharacters(name: string) {\r\n  const splitName = name.split(' ');\r\n  const initials = splitName\r\n    .map((namePart) => namePart.charAt(0))\r\n    .join('')\r\n    .replace(/[^A-Z]/g, '')\r\n    .slice(0, 2)\r\n    .toUpperCase();\r\n  return initials;\r\n}\r\n\r\ninterface Component {\r\n  name: string;\r\n}\r\n\r\nconst Component = ({ name = 'John Doe' }: Component) => {\r\n  return (\r\n    <Avatar className=\"size-14\">\r\n      <AvatarImage src=\"https://i.pravatar.cc/150?img=1\" alt={name} />\r\n      <AvatarFallback>{getInitialsCharacters(name)}</AvatarFallback>\r\n    </Avatar>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
+      "path": "/components/star-forge/avatar-1.tsx",
+      "target": "/components/star-forge/avatar-1.tsx"
+    }
+  ]
+}

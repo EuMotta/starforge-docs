@@ -1,23 +1,32 @@
 'use client';
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { getComponentByName } from '@/registry';
 import { siteConfig } from '@/settings';
-import { AlertCircle, ArrowLeft, RefreshCw, RotateCw } from 'lucide-react';
+import { RotateCw } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
 import { AuthorBadge } from '../../ui/author-badge';
-import { Card, CardContent, CardFooter, CardHeader } from '../../ui/card';
+import ComponentError from './component-error';
 
-type ComponentLoaderProps = {
+interface ComponentLoaderProps {
   name: string;
   hasReTrigger?: boolean;
   classNameComponentContainer?: string;
   fromDocs?: boolean;
-};
+}
+
+const LoadingComponent = () => (
+  <div className="flex h-full w-full items-center justify-center p-16">
+    <div className="flex h-full w-full flex-col items-center justify-center bg-transparent p-4">
+      <div className="rounded-full p-3">
+        <RotateCw className="text-foreground h-6 w-6 animate-spin" />
+      </div>
+    </div>
+  </div>
+);
 
 export function ComponentLoader({
   classNameComponentContainer,
@@ -50,93 +59,11 @@ export function ComponentLoader({
   };
 
   if (loading) {
-    return (
-      <div className="flex h-full w-full items-center justify-center p-16">
-        <div className="flex h-full w-full flex-col items-center justify-center bg-transparent p-4">
-          <div className="rounded-full p-3">
-            <RotateCw className="text-foreground h-6 w-6 animate-spin" />
-          </div>
-        </div>
-      </div>
-    );
+    return <LoadingComponent />;
   }
 
   if (!Component) {
-    return (
-      <div className="flex h-screen items-center justify-center">
-        <div className="bg-background flex min-h-screen flex-col items-center justify-center p-4">
-          <Card className="mx-auto max-w-md shadow-lg">
-            <CardHeader className="flex flex-col items-center space-y-1 pb-2 text-center">
-              <div className="bg-destructive rounded-full p-3 dark:bg-red-900/0">
-                <AlertCircle className="h-6 w-6 text-red-600 dark:text-red-400" />
-              </div>
-              <h1 className="text-foreground mt-4 text-2xl font-bold tracking-tight">
-                Component not found
-              </h1>
-            </CardHeader>
-            <CardContent className="text-center">
-              <div className="space-y-4">
-                <p className="text-muted-foreground">
-                  The component{' '}
-                  <span className="text-foreground font-mono font-medium">
-                    {name}
-                  </span>{' '}
-                  could not be found. Please check the name and try again.
-                </p>
-                <div className="bg-secondary rounded-lg p-4">
-                  <h3 className="mb-2 text-sm font-medium">
-                    Troubleshooting steps:
-                  </h3>
-                  <ul className="text-muted-foreground space-y-2 text-left text-sm">
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>
-                        If you are the developer, ensure the component is
-                        registered correctly in your component registry.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>
-                        Check for typos in the component name or import
-                        statement.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-primary mr-2">•</span>
-                      <span>
-                        If you are the user, please contact the developer to fix
-                        this issue.
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </CardContent>
-            <CardFooter className="flex justify-center gap-2 pt-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => window.history.back()}
-              >
-                <ArrowLeft className="mr-2 h-4 w-4" />
-                Go Back
-              </Button>
-              <Button size="sm" onClick={() => window.location.reload()}>
-                <RefreshCw className="mr-2 h-4 w-4" />
-                Retry
-              </Button>
-            </CardFooter>
-          </Card>
-          <p className="text-muted-foreground mt-6 text-center text-sm">
-            Need help?{' '}
-            <Link href="#" className="text-primary font-medium hover:underline">
-              Contact support
-            </Link>
-          </p>
-        </div>
-      </div>
-    );
+    return <ComponentError componentName={name} />;
   }
 
   return (
@@ -187,12 +114,12 @@ function ComponentDisplay({
       {hasReTrigger && (
         <Button
           variant="ghost"
-          size="icon"
-          className="text-muted-foreground/80 hover:text-foreground absolute top-0 left-0 cursor-pointer hover:bg-transparent"
+          className="text-muted-foreground/80 group hover:text-foreground absolute top-0 left-0 cursor-pointer hover:bg-transparent"
           onClick={reTrigger}
           aria-label="Refresh component"
         >
-          <RotateCw className="h-4 w-4" />
+          <RotateCw className="group-hover:text-destructive h-4 w-4 group-hover:animate-spin" />{' '}
+          Reiniciar animação
         </Button>
       )}
       {hasReTrigger ? (
