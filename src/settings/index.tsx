@@ -26,7 +26,7 @@ export const siteConfig = {
       'Headless UI',
       'Modern Interfaces'
     ],
-    description: 'UI components library.',
+    description: 'UI components for React.',
     locale: 'pt-BR',
     links: {
       linkedin: '',

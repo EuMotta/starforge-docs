@@ -1,16 +1,16 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "container",
-  "type": "registry:block",
+  "type": "registry:ui",
   "dependencies": [
     "class-variance-authority"
   ],
   "registryDependencies": [],
   "files": [
     {
-      "type": "registry:block",
+      "path": "src/components/star-forge/container.tsx",
       "content": "import React from 'react';\r\n\r\nimport { cva, type VariantProps } from 'class-variance-authority';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\nconst containerVariants = cva('container mx-auto', {\r\n  variants: {\r\n    variant: {\r\n      default: '',\r\n      border: 'border-x'\r\n    },\r\n    size: {\r\n      sm: 'max-w-[40rem]', // 640px\r\n      md: 'max-w-[48rem]', // 768px\r\n      lg: 'max-w-[64rem]', // 1024px\r\n      xl: 'max-w-[80rem]', // 1280px\r\n      '2xl': 'max-w-[87.5rem]', // 1400px\r\n      '3xl': 'max-w-[90rem]' // 1440px\r\n    }\r\n  },\r\n  defaultVariants: {\r\n    variant: 'default',\r\n    size: '2xl'\r\n  }\r\n});\r\n\r\ninterface ContainerProps\r\n  extends React.HTMLAttributes<HTMLDivElement>,\r\n    VariantProps<typeof containerVariants> {\r\n  children?: React.ReactNode;\r\n}\r\n\r\nconst Container = React.forwardRef<HTMLDivElement, ContainerProps>(\r\n  ({ className, variant, size, children, ...props }, ref) => {\r\n    return (\r\n      <div\r\n        ref={ref}\r\n        className={cn(containerVariants({ variant, size, className }))}\r\n        {...props}\r\n      >\r\n        {children}\r\n      </div>\r\n    );\r\n  }\r\n);\r\n\r\nContainer.displayName = 'Container';\r\n\r\nexport default Container;\r\n",
-      "path": "/components/star-forge/container.tsx",
-      "target": "/components/star-forge/container.tsx"
+      "type": "registry:ui"
     }
   ]
 }

@@ -1,16 +1,18 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-7",
-  "type": "registry:block",
-  "dependencies": [],
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [
     "avatar"
   ],
   "files": [
     {
-      "type": "registry:block",
-      "content": "import React from 'react';\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';\r\nimport { ShieldCheck } from 'lucide-react';\r\n\r\nconst Component = () => {\r\n  return (\r\n    <div className=\"relative\">\r\n      <Avatar className=\"size-14\">\r\n        <AvatarImage src=\"https://i.pravatar.cc/150?img=52\" alt=\"John Doe\" />\r\n        <AvatarFallback>JD</AvatarFallback>\r\n      </Avatar>\r\n      <span className=\"border-background absolute -end-0.5 -bottom-0.5 size-4 rounded-full border-3 bg-yellow-400\">\r\n        <span className=\"sr-only\">Online</span>\r\n      </span>\r\n\r\n      <span className=\"absolute -end-1.5 -top-1.5 text-emerald-300\">\r\n        <span className=\"sr-only\">Verified</span>\r\n        <ShieldCheck className=\"size-5\" />\r\n      </span>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
-      "path": "/components/star-forge/avatar-7.tsx",
-      "target": "/components/star-forge/avatar-7.tsx"
+      "path": "src/components/star-forge/avatar-7.tsx",
+      "content": "import React from 'react';\r\n\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';\r\nimport { ShieldCheck } from 'lucide-react';\r\n\r\nconst Component = () => {\r\n  return (\r\n    <div className=\"relative\">\r\n      <Avatar className=\"size-14\">\r\n        <AvatarImage src=\"https://i.pravatar.cc/150?img=52\" alt=\"John Doe\" />\r\n        <AvatarFallback>JD</AvatarFallback>\r\n      </Avatar>\r\n      <span className=\"border-background absolute -end-0.5 -bottom-0.5 size-4 rounded-full border-3 bg-yellow-400\">\r\n        <span className=\"sr-only\">Online</span>\r\n      </span>\r\n\r\n      <span className=\"absolute -end-1.5 -top-1.5 text-emerald-300\">\r\n        <span className=\"sr-only\">Verified</span>\r\n        <ShieldCheck className=\"size-5\" />\r\n      </span>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
+      "type": "registry:ui"
     }
   ]
 }

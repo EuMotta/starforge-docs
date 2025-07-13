@@ -2,6 +2,7 @@
 
 import React from 'react';
 
+import { Label } from '@/components/ui/label';
 import {
   Select,
   SelectTrigger,
@@ -10,8 +11,6 @@ import {
   SelectGroup,
   SelectItem
 } from '@/components/ui/select';
-
-import { Label } from '../ui/label';
 
 interface CustomSelectProps {
   formName: string;

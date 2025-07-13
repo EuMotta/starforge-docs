@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-1",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/star-forge/card-1.tsx",
+      "content": "'use client';\nimport React from 'react';\n\nimport { Star } from 'lucide-react';\n\nimport { Button } from '../ui/button';\n\nexport const Component = () => {\n  return (\n    <div className=\"max-w-sm overflow-hidden rounded shadow-lg transition-shadow duration-300 hover:shadow-xl\">\n      <div className=\"from-primary-400 to-primary-600 relative h-48 bg-gradient-to-br\">\n        <div\n          className=\"absolute inset-0 bg-cover\"\n          style={{ backgroundImage: 'url(/ogimage.png)' }}\n        ></div>\n        <div className=\"absolute right-4 bottom-4 left-4\">\n          <h3 className=\"text-xl font-semibold text-white\">Basic Card</h3>\n          <p className=\"text-sm text-white opacity-90\">\n            Simple and clean design\n          </p>\n        </div>\n      </div>\n      <div className=\"bg-white p-6\">\n        <h3 className=\"mb-2 text-xl font-semibold text-gray-800\">Components</h3>\n        <p className=\"mb-4 text-gray-600\">\n          A collection of customizable card for StarForge.\n        </p>\n        <div className=\"flex items-center justify-between\">\n          <div className=\"flex items-center gap-2\">\n            <Star className=\"text-yellow-500\" />\n            <span className=\"text-muted text-sm\">4.8</span>\n          </div>\n          <Button>View Details</Button>\n        </div>\n      </div>\n    </div>\n  );\n};\n\nexport default Component;\n",
+      "type": "registry:ui"
+    }
+  ]
+}

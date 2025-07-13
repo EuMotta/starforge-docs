@@ -213,7 +213,7 @@ export const ui: Registry = [
     name: 'avatar-2',
     author: 'EuMotta',
     type: 'registry:component',
-    registryDependencies: ['avatar'],
+    registryDependencies: ['http://localhost:3000/r/avatar.json'],
     dependencies: [],
     description: 'Custom background component',
     files: [
@@ -386,6 +386,86 @@ export const ui: Registry = [
     example: 'src/components/star-forge/avatar-10.tsx',
     component: React.lazy(() =>
       import('@/components/star-forge/avatar-10').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'card-1',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['button'],
+    dependencies: ['lucide-react'],
+    description: 'Custom card component',
+    files: [
+      {
+        path: 'src/components/star-forge/card-1.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/card-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/card-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-1',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/alert-1.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/alert-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/alert-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-2',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/alert-2.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/alert-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/alert-2').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-3',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/alert-3.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/alert-3.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/alert-3').then((mod) => ({
         default: mod.default
       }))
     )

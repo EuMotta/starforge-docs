@@ -26,7 +26,7 @@ export default async function Page(props: {
       full={page.data.full}
       tableOfContent={{ footer, single: false, style: 'clerk' }}
       article={{
-        className: 'max-w-6xl max-sm:pb-16'
+        className: 'w-full max-w-screen-xl px-4 max-sm:pb-16'
       }}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
