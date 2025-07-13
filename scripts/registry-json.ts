@@ -11,7 +11,7 @@ const COMPONENTS_BASE_PATH = path.join(
 );
 
 interface RegistryFile {
-  type: 'registry:block';
+  type: string;
   content: string;
   path: string;
   target: string;
@@ -19,7 +19,7 @@ interface RegistryFile {
 
 interface RegistryComponent {
   name: string;
-  type: 'registry:block';
+  type: string;
   dependencies: string[];
   registryDependencies: string[];
   files: RegistryFile[];
@@ -63,14 +63,17 @@ async function writeFileRecursive(
 /**
  * Lê o conteúdo do arquivo de um componente e gera um objeto de arquivo de registro.
  */
-async function getComponentFile(componentName: string): Promise<RegistryFile> {
+async function getComponentFile(
+  componentName: string,
+  componentType: string
+): Promise<RegistryFile> {
   const filePath = path.join(COMPONENTS_BASE_PATH, `${componentName}.tsx`);
-  const normalizedPath = `/components/star-forge/${componentName}.tsx`;
+  const normalizedPath = `components/star-forge/${componentName}.tsx`;
 
   try {
     const content = await fs.readFile(filePath, 'utf-8');
     return {
-      type: 'registry:block',
+      type: componentType,
       content,
       path: normalizedPath,
       target: normalizedPath
@@ -86,14 +89,14 @@ async function getComponentFile(componentName: string): Promise<RegistryFile> {
  */
 async function createRegistryComponent(doc: any): Promise<RegistryComponent> {
   const name = doc.name;
-  const file = await getComponentFile(name);
+  const file = await getComponentFile(name, doc.type);
 
   const dependencies: string[] = doc.dependencies ?? [];
   const registryDependencies: string[] = doc.registryDependencies ?? [];
 
   return {
     name,
-    type: 'registry:block',
+    type: doc.type,
     dependencies,
     registryDependencies,
     files: [file]

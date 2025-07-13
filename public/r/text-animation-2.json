@@ -1,16 +1,17 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "text-animation-2",
-  "type": "registry:block",
+  "type": "registry:ui",
   "dependencies": [
+    "framer-motion",
     "class-variance-authority"
   ],
   "registryDependencies": [],
   "files": [
     {
-      "type": "registry:block",
+      "path": "src/components/star-forge/text-animation-2.tsx",
       "content": "'use client';\r\n\r\nimport React from 'react';\r\n\r\nimport { cva, type VariantProps } from 'class-variance-authority';\r\nimport { Easing, HTMLMotionProps, motion, Variants } from 'framer-motion';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\nconst textAnimationVariants = cva('inline', {\r\n  variants: {\r\n    variant: {\r\n      default: 'text-foreground',\r\n      primary: 'text-primary',\r\n      secondary: 'text-secondary'\r\n    }\r\n  },\r\n  defaultVariants: {\r\n    variant: 'default'\r\n  }\r\n});\r\n\r\ninterface TextAnimationProps\r\n  extends HTMLMotionProps<'span'>,\r\n    VariantProps<typeof textAnimationVariants> {\r\n  children: React.ReactNode;\r\n}\r\n\r\nconst TextAnimation = React.forwardRef<HTMLSpanElement, TextAnimationProps>(\r\n  ({ children, variant, className, ...props }, ref) => {\r\n    const fadeIn = (\r\n      direction: 'down' | 'up' | 'left' | 'right',\r\n      transitionConfig: {\r\n        type?: 'tween' | 'spring' | 'inertia';\r\n        delay?: number;\r\n        duration?: number;\r\n        ease?: Easing | Easing[] | undefined;\r\n      }\r\n    ): Variants => {\r\n      const {\r\n        type = 'tween',\r\n        delay = 0,\r\n        duration = 0.5,\r\n        ease = 'backOut'\r\n      } = transitionConfig;\r\n\r\n      return {\r\n        hidden: {\r\n          x: direction === 'left' ? 200 : direction === 'right' ? -100 : 0,\r\n          y: direction === 'up' ? 200 : direction === 'down' ? -100 : 0,\r\n          opacity: 0\r\n        },\r\n        show: (i: number) => ({\r\n          x: 0,\r\n          y: 0,\r\n          opacity: 1,\r\n          transition: {\r\n            type,\r\n            delay: delay + i * 0.2,\r\n            duration,\r\n            ease\r\n          }\r\n        })\r\n      };\r\n    };\r\n\r\n    const textContent =\r\n      typeof children === 'string'\r\n        ? children\r\n        : React.Children.toArray(children).join('');\r\n\r\n    const words = textContent.split(/(\\s+)/);\r\n\r\n    return (\r\n      <span className=\"inline-flex flex-wrap gap-x-1\" ref={ref}>\r\n        {words.map((word, index) => (\r\n          <motion.span\r\n            key={index}\r\n            custom={index}\r\n            variants={fadeIn('down', {\r\n              type: 'tween',\r\n\r\n            })}\r\n            initial=\"hidden\"\r\n            animate=\"show\"\r\n            className={cn(textAnimationVariants({ variant }), className)}\r\n            aria-hidden=\"true\"\r\n            {...props}\r\n          >\r\n            {word}\r\n          </motion.span>\r\n        ))}\r\n      </span>\r\n    );\r\n  }\r\n);\r\n\r\nTextAnimation.displayName = 'TextAnimation';\r\n\r\nexport default TextAnimation;\r\n",
-      "path": "/components/star-forge/text-animation-2.tsx",
-      "target": "/components/star-forge/text-animation-2.tsx"
+      "type": "registry:ui"
     }
   ]
 }

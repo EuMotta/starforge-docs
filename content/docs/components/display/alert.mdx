@@ -1,0 +1,43 @@
+---
+title: Alert
+description: Alert components
+new: true
+---
+
+import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
+import EmptyState from '@/components/common/empty-state';
+import { extractSourceCode } from '@/lib/code';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+
+<Callout title="Nota">
+  Todos os componentes apresentados são responsivos e compatíveis com Tailwind
+  CSS. Certifique-se de ter o Tailwind configurado em seu projeto para usá-los.
+</Callout>
+
+<div className="grid gap-5 gap-y-8 md:grid-cols-2">
+
+<DrawerCodePreview
+  name="alert-1"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-1')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="alert-2"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-2')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="alert-3"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-3')).code}
+  lang="tsx"
+/>
+
+</div>

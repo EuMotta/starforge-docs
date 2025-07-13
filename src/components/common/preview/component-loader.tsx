@@ -104,7 +104,7 @@ function ComponentDisplay({
   return (
     <div
       className={cn(
-        'component-preview border-secondary/50 relative flex w-full items-center justify-center overflow-y-auto rounded-lg border',
+        'relative flex w-full items-center justify-center overflow-y-auto rounded-lg',
         className
       )}
       id="preview"
@@ -118,7 +118,7 @@ function ComponentDisplay({
           onClick={reTrigger}
           aria-label="Refresh component"
         >
-          <RotateCw className="group-hover:text-destructive h-4 w-4 group-hover:animate-spin" />{' '}
+          <RotateCw className="group-hover:text-[#49BEB7] h-4 w-4 group-hover:animate-spin" />{' '}
           Reiniciar animação
         </Button>
       )}

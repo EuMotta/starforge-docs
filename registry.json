@@ -1,0 +1,283 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "star-forge",
+  "homepage": "https://starforge-docs.vercel.appgit",
+  "items": [
+    {
+      "name": "avatar-1",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-2",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-3",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-8",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-8.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-9",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-9.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-10",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["avatar"],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar-10.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alert-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alert-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alert-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "background-1",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/background-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/text.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-variant",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/text-variant.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-animation-1",
+      "type": "registry:ui",
+      "dependencies": ["framer-motion", "class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/background-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-animation-2",
+      "type": "registry:ui",
+      "dependencies": ["framer-motion", "class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/text-animation-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/star-forge/card-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "container",
+      "type": "registry:ui",
+      "dependencies": ["class-variance-authority"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/container.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/section.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select-1",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["select", "label"],
+      "files": [
+        {
+          "path": "src/components/star-forge/select-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select-1-form",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": ["select", "form"],
+      "files": [
+        {
+          "path": "src/components/star-forge/select-1-form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
