@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "star-forge",
-  "homepage": "https://starforge-docs.vercel.appgit",
+  "homepage": "https://starforge-docs.vercel.app",
   "items": [
     {
       "name": "avatar-1",
@@ -275,6 +275,66 @@
       "files": [
         {
           "path": "src/components/star-forge/select-1-form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-1",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/heros/hero-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-2",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/heros/hero-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hero-3",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/heros/hero-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "footer-1",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/footer/footer-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "footer-2",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/footer/footer-2.tsx",
           "type": "registry:ui"
         }
       ]

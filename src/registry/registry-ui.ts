@@ -469,5 +469,105 @@ export const ui: Registry = [
         default: mod.default
       }))
     )
+  },
+  {
+    name: 'hero-1',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/heros/hero-1.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/heros/hero-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/heros/hero-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'hero-2',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/heros/hero-2.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/heros/hero-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/heros/hero-2').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'hero-3',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/heros/hero-3.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/heros/hero-3.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/heros/hero-3').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'footer-1',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/footer/footer-1.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/footer/footer-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/footer/footer-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'footer-2',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Custom background component',
+    files: [
+      {
+        path: 'src/components/star-forge/footer/footer-2.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/footer/footer-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/footer/footer-2').then((mod) => ({
+        default: mod.default
+      }))
+    )
   }
 ];

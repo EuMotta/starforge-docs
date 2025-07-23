@@ -78,8 +78,7 @@ const TextAnimation = React.forwardRef<HTMLSpanElement, TextAnimationProps>(
             key={index}
             custom={index}
             variants={fadeIn('down', {
-              type: 'tween',
-
+              type: 'tween'
             })}
             initial="hidden"
             animate="show"
