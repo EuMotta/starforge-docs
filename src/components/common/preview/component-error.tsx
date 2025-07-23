@@ -25,7 +25,6 @@ const ComponentError = React.forwardRef<HTMLDivElement, ComponentErrorProps>(
   ({ componentName = 'ComponentName', className, ...props }, ref) => {
     return (
       <div
-        id="webcrumbs"
         className={cn(
           'bg-background flex min-h-screen items-center justify-center p-4',
           className

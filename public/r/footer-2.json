@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "footer-2",
+  "type": "registry:ui",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/footer/footer-2.tsx",
+      "content": "import React from 'react';\r\n\r\ninterface LinkItem {\r\n  label: string;\r\n  href: string;\r\n}\r\n\r\nconst footerLinks: LinkItem[] = [\r\n  { label: 'Privacy Policy', href: '#' },\r\n  { label: 'Terms of Service', href: '#' },\r\n  { label: 'Sitemap', href: '#' }\r\n];\r\n\r\nconst Component = () => {\r\n  return (\r\n    <footer className=\"bg-muted text-muted-foreground w-full\">\r\n      <div className=\"border-muted-foreground border-t p-3 text-center\">\r\n        <p>&copy; {new Date().getFullYear()} StarForge. All rights reserved.</p>\r\n        <div className=\"mt-2 flex justify-center space-x-6\">\r\n          {footerLinks.map((link) => (\r\n            <a\r\n              key={link.label}\r\n              href={link.href}\r\n              className=\"hover:text-primary transition-colors\"\r\n            >\r\n              {link.label}\r\n            </a>\r\n          ))}\r\n        </div>\r\n      </div>\r\n    </footer>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}

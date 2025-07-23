@@ -118,7 +118,7 @@ function ComponentDisplay({
           onClick={reTrigger}
           aria-label="Refresh component"
         >
-          <RotateCw className="group-hover:text-[#49BEB7] h-4 w-4 group-hover:animate-spin" />{' '}
+          <RotateCw className="h-4 w-4 group-hover:animate-spin group-hover:text-[#49BEB7]" />{' '}
           Reiniciar animação
         </Button>
       )}

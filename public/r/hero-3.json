@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-3",
+  "type": "registry:ui",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/heros/hero-3.tsx",
+      "content": "import React from 'react';\r\n\r\nimport { BriefcaseBusiness } from 'lucide-react';\r\n\r\nconst HeroSection = () => {\r\n  return (\r\n    <div className=\"bg-background flex w-full items-center justify-center p-8 text-white\">\r\n      <div className=\"grid w-full max-w-5xl items-center gap-8 md:grid-cols-2\">\r\n        <div>\r\n          <BriefcaseBusiness size={50} className=\"text-blue-500\" />\r\n          <h1 className=\"mb-6 text-3xl leading-tight font-bold md:text-4xl\">\r\n            Transform your business with{' '}\r\n            <span className=\"text-blue-500\">innovative digital solutions</span>\r\n          </h1>\r\n          <ul className=\"mb-8 space-y-3\">\r\n            <li className=\"flex items-center\">\r\n              <span className=\"mr-2 text-green-400\">✔</span> Increase\r\n              efficiency and optimize processes\r\n            </li>\r\n            <li className=\"flex items-center\">\r\n              <span className=\"mr-2 text-green-400\">✔</span> High-quality\r\n              customized solutions\r\n            </li>\r\n            <li className=\"flex items-center\">\r\n              <span className=\"mr-2 text-green-400\">✔</span> Technology that\r\n              drives results\r\n            </li>\r\n          </ul>\r\n          <button className=\"rounded-md bg-blue-500 px-6 py-3 font-bold text-white shadow-md transition hover:bg-blue-600\">\r\n            DISCOVER OUR SOLUTIONS\r\n          </button>\r\n        </div>\r\n        <div className=\"relative hidden md:block\">\r\n          <div className=\"absolute inset-0 rounded-full bg-blue-400 opacity-30 blur-3xl\"></div>\r\n          <img\r\n            src=\"/examples/person-1.png\"\r\n            alt=\"Woman with crossed arms\"\r\n            className=\"relative z-10 rounded-lg [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] drop-shadow-sm drop-shadow-black\"\r\n          />\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nconst Hero = () => {\r\n  return (\r\n    <main>\r\n      <HeroSection />\r\n    </main>\r\n  );\r\n};\r\n\r\nexport default Hero;\r\n",
+      "type": "registry:ui"
+    }
+  ]
+}
