@@ -25,7 +25,7 @@ export const source = loader({
         node.name = (
           <>
             {node.name}
-            <Badge className="bg-cyan-300 !text-[10px]">New</Badge>
+            <Badge className="bg-cyan-200 !text-[10px]">Updated</Badge>
           </>
         );
       else if (data.under_construction)

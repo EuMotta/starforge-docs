@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "text-animation-1",
-  "type": "registry:ui",
   "dependencies": [
     "framer-motion",
     "class-variance-authority"
@@ -13,5 +12,6 @@
       "content": "import React from 'react';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\ninterface ComponentProps extends React.HTMLAttributes<HTMLDivElement> {\r\n  children: React.ReactNode;\r\n  className?: string;\r\n}\r\n\r\nconst Component = ({ children, className, ...props }: ComponentProps) => (\r\n  <div\r\n    className={cn(\r\n      'relative flex w-full items-center justify-center',\r\n      className\r\n    )}\r\n    {...props}\r\n  >\r\n    <div\r\n      className={cn(\r\n        'absolute inset-0 z-0',\r\n        '[background-size:50px_50px]',\r\n        '[background-image:linear-gradient(to_right,#90909042_1px,transparent_1px),linear-gradient(to_bottom,#90909042_1px,transparent_1px)]',\r\n        'dark:[background-image:linear-gradient(to_right,#4545458f_1px,transparent_1px),linear-gradient(to_bottom,#4545458f_1px,transparent_1px)]'\r\n      )}\r\n    />\r\n    <div className=\"z-10\">{children}</div>\r\n  </div>\r\n);\r\n\r\nexport default Component;\r\n",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

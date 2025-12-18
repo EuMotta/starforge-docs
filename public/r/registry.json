@@ -249,6 +249,10 @@
       "dependencies": ["class-variance-authority", "react-icons"],
       "registryDependencies": [],
       "files": [
+         {
+          "path": "src/components/star-forge/text.tsx",
+          "type": "registry:ui"
+        },
         {
           "path": "src/components/star-forge/section.tsx",
           "type": "registry:ui"

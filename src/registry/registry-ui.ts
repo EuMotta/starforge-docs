@@ -45,7 +45,7 @@ export const ui: Registry = [
     name: 'section',
     author: 'EuMotta',
     type: 'registry:component',
-    registryDependencies: ['http://localhost:3000/r/text.json'],
+    registryDependencies: [],
     dependencies: ['class-variance-authority', 'react-icons'],
     description: 'Custom section component',
     files: [

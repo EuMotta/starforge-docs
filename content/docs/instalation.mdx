@@ -1,6 +1,6 @@
 ---
-title: Instalação
-description: Instalando e configurando os componentes da Star Forge
+title: Installation
+description: Installing and configuring Star Forge components
 icon: Rocket
 display:
   order: 2
@@ -9,21 +9,21 @@ display:
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { Callout } from "fumadocs-ui/components/callout";
 
-## Configurar o Next.js
+## Set Up Next.js
 
-### Requisitos do Sistema
+### System Requirements
 
-- [Node.js 20](https://nodejs.org/) ou superior.
+- [Node.js 20](https://nodejs.org/) or later.
 
-### Instalação Automática
+### Automatic Installation
 
-Recomendo iniciar um novo projeto Next.js usando o [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), que configura tudo automaticamente. Para criar um projeto, execute:
+We recommend starting a new Next.js project using [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app), which sets everything up automatically. To create a project, run:
 
 ```bash filename="Terminal"
 npx create-next-app@latest
 ```
 
-Durante a instalação, você verá os seguintes prompts:
+During installation, you will see the following prompts:
 
 ```txt filename="Terminal"
 What is your project named? my-app
@@ -37,18 +37,18 @@ Would you like to customize the import alias (`@/*` by default)? No / Yes
 What import alias would you like configured? @/*
 ```
 
-Após responder aos prompts, o [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) criará uma pasta com o nome do seu projeto e instalará as dependências necessárias.
+After answering the prompts, [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app) will create a folder with your project name and install the required dependencies.
 
-## Instalar a Star Forge
+## Install Star Forge
 
-### Para Projetos Next.js
+### For Next.js Projects
 
 <Steps>
 
 <Step>
-### Inicializar o Projeto
+### Initialize the Project
 
-Execute o comando `init` para configurar a Star Forge em um projeto Next.js novo ou existente:
+Run the `init` command to set up Star Forge in a new or existing Next.js project:
 
 ```bash
 npx shadcn@latest init
@@ -56,7 +56,7 @@ npx shadcn@latest init
 
 <Callout className="mt-4">
 
-Você pode usar a flag `-d` para usar configurações padrão, como o estilo `new-york`, a cor base `zinc` e suporte a variáveis CSS.
+You can use the `-d` flag to apply default settings, such as the `new-york` style, the `zinc` base color, and CSS variables support.
 
 ```bash
 npx shadcn@latest init -d
@@ -66,9 +66,9 @@ npx shadcn@latest init -d
 </Step>
 
 <Step>
-### Configurar components.json
+### Configure components.json
 
-Você será guiado por algumas perguntas para configurar o arquivo `components.json`:
+You will be guided through a few questions to configure the `components.json` file:
 
 ```txt showLineNumbers
 Which style would you like to use? › New York
@@ -76,19 +76,19 @@ Which color would you like to use as base color? › Zinc
 Do you want to use CSS variables for colors? › no / yes
 ```
 
-Este arquivo será criado no diretório raiz do seu projeto e definirá as preferências de estilo e tema para os componentes da Star Forge.
+This file will be created in the root directory of your project and will define the style and theme preferences for Star Forge components.
 </Step>
 
 <Step>
-### Adicionar Componentes
+### Add Components
 
-Com a configuração concluída, você pode começar a adicionar componentes ao seu projeto:
+Once configuration is complete, you can start adding components to your project:
 
 ```bash
 npx shadcn@latest add https://star-forge-components.vercel.app/projects/r/text.json
 ```
 
-O comando acima adicionará o componente `Text` ao diretório `components/star-forge`. Você pode importá-lo assim:
+The command above will add the `Text` component to the `components/star-forge` directory. You can import it like this:
 
 ```tsx title="index.tsx"
 import { Text } from '@/components/star-forge/text';
@@ -105,9 +105,9 @@ export default function Home() {
 </Step>
 
 <Step>
-### Personalizar o Tema
+### Customize the Theme
 
-Ajuste as variáveis CSS no arquivo `src/app/globals.css` para alinhar os componentes ao seu sistema de design:
+Adjust the CSS variables in the `src/app/globals.css` file to align components with your design system:
 
 ```css title="globals.css"
 :root {
@@ -120,23 +120,23 @@ Ajuste as variáveis CSS no arquivo `src/app/globals.css` para alinhar os compon
 </Step>
 
 <Step>
-### Pronto para Usar
+### Ready to Use
 
-Você está pronto para forjar interfaces incríveis com a Star Forge! Explore a [documentação de componentes](#) para adicionar mais elementos e personalizá-los conforme necessário.
+You are now ready to forge amazing interfaces with Star Forge! Explore the [components documentation](#) to add more elements and customize them as needed.
 </Step>
 
 </Steps>
 
-## Dependências Adicionais
+## Additional Dependencies
 
-A Star Forge depende das seguintes bibliotecas, que são instaladas automaticamente pelo comando `npx shadcn@latest init`:
+Star Forge relies on the following libraries, which are installed automatically by the `npx shadcn@latest init` command:
 
-- **Tailwind CSS**: Para estilização rápida e flexível dos componentes.
-- **Radix UI**: Para garantir acessibilidade e comportamento robusto dos componentes.
-- **Class Variance Authority (CVA)**: Para gerenciar variantes de estilo de forma eficiente.
+- **Tailwind CSS**: For fast and flexible component styling.
+- **Radix UI**: To ensure accessibility and robust component behavior.
+- **Class Variance Authority (CVA)**: To efficiently manage style variants.
 
-Se você iniciou o projeto com o `create-next-app` e selecionou Tailwind CSS, ele já estará configurado. Caso contrário, siga as [instruções de instalação do Tailwind CSS](https://tailwindcss.com/docs/installation) para configurá-lo manualmente.
+If you started the project with `create-next-app` and selected Tailwind CSS, it will already be configured. Otherwise, follow the [Tailwind CSS installation instructions](https://tailwindcss.com/docs/installation) to set it up manually.
 
 ---
 
-Para feedback ou contribuições, acesse nosso [repositório no GitHub](https://github.com/EuMotta/starforge-docs).
+For feedback or contributions, visit our [GitHub repository](https://github.com/EuMotta/starforge-docs).

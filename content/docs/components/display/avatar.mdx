@@ -11,10 +11,11 @@ import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { status } from '@/constants';
 
-<Callout title="Nota">
-  Todos os componentes apresentados são responsivos e compatíveis com Tailwind
-  CSS. Certifique-se de ter o Tailwind configurado em seu projeto para usá-los.
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
 </Callout>
 
 <div className="grid gap-5 gap-y-8 md:grid-cols-2 xl:grid-cols-3">

@@ -1,7 +1,6 @@
 ---
-title: Grid background
-description: Explore uma coleção de componentes de fundo personalizáveis com diferentes layouts.
-new: true
+title: Grid Background
+description: A collection of customizable background components with different layouts.
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
@@ -10,10 +9,11 @@ import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { status } from '@/constants';
 
-<Callout title="Nota">
-  Todos os componentes apresentados são responsivos e compatíveis com Tailwind
-  CSS. Certifique-se de ter o Tailwind configurado em seu projeto para usá-los.
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
 </Callout>
 
 ## Grid
@@ -25,7 +25,7 @@ import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
   lang="tsx"
 />
 
-## Código Fonte
+### Source Code
 
 <DynamicCodeBlock
   lang="tsx"

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "hero-1",
-  "type": "registry:ui",
   "dependencies": [],
   "registryDependencies": [],
   "files": [
@@ -10,5 +9,6 @@
       "content": "import React from 'react';\r\n\r\nconst HeroSection = () => {\r\n  return (\r\n    <section className=\"relative overflow-hidden\">\r\n      <div className=\"pointer-events-none absolute inset-0 top-0 z-0 overflow-hidden\">\r\n        <div className=\"absolute -top-20 -left-20 h-[600px] w-[600px] rounded-full bg-gradient-to-br from-purple-500/30 via-purple-500/20 to-transparent opacity-50 blur-[100px]\" />\r\n        <div className=\"absolute -top-40 -right-20 h-[500px] w-[500px] rounded-full bg-gradient-to-bl from-pink-500/30 via-red-500/20 to-transparent opacity-50 blur-[100px]\" />\r\n      </div>\r\n      <div className=\"mx-auto max-w-5xl px-6 py-28 lg:py-24\">\r\n        <div className=\"relative z-10 mx-auto max-w-2xl text-center\">\r\n          <h1 className=\"bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 bg-clip-text text-4xl font-semibold text-balance text-transparent md:text-5xl lg:text-6xl\">\r\n            Unleash Your Digital Creativity\r\n          </h1>\r\n          <p className=\"text-muted-foreground mx-auto my-8 max-w-2xl text-xl\">\r\n            Explore new frontiers with creative tools and content that awaken\r\n            your artistic and technological potential.\r\n          </p>\r\n          <a\r\n            href=\"#explore\"\r\n            className=\"bg-primary text-primary-foreground hover:bg-primary/90 focus-visible:ring-ring inline-flex h-11 items-center justify-center rounded-full px-8 text-sm font-medium focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50\"\r\n            aria-label=\"Start creating now\"\r\n          >\r\n            Get Started\r\n          </a>\r\n        </div>\r\n      </div>\r\n      <div className=\"mx-auto -mt-16 max-w-7xl [mask-image:linear-gradient(to_bottom,black_80%,transparent_100%)] p-5\">\r\n        <div className=\"relative lg:h-[44rem]\">\r\n          <img\r\n            className=\"relative z-[2] rounded-md border dark:hidden\"\r\n            alt=\"Creative platform preview\"\r\n            width=\"2880\"\r\n            height=\"2074\"\r\n            src=\"/examples/dashboard-white.webp\"\r\n            loading=\"lazy\"\r\n          />\r\n          <img\r\n            className=\"relative z-[2] hidden rounded-md border dark:block\"\r\n            alt=\"Creative platform preview (dark mode)\"\r\n            width=\"2880\"\r\n            height=\"2074\"\r\n            src=\"/examples/dashboard-black.webp\"\r\n            loading=\"lazy\"\r\n          />\r\n        </div>\r\n      </div>\r\n    </section>\r\n  );\r\n};\r\n\r\nconst Hero = () => {\r\n  return (\r\n    <main className=\"bg-background\">\r\n      <HeroSection />\r\n    </main>\r\n  );\r\n};\r\n\r\nexport default Hero;\r\n",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

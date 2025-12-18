@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-10",
-  "type": "registry:ui",
   "dependencies": [],
   "registryDependencies": [
     "avatar"
@@ -12,5 +11,6 @@
       "content": "import React from 'react';\r\n\r\nimport { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';\r\n\r\nfunction getInitialsCharacters(name: string) {\r\n  const splitName = name.split(' ');\r\n  const initials = splitName\r\n    .map((namePart) => namePart.charAt(0))\r\n    .join('')\r\n    .replace(/[^A-Z]/g, '')\r\n    .slice(0, 2)\r\n    .toUpperCase();\r\n  return initials;\r\n}\r\n\r\ninterface Data {\r\n  id: string;\r\n  name: string;\r\n  imgUrl: string;\r\n}\r\n\r\nconst Component = () => {\r\n  const data: Data[] = [\r\n    {\r\n      id: '1',\r\n      name: 'John Doe',\r\n      imgUrl: 'https://i.pravatar.cc/150?img=10'\r\n    },\r\n    {\r\n      id: '2',\r\n      name: 'Jane Doe',\r\n      imgUrl: 'https://i.pravatar.cc/150?img=20'\r\n    },\r\n    {\r\n      id: '3',\r\n      name: 'Moa Tec',\r\n      imgUrl: 'https://i.pravatar.cc/150?img=30'\r\n    },\r\n    {\r\n      id: '4',\r\n      name: 'Denis Jeff',\r\n      imgUrl: 'https://i.pravatar.cc/150?img=40'\r\n    }\r\n  ];\r\n  return (\r\n    <div className=\"flex -space-x-4\">\r\n      {data.map((user) => (\r\n        <Avatar key={user.id} className=\"border-background size-14 border\">\r\n          <AvatarImage src={user.imgUrl} alt={user.name} />\r\n          <AvatarFallback>{getInitialsCharacters(user.name)}</AvatarFallback>\r\n        </Avatar>\r\n      ))}\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }

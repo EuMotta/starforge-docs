@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { BsChevronDoubleRight } from 'react-icons/bs';
 
-import { Text } from '@/components/star-forge/text';
-
 import { cn } from '@/lib/utils';
 
+interface SubTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  defaultIcon?: boolean;
+  icon?: React.ReactNode;
+}
 const Section = {
   Root: React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
     ({ className, ...props }, ref) => (
@@ -30,7 +32,7 @@ const Section = {
     HTMLHeadingElement,
     React.HTMLAttributes<HTMLHeadingElement>
   >(({ className, ...props }, ref) => (
-    <Text.Header
+    <h1
       ref={ref}
       className={cn(
         'text-2xl leading-none font-semibold tracking-tight',
@@ -40,22 +42,22 @@ const Section = {
     />
   )),
 
-  SubTitle: React.forwardRef<
-    HTMLHeadingElement,
-    React.HTMLAttributes<HTMLHeadingElement>
-  >(({ className, children, ...props }, ref) => (
-    <Text.H1
-      ref={ref}
-      className={cn(
-        'mb-4 flex items-center gap-1 text-2xl leading-none font-semibold tracking-tight lg:mb-6 lg:gap-6',
-        className
-      )}
-      {...props}
-    >
-      <BsChevronDoubleRight />
-      {children}
-    </Text.H1>
-  )),
+  SubTitle: React.forwardRef<HTMLHeadingElement, SubTitleProps>(
+    ({ className, children, defaultIcon, icon, ...props }, ref) => (
+      <h1
+        ref={ref}
+        className={cn(
+          'mb-4 flex items-center gap-1 text-2xl leading-none font-semibold tracking-tight lg:mb-6 lg:gap-6',
+          className
+        )}
+        {...props}
+      >
+        {defaultIcon && <BsChevronDoubleRight />}
+        {icon && !defaultIcon && icon}
+        {children}
+      </h1>
+    )
+  ),
 
   Description: React.forwardRef<
     HTMLParagraphElement,

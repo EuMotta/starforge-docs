@@ -1,6 +1,6 @@
 ---
 title: Select
-description: Uma coleção de componentes de seleção, com diferentes layouts para destacar conteúdo
+description: Select
 new: true
 ---
 
@@ -9,7 +9,7 @@ import { extractSourceCode } from '@/lib/code';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
-
+import { status } from '@/constants';
 
 ## Custom Select
 
@@ -22,7 +22,7 @@ Componente de seleção básico, sem integração com formulários.
   lang="tsx"
 />
 
-## Código Fonte
+### Source Code
 
 <DynamicCodeBlock
   lang="tsx"
@@ -40,7 +40,7 @@ Componente de seleção integrado ao `react-hook-form` para gerenciamento de for
   lang="tsx"
 />
 
-## Código Fonte
+### Source Code
 
 <DynamicCodeBlock
   lang="tsx"
@@ -67,6 +67,6 @@ Componente de seleção integrado ao `react-hook-form` para gerenciamento de for
   </Step>
 </Steps>
 
-<Callout title="Nota">
+<Callout title={status.tailwind_note.title}>
   O componente com `react-hook-form` requer a configuração correta do `Controller` para funcionar adequadamente. Consulte a [documentação oficial do React Hook Form](https://react-hook-form.com/) para mais detalhes.
 </Callout>

@@ -1,7 +1,6 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-2",
-  "type": "registry:ui",
   "dependencies": [
     "lucide-react"
   ],
@@ -12,5 +11,6 @@
       "content": "import React from 'react';\r\n\r\nimport { TriangleAlert, X } from 'lucide-react';\r\n\r\nconst Component = () => {\r\n  return (\r\n    <div className=\"flex w-full items-center space-x-3 rounded-lg border border-yellow-200 bg-yellow-50 p-4\">\r\n      <div className=\"flex-shrink-0\">\r\n        <div className=\"flex size-10 items-center justify-center rounded-full bg-yellow-500\">\r\n          <TriangleAlert />\r\n        </div>\r\n      </div>\r\n      <div className=\"flex-1\">\r\n        <h3 className=\"text-sm font-semibold text-yellow-800\">Warning!</h3>\r\n        <p className=\"mt-1 text-sm text-yellow-700\">\r\n          Please review your information.\r\n        </p>\r\n      </div>\r\n      <button className=\"text-yellow-400 transition-colors duration-200 hover:text-yellow-600\">\r\n        <X />\r\n      </button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
       "type": "registry:ui"
     }
-  ]
+  ],
+  "type": "registry:ui"
 }
