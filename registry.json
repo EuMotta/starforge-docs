@@ -172,25 +172,25 @@
       ]
     },
     {
-      "name": "text",
+      "name": "typography",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/text.tsx",
+          "path": "src/components/star-forge/typography.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "text-variant",
+      "name": "typography-variant",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/text-variant.tsx",
+          "path": "src/components/star-forge/typography-variant.tsx",
           "type": "registry:ui"
         }
       ]

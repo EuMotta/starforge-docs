@@ -61,11 +61,11 @@ const variantConfig: Record<Variant, { element: Element; className: string }> =
     h1: {
       element: 'h1',
       className:
-        'flex font-extralight text-primary lg:mb-2 text-3xl text-primary'
+        'flex font-extralight text-primary lg:mb-2 mb-1 text-3xl text-primary'
     },
     h2: {
       element: 'h2',
-      className: 'flex font-extralight text-2xl text-primary lg:mb-2'
+      className: 'flex font-extralight text-2xl text-primary lg:mb-2 mb-1'
     },
     h3: {
       element: 'h3',
@@ -73,7 +73,7 @@ const variantConfig: Record<Variant, { element: Element; className: string }> =
     },
     p: {
       element: 'p',
-      className: 'mb-2 text-sm font-extralight lg:mb-4'
+      className: 'mb-2 text-sm font-extralight '
     },
     a: {
       element: 'a',
@@ -137,7 +137,7 @@ const variantConfig: Record<Variant, { element: Element; className: string }> =
     }
   };
 
-const Text = forwardRef<HTMLElement, TextProps>(
+const Typography = forwardRef<HTMLElement, TextProps>(
   ({ variant = 'p', as, href, className, children, title, ...props }, ref) => {
     const { element, className: variantClassName } =
       variantConfig[variant] || variantConfig.p;
@@ -160,6 +160,6 @@ const Text = forwardRef<HTMLElement, TextProps>(
     );
   }
 );
-Text.displayName = 'Text';
+Typography.displayName = 'Typography';
 
-export default Text;
+export default Typography;

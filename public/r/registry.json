@@ -172,25 +172,25 @@
       ]
     },
     {
-      "name": "text",
+      "name": "typography",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/text.tsx",
+          "path": "src/components/star-forge/typography.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "text-variant",
+      "name": "typography-variant",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/text-variant.tsx",
+          "path": "src/components/star-forge/typography-variant.tsx",
           "type": "registry:ui"
         }
       ]
@@ -249,10 +249,6 @@
       "dependencies": ["class-variance-authority", "react-icons"],
       "registryDependencies": [],
       "files": [
-         {
-          "path": "src/components/star-forge/text.tsx",
-          "type": "registry:ui"
-        },
         {
           "path": "src/components/star-forge/section.tsx",
           "type": "registry:ui"

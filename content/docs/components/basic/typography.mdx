@@ -1,19 +1,18 @@
 ---
-title: Text
-description: Text components with different structures.
-new: true
+title: Typography
+description: Typography components with different structures.
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { extractSourceCode } from '@/lib/code';
 
-## Text Component
+## Typography Component
 
 <ComponentPreview
-  name="text"
+  name="typography"
   classNameComponentContainer="min-h-[600px]"
-  code={(await extractSourceCode('text')).code}
+  code={(await extractSourceCode('typography')).code}
   lang="tsx"
 />
 
@@ -21,15 +20,15 @@ import { extractSourceCode } from '@/lib/code';
 
 <DynamicCodeBlock
   lang="tsx"
-  code={(await extractSourceCode('text')).sourceCode}
+  code={(await extractSourceCode('typography')).sourceCode}
 />
 
-## Text Variant
+## Typography Variant
 
 <ComponentPreview
-  name="text-variant"
+  name="typography-variant"
   classNameComponentContainer="min-h-[600px]"
-  code={(await extractSourceCode('text-variant')).code}
+  code={(await extractSourceCode('typography-variant')).code}
   lang="tsx"
 />
 
@@ -37,5 +36,5 @@ import { extractSourceCode } from '@/lib/code';
 
 <DynamicCodeBlock
   lang="tsx"
-  code={(await extractSourceCode('text-variant')).sourceCode}
+  code={(await extractSourceCode('typography-variant')).sourceCode}
 />

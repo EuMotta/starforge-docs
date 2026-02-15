@@ -8,7 +8,7 @@ interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
 }
 
-export const Text = {
+export const Typography = {
   Header: forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement>>(
     ({ children, className, ...props }, ref) => (
       <h1
@@ -266,22 +266,22 @@ export const Text = {
   )
 };
 
-Text.Header.displayName = 'Text.Header';
-Text.H1.displayName = 'Text.H1';
-Text.H2.displayName = 'Text.H2';
-Text.H4.displayName = 'Text.H4';
-Text.H5.displayName = 'Text.H5';
-Text.H6.displayName = 'Text.H6';
-Text.H3.displayName = 'Text.H3';
-Text.Span.displayName = 'Text.Span';
-Text.Small.displayName = 'Text.Small';
-Text.Strong.displayName = 'Text.Strong';
-Text.Blockquote.displayName = 'Text.Blockquote';
-Text.Cite.displayName = 'Text.Cite';
-Text.Q.displayName = 'Text.Q';
-Text.P.displayName = 'Text.P';
-Text.Em.displayName = 'Text.Em';
-Text.Abbr.displayName = 'Text.Abbr';
-Text.Del.displayName = 'Text.Del';
-Text.Link.displayName = 'Text.Link';
-Text.Ins.displayName = 'Text.Ins';
+Typography.Header.displayName = 'Typography.Header';
+Typography.H1.displayName = 'Typography.H1';
+Typography.H2.displayName = 'Typography.H2';
+Typography.H4.displayName = 'Typography.H4';
+Typography.H5.displayName = 'Typography.H5';
+Typography.H6.displayName = 'Typography.H6';
+Typography.H3.displayName = 'Typography.H3';
+Typography.Span.displayName = 'Typography.Span';
+Typography.Small.displayName = 'Typography.Small';
+Typography.Strong.displayName = 'Typography.Strong';
+Typography.Blockquote.displayName = 'Typography.Blockquote';
+Typography.Cite.displayName = 'Typography.Cite';
+Typography.Q.displayName = 'Typography.Q';
+Typography.P.displayName = 'Typography.P';
+Typography.Em.displayName = 'Typography.Em';
+Typography.Abbr.displayName = 'Typography.Abbr';
+Typography.Del.displayName = 'Typography.Del';
+Typography.Link.displayName = 'Typography.Link';
+Typography.Ins.displayName = 'Typography.Ins';

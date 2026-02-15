@@ -4,7 +4,7 @@ import { MdHome, MdSearch } from 'react-icons/md';
 
 import Logo from '@/components/common/logo';
 import { SearchTriggerButton } from '@/components/common/search';
-import { Text } from '@/components/star-forge/text';
+import { Typography } from '@/components/star-forge/typography';
 import { Button, buttonVariants } from '@/components/ui/button';
 import { source } from '@/lib/source';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
@@ -32,10 +32,12 @@ const CardLink = memo(
     <div className="border-border bg-card flex h-full max-w-96 flex-col justify-between rounded-xl border p-6 shadow-md transition-shadow duration-300 hover:shadow-lg">
       <div className="space-y-2">
         <Icon className="bg-primary text-primary-foreground mx-auto mb-4 h-12 w-12 rounded-lg p-3" />
-        <Text.H3 className="text-foreground mb-2 text-xl font-semibold">
+        <Typography.H3 className="text-foreground mb-2 text-xl font-semibold">
           {title}
-        </Text.H3>
-        <Text.P className="text-muted-foreground mb-4">{description}</Text.P>
+        </Typography.H3>
+        <Typography.P className="text-muted-foreground mb-4">
+          {description}
+        </Typography.P>
       </div>
       {search ? (
         <SearchTriggerButton />
@@ -59,8 +61,12 @@ const DocLink = memo(({ icon: Icon, title, description }: DocLinkProps) => (
   >
     <Icon className="text-primary mr-3 h-6 w-6 transition-transform duration-200 group-hover:scale-110" />
     <div className="text-left">
-      <Text.H4 className="text-foreground font-medium">{title}</Text.H4>
-      <Text.P className="text-muted-foreground">{description}</Text.P>
+      <Typography.H4 className="text-foreground font-medium">
+        {title}
+      </Typography.H4>
+      <Typography.P className="text-muted-foreground">
+        {description}
+      </Typography.P>
     </div>
   </Link>
 ));
@@ -76,13 +82,15 @@ const Error = () => {
               <div className="bg-primary/10 mb-6 inline-flex h-32 w-32 items-center justify-center rounded-full shadow-lg">
                 <Logo size="xl" />
               </div>
-              <Text.H1 className="mb-4 text-6xl font-bold">404</Text.H1>
-              <Text.H2 className="mb-4 text-3xl font-semibold">
+              <Typography.H1 className="mb-4 text-6xl font-bold">
+                404
+              </Typography.H1>
+              <Typography.H2 className="mb-4 text-3xl font-semibold">
                 Página não encontrada
-              </Text.H2>
-              <Text.P className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
+              </Typography.H2>
+              <Typography.P className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
                 A pagina que procura não existe, tente novamente.
-              </Text.P>
+              </Typography.P>
             </div>
 
             <div className="mb-12 grid grid-cols-2 gap-6">

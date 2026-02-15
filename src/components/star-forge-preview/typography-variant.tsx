@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Text from '@/components/star-forge/text-variant';
+import Text from '@/components/star-forge/typography-variant';
 
 const TextVariant = () => {
   return (

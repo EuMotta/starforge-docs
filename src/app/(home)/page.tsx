@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { BsGithub } from 'react-icons/bs';
 import { MdOutlineDocumentScanner } from 'react-icons/md';
 
-import { Text } from '@/components/star-forge/text';
+import { Typography } from '@/components/star-forge/typography';
 import { siteConfig } from '@/settings';
 
 export default function HomePage() {
@@ -12,7 +12,7 @@ export default function HomePage() {
       className="flex flex-1 flex-col items-center justify-center text-center"
       style={{
         backgroundImage:
-          'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://s21-kling.klingai.com/kimg/EMXN1y8qWAoGdXBsb2FkEg55bGFiLXN0dW50LXNncBo-a2xpbmcvd3MtN0lQd0I4YXJmWks4dGUzcG5rZy9ncmF5c2NhbGVfbWFqZXN0aWNfdGVjaF9zcGFjZS5wbmc.origin?x-kcdn-pid=112372)',
+          'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/bg-home.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -25,7 +25,7 @@ export default function HomePage() {
           height={700}
           alt="logo"
         />
-        <Text.H2>Componentes reutilizáveis</Text.H2>
+        <Typography.H2>Componentes reutilizáveis</Typography.H2>
         <div className="mt-20 flex justify-evenly gap-5">
           <Link
             href="/docs"
