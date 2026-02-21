@@ -2,7 +2,7 @@
 import { siteConfig } from '@/settings';
 import './global.css';
 import { RootProvider } from 'fumadocs-ui/provider';
-
+import NextTopLoader from 'nextjs-toploader';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 import { Metadata } from 'next';
@@ -71,7 +71,24 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
-        <RootProvider theme={{ defaultTheme: 'dark' }}>{children}</RootProvider>
+        <RootProvider theme={{ defaultTheme: 'dark' }}>
+          <NextTopLoader
+            color="var(--color-fd-info)"
+            initialPosition={0.08}
+            crawlSpeed={200}
+            height={3}
+            crawl={true}
+            showSpinner={true}
+            easing="ease"
+            speed={200}
+            shadow="0 0 10px var(--color-fd-info),0 0 5px var(--color-fd-info)"
+            template='<div class="bar" role="bar"><div class="peg"></div></div> 
+  <div class="spinner" role="spinner"><div class="spinner-icon"></div></div>'
+            zIndex={1600}
+            showAtBottom={false}
+          />
+          {children}
+        </RootProvider>
       </body>
     </html>
   );
