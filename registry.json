@@ -172,25 +172,25 @@
       ]
     },
     {
-      "name": "text",
+      "name": "typography",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/text.tsx",
+          "path": "src/components/star-forge/typography.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "text-variant",
+      "name": "typography-variant",
       "type": "registry:ui",
       "dependencies": ["class-variance-authority"],
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/text-variant.tsx",
+          "path": "src/components/star-forge/typography-variant.tsx",
           "type": "registry:ui"
         }
       ]
@@ -336,6 +336,26 @@
         {
           "path": "src/components/star-forge/footer/footer-2.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "search-1",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["input-group"],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/search.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/use-debounce.ts",
+          "type": "registry:hook"
         }
       ]
     }

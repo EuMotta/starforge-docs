@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import 'fumadocs-ui/css/dusk.css';
+@import 'fumadocs-ui/css/ocean.css';
 @import 'fumadocs-ui/css/preset.css';
 @import 'tw-animate-css';
 
@@ -115,6 +115,7 @@
 :root {
   --fd-page-width: 100%;
 }
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -127,6 +128,7 @@
 button {
   cursor: pointer;
 }
+
 .detail-dot {
   fill: #fff;
   opacity: 0;

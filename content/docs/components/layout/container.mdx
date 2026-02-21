@@ -1,7 +1,6 @@
 ---
 title: Container
 description: Container
-new: true
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
@@ -24,5 +23,6 @@ import { status } from '@/constants';
   name="container"
   classNameComponentContainer="min-h-[600px]"
   code={(await extractSourceCode('container')).code}
+  sourceCode={(await extractSourceCode('container')).sourceCode}
   lang="tsx"
 />

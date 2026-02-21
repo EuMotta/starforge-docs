@@ -11,7 +11,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { siteConfig } from '@/settings';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
-import { CheckCheck, Ellipsis, Fullscreen, Terminal } from 'lucide-react';
+import { CheckCheck, Code, Ellipsis, Fullscreen, Terminal } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -22,6 +22,7 @@ export function ComponentPreview({
   code,
   hasReTrigger = false,
   lang,
+  sourceCode,
   name,
   fromDocs
 }: any) {
@@ -48,16 +49,24 @@ export function ComponentPreview({
         <TabsList className="w-full justify-start rounded-none border-b bg-transparent p-0">
           <TabsTrigger
             value="preview"
-            className="text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none"
+            className="text-muted-foreground data-[state=active]:border-b-primary hover:border-b-primary/20 data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none"
           >
             Preview
           </TabsTrigger>
           <TabsTrigger
             value="code"
-            className="text-muted-foreground data-[state=active]:border-b-primary data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none"
+            className="text-muted-foreground data-[state=active]:border-b-primary hover:border-b-primary/20 data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none"
           >
-            Code
+            <Code className="text-primary h-4 w-4" /> Code
           </TabsTrigger>
+          {sourceCode && (
+            <TabsTrigger
+              value="source-code"
+              className="text-muted-foreground data-[state=active]:border-b-primary hover:border-b-primary/20 data-[state=active]:text-foreground relative h-9 rounded-none border-b-2 border-b-transparent bg-transparent px-4 pt-2 pb-3 font-semibold shadow-none transition-none data-[state=active]:shadow-none"
+            >
+              <Terminal className="h-4 w-4" /> Source Code
+            </TabsTrigger>
+          )}
 
           <div className="grow"></div>
 
@@ -152,9 +161,16 @@ export function ComponentPreview({
             />
           </div>
         </TabsContent>
+
         <TabsContent value="code">
           <DynamicCodeBlock lang={lang} code={code} />
         </TabsContent>
+
+        {sourceCode && (
+          <TabsContent value="source-code">
+            <DynamicCodeBlock lang={lang} code={sourceCode} />
+          </TabsContent>
+        )}
       </Tabs>
     </div>
   );
