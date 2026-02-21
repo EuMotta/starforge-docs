@@ -121,7 +121,7 @@ const CustomSelectContent = ({
 
 const CustomSelect = ({
   formName,
-  label = 'Usuários',
+  label = 'Users',
   existingValues = ''
 }: CustomSelectProps) => {
   const [selected, setSelected] = React.useState(existingValues);
@@ -156,7 +156,7 @@ const CustomSelect = ({
               </div>
             </div>
           ) : (
-            <SelectValue placeholder="Selecione um usuário" />
+            <SelectValue placeholder="Select a user" />
           )}
         </SelectTrigger>
         <SelectContent>

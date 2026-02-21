@@ -30,10 +30,10 @@ const CustomSelectComponent = () => {
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
           <div>
-            <CustomSelect formName="user" label="Selecionar Usuário" />
+            <CustomSelect formName="user" label="Select User" />
           </div>
           <Button type="submit" className="w-full sm:w-auto">
-            Enviar
+            Submit
           </Button>
         </form>
       </Form>

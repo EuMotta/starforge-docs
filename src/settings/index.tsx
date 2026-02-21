@@ -35,9 +35,9 @@ export const siteConfig = {
   },
   personalInfo: {
     name: 'José Antonio Motta',
-    role: 'Desenvolvedor Fullstack',
+    role: 'Fullstack Developer',
     avatar: '',
-    description: 'Desenvolvedor Fullstack',
+    description: 'Fullstack Developer',
     country: 'Brazil',
     socialMedia: {
       linkedin:
