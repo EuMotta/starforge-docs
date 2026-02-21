@@ -37,12 +37,12 @@ export function createMetadata(override: Metadata): Metadata {
       locale: siteConfig.site.locale,
       ...(override.openGraph || {})
     },
-    creator: 'Motta',
+    creator: siteConfig.personalInfo.name,
     twitter: {
       card: 'summary_large_image',
       title: titleStr,
       description: descriptionStr,
-      creator: 'Motta',
+      creator: siteConfig.personalInfo.name,
       images: [siteConfig.site.ogImage],
       ...(override.twitter || {})
     },

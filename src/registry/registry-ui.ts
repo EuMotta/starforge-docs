@@ -571,5 +571,65 @@ export const ui: Registry = [
         default: mod.default
       }))
     )
+  },
+  {
+    name: 'search-1',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Complete search with trending and recent searches',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/search.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge-preview/search-complete.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/search-complete').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'search-2',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Search with trending searches only',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/search.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge-preview/search-trending.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/search-trending').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'search-3',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Minimal search without suggestions',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/search.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge-preview/search-minimal.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/search-minimal').then((mod) => ({
+        default: mod.default
+      }))
+    )
   }
 ];

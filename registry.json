@@ -338,6 +338,26 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "search-1",
+      "type": "registry:ui",
+      "dependencies": ["@base-ui/react"],
+      "registryDependencies": ["input-group"],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/search.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/use-debounce.ts",
+          "type": "registry:hook"
+        }
+      ]
     }
   ]
 }
