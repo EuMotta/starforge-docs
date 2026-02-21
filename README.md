@@ -100,7 +100,6 @@ starforge-docs/
 │   ├── registry/         # Component registry
 │   └── app/              # Next.js app router
 ├── public/               # Static assets
-└── scripts/              # Build scripts
 ```
 
 ### Scripts
