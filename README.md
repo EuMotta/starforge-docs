@@ -108,7 +108,6 @@ starforge-docs/
 ```bash
 npm run dev              # Start development server
 npm run build            # Build for production
-npm run build:registry   # Build component registry
 npm run lint             # Run ESLint
 npm run format           # Format code with Prettier
 ```

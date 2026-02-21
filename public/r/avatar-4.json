@@ -1,12 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-4",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "avatar"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["avatar"],
   "files": [
     {
       "path": "src/components/star-forge/avatar-4.tsx",

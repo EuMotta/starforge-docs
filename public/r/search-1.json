@@ -1,12 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "search-1",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "input-group"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["input-group"],
   "files": [
     {
       "path": "src/components/star-forge/inputs/search.tsx",

@@ -7,7 +7,6 @@
     "dev": "next dev --turbo",
     "start": "next start",
     "lint": "next lint",
-    "build:registry": "node scripts/registry-json.ts",
     "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
     "postinstall": "fumadocs-mdx",
     "prepare": "husky",
