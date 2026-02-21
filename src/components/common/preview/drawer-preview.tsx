@@ -1,49 +1,45 @@
 'use client';
 
-import { useState, type ReactNode } from 'react';
+import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger
-} from '@/components/ui/dialog';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { siteConfig } from '@/settings';
 import { motion, AnimatePresence } from 'framer-motion';
-import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
-import { CheckCheck, Code, DiamondPlus, Terminal, X } from 'lucide-react';
+import { CheckCheck, DiamondPlus, Terminal } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
+import { CodeDialog } from './code-dialog';
 import { ComponentLoader } from './component-loader';
 
 type DrawerCodePreviewProps = {
   name: string;
   code: string;
+  sourceCode: string;
   isImproved: boolean;
+  title: string;
   lang?: string;
   classNameComponentContainer?: string;
   hasReTrigger?: boolean;
   fromDocs?: boolean;
   responsive?: boolean;
-  children?: ReactNode;
 };
 
 export function DrawerCodePreview({
   name,
   code,
+  sourceCode,
   isImproved,
+  title,
   lang = 'tsx',
   classNameComponentContainer,
   hasReTrigger = false,
   fromDocs = false,
-  responsive = true,
-  children
+  responsive = true
 }: DrawerCodePreviewProps) {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const [sourceDialogOpen, setSourceDialogOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -60,15 +56,18 @@ export function DrawerCodePreview({
 
   return (
     <Card className="not-prose relative overflow-hidden border shadow-md">
-      {isImproved && (
-        <div className="absolute top-0 left-0 z-20 flex items-center justify-start p-3">
-          <div className="text-destructive h-8 gap-1.5 text-xs">
-            <DiamondPlus />
-          </div>
-        </div>
-      )}
-      <div className="absolute top-0 right-0 z-20 flex items-center justify-end p-3">
-        <div className="flex items-center gap-2">
+      <CardHeader className="flex !w-full items-center justify-between">
+        <CardTitle>
+          <span className="text-xs font-semibold">{title}</span>
+        </CardTitle>
+        <div className="flex items-center justify-end gap-2">
+          {isImproved && (
+            <div className="absolute top-0 left-0 z-20 flex items-center justify-start p-3">
+              <div className="text-destructive h-8 gap-1.5 text-xs">
+                <DiamondPlus />
+              </div>
+            </div>
+          )}
           <Button
             variant="outline"
             size="sm"
@@ -91,53 +90,31 @@ export function DrawerCodePreview({
             </AnimatePresence>
           </Button>
 
-          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-            <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                size="sm"
-                className="h-8 gap-1.5 text-xs"
-              >
-                <Code className="h-3.5 w-3.5" />
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="not-prose flex max-h-[80vh] !w-full !max-w-4xl flex-col overflow-auto p-0">
-              <DialogHeader className="bg-background sticky top-0 z-10 border-b px-6 py-4">
-                <DialogTitle className="flex items-center justify-between text-lg font-semibold">
-                  <span>{formattedName}</span>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="text-muted-foreground hover:text-foreground hover:bg-transparent"
-                    onClick={() => setDialogOpen(false)}
-                    aria-label="Close"
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
-                </DialogTitle>
-              </DialogHeader>
+          <CodeDialog
+            open={dialogOpen}
+            onOpenChange={setDialogOpen}
+            title={formattedName}
+            code={code}
+            lang={lang}
+          >
+            <Terminal className="h-3.5 w-3.5" />
+          </CodeDialog>
 
-              <div className="flex w-full flex-col">
-                <div className="overflow-x-auto p-6">
-                  <div className="w-full max-w-full [&_code]:break-words [&_code]:whitespace-pre-wrap [&_pre]:!overflow-x-visible">
-                    <DynamicCodeBlock code={code} lang={lang} />
-                  </div>
-                </div>
-
-                {children && (
-                  <div className="border-t">
-                    <div className="dark:prose-invert prose p-6">
-                      {children}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </DialogContent>
-          </Dialog>
+          <CodeDialog
+            open={sourceDialogOpen}
+            onOpenChange={setSourceDialogOpen}
+            title={formattedName}
+            code={sourceCode}
+            lang={lang}
+            disabled={!sourceCode}
+          >
+            SC
+            <Terminal className="h-3.5 w-3.5" />
+          </CodeDialog>
         </div>
-      </div>
-
+      </CardHeader>
       <CardContent className="h-full min-h-64 p-0">
+        <div className="text-muted-foreground absolute top-10 left-0 z-20 flex items-center justify-end p-3"></div>
         <div className="component-preview from-background to-muted/30 flex h-full items-center justify-center bg-gradient-to-br shadow-[0px_2px_10px_0px_rgba(255,255,255,0.1)_inset]">
           <div
             className={cn(

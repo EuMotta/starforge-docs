@@ -1,0 +1,46 @@
+---
+title: Search
+description: Search
+---
+
+import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
+import { ComponentPreview } from '@/components/common/preview/component-preview';
+import EmptyState from '@/components/common/empty-state';
+import { extractSourceCode } from '@/lib/code';
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { status } from '@/constants';
+
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
+</Callout>
+
+<div className="grid gap-5 gap-y-8 md:grid-cols-1 xl:grid-cols-2">
+  <DrawerCodePreview
+    name="search-1"
+    title="With Trending and Recent Searches"
+    classNameComponentContainer="min-h-[200px]"
+    code={(await extractSourceCode('search-1')).code}
+    sourceCode={(await extractSourceCode('search-1')).sourceCode}
+    lang="tsx"
+  />
+  <DrawerCodePreview
+    name="search-2"
+    title="With Trending Searches Only"
+    classNameComponentContainer="min-h-[200px]"
+    code={(await extractSourceCode('search-2')).code}
+    sourceCode={(await extractSourceCode('search-2')).sourceCode}
+    lang="tsx"
+  />
+  <DrawerCodePreview
+    name="search-3"
+    title="Minimal Search Component"
+    classNameComponentContainer="min-h-[200px]"
+    code={(await extractSourceCode('search-3')).code}
+    sourceCode={(await extractSourceCode('search-3')).sourceCode}
+    lang="tsx"
+  />
+</div>
