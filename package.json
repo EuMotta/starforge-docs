@@ -12,6 +12,10 @@
     "prepare": "husky",
     "postbuild": "next-sitemap"
   },
+  "lint-staged": {
+    "*.{js,jsx,md,ts,tsx,html,css,scss}": "yarn format",
+    "*.{js,jsx,ts,tsx}": "eslint --cache --fix --cache-location ./node_modules/.cache/.eslintcache"
+  },
   "dependencies": {
     "@base-ui/react": "^1.2.0",
     "@hookform/resolvers": "^5.1.1",
