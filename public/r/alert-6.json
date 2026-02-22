@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-6",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/alerts/theme-2/alert-6.tsx",
+      "content": "import React from 'react';\n\nimport { TriangleAlert, X } from 'lucide-react';\n\nconst Component = () => {\n  return (\n    <div className=\"flex w-full items-start space-x-3 rounded-lg border border-yellow-500 bg-yellow-500/10 p-4\">\n      <div className=\"flex flex-col items-center\">\n        <div className=\"flex size-4 rounded-full text-yellow-500\">\n          <TriangleAlert />\n        </div>\n      </div>\n      <div className=\"flex-1\">\n        <div className=\"flex items-center gap-2\">\n          <h5 className=\"text-foreground text-sm font-semibold\">Warning!</h5>\n        </div>\n        <p className=\"text-muted-foreground mt-1 text-sm\">\n          Please review your information.\n        </p>\n      </div>\n      <div className=\"flex items-center self-center\">\n        <button className=\"text-yellow-400 transition-colors duration-200 hover:text-yellow-600\">\n          <X />\n        </button>\n      </div>\n    </div>\n  );\n};\n\nexport default Component;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

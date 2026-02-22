@@ -130,7 +130,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/alert-1.tsx",
+          "path": "src/components/star-forge/alerts/theme-1/alert-1.tsx",
           "type": "registry:ui"
         }
       ]
@@ -142,7 +142,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/alert-2.tsx",
+          "path": "src/components/star-forge/alerts/theme-1/alert-2.tsx",
           "type": "registry:ui"
         }
       ]
@@ -154,7 +154,91 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/alert-3.tsx",
+          "path": "src/components/star-forge/alerts/theme-1/alert-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-4",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/theme-1/alert-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-5",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/theme-2/alert-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-6",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/theme-2/alert-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-7",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/theme-2/alert-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-8",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/theme-2/alert-8.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-theme-1-variant",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/theme-1/alert-theme-1-variant.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-theme-2-variant",
+      "type": "registry:ui",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/theme-2/alert-theme-2-variant.tsx",
           "type": "registry:ui"
         }
       ]

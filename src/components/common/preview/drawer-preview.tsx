@@ -3,7 +3,21 @@
 import { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from '@/components/ui/card';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
+import { getComponentByName } from '@/registry';
 import { siteConfig } from '@/settings';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCheck, DiamondPlus, Terminal } from 'lucide-react';
@@ -41,6 +55,17 @@ export function DrawerCodePreview({
   const [dialogOpen, setDialogOpen] = useState(false);
   const [sourceDialogOpen, setSourceDialogOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [selectedPresetLabel, setSelectedPresetLabel] = useState<
+    string | undefined
+  >(undefined);
+
+  const previewPresets = getComponentByName(name)?.previewPresets;
+  const selectedPreset = previewPresets?.find(
+    (preset) => preset.label === selectedPresetLabel
+  );
+  const effectivePreset = selectedPreset ?? previewPresets?.[0];
+  const effectivePresetLabel = effectivePreset?.label;
+  const selectedProps = effectivePreset?.props;
 
   const handleCopy = () => {
     const cli = `npx shadcn@latest add ${siteConfig.site.url}/r/${name}.json`;
@@ -55,10 +80,10 @@ export function DrawerCodePreview({
     .join(' ');
 
   return (
-    <Card className="not-prose relative overflow-hidden border shadow-md">
-      <CardHeader className="flex !w-full items-center justify-between">
+    <Card className="not-prose relative !gap-0 overflow-hidden border shadow-md">
+      <CardHeader className="mb-6 flex !w-full items-center justify-between">
         <CardTitle>
-          <span className="text-xs font-semibold">{title}</span>
+          <span className="text-sm font-semibold">{title}</span>
         </CardTitle>
         <div className="flex items-center justify-end gap-2">
           {isImproved && (
@@ -127,10 +152,33 @@ export function DrawerCodePreview({
               hasReTrigger={hasReTrigger}
               classNameComponentContainer={classNameComponentContainer}
               fromDocs={fromDocs}
+              props={selectedProps}
             />
           </div>
         </div>
       </CardContent>
+
+      <CardFooter className="border-t">
+        <div className="flex w-full items-center justify-between gap-3">
+          {previewPresets && previewPresets.length > 0 && (
+            <Select
+              value={selectedPresetLabel ?? effectivePresetLabel}
+              onValueChange={setSelectedPresetLabel}
+            >
+              <SelectTrigger size="sm" className="h-8 text-xs">
+                <SelectValue placeholder={effectivePresetLabel} />
+              </SelectTrigger>
+              <SelectContent>
+                {previewPresets.map((preset) => (
+                  <SelectItem key={preset.label} value={preset.label}>
+                    {preset.label}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
+        </div>
+      </CardFooter>
     </Card>
   );
 }
