@@ -128,7 +128,7 @@ const CustomSelectContent = ({
     </div>
   );
 };
-const CustomSelect = ({ formName, label = 'Usuários' }: CustomSelectProps) => {
+const CustomSelect = ({ formName, label = 'Users' }: CustomSelectProps) => {
   const form = useFormContext();
 
   return (
@@ -164,7 +164,7 @@ const CustomSelect = ({ formName, label = 'Usuários' }: CustomSelectProps) => {
                         </div>
                       </div>
                     ) : (
-                      <SelectValue placeholder="Selecione um usuário" />
+                      <SelectValue placeholder="Select a user" />
                     )}
                   </SelectTrigger>
                   <SelectContent>

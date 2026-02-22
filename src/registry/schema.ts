@@ -2,6 +2,11 @@ import * as z from 'zod';
 
 export const registryItemTypeSchema = z.enum(['registry:component']);
 
+export const registryItemPreviewPresetSchema = z.object({
+  label: z.string(),
+  props: z.record(z.string(), z.any())
+});
+
 export const registryItemFileSchema = z.object({
   path: z.string(),
   content: z.string().optional(),
@@ -34,7 +39,8 @@ export const registryItemSchema = z.object({
   component: z.function().args(z.any()).returns(z.any()).optional(),
   tailwind: registryItemTailwindSchema.optional(),
   cssVars: registryItemCssVarsSchema.optional(),
-  categories: z.array(z.string()).optional()
+  categories: z.array(z.string()).optional(),
+  previewPresets: z.array(registryItemPreviewPresetSchema).optional()
 });
 
 export const registrySchema = z.array(registryItemSchema);

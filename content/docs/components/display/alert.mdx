@@ -17,10 +17,13 @@ import { status } from '@/constants';
   sure Tailwind is configured in your project to use them.
 </Callout>
 
+## Theme 1 (Background Style)
+
 <div className="grid gap-5 gap-y-8 md:grid-cols-2">
 
 <DrawerCodePreview
   name="alert-1"
+  title="Success Alert"
   classNameComponentContainer="py-20"
   code={(await extractSourceCode('alert-1')).code}
   lang="tsx"
@@ -28,6 +31,7 @@ import { status } from '@/constants';
 
 <DrawerCodePreview
   name="alert-2"
+  title="Warning Alert"
   classNameComponentContainer="py-20"
   code={(await extractSourceCode('alert-2')).code}
   lang="tsx"
@@ -35,9 +39,74 @@ import { status } from '@/constants';
 
 <DrawerCodePreview
   name="alert-3"
+  title="Info Alert"
   classNameComponentContainer="py-20"
   code={(await extractSourceCode('alert-3')).code}
   lang="tsx"
 />
 
+<DrawerCodePreview
+  name="alert-4"
+  title="Error Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-4')).code}
+  lang="tsx"
+/>
+</div>
+
+## Theme 2 (Border Style)
+
+<div className="grid gap-5 gap-y-8 md:grid-cols-2">
+
+<DrawerCodePreview
+  name="alert-5"
+  title="Success Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-5')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="alert-6"
+  title="Warning Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-6')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="alert-7"
+  title="Info Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-7')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="alert-8"
+  title="Error Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-8')).code}
+  lang="tsx"
+/>
+</div>
+
+## Dynamic Variants
+
+<div className="grid gap-5 gap-y-8 md:grid-cols-2">
+
+<DrawerCodePreview
+  name="alert-theme-2-variant"
+  title="Dynamic Theme 2 Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-theme-2-variant')).code}
+  lang="tsx"
+/>
+<DrawerCodePreview
+  name="alert-theme-1-variant"
+  title="Dynamic Theme 1 Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-theme-1-variant')).code}
+  lang="tsx"
+/>
 </div>

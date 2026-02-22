@@ -1,12 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "search-1",
-  "dependencies": [
-    "@base-ui/react"
-  ],
-  "registryDependencies": [
-    "input-group"
-  ],
+  "dependencies": ["@base-ui/react"],
+  "registryDependencies": ["input-group"],
   "files": [
     {
       "path": "src/components/star-forge/inputs/search.tsx",
@@ -20,7 +16,7 @@
     },
     {
       "path": "src/hooks/use-debounce.ts",
-      "content": "import { useState, useEffect } from 'react';\n\n/**\n * A custom hook that debounces a value.\n *\n * @param value - The value to debounce\n * @param delay - The delay in milliseconds\n * @returns The debounced value\n */\nexport function useDebounce<T>(value: T, delay: number): T {\n  const [debouncedValue, setDebouncedValue] = useState<T>(value);\n\n  useEffect(() => {\n    const handler = setTimeout(() => {\n      setDebouncedValue(value);\n    }, delay);\n\n    return () => {\n      clearTimeout(handler);\n    };\n  }, [value, delay]);\n\n  return debouncedValue;\n}\n",
+      "content": "import { useState, useEffect } from 'react';\r\n\r\n/**\r\n * A custom hook that debounces a value.\r\n *\r\n * @param value - The value to debounce\r\n * @param delay - The delay in milliseconds\r\n * @returns The debounced value\r\n */\r\nexport function useDebounce<T>(value: T, delay: number): T {\r\n  const [debouncedValue, setDebouncedValue] = useState<T>(value);\r\n\r\n  useEffect(() => {\r\n    const handler = setTimeout(() => {\r\n      setDebouncedValue(value);\r\n    }, delay);\r\n\r\n    return () => {\r\n      clearTimeout(handler);\r\n    };\r\n  }, [value, delay]);\r\n\r\n  return debouncedValue;\r\n}\r\n",
       "type": "registry:hook"
     }
   ],

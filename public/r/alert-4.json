@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-4",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/alerts/theme-1/alert-4.tsx",
+      "content": "import React from 'react';\n\nimport { XCircle, X } from 'lucide-react';\n\nconst Component = () => {\n  return (\n    <div className=\"flex w-full items-center space-x-3 rounded-lg border border-red-200 bg-red-50 p-4\">\n      <div className=\"flex-shrink-0\">\n        <div className=\"flex size-10 items-center justify-center rounded-full bg-red-500\">\n          <XCircle />\n        </div>\n      </div>\n      <div className=\"flex-1\">\n        <h3 className=\"text-sm font-semibold text-red-800\">Error!</h3>\n        <p className=\"mt-1 text-sm text-red-700\">\n          Something went wrong. Please try again.\n        </p>\n      </div>\n      <button className=\"text-red-400 transition-colors duration-200 hover:text-red-600\">\n        <X />\n      </button>\n    </div>\n  );\n};\n\nexport default Component;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

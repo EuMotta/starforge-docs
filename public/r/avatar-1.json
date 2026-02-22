@@ -2,9 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "avatar-1",
   "dependencies": [],
-  "registryDependencies": [
-    "avatar"
-  ],
+  "registryDependencies": ["avatar"],
   "files": [
     {
       "path": "src/components/star-forge/avatar-1.tsx",

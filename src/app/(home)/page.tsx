@@ -25,7 +25,7 @@ export default function HomePage() {
           height={700}
           alt="logo"
         />
-        <Typography.H2>Componentes reutilizáveis</Typography.H2>
+        <Typography.H2>Reusable components</Typography.H2>
         <div className="mt-20 flex justify-evenly gap-5">
           <Link
             href="/docs"

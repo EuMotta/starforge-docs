@@ -86,24 +86,24 @@ const Error = () => {
                 404
               </Typography.H1>
               <Typography.H2 className="mb-4 text-3xl font-semibold">
-                Página não encontrada
+                Page not found
               </Typography.H2>
               <Typography.P className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
-                A pagina que procura não existe, tente novamente.
+                The page you are looking for does not exist, please try again.
               </Typography.P>
             </div>
 
             <div className="mb-12 grid grid-cols-2 gap-6">
               <CardLink
                 icon={MdHome}
-                title="Voltar"
-                description="Volte para a página inicial"
+                title="Back"
+                description="Go back to home page"
                 href="/docs"
               />
               <CardLink
                 icon={MdSearch}
-                title="Pesquisar"
-                description="Encontre o que procura na documentação"
+                title="Search"
+                description="Find what you're looking for in the documentation"
                 search
               />
             </div>

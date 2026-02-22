@@ -1,12 +1,8 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "card-1",
-  "dependencies": [
-    "lucide-react"
-  ],
-  "registryDependencies": [
-    "button"
-  ],
+  "dependencies": ["lucide-react"],
+  "registryDependencies": ["button"],
   "files": [
     {
       "path": "src/components/star-forge/card-1.tsx",

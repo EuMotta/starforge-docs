@@ -421,13 +421,62 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/alert-1.tsx',
+        path: 'src/components/star-forge/alerts/theme-1/alert-1.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/alert-1.tsx',
+    example: 'src/components/star-forge/alerts/theme-1/alert-1.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/alert-1').then((mod) => ({
+      import('@/components/star-forge/alerts/theme-1/alert-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-theme-1-variant',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Alert theme 1 with dynamic type via props',
+    previewPresets: [
+      {
+        label: 'Success',
+        props: {
+          success: true
+        }
+      },
+      {
+        label: 'Warning',
+        props: {
+          warning: true
+        }
+      },
+      {
+        label: 'Info',
+        props: {
+          info: true
+        }
+      },
+      {
+        label: 'Error',
+        props: {
+          error: true
+        }
+      }
+    ],
+    files: [
+      {
+        path: 'src/components/star-forge/alerts/theme-1/alert-theme-1-variant.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example:
+      'src/components/star-forge/alerts/theme-1/alert-theme-1-variant.tsx',
+    component: React.lazy(() =>
+      import(
+        '@/components/star-forge/alerts/theme-1/alert-theme-1-variant'
+      ).then((mod) => ({
         default: mod.default
       }))
     )
@@ -441,13 +490,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/alert-2.tsx',
+        path: 'src/components/star-forge/alerts/theme-1/alert-2.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/alert-2.tsx',
+    example: 'src/components/star-forge/alerts/theme-1/alert-2.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/alert-2').then((mod) => ({
+      import('@/components/star-forge/alerts/theme-1/alert-2').then((mod) => ({
         default: mod.default
       }))
     )
@@ -461,13 +510,162 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/alert-3.tsx',
+        path: 'src/components/star-forge/alerts/theme-1/alert-3.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/alert-3.tsx',
+    example: 'src/components/star-forge/alerts/theme-1/alert-3.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/alert-3').then((mod) => ({
+      import('@/components/star-forge/alerts/theme-1/alert-3').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-4',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Error alert component',
+    files: [
+      {
+        path: 'src/components/star-forge/alerts/theme-1/alert-4.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/alerts/theme-1/alert-4.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/alerts/theme-1/alert-4').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-5',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Success alert with left border style',
+    files: [
+      {
+        path: 'src/components/star-forge/alerts/theme-2/alert-5.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/alerts/theme-2/alert-5.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/alerts/theme-2/alert-5').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-6',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Warning alert with left border style',
+    files: [
+      {
+        path: 'src/components/star-forge/alerts/theme-2/alert-6.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/alerts/theme-2/alert-6.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/alerts/theme-2/alert-6').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-7',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Information alert with left border style',
+    files: [
+      {
+        path: 'src/components/star-forge/alerts/theme-2/alert-7.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/alerts/theme-2/alert-7.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/alerts/theme-2/alert-7').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-8',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Error alert with left border style',
+    files: [
+      {
+        path: 'src/components/star-forge/alerts/theme-2/alert-8.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/alerts/theme-2/alert-8.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/alerts/theme-2/alert-8').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'alert-theme-2-variant',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [],
+    description: 'Alert theme 5-8 with dynamic type via props',
+    previewPresets: [
+      {
+        label: 'Success',
+        props: {
+          success: true
+        }
+      },
+      {
+        label: 'Warning',
+        props: {
+          warning: true
+        }
+      },
+      {
+        label: 'Info',
+        props: {
+          info: true
+        }
+      },
+      {
+        label: 'Error',
+        props: {
+          error: true
+        }
+      }
+    ],
+    files: [
+      {
+        path: 'src/components/star-forge/alerts/theme-2/alert-theme-2-variant.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example:
+      'src/components/star-forge/alerts/theme-2/alert-theme-2-variant.tsx',
+    component: React.lazy(() =>
+      import(
+        '@/components/star-forge/alerts/theme-2/alert-theme-2-variant'
+      ).then((mod) => ({
         default: mod.default
       }))
     )

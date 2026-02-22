@@ -19,7 +19,7 @@ interface ComponentErrorProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Componente de erro para componente não encontrado
+ * Error component for component not found
  */
 const ComponentError = React.forwardRef<HTMLDivElement, ComponentErrorProps>(
   ({ componentName = 'ComponentName', className, ...props }, ref) => {
@@ -43,36 +43,34 @@ const ComponentError = React.forwardRef<HTMLDivElement, ComponentErrorProps>(
               </div>
 
               <h1 className="text-foreground mb-2 text-xl font-semibold">
-                Componente não encontrado
+                Component not found
               </h1>
 
               <p className="text-muted-foreground mb-6">
-                O componente{' '}
+                The component{' '}
                 <span className="bg-muted rounded px-1 py-0.5 font-mono text-sm">
                   {componentName}
                 </span>{' '}
-                não foi encontrado.
+                was not found.
               </p>
 
               <div className="mb-6 w-full text-left">
                 <h3 className="text-foreground mb-3 text-sm font-medium">
-                  Passos para solução:
+                  Troubleshooting steps:
                 </h3>
                 <ul className="text-muted-foreground space-y-2 text-sm">
                   <li className="flex items-start">
                     <span className="bg-muted-foreground mt-2 mr-3 h-1.5 w-1.5 flex-shrink-0 rounded-full" />
-                    Se for um desenvolvedor, certifique-se de que o componente
-                    está registrado corretamente no seu registro de componentes.
+                    If you are a developer, make sure the component is properly
+                    registered in your component registry.
                   </li>
                   <li className="flex items-start">
                     <span className="bg-muted-foreground mt-2 mr-3 h-1.5 w-1.5 flex-shrink-0 rounded-full" />
-                    Verifique se há erros de digitação no nome do componente ou
-                    na instrução de importação.
+                    Check for typos in the component name or import statement.
                   </li>
                   <li className="flex items-start">
                     <span className="bg-muted-foreground mt-2 mr-3 h-1.5 w-1.5 flex-shrink-0 rounded-full" />
-                    Se você for um usuário, entre em contato com o desenvolvedor
-                    para corrigir esse problema.
+                    If you are a user, contact the developer to fix this issue.
                   </li>
                 </ul>
               </div>
@@ -84,7 +82,7 @@ const ComponentError = React.forwardRef<HTMLDivElement, ComponentErrorProps>(
                   onClick={() => window.history.back()}
                 >
                   <MdArrowBack className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Voltar
+                  Back
                 </Button>
                 <Button
                   variant="default"
@@ -92,31 +90,31 @@ const ComponentError = React.forwardRef<HTMLDivElement, ComponentErrorProps>(
                   onClick={() => window.location.reload()}
                 >
                   <MdRefresh className="mr-2 h-4 w-4" aria-hidden="true" />
-                  Tentar novamente
+                  Try again
                 </Button>
               </div>
             </div>
           </div>
 
           <div className="text-muted-foreground mt-6 text-center text-sm">
-            Precisa de ajuda?{' '}
+            Need help?
             <Dialog>
               <DialogTrigger asChild>
                 <Button variant="link" className="inline p-0">
-                  Contacte o suporte
+                  Contact support
                 </Button>
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>Entre em contato com o suporte</DialogTitle>
+                  <DialogTitle>Contact support</DialogTitle>
                 </DialogHeader>
                 <div className="space-y-4">
                   <p className="text-muted-foreground">
-                    Entre em contato conosco para assistência com o componente{' '}
+                    Contact us for assistance with the component{' '}
                     <span className="font-mono">{componentName}</span>.
                   </p>
                   <Button asChild variant="default">
-                    <Link href="/contact">Ir para a página de suporte</Link>
+                    <Link href="/contact">Go to support page</Link>
                   </Button>
                 </div>
               </DialogContent>

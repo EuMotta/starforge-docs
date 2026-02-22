@@ -16,6 +16,7 @@ interface ComponentLoaderProps {
   hasReTrigger?: boolean;
   classNameComponentContainer?: string;
   fromDocs?: boolean;
+  props?: Record<string, unknown>;
 }
 
 const LoadingComponent = () => (
@@ -32,7 +33,8 @@ export function ComponentLoader({
   classNameComponentContainer,
   hasReTrigger = false,
   name,
-  fromDocs
+  fromDocs,
+  props
 }: ComponentLoaderProps) {
   const [Component, setComponent] = useState<React.ComponentType | null>(null);
   const [reTriggerKey, setReTriggerKey] = useState<number>(Date.now());
@@ -68,7 +70,7 @@ export function ComponentLoader({
 
   return (
     <ComponentDisplay
-      component={<Component />}
+      component={<Component {...props} />}
       hasReTrigger={hasReTrigger}
       className={classNameComponentContainer}
       reTriggerKey={reTriggerKey}
@@ -109,8 +111,9 @@ function ComponentDisplay({
       )}
       id="preview"
     >
-      {author && <AuthorBadge username={author} />}
-
+      {author && (
+        <AuthorBadge className="absolute right-2 bottom-2" username={author} />
+      )}
       {hasReTrigger && (
         <Button
           variant="ghost"
@@ -119,7 +122,7 @@ function ComponentDisplay({
           aria-label="Refresh component"
         >
           <RotateCw className="h-4 w-4 group-hover:animate-spin group-hover:text-[#49BEB7]" />{' '}
-          Reiniciar animação
+          Restart animation
         </Button>
       )}
       {hasReTrigger ? (
