@@ -1,6 +1,7 @@
 ---
 title: Alert
 description: Alert components
+new: true
 ---
 
 import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
@@ -94,6 +95,13 @@ import { status } from '@/constants';
 ## Dynamic Variants
 
 <div className="grid gap-5 gap-y-8 md:grid-cols-2">
+<DrawerCodePreview
+  name="alert-theme-1-variant"
+  title="Dynamic Theme 1 Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-theme-1-variant')).code}
+  lang="tsx"
+/>
 
 <DrawerCodePreview
   name="alert-theme-2-variant"
@@ -102,11 +110,5 @@ import { status } from '@/constants';
   code={(await extractSourceCode('alert-theme-2-variant')).code}
   lang="tsx"
 />
-<DrawerCodePreview
-  name="alert-theme-1-variant"
-  title="Dynamic Theme 1 Alert"
-  classNameComponentContainer="py-20"
-  code={(await extractSourceCode('alert-theme-1-variant')).code}
-  lang="tsx"
-/>
+
 </div>

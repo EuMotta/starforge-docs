@@ -81,11 +81,11 @@ export function DrawerCodePreview({
 
   return (
     <Card className="not-prose relative !gap-0 overflow-hidden border shadow-md">
-      <CardHeader className="flex !w-full items-center justify-between">
+      <CardHeader className="mb-6 flex !w-full items-center justify-between">
         <CardTitle>
-          <span className="text-xs font-semibold">{title}</span>
+          <span className="text-sm font-semibold">{title}</span>
         </CardTitle>
-        <div className="mb-6 flex items-center justify-end gap-2">
+        <div className="flex items-center justify-end gap-2">
           {isImproved && (
             <div className="absolute top-0 left-0 z-20 flex items-center justify-start p-3">
               <div className="text-destructive h-8 gap-1.5 text-xs">
