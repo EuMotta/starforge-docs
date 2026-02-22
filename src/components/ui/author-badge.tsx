@@ -25,10 +25,7 @@ export function AuthorBadge({ username, className }: AuthorBadgeProps) {
       href={`https://github.com/${username}`}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(
-        'absolute right-1 bottom-1 z-10 flex items-center gap-1.5 no-underline',
-        className
-      )}
+      className={cn('z-10 flex items-center gap-1.5 no-underline', className)}
     >
       <Badge
         variant="outline"

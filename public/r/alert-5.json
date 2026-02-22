@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "alert-5",
+  "dependencies": ["lucide-react"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/alerts/theme-2/alert-5.tsx",
+      "content": "import React from 'react';\n\nimport { CircleCheck, X } from 'lucide-react';\n\nconst Component = () => {\n  return (\n    <div className=\"flex w-full items-start space-x-3 rounded-lg border border-green-500 bg-green-500/10 p-4\">\n      <div className=\"flex flex-col items-center\">\n        <div className=\"flex size-4 rounded-full text-green-500\">\n          <CircleCheck />\n        </div>\n      </div>\n      <div className=\"flex-1\">\n        <div className=\"flex items-center gap-2\">\n          <h5 className=\"text-foreground text-sm font-semibold\">Success!</h5>\n        </div>\n        <p className=\"text-muted-foreground mt-1 text-sm\">\n          Your changes have been saved successfully.\n        </p>\n      </div>\n      <div className=\"flex items-center self-center\">\n        <button className=\"text-green-400 transition-colors duration-200 hover:text-green-600\">\n          <X />\n        </button>\n      </div>\n    </div>\n  );\n};\n\nexport default Component;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
