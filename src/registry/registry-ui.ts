@@ -829,5 +829,50 @@ export const ui: Registry = [
         default: mod.default
       }))
     )
+  },
+  {
+    name: 'password-input',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [''],
+    description: '',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/password-input.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge-preview/inputs/password-input.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/inputs/password-input').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'password-input-register',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: [],
+    dependencies: [''],
+    description: '',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/password-input-register.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example:
+      'src/components/star-forge-preview/inputs/password-input-register.tsx',
+    component: React.lazy(() =>
+      import(
+        '@/components/star-forge-preview/inputs/password-input-register'
+      ).then((mod) => ({
+        default: mod.default
+      }))
+    )
   }
 ];

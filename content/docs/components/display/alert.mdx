@@ -2,23 +2,19 @@
 title: Alert
 description: Alert components
 new: true
+showToc: false
 ---
 
 import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
 import EmptyState from '@/components/common/empty-state';
 import { extractSourceCode } from '@/lib/code';
-import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
-import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
-import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { status } from '@/constants';
 
 <Callout title={status.tailwind_note.title}>
   All presented components are responsive and compatible with Tailwind CSS. Make
   sure Tailwind is configured in your project to use them.
 </Callout>
-
-## Theme 1 (Background Style)
 
 <div className="grid gap-5 gap-y-8 md:grid-cols-2">
 
@@ -53,11 +49,6 @@ import { status } from '@/constants';
   code={(await extractSourceCode('alert-4')).code}
   lang="tsx"
 />
-</div>
-
-## Theme 2 (Border Style)
-
-<div className="grid gap-5 gap-y-8 md:grid-cols-2">
 
 <DrawerCodePreview
   name="alert-5"
@@ -90,11 +81,7 @@ import { status } from '@/constants';
   code={(await extractSourceCode('alert-8')).code}
   lang="tsx"
 />
-</div>
 
-## Dynamic Variants
-
-<div className="grid gap-5 gap-y-8 md:grid-cols-2">
 <DrawerCodePreview
   name="alert-theme-1-variant"
   title="Dynamic Theme 1 Alert"
