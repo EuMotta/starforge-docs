@@ -49,8 +49,7 @@ Attach any relevant context, mockups, or additional information that helps clari
     }
   },
   viewOnGithub: 'View on GitHub',
-  builtWith: 'Built with ❤️ using React, Next.js, TypeScript, and Tailwind CSS',
-  since: 'Online since 2025 • Built with web technologies'
+  builtWith: 'Built with ❤️ using React, Next.js, TypeScript, and Tailwind CSS'
 } as const;
 
 export default async function Page(props: {
@@ -102,7 +101,6 @@ export default async function Page(props: {
         <p className="text-muted-foreground text-xs">
           {FOOTER_CONTENTS.builtWith}
         </p>
-        <p className="text-muted-foreground text-xs">{FOOTER_CONTENTS.since}</p>
       </div>
     </div>
   );
