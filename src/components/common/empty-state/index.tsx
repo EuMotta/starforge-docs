@@ -43,7 +43,7 @@ const EmptyState: React.FC<ErrorProps> = ({
   const router = useRouter();
 
   return (
-    <div className="flex h-full w-full items-center justify-center px-4">
+    <div className="flex w-full items-center justify-center px-4">
       <motion.div
         className="border-muted-foreground bg-card/20 flex w-full max-w-3xl flex-col items-center justify-center border-y p-10 shadow-xl"
         variants={container}
@@ -51,7 +51,7 @@ const EmptyState: React.FC<ErrorProps> = ({
         animate="visible"
       >
         <motion.div
-          className="mb-4 flex transform items-center justify-center text-amber-500 transition-all duration-300 hover:scale-110"
+          className="flex transform items-center justify-center text-amber-500 transition-all duration-300 hover:scale-110"
           animate={{ scale: [1, 1.1, 1], opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 2, repeat: Infinity }}
         >

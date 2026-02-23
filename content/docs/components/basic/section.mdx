@@ -1,10 +1,10 @@
 ---
 title: Section
 description: Component for organizing sections
+
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
-import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { extractSourceCode } from '@/lib/code';
 
 ## Section
@@ -15,11 +15,4 @@ import { extractSourceCode } from '@/lib/code';
   code={(await extractSourceCode('section')).code}
   sourceCode={(await extractSourceCode('section')).sourceCode}
   lang="tsx"
-/>
-
-#### Source Code
-
-<DynamicCodeBlock
-  lang="tsx"
-  code={(await extractSourceCode('section')).sourceCode}
 />
