@@ -5,9 +5,7 @@ description: A collection of customizable background components with different l
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
 import { extractSourceCode } from '@/lib/code';
-import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
-import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { status } from '@/constants';
 
@@ -24,11 +22,4 @@ import { status } from '@/constants';
   code={(await extractSourceCode('background-1')).code}
   sourceCode={(await extractSourceCode('background-1')).sourceCode}
   lang="tsx"
-/>
-
-### Source Code
-
-<DynamicCodeBlock
-  lang="tsx"
-  code={(await extractSourceCode('background-1')).sourceCode}
 />

@@ -1,16 +1,13 @@
 ---
 title: Input
 description: Input
-under_construction: true
+new: true
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
 import EmptyState from '@/components/common/empty-state';
 import { extractSourceCode } from '@/lib/code';
-import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
-import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
-import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { status } from '@/constants';
 
 <Callout title={status.tailwind_note.title}>
@@ -18,7 +15,17 @@ import { status } from '@/constants';
   sure Tailwind is configured in your project to use them.
 </Callout>
 
-<EmptyState
-  title={status.under_construction.title}
-  subtitle={status.under_construction.description}
+<ComponentPreview
+  name="password-input"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('password-input')).code}
+  sourceCode={(await extractSourceCode('password-input')).sourceCode}
+  lang="tsx"
+/>
+<ComponentPreview
+  name="password-input-register"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('password-input-register')).code}
+  sourceCode={(await extractSourceCode('password-input-register')).sourceCode}
+  lang="tsx"
 />

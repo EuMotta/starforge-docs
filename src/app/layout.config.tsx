@@ -1,7 +1,7 @@
 import Logo from '@/components/common/logo';
 import { siteConfig } from '@/settings';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { Home } from 'lucide-react';
+import { Home, FileText } from 'lucide-react';
 
 /**
  * Shared layout configurations
@@ -31,7 +31,7 @@ export const baseOptions: BaseLayoutProps = {
       text: 'Docs',
       url: '/docs',
       active: 'nested-url',
-      icon: <Home />
+      icon: <FileText />
     }
   ]
 };

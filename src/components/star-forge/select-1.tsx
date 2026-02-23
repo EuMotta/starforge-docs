@@ -12,11 +12,21 @@ import {
   SelectItem
 } from '@/components/ui/select';
 
-interface CustomSelectProps {
+import { cn } from '@/lib/utils';
+
+interface CustomSelectProps
+  extends Omit<
+    React.ComponentPropsWithoutRef<typeof Select>,
+    'value' | 'onValueChange' | 'children' | 'className'
+  > {
   formName: string;
   label?: string;
+  value?: string;
+  onValueChange?: (value: string) => void;
   existingValues?: string;
+  className?: string;
 }
+
 interface CustomSelectContentProps {
   image: string;
   name: string;
@@ -122,11 +132,25 @@ const CustomSelectContent = ({
 const CustomSelect = ({
   formName,
   label = 'Users',
-  existingValues = ''
+  existingValues = '',
+  value,
+  onValueChange,
+  className,
+  ...props
 }: CustomSelectProps) => {
-  const [selected, setSelected] = React.useState(existingValues);
+  const [internalValue, setInternalValue] = React.useState(
+    value || existingValues
+  );
+  const selectedValue = value !== undefined ? value : internalValue;
 
-  const selectedUser = localUsers.find((user) => user.id === selected);
+  const handleValueChange = (newValue: string) => {
+    if (value === undefined) {
+      setInternalValue(newValue);
+    }
+    onValueChange?.(newValue);
+  };
+
+  const selectedUser = localUsers.find((user) => user.id === selectedValue);
 
   return (
     <div className="space-y-1.5">
@@ -135,10 +159,14 @@ const CustomSelect = ({
           {label}
         </Label>
       )}
-      <Select value={selected} onValueChange={setSelected}>
+      <Select
+        value={selectedValue}
+        onValueChange={handleValueChange}
+        {...props}
+      >
         <SelectTrigger
           id={formName}
-          className="w-full py-5"
+          className={cn('w-full py-5', className)}
           aria-describedby={`${formName}-error`}
         >
           {selectedUser ? (
@@ -172,5 +200,7 @@ const CustomSelect = ({
     </div>
   );
 };
+
+CustomSelect.displayName = 'CustomSelect';
 
 export default CustomSelect;

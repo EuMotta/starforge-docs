@@ -6,6 +6,13 @@ description: Text Animations.
 import { ComponentPreview } from '@/components/common/preview/component-preview';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { extractSourceCode } from '@/lib/code';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { status } from '@/constants';
+
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
+</Callout>
 
 ## Text Component
 
@@ -30,9 +37,3 @@ import { extractSourceCode } from '@/lib/code';
   hasReTrigger
 />
 
-### Source Code
-
-<DynamicCodeBlock
-  lang="tsx"
-  code={(await extractSourceCode('text-animation-2')).sourceCode}
-/>
