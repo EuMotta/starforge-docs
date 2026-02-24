@@ -26,7 +26,8 @@ export const siteConfig = {
       'Headless UI',
       'Modern Interfaces'
     ],
-    description: 'UI components for React.',
+    description:
+      'Biblioteca de componentes UI reutilizáveis para React e Next.js, construída com Tailwind CSS e inspirada no ecossistema shadcn/ui. Documentação, exemplos e padrões para acelerar a criação de interfaces.',
     locale: 'pt-BR',
     links: {
       linkedin: '',

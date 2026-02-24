@@ -10,7 +10,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-1.tsx",
+          "path": "src/components/star-forge/avatar/avatar-1.tsx",
           "type": "registry:ui"
         }
       ]
@@ -22,7 +22,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-2.tsx",
+          "path": "src/components/star-forge/avatar/avatar-2.tsx",
           "type": "registry:ui"
         }
       ]
@@ -34,7 +34,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-3.tsx",
+          "path": "src/components/star-forge/avatar/avatar-3.tsx",
           "type": "registry:ui"
         }
       ]
@@ -46,7 +46,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-4.tsx",
+          "path": "src/components/star-forge/avatar/avatar-4.tsx",
           "type": "registry:ui"
         }
       ]
@@ -58,7 +58,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-5.tsx",
+          "path": "src/components/star-forge/avatar/avatar-5.tsx",
           "type": "registry:ui"
         }
       ]
@@ -70,7 +70,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-6.tsx",
+          "path": "src/components/star-forge/avatar/avatar-6.tsx",
           "type": "registry:ui"
         }
       ]
@@ -82,7 +82,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-7.tsx",
+          "path": "src/components/star-forge/avatar/avatar-7.tsx",
           "type": "registry:ui"
         }
       ]
@@ -94,7 +94,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-8.tsx",
+          "path": "src/components/star-forge/avatar/avatar-8.tsx",
           "type": "registry:ui"
         }
       ]
@@ -106,7 +106,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-9.tsx",
+          "path": "src/components/star-forge/avatar/avatar-9.tsx",
           "type": "registry:ui"
         }
       ]
@@ -118,7 +118,7 @@
       "registryDependencies": ["avatar"],
       "files": [
         {
-          "path": "src/components/star-forge/avatar-10.tsx",
+          "path": "src/components/star-forge/avatar/avatar-10.tsx",
           "type": "registry:ui"
         }
       ]
@@ -310,7 +310,7 @@
       "registryDependencies": ["button"],
       "files": [
         {
-          "path": "src/components/star-forge/card-1.tsx",
+          "path": "src/components/star-forge/cards/card-1.tsx",
           "type": "registry:ui"
         }
       ]
@@ -438,7 +438,7 @@
           "type": "registry:ui"
         },
         {
-          "path": "src/hooks/use-debounce.ts",
+          "path": "src/hooks/star-forge/useDebounce.ts",
           "type": "registry:hook"
         }
       ]

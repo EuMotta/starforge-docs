@@ -1,7 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "section",
-  "dependencies": ["class-variance-authority", "react-icons"],
+  "dependencies": [
+    "class-variance-authority",
+    "react-icons"
+  ],
   "registryDependencies": [],
   "files": [
     {

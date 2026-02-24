@@ -2,7 +2,10 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "select-1-form",
   "dependencies": [],
-  "registryDependencies": ["select", "form"],
+  "registryDependencies": [
+    "select",
+    "form"
+  ],
   "files": [
     {
       "path": "src/components/star-forge/select-1-form.tsx",

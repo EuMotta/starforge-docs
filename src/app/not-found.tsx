@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import Logo from '@/components/common/logo';
 import { SearchTriggerButton } from '@/components/common/search';
 import { Typography } from '@/components/star-forge/typography';
@@ -26,11 +28,11 @@ const Error = () => {
 
           <div className="mx-auto flex w-full max-w-sm flex-col gap-3">
             <Button asChild className="w-full">
-              <a href="/">Go to Home</a>
+              <Link href="/">Go to Home</Link>
             </Button>
             <SearchTriggerButton />
             <Button asChild variant="ghost" className="w-full">
-              <a href="/docs">Explore documentation</a>
+              <Link href="/docs">Explore documentation</Link>
             </Button>
           </div>
         </div>

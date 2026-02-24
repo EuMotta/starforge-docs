@@ -12,7 +12,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: siteConfig.site.name,
+  title: {
+    default: `${siteConfig.site.name} — UI components para React e Next.js`,
+    template: `%s | ${siteConfig.site.name}`
+  },
   description: siteConfig.site.description,
   keywords: [
     'ShadCNUI',
@@ -27,21 +30,21 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.personalInfo.name }],
   creator: siteConfig.personalInfo.name,
   publisher: siteConfig.personalInfo.name,
-  metadataBase: new URL(process.env.SITE_URL || ''),
+  metadataBase: new URL(process.env.SITE_URL || 'http://localhost:3000'),
   alternates: {
     canonical: siteConfig.site.url
   },
   openGraph: {
-    title: siteConfig.site.name,
+    title: `${siteConfig.site.name} — UI components para React e Next.js`,
     description: siteConfig.site.description,
     url: siteConfig.site.url,
     siteName: siteConfig.site.name,
     images: [
       {
         url: '/ogimage.png',
-        width: 600,
-        height: 600,
-        alt: ''
+        width: 1200,
+        height: 630,
+        alt: `${siteConfig.site.name} — UI components para React e Next.js`
       }
     ],
     locale: 'pt_BR',
@@ -49,10 +52,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.site.name,
+    title: `${siteConfig.site.name} — UI components para React e Next.js`,
     description: siteConfig.site.description,
-    creator: '',
-    images: ['']
+    creator: siteConfig.personalInfo.name,
+    images: ['/ogimage.png']
   },
   robots: {
     follow: true,
@@ -69,7 +72,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={inter.className} suppressHydrationWarning>
+    <html lang="pt-BR" className={inter.className} suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
         <RootProvider theme={{ defaultTheme: 'dark' }}>
           <NextTopLoader

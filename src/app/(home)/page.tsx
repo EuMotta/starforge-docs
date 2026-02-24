@@ -1,56 +1,57 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { BsGithub } from 'react-icons/bs';
-import { MdOutlineDocumentScanner } from 'react-icons/md';
+import { Metadata } from 'next';
 
-import { Typography } from '@/components/star-forge/typography';
-import { siteConfig } from '@/settings';
+import { Features, ResourcesNav, SocialShare } from '@/templates/home';
+import StarForgeHero from '@/templates/home/hero';
+
+export const metadata: Metadata = {
+  title: 'StarForge — Componentes UI para React e Next.js',
+  description:
+    'Biblioteca de componentes reutilizáveis para React e Next.js. Inspirada no shadcn/ui, construída com Tailwind CSS e Radix UI. Copy-paste ready, totalmente customizável.',
+  keywords: [
+    'UI Components',
+    'React',
+    'Next.js',
+    'Tailwind CSS',
+    'Component Library',
+    'shadcn/ui',
+    'Radix UI',
+    'TypeScript',
+    'Accessibility',
+    'Frontend',
+    'Design System',
+    'Components Reutilizáveis',
+    'Desenvolvimento Web'
+  ],
+  openGraph: {
+    title: 'StarForge — Componentes UI para React e Next.js',
+    description:
+      'Biblioteca de componentes reutilizáveis para React e Next.js. Inspirada no shadcn/ui, construída com Tailwind CSS e Radix UI.',
+    type: 'website',
+    images: [
+      {
+        url: '/ogimage.png',
+        width: 1200,
+        height: 630,
+        alt: 'StarForge — Componentes UI para React e Next.js'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'StarForge — Componentes UI para React e Next.js',
+    description:
+      'Biblioteca de componentes reutilizáveis para React e Next.js. Inspirada no shadcn/ui, construída com Tailwind CSS e Radix UI.',
+    images: ['/ogimage.png']
+  }
+};
 
 export default function HomePage() {
   return (
-    <main
-      className="flex flex-1 flex-col items-center justify-center text-center"
-      style={{
-        backgroundImage:
-          'linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(/bg-home.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <div className="space-y-10 text-center text-white">
-        <Image
-          src={'/logo-extended-white.svg'}
-          width={700}
-          height={700}
-          alt="logo"
-        />
-        <Typography.H2>Reusable components</Typography.H2>
-        <div className="mt-20 flex justify-evenly gap-5">
-          <Link
-            href="/docs"
-            className="group hover:shadow2xl relative inline-block overflow-hidden px-4 py-2 text-lg font-bold tracking-wide text-white uppercase transition-all duration-500 hover:scale-105 hover:shadow-[#49BEB7]/40"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              <MdOutlineDocumentScanner className="text-[#49BEB7]" />
-              Docs
-            </span>
-            <span className="absolute bottom-0 left-0 h-[3px] w-full scale-x-0 transform bg-gradient-to-r from-[#49BEB7] to-[#409690] transition-transform duration-500 group-hover:scale-x-100"></span>
-            <span className="absolute inset-0 translate-x-[-100%] -skew-x-12 transform bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-[100%]"></span>
-          </Link>
-          <Link
-            href={siteConfig.site.links.github}
-            className="group hover:shadow2xl relative inline-block overflow-hidden px-4 py-2 text-lg font-bold tracking-wide text-white uppercase transition-all duration-500 hover:scale-105 hover:shadow-[#49BEB7]/40"
-          >
-            <span className="relative z-10 flex items-center gap-2">
-              <BsGithub className="text-[#49BEB7]" />
-              GitHub
-            </span>
-            <span className="absolute bottom-0 left-0 h-[3px] w-full scale-x-0 transform bg-gradient-to-r from-[#49BEB7] to-[#409690] transition-transform duration-500 group-hover:scale-x-100"></span>
-            <span className="absolute inset-0 translate-x-[-100%] -skew-x-12 transform bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-[100%]"></span>
-          </Link>
-        </div>
-      </div>
+    <main className="mb-20 flex flex-1 flex-col">
+      <StarForgeHero />
+      <Features />
+      <ResourcesNav />
+      <SocialShare />
     </main>
   );
 }
