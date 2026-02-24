@@ -1,7 +1,7 @@
 import Logo from '@/components/common/logo';
 import { siteConfig } from '@/settings';
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
-import { Home, FileText } from 'lucide-react';
+import { Home } from 'lucide-react';
 
 /**
  * Shared layout configurations

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { Star } from 'lucide-react';
 
-import { Button } from '../ui/button';
+import { Button } from '../../ui/button';
 
 export const Component = () => {
   return (

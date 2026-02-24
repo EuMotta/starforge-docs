@@ -144,6 +144,17 @@ button {
 .floating-element {
   animation: float 4s ease-in-out infinite;
 }
+@keyframes moveGradientLeft {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
+}
+.animate-gradient-x {
+  animation: moveGradientLeft 20s linear infinite;
+}
 
 @keyframes float {
   0%,
@@ -173,4 +184,20 @@ button {
     stroke-dashoffset: 0;
     opacity: 1;
   }
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-fd-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-fd-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fd-muted);
+}
+
+* {
+  scrollbar-color: var(--color-fd-primary) var(--color-fd-background);
 }

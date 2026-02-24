@@ -1,7 +1,10 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "text-animation-2",
-  "dependencies": ["framer-motion", "class-variance-authority"],
+  "dependencies": [
+    "framer-motion",
+    "class-variance-authority"
+  ],
   "registryDependencies": [],
   "files": [
     {

@@ -1,12 +1,14 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "alert-7",
-  "dependencies": ["lucide-react"],
+  "dependencies": [
+    "lucide-react"
+  ],
   "registryDependencies": [],
   "files": [
     {
       "path": "src/components/star-forge/alerts/theme-2/alert-7.tsx",
-      "content": "import React from 'react';\n\nimport { CircleAlert, X } from 'lucide-react';\n\nconst Component = () => {\n  return (\n    <div className=\"flex w-full items-start space-x-3 rounded-lg border border-blue-500 bg-blue-500/10 p-4\">\n      <div className=\"flex flex-col items-center\">\n        <div className=\"flex size-4 rounded-full text-blue-500\">\n          <CircleAlert />\n        </div>\n      </div>\n      <div className=\"flex-1\">\n        <div className=\"flex items-center gap-2\">\n          <h5 className=\"text-foreground text-sm font-semibold\">Information</h5>\n        </div>\n        <p className=\"text-muted-foreground mt-1 text-sm\">\n          New features are now available in your dashboard.\n        </p>\n      </div>\n      <div className=\"flex items-center self-center\">\n        <button className=\"text-blue-400 transition-colors duration-200 hover:text-blue-600\">\n          <X />\n        </button>\n      </div>\n    </div>\n  );\n};\n\nexport default Component;\n",
+      "content": "import React from 'react';\r\n\r\nimport { CircleAlert, X } from 'lucide-react';\r\n\r\nconst Component = () => {\r\n  return (\r\n    <div className=\"flex w-full items-start space-x-3 rounded-lg border border-blue-500 bg-blue-500/10 p-4\">\r\n      <div className=\"flex flex-col items-center\">\r\n        <div className=\"flex size-4 rounded-full text-blue-500\">\r\n          <CircleAlert />\r\n        </div>\r\n      </div>\r\n      <div className=\"flex-1\">\r\n        <div className=\"flex items-center gap-2\">\r\n          <h5 className=\"text-foreground text-sm font-semibold\">Information</h5>\r\n        </div>\r\n        <p className=\"text-muted-foreground mt-1 text-sm\">\r\n          New features are now available in your dashboard.\r\n        </p>\r\n      </div>\r\n      <div className=\"flex items-center self-center\">\r\n        <button className=\"text-blue-400 transition-colors duration-200 hover:text-blue-600\">\r\n          <X />\r\n        </button>\r\n      </div>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
       "type": "registry:ui"
     }
   ],

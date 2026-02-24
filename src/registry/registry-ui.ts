@@ -200,13 +200,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-1.tsx',
+        path: 'src/components/star-forge/abavatar-1.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-1.tsx',
+    example: 'src/components/star-forge/avatar/avatar-1.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-1').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-1').then((mod) => ({
         default: mod.default
       }))
     )
@@ -220,13 +220,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-2.tsx',
+        path: 'src/components/star-forge/avatar/avatar-2.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-2.tsx',
+    example: 'src/components/star-forge/avatar/avatar-2.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-2').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-2').then((mod) => ({
         default: mod.default
       }))
     )
@@ -241,13 +241,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-3.tsx',
+        path: 'src/components/star-forge/avatar/avatar-3.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-3.tsx',
+    example: 'src/components/star-forge/avatar/avatar-3.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-3').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-3').then((mod) => ({
         default: mod.default
       }))
     )
@@ -261,13 +261,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-4.tsx',
+        path: 'src/components/star-forge/avatar/avatar-4.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-4.tsx',
+    example: 'src/components/star-forge/avatar/avatar-4.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-4').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-4').then((mod) => ({
         default: mod.default
       }))
     )
@@ -281,13 +281,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-5.tsx',
+        path: 'src/components/star-forge/avatar/avatar-5.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-5.tsx',
+    example: 'src/components/star-forge/avatar/avatar-5.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-5').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-5').then((mod) => ({
         default: mod.default
       }))
     )
@@ -301,13 +301,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-6.tsx',
+        path: 'src/components/star-forge/avatar/avatar-6.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-6.tsx',
+    example: 'src/components/star-forge/avatar/avatar-6.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-6').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-6').then((mod) => ({
         default: mod.default
       }))
     )
@@ -321,13 +321,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-7.tsx',
+        path: 'src/components/star-forge/avatar/avatar-7.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-7.tsx',
+    example: 'src/components/star-forge/avatar/avatar-7.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-7').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-7').then((mod) => ({
         default: mod.default
       }))
     )
@@ -341,13 +341,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-8.tsx',
+        path: 'src/components/star-forge/avatar/avatar-8.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-8.tsx',
+    example: 'src/components/star-forge/avatar/avatar-8.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-8').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-8').then((mod) => ({
         default: mod.default
       }))
     )
@@ -361,13 +361,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-9.tsx',
+        path: 'src/components/star-forge/avatar/avatar-9.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-9.tsx',
+    example: 'src/components/star-forge/avatar/avatar-9.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-9').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-9').then((mod) => ({
         default: mod.default
       }))
     )
@@ -381,13 +381,13 @@ export const ui: Registry = [
     description: 'Custom background component',
     files: [
       {
-        path: 'src/components/star-forge/avatar-10.tsx',
+        path: 'src/components/star-forge/avatar/avatar-10.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/avatar-10.tsx',
+    example: 'src/components/star-forge/avatar/avatar-10.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/avatar-10').then((mod) => ({
+      import('@/components/star-forge/avatar/avatar-10').then((mod) => ({
         default: mod.default
       }))
     )
@@ -401,13 +401,33 @@ export const ui: Registry = [
     description: 'Custom card component',
     files: [
       {
-        path: 'src/components/star-forge/card-1.tsx',
+        path: 'src/components/star-forge/cards/card-1.tsx',
         type: 'registry:component'
       }
     ],
-    example: 'src/components/star-forge/card-1.tsx',
+    example: 'src/components/star-forge/cards/card-1.tsx',
     component: React.lazy(() =>
-      import('@/components/star-forge/card-1').then((mod) => ({
+      import('@/components/star-forge/cards/card-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'card-2',
+    author: 'EuMotta',
+    type: 'registry:component',
+    registryDependencies: ['button'],
+    dependencies: ['lucide-react'],
+    description: 'Custom card component',
+    files: [
+      {
+        path: 'src/components/star-forge/cards/card-2.tsx',
+        type: 'registry:component'
+      }
+    ],
+    example: 'src/components/star-forge/cards/card-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/cards/card-2').then((mod) => ({
         default: mod.default
       }))
     )
