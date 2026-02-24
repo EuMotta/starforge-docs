@@ -1,0 +1,403 @@
+---
+title: Add Components
+description: Complete guide to adding new components to StarForge
+---
+
+# Add Components
+
+This guide shows how to create and add new components to the StarForge project following our conventions and best practices.
+
+## Directory Structure
+
+StarForge components must follow a specific structure:
+
+```
+src/
+├── components/
+│   ├── star-forge/          # StarForge Components
+│   │   ├── inputs/          # Input components
+│   │   ├── alerts/          # Alert components
+│   │   ├── heros/           # Hero components
+│   │   ├── footer/          # Footer components
+│   │   └── ...              # Other components
+│   └── ui/                  # Base shadcn/ui components
+├── hooks/
+│   └── star-forge/          # Custom StarForge hooks
+└── lib/
+    └── utils.ts             # Shared utilities
+```
+
+## Step by Step to Create a Component
+
+### 1. Create the Component File
+
+Create your component in the appropriate directory within `src/components/star-forge/`:
+
+```tsx
+// src/components/star-forge/my-component.tsx
+'use client';
+
+import { useState } from 'react';
+import { cn } from '@/lib/utils';
+
+export interface MyComponentProps {
+  // Define your props here
+  children?: React.ReactNode;
+  className?: string;
+  variant?: 'default' | 'secondary';
+}
+
+export function MyComponent({
+  children,
+  className,
+  variant = 'default'
+}: MyComponentProps) {
+  return (
+    <div
+      className={cn(
+        'base-component-styles',
+        variant === 'secondary' && 'secondary-styles',
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
+}
+
+export default MyComponent;
+```
+
+### 2. Create Hooks (if necessary)
+
+If your component needs custom hooks, create them in `src/hooks/star-forge/`:
+
+```tsx
+// src/hooks/star-forge/use-my-hook.ts
+import { useState, useEffect } from 'react';
+
+export function useMyHook(initialValue: string) {
+  const [value, setValue] = useState(initialValue);
+
+  // Your hook logic here
+
+  return { value, setValue };
+}
+```
+
+### 3. Add to Registry.json
+
+Add your component to the `registry.json` in the project root:
+
+```json
+{
+  "name": "my-component",
+  "type": "registry:ui",
+  "dependencies": ["lucide-react"], // External dependencies
+  "registryDependencies": ["button"], // Dependencies on other shadcn components
+  "files": [
+    {
+      "path": "src/components/star-forge/my-component.tsx",
+      "type": "registry:ui"
+    },
+    {
+      "path": "src/hooks/star-forge/use-my-hook.ts",
+      "type": "registry:hook"
+    }
+  ]
+}
+```
+
+### 4. Install Dependencies
+
+If your component uses external dependencies, install them:
+
+```bash
+npm install lucide-react
+# or
+yarn add lucide-react
+# or
+pnpm add lucide-react
+```
+
+### 5. Create MDX Documentation
+
+Create an MDX file to document your component in `content/docs/components/`:
+
+````mdx
+---
+title: Badge 1
+description: Badge component with style variants
+---
+
+import { Badge } from '@/registry/components/badge-1';
+
+# Badge 1
+
+Badge component with style variants for displaying information in a compact way.
+
+## Import
+
+```tsx
+import { Badge } from '@/registry/components/badge-1';
+```
+````
+
+## Basic Usage
+
+```tsx
+<Badge>Default Badge</Badge>
+```
+
+## Variants
+
+### Default
+
+```tsx
+<Badge>Default</Badge>
+```
+
+### Secondary
+
+```tsx
+<Badge variant="secondary">Secondary</Badge>
+```
+
+### Destructive
+
+```tsx
+<Badge variant="destructive">Destructive</Badge>
+```
+
+### Outline
+
+```tsx
+<Badge variant="outline">Outline</Badge>
+```
+
+## Props
+
+| Prop      | Type                                                     | Default     | Description                 |
+| --------- | -------------------------------------------------------- | ----------- | --------------------------- |
+| variant   | `'default' \| 'secondary' \| 'destructive' \| 'outline'` | `'default'` | Visual variant of the badge |
+| className | `string`                                                 | -           | Additional CSS classes      |
+| children  | `React.ReactNode`                                        | -           | Badge content               |
+
+## Examples
+
+### With Icon
+
+```tsx
+<Badge className="flex items-center gap-2">
+  <CheckIcon className="h-3 w-3" />
+  Completed
+</Badge>
+```
+
+### With Status
+
+```tsx
+<div className="flex gap-2">
+  <Badge variant="destructive">Error</Badge>
+  <Badge variant="secondary">Pending</Badge>
+  <Badge>Completed</Badge>
+</div>
+```
+
+### 6. Build the Registry
+
+Run the shadcn build to update the registry:
+
+```bash
+npx shadcn@latest build
+```
+
+## Naming Conventions
+
+### Components
+
+- Use kebab-case for file names: `my-component.tsx`
+- Use PascalCase for component names: `MyComponent`
+- Follow the `category-name` pattern when applicable: `hero-1`, `alert-1`, `search-1`
+
+### Hooks
+
+- Use kebab-case for file names: `use-my-hook.ts`
+- Use camelCase for hook names: `useMyHook`
+
+### Structure by Category
+
+- **Inputs**: Form and input components
+- **Alerts**: Alert and notification components
+- **Heros**: Hero/main section components
+- **Footer**: Footer components
+- **Cards**: Card components
+- **Backgrounds**: Background components
+
+## Practical Example
+
+Let's create a badge component as an example:
+
+### 1. Badge Component
+
+```tsx
+// src/components/star-forge/badge-1.tsx
+'use client';
+
+import { cva, type VariantProps } from 'class-variance-authority';
+import { cn } from '@/lib/utils';
+
+const badgeVariants = cva(
+  'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  {
+    variants: {
+      variant: {
+        default:
+          'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
+        secondary:
+          'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
+        destructive:
+          'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
+        outline: 'text-foreground'
+      }
+    },
+    defaultVariants: {
+      variant: 'default'
+    }
+  }
+);
+
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
+
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  );
+}
+
+export { Badge, badgeVariants };
+```
+
+### 2. Add to Registry
+
+```json
+{
+  "name": "badge-1",
+  "type": "registry:ui",
+  "dependencies": ["class-variance-authority"],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/badge-1.tsx",
+      "type": "registry:ui"
+    }
+  ]
+}
+```
+
+### 3. Build
+
+```bash
+npx shadcn@latest build
+```
+
+## Best Practices
+
+1. **Always use `'use client'`** for components that use React hooks
+2. **Export interfaces** for TypeScript
+3. **Use `cn()`** to combine classes
+4. **Document props** with TypeScript
+5. **Follow variant pattern** when applicable
+6. **Test components** before adding to registry
+7. **Use minimal dependencies** - only what's necessary
+
+## Validation
+
+After adding your component:
+
+1. **Check if TypeScript compiles**:
+
+   ```bash
+   npm run type-check
+   ```
+
+2. **Test the component locally**:
+
+   ```bash
+   npm run dev
+   ```
+
+3. **Check the build**:
+
+   ```bash
+   npm run build
+   ```
+
+4. **Test the registry**:
+   ```bash
+   npx shadcn@latest add badge-1
+   ```
+
+## Next Steps
+
+- [ ] Create documentation for your component
+- [ ] Add usage examples
+
+## Reusing Existing Libraries
+
+Before creating a new component, check if you can reuse the libraries and components already existing in the project. This helps maintain consistency and reduce bundle size.
+
+### Available Libraries
+
+The project already includes several libraries that can be used:
+
+- **shadcn/ui**: Ready-to-use base UI components
+- **Lucide React**: Various icons for interfaces
+- **class-variance-authority**: For managing component variants
+- **Tailwind CSS**: For styling
+- **Framer Motion**: For animations
+
+### When to Create a New Component
+
+Create a new component only when:
+
+1. **Unique functionality**: The component has specific functionality that doesn't exist in current components
+2. **Frequent reuse**: The component will be used in multiple places in the project
+3. **Specific complexity**: The component encapsulates complex logic that doesn't fit existing components
+
+### Reuse Example
+
+Instead of creating a new button, use existing shadcn/ui components:
+
+```tsx
+// Instead of creating a CustomButton
+import { Button } from '@/components/ui/button';
+
+// Reuse with existing variants
+<Button variant="default">Default Button</Button>
+<Button variant="outline">Outline Button</Button>
+<Button variant="ghost">Ghost Button</Button>
+```
+
+### Checking Existing Components
+
+Before creating, explore:
+
+1. **shadcn/ui components** in `src/components/ui/`
+2. **StarForge components** in `src/components/star-forge/`
+3. **Custom hooks** in `src/hooks/star-forge/`
+
+### Benefits of Reuse
+
+- **Less code**: Reduces the amount of code to maintain
+- **Consistency**: Maintains uniform design and behavior
+- **Performance**: Avoids dependency duplication
+- **Maintainability**: Fewer components to maintain and update
+
+---
+
+## Questions?
+
+If you have questions about how to add components, consult the existing examples in the project or [open an issue](https://github.com/eumotta/starforge-docs/issues/new) in the repository.
