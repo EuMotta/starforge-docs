@@ -1,17 +1,17 @@
 /**
- * Extrai o código-fonte de um componente registrado com base no seu nome.
+ * Extracts the source code of a registered component based on its name.
  *
- * @param {string} componentName - Nome do componente a ser buscado no registro.
- * @returns {Promise<{ code: string }>} Um objeto contendo o código-fonte do componente ou uma mensagem de erro.
- * @throws {Error} Não lança erros diretamente, mas retorna mensagens de erro no objeto de retorno em caso de falha.
+ * @param {string} componentName - Name of the component to be searched in the registry.
+ * @returns {Promise<{ code: string }>} An object containing the component's source code or an error message.
+ * @throws {Error} Does not throw errors directly, but returns error messages in the return object in case of failure.
  * @remarks
- * - Utiliza o registro de componentes para localizar o arquivo correspondente.
- * - O caminho do arquivo é sanitizado para remover o prefixo '@' se presente.
- * - Em caso de erro (componente não encontrado, ausência de arquivos ou falha na leitura), retorna uma mensagem de erro formatada.
+ * - Uses the component registry to locate the corresponding file.
+ * - The file path is sanitized to remove the '@' prefix if present.
+ * - In case of error (component not found, missing files, or read failure), returns a formatted error message.
  * @example
  *
  * const result = await extractSourceCode('Button');
- * console.log(result.code); // Exibe o código-fonte ou uma mensagem de erro
+ * console.log(result.code); // Displays the source code or an error message
  *
  */
 

@@ -12,7 +12,7 @@ import {
   ComboboxGroup,
   ComboboxLabel
 } from '@/components/ui/combobox';
-import { useDebounce } from '@/hooks/star-forge/useDebounce';
+import { useDebounce } from '@/hooks/star-forge/use-debounce';
 import { Search, X, Clock, Loader2, TrendingUp } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
