@@ -1,11 +1,10 @@
 ---
 title: Add Components
 description: Complete guide to adding new components to StarForge
+icon: Plus
 ---
 
-# Add Components
-
-This guide shows how to create and add new components to the StarForge project following our conventions and best practices.
+import { Step, Steps } from 'fumadocs-ui/components/steps';
 
 ## Directory Structure
 
@@ -29,7 +28,10 @@ src/
 
 ## Step by Step to Create a Component
 
-### 1. Create the Component File
+<Steps>
+
+<Step>
+### Create the Component File
 
 Create your component in the appropriate directory within `src/components/star-forge/`:
 
@@ -68,7 +70,10 @@ export function MyComponent({
 export default MyComponent;
 ```
 
-### 2. Create Hooks (if necessary)
+</Step>
+
+<Step>
+### Create Hooks (if necessary)
 
 If your component needs custom hooks, create them in `src/hooks/star-forge/`:
 
@@ -85,7 +90,10 @@ export function useMyHook(initialValue: string) {
 }
 ```
 
-### 3. Add to Registry.json
+</Step>
+
+<Step>
+### Add to Registry.json
 
 Add your component to the `registry.json` in the project root:
 
@@ -108,7 +116,17 @@ Add your component to the `registry.json` in the project root:
 }
 ```
 
-### 4. Install Dependencies
+#### Type Options
+
+- **`registry:ui`** - Use for UI components (React components, visual elements)
+- **`registry:hook`** - Use for custom React hooks
+- **`registry:lib`** - Use for utility functions, constants, or helper libraries
+- **`registry:component`** - Use for complete component packages with multiple files
+
+</Step>
+
+<Step>
+### Install Dependencies
 
 If your component uses external dependencies, install them:
 
@@ -120,28 +138,41 @@ yarn add lucide-react
 pnpm add lucide-react
 ```
 
-### 5. Create MDX Documentation
+</Step>
+
+<Step>
+### Create MDX Documentation
 
 Create an MDX file to document your component in `content/docs/components/`:
 
-````mdx
+```mdx
 ---
-title: Badge 1
-description: Badge component with style variants
+title: Section
+description: Component for organizing sections
 ---
 
-import { Badge } from '@/registry/components/badge-1';
+import { ComponentPreview } from '@/components/common/preview/component-preview';
+import { extractSourceCode } from '@/lib/code';
 
-# Badge 1
+## Section
 
-Badge component with style variants for displaying information in a compact way.
+<ComponentPreview
+  name="my-component"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('my-component')).code}
+  sourceCode={(await extractSourceCode('my-component')).sourceCode}
+  lang="tsx"
+/>
 
-## Import
+### or use DrawerCodePreview
 
-```tsx
-import { Badge } from '@/registry/components/badge-1';
+<DrawerCodePreview
+  name="my-component"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('my-component')).code}
+  lang="tsx"
+/>
 ```
-````
 
 ## Basic Usage
 
@@ -175,6 +206,7 @@ import { Badge } from '@/registry/components/badge-1';
 <Badge variant="outline">Outline</Badge>
 ```
 
+
 ## Props
 
 | Prop      | Type                                                     | Default     | Description                 |
@@ -183,26 +215,11 @@ import { Badge } from '@/registry/components/badge-1';
 | className | `string`                                                 | -           | Additional CSS classes      |
 | children  | `React.ReactNode`                                        | -           | Badge content               |
 
-## Examples
 
-### With Icon
+</Step>
 
-```tsx
-<Badge className="flex items-center gap-2">
-  <CheckIcon className="h-3 w-3" />
-  Completed
-</Badge>
-```
+<Step>
 
-### With Status
-
-```tsx
-<div className="flex gap-2">
-  <Badge variant="destructive">Error</Badge>
-  <Badge variant="secondary">Pending</Badge>
-  <Badge>Completed</Badge>
-</div>
-```
 
 ### 6. Build the Registry
 
@@ -211,6 +228,9 @@ Run the shadcn build to update the registry:
 ```bash
 npx shadcn@latest build
 ```
+</Step>
+
+</Steps>
 
 ## Naming Conventions
 
@@ -234,74 +254,6 @@ npx shadcn@latest build
 - **Cards**: Card components
 - **Backgrounds**: Background components
 
-## Practical Example
-
-Let's create a badge component as an example:
-
-### 1. Badge Component
-
-```tsx
-// src/components/star-forge/badge-1.tsx
-'use client';
-
-import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@/lib/utils';
-
-const badgeVariants = cva(
-  'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
-  {
-    variants: {
-      variant: {
-        default:
-          'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
-        secondary:
-          'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        destructive:
-          'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
-        outline: 'text-foreground'
-      }
-    },
-    defaultVariants: {
-      variant: 'default'
-    }
-  }
-);
-
-export interface BadgeProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof badgeVariants> {}
-
-function Badge({ className, variant, ...props }: BadgeProps) {
-  return (
-    <div className={cn(badgeVariants({ variant }), className)} {...props} />
-  );
-}
-
-export { Badge, badgeVariants };
-```
-
-### 2. Add to Registry
-
-```json
-{
-  "name": "badge-1",
-  "type": "registry:ui",
-  "dependencies": ["class-variance-authority"],
-  "registryDependencies": [],
-  "files": [
-    {
-      "path": "src/components/star-forge/badge-1.tsx",
-      "type": "registry:ui"
-    }
-  ]
-}
-```
-
-### 3. Build
-
-```bash
-npx shadcn@latest build
-```
 
 ## Best Practices
 
@@ -359,27 +311,6 @@ The project already includes several libraries that can be used:
 - **Tailwind CSS**: For styling
 - **Framer Motion**: For animations
 
-### When to Create a New Component
-
-Create a new component only when:
-
-1. **Unique functionality**: The component has specific functionality that doesn't exist in current components
-2. **Frequent reuse**: The component will be used in multiple places in the project
-3. **Specific complexity**: The component encapsulates complex logic that doesn't fit existing components
-
-### Reuse Example
-
-Instead of creating a new button, use existing shadcn/ui components:
-
-```tsx
-// Instead of creating a CustomButton
-import { Button } from '@/components/ui/button';
-
-// Reuse with existing variants
-<Button variant="default">Default Button</Button>
-<Button variant="outline">Outline Button</Button>
-<Button variant="ghost">Ghost Button</Button>
-```
 
 ### Checking Existing Components
 

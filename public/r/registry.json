@@ -438,7 +438,7 @@
           "type": "registry:ui"
         },
         {
-          "path": "src/hooks/star-forge/useDebounce.ts",
+          "path": "src/hooks/star-forge/use-debounce.ts",
           "type": "registry:hook"
         }
       ]

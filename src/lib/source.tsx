@@ -1,8 +1,10 @@
+import { createElement } from 'react';
+
 import { docs, meta } from '@/.source';
 import { Badge } from '@/components/ui/badge';
 import { loader } from 'fumadocs-core/source';
 import { createMDXSource } from 'fumadocs-mdx';
-
+import { icons } from 'lucide-react';
 // See https://fumadocs.vercel.app/docs/headless/source-api for more info
 export const source = loader({
   pageTree: {
@@ -38,6 +40,10 @@ export const source = loader({
 
       return node;
     }
+  },
+  icon(icon) {
+    if (icon && icon in icons)
+      return createElement(icons[icon as keyof typeof icons]);
   },
   baseUrl: '/docs',
   source: createMDXSource(docs, meta)

@@ -1,0 +1,14 @@
+# Ignore public/r folder to prevent formatting registry JSON files
+public/r/
+
+# Other common ignores
+node_modules/
+dist/
+build/
+.next/
+coverage/
+*.min.js
+*.min.css
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

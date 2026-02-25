@@ -7,7 +7,7 @@
     "dev": "next dev --turbo",
     "start": "next start",
     "lint": "next lint",
-    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+    "format": "next lint --fix && prettier '**/*.{json,yaml,js,jsx,ts,tsx,html,css,scss,md}' --write",
     "postinstall": "fumadocs-mdx",
     "prepare": "husky",
     "postbuild": "next-sitemap"

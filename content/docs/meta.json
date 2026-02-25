@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "pages": [
+    "---Getting Started---",
+    "index",
+    "instalation",
+    "add-components",
+    "---Components---",
+    "animations",
+    "background",
+    "basic",
+    "display",
+    "form",
+    "layout",
+    "media",
+    "navigation"
+  ]
+}
