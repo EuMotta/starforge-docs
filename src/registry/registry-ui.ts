@@ -8,7 +8,8 @@ export const ui: Registry = [
     author: 'EuMotta',
     type: 'registry:component',
     dependencies: ['class-variance-authority'],
-    description: 'Custom text component',
+    description:
+      'Typography component set (headers, paragraphs, inline, link) with predefined styles.',
     files: [
       {
         path: 'src/components/star-forge/typography.tsx',
@@ -27,7 +28,8 @@ export const ui: Registry = [
     author: 'EuMotta',
     type: 'registry:component',
     dependencies: ['class-variance-authority'],
-    description: 'Custom text variant component',
+    description:
+      'Single typography component with `variant`/`as` props to render different tags (h1-h6, p, span, a, etc.) with styles.',
     files: [
       {
         path: 'src/components/star-forge/typography-variant.tsx',
@@ -49,7 +51,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: ['class-variance-authority', 'react-icons'],
-    description: 'Custom section component',
+    description:
+      'Composite component for structuring sections (Root/Header/Title/SubTitle/Description/Content/Footer), with optional iconed subtitle.',
     files: [
       {
         path: 'src/components/star-forge/section.tsx',
@@ -69,7 +72,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['select'],
     dependencies: [],
-    description: 'Custom select-1 component',
+    description:
+      'Select with label and rich items (user with avatar, role, status, email), supporting controlled or internal state.',
     files: [
       {
         path: 'src/components/star-forge/select-1.tsx',
@@ -91,7 +95,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['form', 'select'],
     dependencies: ['react-hook-form'],
-    description: 'Custom select-1-form component',
+    description:
+      'Rich items select integrated with react-hook-form (FormField/FormItem), displaying validation via FormMessage.',
     files: [
       {
         path: 'src/components/star-forge/select-1-form.tsx',
@@ -113,7 +118,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['http://localhost:3000/r/text.json'],
     dependencies: ['class-variance-authority', 'react-icons'],
-    description: 'Custom background component',
+    description:
+      'Wrapper with CSS-generated grid background, keeping content highlighted (layer above).',
     files: [
       {
         path: 'src/components/star-forge/background-1.tsx',
@@ -133,7 +139,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: ['class-variance-authority'],
-    description: 'Custom background component',
+    description:
+      'Responsive centered container with width variations (sm-3xl) and optional vertical border (border-x).',
     files: [
       {
         path: 'src/components/star-forge/container.tsx',
@@ -153,7 +160,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: ['class-variance-authority'],
-    description: 'Custom background component',
+    description:
+      'Character-by-character text animation using framer-motion (fade/slide), with color variants (default/primary/secondary).',
     files: [
       {
         path: 'src/components/star-forge/text-animation-1.tsx',
@@ -175,7 +183,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: ['class-variance-authority'],
-    description: 'Custom background component',
+    description:
+      'Word-by-word text animation using framer-motion (sequential fade-in), with color variants (default/primary/secondary).',
     files: [
       {
         path: 'src/components/star-forge/text-animation-2.tsx',
@@ -197,10 +206,10 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description: 'Basic avatar with initials fallback generated from the name.',
     files: [
       {
-        path: 'src/components/star-forge/abavatar-1.tsx',
+        path: 'src/components/star-forge/avatar/avatar-1.tsx',
         type: 'registry:component'
       }
     ],
@@ -217,7 +226,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['http://localhost:3000/r/avatar.json'],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Avatar with online status indicator (circular badge in bottom corner).',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-2.tsx',
@@ -238,7 +248,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Avatar with status indicator (online/away/busy/offline) based on numeric value.',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-3.tsx',
@@ -258,7 +269,7 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description: 'Avatar with verified badge (icon) in top corner.',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-4.tsx',
@@ -278,7 +289,7 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description: 'Avatar with verified badge controlled by boolean flag.',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-5.tsx',
@@ -298,7 +309,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Avatar with status indicator and verified badge (status + verification combination).',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-6.tsx',
@@ -318,7 +330,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Avatar with verified badge and status indicator (example with fixed initials).',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-7.tsx',
@@ -338,7 +351,7 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description: 'Avatar with dynamic status and conditional verified badge.',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-8.tsx',
@@ -358,7 +371,7 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description: 'Stacked avatar group to represent multiple users.',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-9.tsx',
@@ -378,7 +391,7 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['avatar'],
     dependencies: [],
-    description: 'Custom background component',
+    description: 'Stacked avatar group rendered from a user list (map).',
     files: [
       {
         path: 'src/components/star-forge/avatar/avatar-10.tsx',
@@ -398,7 +411,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['button'],
     dependencies: ['lucide-react'],
-    description: 'Custom card component',
+    description:
+      'Promotional card with cover image, text, rating and action button.',
     files: [
       {
         path: 'src/components/star-forge/cards/card-1.tsx',
@@ -418,7 +432,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: ['button'],
     dependencies: ['lucide-react'],
-    description: 'Custom card component',
+    description:
+      'Benefit/feature card with optional icon, title and description, with clipped border style (clip-path).',
     files: [
       {
         path: 'src/components/star-forge/cards/card-2.tsx',
@@ -438,7 +453,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Success alert (theme 1) with icon, title, description and close button.',
     files: [
       {
         path: 'src/components/star-forge/alerts/theme-1/alert-1.tsx',
@@ -458,7 +474,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Alert theme 1 with dynamic type via props',
+    description:
+      'Alert (theme 1) with type variation via props (success/warning/info/error).',
     previewPresets: [
       {
         label: 'Success',
@@ -507,7 +524,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Warning alert (theme 1) with icon, title, description and close button.',
     files: [
       {
         path: 'src/components/star-forge/alerts/theme-1/alert-2.tsx',
@@ -527,7 +545,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Information alert (theme 1) with icon, title, description and close button.',
     files: [
       {
         path: 'src/components/star-forge/alerts/theme-1/alert-3.tsx',
@@ -547,7 +566,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Error alert component',
+    description:
+      'Error alert (theme 1) with icon, title, description and close button.',
     files: [
       {
         path: 'src/components/star-forge/alerts/theme-1/alert-4.tsx',
@@ -567,7 +587,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Success alert with left border style',
+    description:
+      'Success alert (theme 2) with compact layout and color highlight (theme 2 variation).',
     files: [
       {
         path: 'src/components/star-forge/alerts/theme-2/alert-5.tsx',
@@ -587,7 +608,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Warning alert with left border style',
+    description:
+      'Warning alert (theme 2) with compact layout and color highlight (theme 2 variation).',
     files: [
       {
         path: 'src/components/star-forge/alerts/theme-2/alert-6.tsx',
@@ -607,7 +629,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Information alert with left border style',
+    description:
+      'Information alert (theme 2) with compact layout and color highlight (theme 2 variation).',
     files: [
       {
         path: 'src/components/star-forge/alerts/theme-2/alert-7.tsx',
@@ -627,7 +650,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Error alert with left border style',
+    description:
+      'Error alert (theme 2) with compact layout and color highlight (theme 2 variation).',
     files: [
       {
         path: 'src/components/star-forge/alerts/theme-2/alert-8.tsx',
@@ -647,7 +671,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Alert theme 5-8 with dynamic type via props',
+    description:
+      'Alert (theme 2) with type variation via props (success/warning/info/error).',
     previewPresets: [
       {
         label: 'Success',
@@ -696,7 +721,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Hero with gradient title, text, CTA and preview image (light/dark variation) and decorative blobs.',
     files: [
       {
         path: 'src/components/star-forge/heros/hero-1.tsx',
@@ -716,7 +742,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Hero/landing page with sticky promo bar, navigation header with CTAs, logos section and featured image.',
     files: [
       {
         path: 'src/components/star-forge/heros/hero-2.tsx',
@@ -736,7 +763,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Hero in split layout with benefits list, CTA and side image with decorative glow/blur.',
     files: [
       {
         path: 'src/components/star-forge/heros/hero-3.tsx',
@@ -756,7 +784,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Full footer with multiple link columns, contact info and social media icons.',
     files: [
       {
         path: 'src/components/star-forge/footer/footer-1.tsx',
@@ -776,7 +805,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Custom background component',
+    description:
+      'Simple footer with copyright and links (privacy/terms/sitemap).',
     files: [
       {
         path: 'src/components/star-forge/footer/footer-2.tsx',
@@ -796,7 +826,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Complete search with trending and recent searches',
+    description:
+      'Complete search with autocomplete, debounce, async results, recent searches and trending searches.',
     files: [
       {
         path: 'src/components/star-forge/inputs/search.tsx',
@@ -816,7 +847,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Search with trending searches only',
+    description:
+      'Search with autocomplete showing only trending suggestions (no recent list).',
     files: [
       {
         path: 'src/components/star-forge/inputs/search.tsx',
@@ -836,7 +868,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [],
-    description: 'Minimal search without suggestions',
+    description:
+      'Minimalist search with autocomplete, without suggestion blocks (recent/trending).',
     files: [
       {
         path: 'src/components/star-forge/inputs/search.tsx',
@@ -856,7 +889,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [''],
-    description: '',
+    description:
+      'Password input with show/hide value button (visibility toggle).',
     files: [
       {
         path: 'src/components/star-forge/inputs/password-input.tsx',
@@ -878,7 +912,8 @@ export const ui: Registry = [
     type: 'registry:component',
     registryDependencies: [],
     dependencies: [''],
-    description: '',
+    description:
+      'Registration password input with visibility toggle, rule validation (optional) and strength meter (optional), with change callback.',
     files: [
       {
         path: 'src/components/star-forge/inputs/password-input-register.tsx',

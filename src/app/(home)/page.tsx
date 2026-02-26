@@ -1,46 +1,30 @@
 import { Metadata } from 'next';
 
+import { siteConfig } from '@/settings';
 import { Features, ResourcesNav, SocialShare, CTA } from '@/templates/home';
 import StarForgeHero from '@/templates/home/hero';
 
 export const metadata: Metadata = {
-  title: 'StarForge — Componentes UI para React e Next.js',
-  description:
-    'Biblioteca de componentes reutilizáveis para React e Next.js. Inspirada no shadcn/ui, construída com Tailwind CSS e Radix UI. Copy-paste ready, totalmente customizável.',
-  keywords: [
-    'UI Components',
-    'React',
-    'Next.js',
-    'Tailwind CSS',
-    'Component Library',
-    'shadcn/ui',
-    'Radix UI',
-    'TypeScript',
-    'Accessibility',
-    'Frontend',
-    'Design System',
-    'Components Reutilizáveis',
-    'Desenvolvimento Web'
-  ],
+  title: siteConfig.site.name,
+  description: siteConfig.site.description,
+  keywords: siteConfig.site.keywords,
   openGraph: {
-    title: 'StarForge — Componentes UI para React e Next.js',
-    description:
-      'Biblioteca de componentes reutilizáveis para React e Next.js. Inspirada no shadcn/ui, construída com Tailwind CSS e Radix UI.',
+    title: siteConfig.site.name,
+    description: siteConfig.site.description,
     type: 'website',
     images: [
       {
         url: '/ogimage.png',
         width: 1200,
         height: 630,
-        alt: 'StarForge — Componentes UI para React e Next.js'
+        alt: siteConfig.site.name
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'StarForge — Componentes UI para React e Next.js',
-    description:
-      'Biblioteca de componentes reutilizáveis para React e Next.js. Inspirada no shadcn/ui, construída com Tailwind CSS e Radix UI.',
+    title: siteConfig.site.name,
+    description: siteConfig.site.description,
     images: ['/ogimage.png']
   }
 };
