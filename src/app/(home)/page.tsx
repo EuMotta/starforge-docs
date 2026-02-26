@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 
-import { Features, ResourcesNav, SocialShare } from '@/templates/home';
+import { Features, ResourcesNav, SocialShare, CTA } from '@/templates/home';
 import StarForgeHero from '@/templates/home/hero';
 
 export const metadata: Metadata = {
@@ -50,6 +50,7 @@ export default function HomePage() {
     <main className="mb-20 flex flex-1 flex-col">
       <StarForgeHero />
       <Features />
+      <CTA />
       <ResourcesNav />
       <SocialShare />
     </main>

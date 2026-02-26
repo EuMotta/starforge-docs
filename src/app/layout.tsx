@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR" className={inter.className} suppressHydrationWarning>
+    <html lang="en" className={inter.className} suppressHydrationWarning>
       <body className="flex min-h-screen flex-col">
         <RootProvider theme={{ defaultTheme: 'dark' }}>
           <NextTopLoader
