@@ -27,8 +27,8 @@ export const siteConfig = {
       'Modern Interfaces'
     ],
     description:
-      'Biblioteca de componentes UI reutilizáveis para React e Next.js, construída com Tailwind CSS e inspirada no ecossistema shadcn/ui. Documentação, exemplos e padrões para acelerar a criação de interfaces.',
-    locale: 'pt-BR',
+      'Reusable UI component library for React and Next.js with Tailwind CSS. Documentation, examples, and patterns to accelerate interface creation.',
+    locale: 'en',
     links: {
       linkedin: '',
       github: 'https://github.com/EuMotta/starforge-docs'
