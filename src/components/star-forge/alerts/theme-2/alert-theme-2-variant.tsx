@@ -8,34 +8,11 @@ import {
   X
 } from 'lucide-react';
 
-type AlertType = 'success' | 'warning' | 'info' | 'error';
-
 type Props = {
-  success?: boolean;
-  warning?: boolean;
-  info?: boolean;
-  error?: boolean;
+  variant?: 'success' | 'warning' | 'info' | 'error';
 };
 
-function getAlertType({ success, warning, info, error }: Props): AlertType {
-  if (error) return 'error';
-  if (warning) return 'warning';
-  if (info) return 'info';
-  if (success) return 'success';
-  return 'success';
-}
-
-const config: Record<
-  AlertType,
-  {
-    wrapper: string;
-    icon: string;
-    close: string;
-    title: string;
-    description: string;
-    Icon: React.ComponentType;
-  }
-> = {
+const alertVariants = {
   success: {
     wrapper:
       'flex w-full items-start space-x-3 rounded-lg border border-green-500 bg-green-500/10 p-4',
@@ -75,9 +52,9 @@ const config: Record<
   }
 };
 
-const Component = (props: Props) => {
-  const type = getAlertType(props);
-  const { wrapper, icon, close, title, description, Icon } = config[type];
+const Component = ({ variant = 'success' }: Props) => {
+  const { wrapper, icon, close, title, description, Icon } =
+    alertVariants[variant];
 
   return (
     <div className={wrapper}>

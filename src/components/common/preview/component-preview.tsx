@@ -11,7 +11,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { siteConfig } from '@/settings';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
-import { CheckCheck, Code, Ellipsis, Fullscreen, Terminal } from 'lucide-react';
+import { CheckCheck, Code, Ellipsis, Terminal } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -129,23 +129,6 @@ export function ComponentPreview({
                 </Button>
               </PopoverContent>
             </Popover>
-          </div>
-          <div className="mb-2 ml-2">
-            <Button size="sm" asChild variant="default">
-              <a
-                href={`${siteConfig.site.url}/preview/${name}`}
-                target="_blank"
-                rel="noreferrer"
-                className={cn('group no-underline transition-all duration-200')}
-              >
-                <Fullscreen
-                  className={cn(
-                    'h-4 w-4',
-                    'transition-transform duration-200 group-hover:rotate-45'
-                  )}
-                />
-              </a>
-            </Button>
           </div>
         </TabsList>
         <TabsContent value="preview">

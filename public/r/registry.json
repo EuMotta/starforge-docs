@@ -352,18 +352,6 @@
       ]
     },
     {
-      "name": "select-1-form",
-      "type": "registry:ui",
-      "dependencies": [],
-      "registryDependencies": ["select", "form"],
-      "files": [
-        {
-          "path": "src/components/star-forge/select-1-form.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "hero-1",
       "type": "registry:ui",
       "dependencies": [],

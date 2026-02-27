@@ -80,14 +80,14 @@ export function DrawerCodePreview({
     .join(' ');
 
   return (
-    <Card className="not-prose relative !gap-0 overflow-hidden border shadow-md">
-      <CardHeader className="mb-6 flex !w-full items-center justify-between">
+    <Card className="not-prose relative !gap-0 overflow-hidden border pt-2 pb-0 shadow-md">
+      <CardHeader className="mb-2 flex !w-full items-center justify-between">
         <CardTitle>
           <span className="text-sm font-semibold">{title}</span>
         </CardTitle>
         <div className="flex items-center justify-end gap-2">
           {isImproved && (
-            <div className="absolute top-0 left-0 z-20 flex items-center justify-start p-3">
+            <div className="absolute top-12 left-0 z-20 flex items-center justify-start p-3">
               <div className="text-destructive h-8 gap-1.5 text-xs">
                 <DiamondPlus />
               </div>
@@ -157,10 +157,9 @@ export function DrawerCodePreview({
           </div>
         </div>
       </CardContent>
-
-      <CardFooter className="border-t">
-        <div className="flex w-full items-center justify-between gap-3">
-          {previewPresets && previewPresets.length > 0 && (
+      {previewPresets && previewPresets.length > 0 && (
+        <CardFooter className="border-t !py-2">
+          <div className="flex w-full items-center justify-between gap-3">
             <Select
               value={selectedPresetLabel ?? effectivePresetLabel}
               onValueChange={setSelectedPresetLabel}
@@ -176,9 +175,9 @@ export function DrawerCodePreview({
                 ))}
               </SelectContent>
             </Select>
-          )}
-        </div>
-      </CardFooter>
+          </div>
+        </CardFooter>
+      )}
     </Card>
   );
 }

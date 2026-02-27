@@ -2,36 +2,11 @@ import React from 'react';
 
 import { Check, TriangleAlert, CircleAlert, XCircle, X } from 'lucide-react';
 
-type AlertType = 'success' | 'warning' | 'info' | 'error';
-
 type Props = {
-  success?: boolean;
-  warning?: boolean;
-  info?: boolean;
-  error?: boolean;
+  variant?: 'success' | 'warning' | 'info' | 'error';
 };
 
-function getAlertType({ success, warning, info, error }: Props): AlertType {
-  if (error) return 'error';
-  if (warning) return 'warning';
-  if (info) return 'info';
-  if (success) return 'success';
-  return 'success';
-}
-
-const config: Record<
-  AlertType,
-  {
-    wrapper: string;
-    iconWrapper: string;
-    close: string;
-    title: string;
-    description: string;
-    Icon: React.ComponentType;
-    titleClassName: string;
-    descriptionClassName: string;
-  }
-> = {
+const alertVariants = {
   success: {
     wrapper:
       'flex w-full items-center space-x-3 rounded-lg border border-green-200 bg-green-50 p-4',
@@ -82,32 +57,25 @@ const config: Record<
     descriptionClassName: 'text-red-700'
   }
 };
-
-const Component = (props: Props) => {
-  const type = getAlertType(props);
-  const {
-    wrapper,
-    iconWrapper,
-    close,
-    title,
-    description,
-    Icon,
-    titleClassName,
-    descriptionClassName
-  } = config[type];
+const Component = ({ variant = 'success' }: Props) => {
+  const alertConfig = alertVariants[variant];
 
   return (
-    <div className={wrapper}>
+    <div className={alertConfig.wrapper}>
       <div className="flex-shrink-0">
-        <div className={iconWrapper}>
-          <Icon />
+        <div className={alertConfig.iconWrapper}>
+          <alertConfig.Icon />
         </div>
       </div>
       <div className="flex-1">
-        <h3 className={`text-sm font-semibold ${titleClassName}`}>{title}</h3>
-        <p className={`mt-1 text-sm ${descriptionClassName}`}>{description}</p>
+        <h3 className={`text-sm font-semibold ${alertConfig.titleClassName}`}>
+          {alertConfig.title}
+        </h3>
+        <p className={`mt-1 text-sm ${alertConfig.descriptionClassName}`}>
+          {alertConfig.description}
+        </p>
       </div>
-      <button className={close}>
+      <button className={alertConfig.close}>
         <X />
       </button>
     </div>
