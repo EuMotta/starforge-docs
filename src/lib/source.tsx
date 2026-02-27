@@ -18,24 +18,24 @@ export const source = loader({
 
       if (data.new)
         node.name = (
-          <>
+          <div key="new" className="flex items-center gap-2">
             {node.name}
             <Badge className="bg-emerald-300 !text-[10px]">New</Badge>
-          </>
+          </div>
         );
       else if (data.updated)
         node.name = (
-          <>
+          <div key="updated" className="flex items-center gap-2">
             {node.name}
             <Badge className="bg-cyan-200 !text-[10px]">Updated</Badge>
-          </>
+          </div>
         );
       else if (data.under_construction)
         node.name = (
-          <>
+          <div key="soon" className="flex items-center gap-2">
             {node.name}
             <Badge className="bg-orange-300 !text-[10px]">Soon</Badge>
-          </>
+          </div>
         );
 
       return node;

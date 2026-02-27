@@ -1,7 +1,7 @@
 export const siteConfig = {
   site: {
     name: 'StarForge',
-    url: process.env.SITE_URL,
+    url: process.env.SITE_URL || 'https://www.starforge-docs.com/',
     ogImage: '/ogimage.png',
     keywords: [
       'UI Components',

@@ -71,8 +71,32 @@ export const metadata: Metadata = {
 };
 
 export default function Layout({ children }: { children: ReactNode }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        name: siteConfig.site.name,
+        url: siteConfig.site.url,
+        description: siteConfig.site.description,
+        inLanguage: siteConfig.site.locale
+      },
+      {
+        '@type': 'Organization',
+        name: siteConfig.site.name,
+        url: siteConfig.site.url
+      }
+    ]
+  };
+
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="flex min-h-screen flex-col">
         <RootProvider theme={{ defaultTheme: 'dark' }}>
           <NextTopLoader

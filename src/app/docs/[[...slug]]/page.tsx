@@ -143,8 +143,13 @@ export async function generateMetadata(props: {
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  return createMetadata({
-    title: page.data.title,
-    description: page.data.description
-  });
+  const pathname = `/docs/${params.slug?.join('/') || ''}`;
+
+  return createMetadata(
+    {
+      title: page.data.title,
+      description: page.data.description
+    },
+    pathname
+  );
 }
