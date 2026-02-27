@@ -1,33 +1,15 @@
-import { Metadata } from 'next';
-
-import { siteConfig } from '@/settings';
+import { createMetadata } from '@/lib/create-metadata';
 import { Features, ResourcesNav, SocialShare, CTA } from '@/templates/home';
 import StarForgeHero from '@/templates/home/hero';
 
-export const metadata: Metadata = {
-  title: siteConfig.site.name,
-  description: siteConfig.site.description,
-  keywords: siteConfig.site.keywords,
-  openGraph: {
-    title: siteConfig.site.name,
-    description: siteConfig.site.description,
-    type: 'website',
-    images: [
-      {
-        url: '/ogimage.png',
-        width: 1200,
-        height: 630,
-        alt: siteConfig.site.name
-      }
-    ]
+export const metadata = createMetadata(
+  {
+    openGraph: {
+      type: 'website'
+    }
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: siteConfig.site.name,
-    description: siteConfig.site.description,
-    images: ['/ogimage.png']
-  }
-};
+  '/'
+);
 
 export default function HomePage() {
   return (

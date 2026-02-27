@@ -2,7 +2,10 @@ import type { Metadata } from 'next/types';
 
 import { siteConfig } from '@/settings';
 
-export function createMetadata(override: Metadata): Metadata {
+export function createMetadata(
+  override: Metadata,
+  pathname?: string
+): Metadata {
   const titleStr = override.title
     ? typeof override.title === 'string'
       ? override.title
@@ -14,6 +17,15 @@ export function createMetadata(override: Metadata): Metadata {
       : String(override.description)
     : siteConfig.site.description;
 
+  const resolvedPathname = pathname
+    ? pathname.startsWith('/')
+      ? pathname
+      : `/${pathname}`
+    : undefined;
+  const pageUrl = resolvedPathname
+    ? new URL(resolvedPathname, baseUrl).toString()
+    : undefined;
+
   return {
     ...override,
     title: titleStr,
@@ -21,10 +33,14 @@ export function createMetadata(override: Metadata): Metadata {
     authors: [{ name: 'EuMotta' }],
     keywords: siteConfig.site.keywords,
     publisher: 'EuMotta',
+    alternates: {
+      canonical: pageUrl || siteConfig.site.url,
+      ...(override.alternates || {})
+    },
     openGraph: {
       title: titleStr,
       description: descriptionStr,
-      url: siteConfig.site.url,
+      url: pageUrl || siteConfig.site.url,
       images: [
         {
           url: siteConfig.site.ogImage,

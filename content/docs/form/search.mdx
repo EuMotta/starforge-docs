@@ -5,7 +5,7 @@ new: true
 showToc: false
 ---
 
-import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
+import { ComponentPreview } from '@/components/common/preview/component-preview';
 import { extractSourceCode } from '@/lib/code';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { status } from '@/constants';
@@ -15,29 +15,108 @@ import { status } from '@/constants';
   sure Tailwind is configured in your project to use them.
 </Callout>
 
-<div className="grid gap-5 gap-y-8 md:grid-cols-1 xl:grid-cols-2">
-  <DrawerCodePreview
-    name="search-1"
-    title="With Trending and Recent Searches"
-    classNameComponentContainer="min-h-[200px]"
-    code={(await extractSourceCode('search-1')).code}
-    sourceCode={(await extractSourceCode('search-1')).sourceCode}
-    lang="tsx"
-  />
-  <DrawerCodePreview
-    name="search-2"
-    title="With Trending Searches Only"
-    classNameComponentContainer="min-h-[200px]"
-    code={(await extractSourceCode('search-2')).code}
-    sourceCode={(await extractSourceCode('search-2')).sourceCode}
-    lang="tsx"
-  />
-  <DrawerCodePreview
-    name="search-3"
-    title="Minimal Search Component"
-    classNameComponentContainer="min-h-[200px]"
-    code={(await extractSourceCode('search-3')).code}
-    sourceCode={(await extractSourceCode('search-3')).sourceCode}
-    lang="tsx"
-  />
-</div>
+## With Trending and Recent Searches
+
+<ComponentPreview
+  name="search-1"
+  title="Complete Search with Trending and Recent Searches"
+classNameComponentContainer="min-h-[200px]"
+code={(await extractSourceCode('search-1')).code}
+sourceCode={(await extractSourceCode('search-1')).sourceCode}
+lang="tsx"
+/>
+
+### Props Reference
+
+| Prop                 | Type                              | Description                                    | Default     |
+| -------------------- | --------------------------------- | ---------------------------------------------- | ----------- |
+| `onSearch`           | `(query: string) => Promise<SearchOption[]>` | Async search function that returns results     | `mockSearch` |
+| `trendingSearches`   | `SearchOption[]`                  | Array of trending search suggestions           | `[]`        |
+| `onSelect`           | `(item: SearchOption) => void`   | Callback fired when an item is selected        | `undefined` |
+| `placeholder`        | `string`                          | Placeholder text for the search input          | `"Search documentation, examples, and more..."` |
+| `className`          | `string`                          | Additional CSS classes for styling              | `undefined` |
+| `maxRecentSearches`  | `number`                          | Maximum number of recent searches to store     | `5`         |
+| `showRecentSearches` | `boolean`                         | Show/hide recent searches section              | `true`      |
+| `showTrendingSearches` | `boolean`                         | Show/hide trending searches section           | `true`      |
+
+**SearchOption Interface:**
+
+```typescript
+interface SearchOption {
+  id: string;
+  title: string;
+  description?: string;
+  category?: string;
+}
+```
+
+<ComponentPreview
+  name="search-2"
+  title="With Trending Searches Only"
+  classNameComponentContainer="min-h-[200px]"
+  code={(await extractSourceCode('search-2')).code}
+  sourceCode={(await extractSourceCode('search-2')).sourceCode}
+  lang="tsx"
+/>
+
+### Props Reference
+
+| Prop                 | Type                              | Description                                    | Default     |
+| -------------------- | --------------------------------- | ---------------------------------------------- | ----------- |
+| `onSearch`           | `(query: string) => Promise<SearchOption[]>` | Async search function that returns results     | `mockSearch` |
+| `trendingSearches`   | `SearchOption[]`                  | Array of trending search suggestions           | `[]`        |
+| `onSelect`           | `(item: SearchOption) => void`   | Callback fired when an item is selected        | `undefined` |
+| `placeholder`        | `string`                          | Placeholder text for the search input          | `"Search without recent searches..."` |
+| `className`          | `string`                          | Additional CSS classes for styling              | `undefined` |
+| `maxRecentSearches`  | `number`                          | Maximum number of recent searches to store     | `5`         |
+| `showRecentSearches` | `boolean`                         | Show/hide recent searches section              | `false`     |
+| `showTrendingSearches` | `boolean`                         | Show/hide trending searches section           | `true`      |
+
+**SearchOption Interface:**
+
+```typescript
+interface SearchOption {
+  id: string;
+  title: string;
+  description?: string;
+  category?: string;
+}
+```
+<ComponentPreview
+  name="search-3"
+  title="Minimal Search Component"
+  classNameComponentContainer="min-h-[200px]"
+  code={(await extractSourceCode('search-3')).code}
+  sourceCode={(await extractSourceCode('search-3')).sourceCode}
+  lang="tsx"
+/>
+
+### Props Reference
+
+| Prop                 | Type                              | Description                                    | Default     |
+| -------------------- | --------------------------------- | ---------------------------------------------- | ----------- |
+| `onSearch`           | `(query: string) => Promise<SearchOption[]>` | Async search function that returns results     | `mockSearch` |
+| `trendingSearches`   | `SearchOption[]`                  | Array of trending search suggestions           | `[]`        |
+| `onSelect`           | `(item: SearchOption) => void`   | Callback fired when an item is selected        | `undefined` |
+| `placeholder`        | `string`                          | Placeholder text for the search input          | `"Basic search..."` |
+| `className`          | `string`                          | Additional CSS classes for styling              | `undefined` |
+| `maxRecentSearches`  | `number`                          | Maximum number of recent searches to store     | `5`         |
+| `showRecentSearches` | `boolean`                         | Show/hide recent searches section              | `false`     |
+| `showTrendingSearches` | `boolean`                         | Show/hide trending searches section           | `false`     |
+
+**SearchOption Interface:**
+
+```typescript
+interface SearchOption {
+  id: string;
+  title: string;
+  description?: string;
+  category?: string;
+}
+```
+
+**Usage:**
+
+- Use `search-1` for complete search with both trending and recent searches
+- Use `search-2` for search with only trending suggestions
+- Use `search-3` for minimal search without suggestion blocks
