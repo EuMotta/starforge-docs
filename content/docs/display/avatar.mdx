@@ -5,7 +5,6 @@ showToc: false
 ---
 
 import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
-import EmptyState from '@/components/common/empty-state';
 import { extractSourceCode } from '@/lib/code';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { status } from '@/constants';
@@ -16,6 +15,7 @@ import { status } from '@/constants';
 </Callout>
 
 <div className="grid gap-5 gap-y-8 lg:grid-cols-2 xl:grid-cols-3">
+
 <DrawerCodePreview
   name="avatar-1"
   classNameComponentContainer="p-20"
@@ -30,6 +30,29 @@ import { status } from '@/constants';
 />
 
 <DrawerCodePreview
+  name="avatar-5"
+  code={(await extractSourceCode('avatar-5')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="avatar-7"
+  code={(await extractSourceCode('avatar-7')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="avatar-9"
+  code={(await extractSourceCode('avatar-9')).code}
+  lang="tsx"
+/>
+
+</div>
+
+## Dynamic Avatars
+<div className="grid gap-5 gap-y-8 lg:grid-cols-2 xl:grid-cols-3">
+
+<DrawerCodePreview
   name="avatar-3"
   isImproved
   code={(await extractSourceCode('avatar-3')).code}
@@ -41,33 +64,21 @@ import { status } from '@/constants';
   code={(await extractSourceCode('avatar-4')).code}
   lang="tsx"
 />
-<DrawerCodePreview
-  name="avatar-5"
-  code={(await extractSourceCode('avatar-5')).code}
-  lang="tsx"
-/>
+
 <DrawerCodePreview
   name="avatar-6"
   isImproved
   code={(await extractSourceCode('avatar-6')).code}
   lang="tsx"
 />
-<DrawerCodePreview
-  name="avatar-7"
-  code={(await extractSourceCode('avatar-7')).code}
-  lang="tsx"
-/>
+
 <DrawerCodePreview
   name="avatar-8"
   isImproved
   code={(await extractSourceCode('avatar-8')).code}
   lang="tsx"
 />
-<DrawerCodePreview
-  name="avatar-9"
-  code={(await extractSourceCode('avatar-9')).code}
-  lang="tsx"
-/>
+
 <DrawerCodePreview
   name="avatar-10"
   isImproved
@@ -75,3 +86,20 @@ import { status } from '@/constants';
   lang="tsx"
 />
 </div>
+
+### Props Reference
+
+| Prop | Type | Description | Default |
+| ---- | ---- | ----------- | ------- |
+| `name` | `string` | User name for generating initials and alt text | `'John Doe'` |
+| `avatar` | `string` | URL of the user's profile image | `undefined` |
+| `status` | `0 \| 1 \| 2 \| 3` | User status: 0=Offline, 1=Online, 2=Away, 3=Busy | `undefined` |
+| `verified` | `boolean` | Whether the user has verified badge | `false` |
+| `size` | `string` | Avatar size using Tailwind classes (e.g., `size-14`) | `'size-14'` |
+| `className` | `string` | Additional CSS classes for styling | `undefined` |
+
+**Status Values:**
+- `0`: Offline (gray indicator)
+- `1`: Online (green indicator) 
+- `2`: Away (yellow indicator)
+- `3`: Busy (red indicator)

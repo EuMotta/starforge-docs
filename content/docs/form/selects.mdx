@@ -10,9 +10,14 @@ import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { status } from '@/constants';
 
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
+</Callout>
+
 ## Custom Select
 
-Basic selection component, without form integration.
+Selection component with name, email, status and role.
 
 <ComponentPreview
   name="select-1"
@@ -21,38 +26,3 @@ Basic selection component, without form integration.
   sourceCode={(await extractSourceCode('select-1')).sourceCode}
   lang="tsx"
 />
-
-## Custom Select (react-hook-form)
-
-Selection component integrated with `react-hook-form` for form management.
-
-<ComponentPreview
-  name="select-1-form"
-  classNameComponentContainer="min-h-[600px]"
-  code={(await extractSourceCode('select-1-form')).code}
-  sourceCode={(await extractSourceCode('select-1-form')).sourceCode}
-  lang="tsx"
-/>
-
-### How to use with React Hook Form
-
-<Steps>
-  <Step>
-    **Install dependencies** Make sure you have `react-hook-form` installed:
-    ```npm install react-hook-form ```
-  </Step>
-  <Step>
-    **Configure the form** Import `useForm` from `react-hook-form` and configure
-    the selection component with `FormField` to manage state.
-  </Step>
-  <Step>
-    **Integrate the component** Pass the `control` and `formName` to the
-    selection component, as shown in the `select-2` example code.
-  </Step>
-</Steps>
-
-<Callout title={status.tailwind_note.title}>
-  The component with `react-hook-form` requires proper configuration of the
-  `Controller` to work correctly. Check the [official React Hook Form
-  documentation](https://react-hook-form.com/) for more details.
-</Callout>

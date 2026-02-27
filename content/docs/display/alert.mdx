@@ -6,7 +6,6 @@ showToc: false
 ---
 
 import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
-import EmptyState from '@/components/common/empty-state';
 import { extractSourceCode } from '@/lib/code';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { status } from '@/constants';
@@ -15,6 +14,8 @@ import { status } from '@/constants';
   All presented components are responsive and compatible with Tailwind CSS. Make
   sure Tailwind is configured in your project to use them.
 </Callout>
+
+## Common Alerts
 
 <div className="grid gap-5 gap-y-8 md:grid-cols-2">
 
@@ -82,9 +83,15 @@ import { status } from '@/constants';
   lang="tsx"
 />
 
+</div>
+
+## Dynamic Alerts
+
+<div className="grid gap-5 gap-y-8 md:grid-cols-2">
+
 <DrawerCodePreview
   name="alert-theme-1-variant"
-  title="Dynamic Theme 1 Alert"
+  isImproved
   classNameComponentContainer="py-20"
   code={(await extractSourceCode('alert-theme-1-variant')).code}
   lang="tsx"
@@ -92,10 +99,16 @@ import { status } from '@/constants';
 
 <DrawerCodePreview
   name="alert-theme-2-variant"
-  title="Dynamic Theme 2 Alert"
+  isImproved
   classNameComponentContainer="py-20"
   code={(await extractSourceCode('alert-theme-2-variant')).code}
   lang="tsx"
 />
 
 </div>
+
+### Props Reference
+
+| Prop      | Type                                          | Description              | Default     |
+| --------- | --------------------------------------------- | ------------------------ | ----------- |
+| `variant` | `'success' \| 'warning' \| 'info' \| 'error'` | Type of alert to display | `'success'` |

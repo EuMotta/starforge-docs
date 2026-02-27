@@ -106,7 +106,7 @@ const CustomSelectContent = ({
 }: CustomSelectContentProps) => {
   const colors = statusColors[status as keyof typeof statusColors];
   return (
-    <div className="hover:bg-primary-50 group/item flex cursor-pointer items-center space-x-3 rounded-lg p-2 transition-colors duration-150">
+    <div className="hover:bg-primary-50 group/item flex items-center space-x-3 rounded-lg p-2 transition-colors duration-150">
       <img
         src={image}
         alt={name}
@@ -155,7 +155,10 @@ const CustomSelect = ({
   return (
     <div className="space-y-1.5">
       {label && (
-        <Label htmlFor={formName} className="text-sm font-medium text-gray-700">
+        <Label
+          htmlFor={formName}
+          className="text-muted-foreground text-sm font-medium"
+        >
           {label}
         </Label>
       )}
@@ -190,7 +193,11 @@ const CustomSelect = ({
         <SelectContent>
           <SelectGroup>
             {localUsers.map((user) => (
-              <SelectItem key={user.id} value={user.id} className="py-2">
+              <SelectItem
+                key={user.id}
+                value={user.id}
+                className="cursor-pointer py-2"
+              >
                 <CustomSelectContent {...user} />
               </SelectItem>
             ))}

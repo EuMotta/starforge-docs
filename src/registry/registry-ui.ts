@@ -90,29 +90,6 @@ export const ui: Registry = [
     )
   },
   {
-    name: 'select-1-form',
-    author: 'EuMotta',
-    type: 'registry:component',
-    registryDependencies: ['form', 'select'],
-    dependencies: ['react-hook-form'],
-    description:
-      'Rich items select integrated with react-hook-form (FormField/FormItem), displaying validation via FormMessage.',
-    files: [
-      {
-        path: 'src/components/star-forge/select-1-form.tsx',
-        type: 'registry:component'
-      }
-    ],
-    example: 'src/components/star-forge-preview/selects/select-1-form.tsx',
-    component: React.lazy(() =>
-      import('@/components/star-forge-preview/selects/select-1-form').then(
-        (mod) => ({
-          default: mod.default
-        })
-      )
-    )
-  },
-  {
     name: 'background-1',
     author: 'EuMotta',
     type: 'registry:component',
@@ -480,25 +457,25 @@ export const ui: Registry = [
       {
         label: 'Success',
         props: {
-          success: true
+          variant: 'success'
         }
       },
       {
         label: 'Warning',
         props: {
-          warning: true
+          variant: 'warning'
         }
       },
       {
         label: 'Info',
         props: {
-          info: true
+          variant: 'info'
         }
       },
       {
         label: 'Error',
         props: {
-          error: true
+          variant: 'error'
         }
       }
     ],
@@ -677,25 +654,25 @@ export const ui: Registry = [
       {
         label: 'Success',
         props: {
-          success: true
+          variant: 'success'
         }
       },
       {
         label: 'Warning',
         props: {
-          warning: true
+          variant: 'warning'
         }
       },
       {
         label: 'Info',
         props: {
-          info: true
+          variant: 'info'
         }
       },
       {
         label: 'Error',
         props: {
-          error: true
+          variant: 'error'
         }
       }
     ],
