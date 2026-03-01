@@ -1,15 +1,15 @@
 'use client';
 
 import {
-  SearchComponent,
-  SearchOption
-} from '@/components/star-forge/inputs/search';
+  Search1Input,
+  Search1InputOption
+} from '@/components/star-forge/inputs/search/search-1';
 
 // Mock search function for demo
-const mockSearch = async (query: string): Promise<SearchOption[]> => {
+const mockSearch = async (query: string): Promise<Search1InputOption[]> => {
   await new Promise((resolve) => setTimeout(resolve, 500));
 
-  const mockData: SearchOption[] = [
+  const mockData: Search1InputOption[] = [
     {
       id: '1',
       title: 'React Documentation',
@@ -71,13 +71,13 @@ const mockSearch = async (query: string): Promise<SearchOption[]> => {
 };
 
 export function SearchMinimal() {
-  const handleSelect = (item: SearchOption) => {
+  const handleSelect = (item: Search1InputOption) => {
     console.log('Selected item:', item);
   };
 
   return (
     <div className="flex w-full items-center justify-center p-8">
-      <SearchComponent
+      <Search1Input
         onSearch={mockSearch}
         onSelect={handleSelect}
         placeholder="Basic search..."

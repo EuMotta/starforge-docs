@@ -1,12 +1,17 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "background-1",
-  "dependencies": [],
-  "registryDependencies": [],
+  "dependencies": [
+    "class-variance-authority",
+    "react-icons"
+  ],
+  "registryDependencies": [
+    "https://www.starforge-docs.com/r/typography-1.json"
+  ],
   "files": [
     {
-      "path": "src/components/star-forge/background-1.tsx",
-      "content": "import React from 'react';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\ninterface ComponentProps extends React.HTMLAttributes<HTMLDivElement> {\r\n  children: React.ReactNode;\r\n  className?: string;\r\n}\r\n\r\nconst Component = ({ children, className, ...props }: ComponentProps) => (\r\n  <div\r\n    className={cn(\r\n      'relative flex w-full items-center justify-center',\r\n      className\r\n    )}\r\n    {...props}\r\n  >\r\n    <div\r\n      className={cn(\r\n        'absolute inset-0 z-0',\r\n        '[background-size:50px_50px]',\r\n        '[background-image:linear-gradient(to_right,#90909042_1px,transparent_1px),linear-gradient(to_bottom,#90909042_1px,transparent_1px)]',\r\n        'dark:[background-image:linear-gradient(to_right,#4545458f_1px,transparent_1px),linear-gradient(to_bottom,#4545458f_1px,transparent_1px)]'\r\n      )}\r\n    />\r\n    <div className=\"z-10\">{children}</div>\r\n  </div>\r\n);\r\n\r\nexport default Component;\r\n",
+      "path": "src/components/star-forge/backgrounds/background-1.tsx",
+      "content": "import React from 'react';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\ninterface Component1Props extends React.HTMLAttributes<HTMLDivElement> {\r\n  children: React.ReactNode;\r\n  className?: string;\r\n}\r\n\r\nconst Background1 = ({ children, className, ...props }: Component1Props) => (\r\n  <div\r\n    className={cn(\r\n      'relative flex w-full items-center justify-center',\r\n      className\r\n    )}\r\n    {...props}\r\n  >\r\n    <div\r\n      className={cn(\r\n        'absolute inset-0 z-0',\r\n        '[background-size:50px_50px]',\r\n        '[background-image:linear-gradient(to_right,#90909042_1px,transparent_1px),linear-gradient(to_bottom,#90909042_1px,transparent_1px)]',\r\n        'dark:[background-image:linear-gradient(to_right,#4545458f_1px,transparent_1px),linear-gradient(to_bottom,#4545458f_1px,transparent_1px)]'\r\n      )}\r\n    />\r\n    <div className=\"z-10\">{children}</div>\r\n  </div>\r\n);\r\n\r\nexport default Background1;\r\n",
       "type": "registry:ui"
     }
   ],

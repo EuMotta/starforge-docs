@@ -21,6 +21,32 @@ interface ComponentPreviewProps {
   lang: string;
   name: string;
 }
+/**
+ * A collapsible component that displays a component preview with expandable code view.
+ *
+ * @param {string} classNameComponentContainer - CSS classes for the component container.
+ * @param {string} code - The source code to display when expanded.
+ * @param {boolean} hasReTrigger - Whether the component has restart animation functionality.
+ * @param {string} lang - The programming language for syntax highlighting.
+ * @param {string} name - The name of the component to load and display.
+ * @returns {JSX.Element} A collapsible preview component with code display.
+ * @remarks
+ * - Uses Collapsible component for expand/collapse functionality.
+ * - Shows component preview in the collapsed state by default.
+ * - Displays syntax-highlighted code when expanded.
+ * - Chevron icon rotates when the component is expanded.
+ * - Integrates with ComponentLoader for dynamic component rendering.
+ * @example
+ *
+ * <ComponentCollapse
+ *   classNameComponentContainer="preview-container"
+ *   code="const Button = () => <button>Click me</button>;"
+ *   hasReTrigger={true}
+ *   lang="tsx"
+ *   name="Button"
+ * />
+ *
+ */
 export function ComponentCollapse({
   classNameComponentContainer,
   code,

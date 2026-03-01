@@ -10,7 +10,8 @@
     "format": "next lint --fix && prettier '**/*.{json,yaml,js,jsx,ts,tsx,html,css,scss,md}' --write",
     "postinstall": "fumadocs-mdx",
     "prepare": "husky",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "build:components": "node scripts/build-registry.js && npx shadcn@latest build"
   },
   "lint-staged": {
     "*.{js,jsx,md,ts,tsx,html,css,scss}": "yarn format",

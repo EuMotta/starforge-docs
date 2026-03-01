@@ -20,7 +20,7 @@ interface User {
   verified: boolean;
 }
 
-const Component = () => {
+const Avatar5 = () => {
   const user: User = {
     name: 'John Doe',
     avatar: 'https://i.pravatar.cc/150?img=52',
@@ -43,4 +43,4 @@ const Component = () => {
   );
 };
 
-export default Component;
+export default Avatar5;

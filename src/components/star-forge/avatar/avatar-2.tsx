@@ -17,7 +17,7 @@ interface Component {
   name: string;
 }
 
-const Component = ({ name = 'John Doe' }: Component) => {
+const Avatar2 = ({ name = 'John Doe' }: Component) => {
   return (
     <div className="relative">
       <Avatar className="size-14">
@@ -31,4 +31,4 @@ const Component = ({ name = 'John Doe' }: Component) => {
   );
 };
 
-export default Component;
+export default Avatar2;

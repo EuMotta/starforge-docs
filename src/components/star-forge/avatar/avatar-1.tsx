@@ -17,7 +17,7 @@ interface Component {
   name: string;
 }
 
-const Component = ({ name = 'John Doe' }: Component) => {
+const Avatar1 = ({ name = 'John Doe' }: Component) => {
   return (
     <Avatar className="size-14">
       <AvatarImage src="https://i.pravatar.cc/150?img=1" alt={name} />
@@ -26,4 +26,4 @@ const Component = ({ name = 'John Doe' }: Component) => {
   );
 };
 
-export default Component;
+export default Avatar1;

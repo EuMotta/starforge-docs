@@ -23,6 +23,35 @@ type CodeDialogProps = {
   disabled?: boolean;
 };
 
+/**
+ * A dialog component that displays code in a modal with syntax highlighting.
+ *
+ * @param {boolean} open - Whether the dialog is currently open.
+ * @param {(open: boolean) => void} onOpenChange - Function to call when the dialog open state changes.
+ * @param {string} title - The title to display in the dialog header.
+ * @param {string} code - The source code to display in the dialog.
+ * @param {string} [lang='tsx'] - The programming language for syntax highlighting.
+ * @param {ReactNode} [children] - Custom trigger element for opening the dialog.
+ * @param {boolean} [disabled=false] - Whether the trigger button should be disabled.
+ * @returns {JSX.Element} A dialog with code display and syntax highlighting.
+ * @remarks
+ * - Uses DynamicCodeBlock from fumadocs-ui for syntax highlighting.
+ * - Provides a default code icon trigger if no children are provided.
+ * - Has a sticky header with title and close button.
+ * - Supports responsive design with max-width constraints.
+ * - The dialog content is scrollable for long code blocks.
+ * @example
+ *
+ * <CodeDialog
+ *   open={isOpen}
+ *   onOpenChange={setIsOpen}
+ *   title="Component Source Code"
+ *   code="const Button = () => <button>Click me</button>;"
+ *   lang="tsx"
+ *   disabled={false}
+ * />
+ *
+ */
 export function CodeDialog({
   open,
   onOpenChange,

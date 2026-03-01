@@ -17,6 +17,37 @@ import { cn } from '@/lib/utils';
 
 import { ComponentLoader } from './component-loader';
 
+/**
+ * A tabbed component preview interface with code display and CLI installation functionality.
+ *
+ * @param {string} classNameComponentContainer - CSS classes for the component container.
+ * @param {string} code - The component usage code to display.
+ * @param {boolean} [hasReTrigger=false] - Whether the component has restart animation functionality.
+ * @param {string} lang - The programming language for syntax highlighting.
+ * @param {string} [sourceCode] - The source code of the component (optional).
+ * @param {string} name - The name of the component to load and display.
+ * @param {boolean} [fromDocs] - Whether rendering in documentation context.
+ * @returns {JSX.Element} A tabbed interface with preview, code, and source code views.
+ * @remarks
+ * - Provides three tabs: Preview, Code, and Source Code (if sourceCode is provided).
+ * - Includes CLI installation button with copy functionality.
+ * - Shows visual feedback when CLI command is copied.
+ * - Responsive design with popover menu for mobile devices.
+ * - Integrates with ComponentLoader for dynamic component rendering.
+ * - Uses DynamicCodeBlock for syntax highlighting.
+ * @example
+ *
+ * <ComponentPreview
+ *   classNameComponentContainer="preview-container"
+ *   code="<Button variant="primary">Click me</Button>"
+ *   hasReTrigger={true}
+ *   lang="tsx"
+ *   sourceCode="const Button = ({ variant }) => <button className={variant}>Click me</button>;"
+ *   name="Button"
+ *   fromDocs={false}
+ * />
+ *
+ */
 export function ComponentPreview({
   classNameComponentContainer,
   code,
