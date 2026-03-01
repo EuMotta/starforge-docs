@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "section-1",
+  "dependencies": [
+    "class-variance-authority",
+    "react-icons"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/layout/section-1.tsx",
+      "content": "import * as React from 'react';\nimport { BsChevronDoubleRight } from 'react-icons/bs';\n\nimport { cn } from '@/lib/utils';\n\ninterface SubTitleProps extends React.HTMLAttributes<HTMLHeadingElement> {\n  defaultIcon?: boolean;\n  icon?: React.ReactNode;\n}\nconst Section1 = {\n  Root: React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(\n    ({ className, ...props }, ref) => (\n      <div ref={ref} className={cn('m-6', className)} {...props} />\n    )\n  ),\n\n  Header: React.forwardRef<\n    HTMLDivElement,\n    React.HTMLAttributes<HTMLDivElement>\n  >(({ className, ...props }, ref) => (\n    <div\n      ref={ref}\n      className={cn(\n        'border-primary/50 mb-5 flex flex-col space-y-1.5 border-b',\n        className\n      )}\n      {...props}\n    />\n  )),\n\n  Title: React.forwardRef<\n    HTMLHeadingElement,\n    React.HTMLAttributes<HTMLHeadingElement>\n  >(({ className, ...props }, ref) => (\n    <h1\n      ref={ref}\n      className={cn(\n        'text-2xl leading-none font-semibold tracking-tight',\n        className\n      )}\n      {...props}\n    />\n  )),\n\n  SubTitle: React.forwardRef<HTMLHeadingElement, SubTitleProps>(\n    ({ className, children, defaultIcon, icon, ...props }, ref) => (\n      <h1\n        ref={ref}\n        className={cn(\n          'mb-4 flex items-center gap-1 text-2xl leading-none font-semibold tracking-tight lg:mb-6 lg:gap-6',\n          className\n        )}\n        {...props}\n      >\n        {defaultIcon && <BsChevronDoubleRight />}\n        {icon && !defaultIcon && icon}\n        {children}\n      </h1>\n    )\n  ),\n\n  Description: React.forwardRef<\n    HTMLParagraphElement,\n    React.HTMLAttributes<HTMLParagraphElement>\n  >(({ className, ...props }, ref) => (\n    <p\n      ref={ref}\n      className={cn('text-muted-foreground text-sm', className)}\n      {...props}\n    />\n  )),\n\n  Content: React.forwardRef<\n    HTMLDivElement,\n    React.HTMLAttributes<HTMLDivElement>\n  >(({ className, ...props }, ref) => (\n    <div ref={ref} className={cn('mb-5', className)} {...props} />\n  )),\n\n  Footer: React.forwardRef<\n    HTMLDivElement,\n    React.HTMLAttributes<HTMLDivElement>\n  >(({ className, ...props }, ref) => (\n    <div ref={ref} className={cn('flex items-center', className)} {...props} />\n  ))\n};\n\nSection1.Root.displayName = 'Section1.Root';\nSection1.Header.displayName = 'Section1.Header';\nSection1.Title.displayName = 'Section1.Title';\nSection1.SubTitle.displayName = 'Section1.SubTitle';\nSection1.Description.displayName = 'Section1.Description';\nSection1.Content.displayName = 'Section1.Content';\nSection1.Footer.displayName = 'Section1.Footer';\n\nexport { Section1 };\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,13 +1,131 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "star-forge",
-  "homepage": "https://starforge-docs.vercel.app",
+  "homepage": "https://www.starforge-docs.com",
   "items": [
+    {
+      "name": "typography-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/typography-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "typography-variant-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/typography-variant-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "section-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "react-icons"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/layout/section-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select-1",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "select"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/selects/select-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "background-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "react-icons"
+      ],
+      "registryDependencies": [
+        "https://www.starforge-docs.com/r/typography-1.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/backgrounds/background-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "container-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/layout/container-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-animation-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/animations/text-animation-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "text-animation-2",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/animations/text-animation-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
     {
       "name": "avatar-1",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": ["avatar"],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-1.tsx",
@@ -19,7 +137,9 @@
       "name": "avatar-2",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": ["avatar"],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-2.tsx",
@@ -31,7 +151,9 @@
       "name": "avatar-3",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": ["avatar"],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-3.tsx",
@@ -42,8 +164,12 @@
     {
       "name": "avatar-4",
       "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["avatar"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-4.tsx",
@@ -54,8 +180,12 @@
     {
       "name": "avatar-5",
       "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["avatar"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-5.tsx",
@@ -66,8 +196,12 @@
     {
       "name": "avatar-6",
       "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["avatar"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-6.tsx",
@@ -78,8 +212,12 @@
     {
       "name": "avatar-7",
       "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["avatar"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-7.tsx",
@@ -90,8 +228,12 @@
     {
       "name": "avatar-8",
       "type": "registry:ui",
-      "dependencies": [],
-      "registryDependencies": ["avatar"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-8.tsx",
@@ -103,7 +245,9 @@
       "name": "avatar-9",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": ["avatar"],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-9.tsx",
@@ -115,7 +259,9 @@
       "name": "avatar-10",
       "type": "registry:ui",
       "dependencies": [],
-      "registryDependencies": ["avatar"],
+      "registryDependencies": [
+        "avatar"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/avatar/avatar-10.tsx",
@@ -124,190 +270,14 @@
       ]
     },
     {
-      "name": "alert-1",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-1/alert-1.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-2",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-1/alert-2.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-3",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-1/alert-3.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-4",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-1/alert-4.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-5",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-2/alert-5.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-6",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-2/alert-6.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-7",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-2/alert-7.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-8",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-2/alert-8.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-theme-1-variant",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-1/alert-theme-1-variant.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "alert-theme-2-variant",
-      "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/alerts/theme-2/alert-theme-2-variant.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "background-1",
-      "type": "registry:ui",
-      "dependencies": [],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/background-1.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "typography",
-      "type": "registry:ui",
-      "dependencies": ["class-variance-authority"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/typography.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "typography-variant",
-      "type": "registry:ui",
-      "dependencies": ["class-variance-authority"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/typography-variant.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "text-animation-1",
-      "type": "registry:ui",
-      "dependencies": ["framer-motion", "class-variance-authority"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/background-1.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
-      "name": "text-animation-2",
-      "type": "registry:ui",
-      "dependencies": ["framer-motion", "class-variance-authority"],
-      "registryDependencies": [],
-      "files": [
-        {
-          "path": "src/components/star-forge/text-animation-2.tsx",
-          "type": "registry:ui"
-        }
-      ]
-    },
-    {
       "name": "card-1",
       "type": "registry:ui",
-      "dependencies": ["lucide-react"],
-      "registryDependencies": ["button"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
           "path": "src/components/star-forge/cards/card-1.tsx",
@@ -316,37 +286,157 @@
       ]
     },
     {
-      "name": "container",
+      "name": "card-2",
       "type": "registry:ui",
-      "dependencies": ["class-variance-authority"],
-      "registryDependencies": [],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
       "files": [
         {
-          "path": "src/components/star-forge/container.tsx",
+          "path": "src/components/star-forge/cards/card-2.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "section",
+      "name": "alert-1",
       "type": "registry:ui",
-      "dependencies": ["class-variance-authority", "react-icons"],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/section.tsx",
+          "path": "src/components/star-forge/alerts/alert-1.tsx",
           "type": "registry:ui"
         }
       ]
     },
     {
-      "name": "select-1",
+      "name": "alert-2",
       "type": "registry:ui",
-      "dependencies": [],
-      "registryDependencies": ["select", "label"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/star-forge/select-1.tsx",
+          "path": "src/components/star-forge/alerts/alert-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-3",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/alert-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-4",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/alert-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-5",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/alert-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-6",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/alert-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-7",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/alert-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-8",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/alert-8.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-9",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/alert-9.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-10",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/alerts/alert-10.tsx",
           "type": "registry:ui"
         }
       ]
@@ -366,7 +456,9 @@
     {
       "name": "hero-2",
       "type": "registry:ui",
-      "dependencies": ["lucide-react"],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [],
       "files": [
         {
@@ -378,7 +470,9 @@
     {
       "name": "hero-3",
       "type": "registry:ui",
-      "dependencies": ["lucide-react"],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [],
       "files": [
         {
@@ -390,7 +484,9 @@
     {
       "name": "footer-1",
       "type": "registry:ui",
-      "dependencies": ["lucide-react"],
+      "dependencies": [
+        "lucide-react"
+      ],
       "registryDependencies": [],
       "files": [
         {
@@ -414,20 +510,94 @@
     {
       "name": "search-1",
       "type": "registry:ui",
-      "dependencies": ["@base-ui/react"],
-      "registryDependencies": ["input-group"],
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "combobox"
+      ],
       "files": [
         {
-          "path": "src/components/star-forge/inputs/search.tsx",
-          "type": "registry:ui"
-        },
-        {
-          "path": "src/components/ui/combobox.tsx",
+          "path": "src/components/star-forge/inputs/search/search-1.tsx",
           "type": "registry:ui"
         },
         {
           "path": "src/hooks/star-forge/use-debounce.ts",
           "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "search-2",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "combobox"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/search/search-1.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/star-forge/use-debounce.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "search-3",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "combobox"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/search/search-1.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/star-forge/use-debounce.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "password-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/password/password-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "password-2",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/password/password-2.tsx",
+          "type": "registry:ui"
         }
       ]
     }

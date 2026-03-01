@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Component from '../star-forge/background-1';
+import Component from '../star-forge/backgrounds/background-1';
 
 const BackgroundPreview = () => {
   return (

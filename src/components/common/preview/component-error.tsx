@@ -19,7 +19,27 @@ interface ComponentErrorProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 /**
- * Error component for component not found
+ * Error component displayed when a requested component cannot be found in the registry.
+ *
+ * @param {string} [componentName='ComponentName'] - The name of the component that was not found.
+ * @param {string} [className] - Additional CSS classes to apply to the container.
+ * @param {React.HTMLAttributes<HTMLDivElement>} props - Additional HTML attributes to spread on the container.
+ * @param {React.Ref<HTMLDivElement>} ref - React ref for the container element.
+ * @returns {JSX.Element} A comprehensive error page with troubleshooting steps and support options.
+ * @remarks
+ * - Displays a full-screen error message with icon and title.
+ * - Provides troubleshooting steps for developers and users.
+ * - Includes navigation buttons to go back or retry the page.
+ * - Offers a contact support dialog for further assistance.
+ * - Uses forwardRef for ref forwarding support.
+ * - Responsive design with mobile-friendly layout.
+ * @example
+ *
+ * <ComponentError
+ *   componentName="CustomButton"
+ *   className="custom-error-class"
+ * />
+ *
  */
 const ComponentError = React.forwardRef<HTMLDivElement, ComponentErrorProps>(
   ({ componentName = 'ComponentName', className, ...props }, ref) => {

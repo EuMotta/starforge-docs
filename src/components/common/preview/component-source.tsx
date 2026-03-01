@@ -11,6 +11,33 @@ import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 
 import { cn } from '@/lib/utils';
 
+/**
+ * A collapsible code block component with expand/collapse functionality.
+ *
+ * @param {string} code - The source code to display with syntax highlighting.
+ * @param {string} highlightedCode - The syntax-highlighted version of the code (deprecated parameter).
+ * @param {string} [className] - Additional CSS classes to apply to the container.
+ * @param {string} [expandButtonTitle='Expand'] - Text to display on the expand/collapse button.
+ * @param {string} [maxHeight='550px'] - Maximum height of the expanded code block.
+ * @returns {JSX.Element} A collapsible code block with syntax highlighting.
+ * @remarks
+ * - Uses Collapsible component for expand/collapse functionality.
+ * - Shows a preview of the code when collapsed (limited height).
+ * - Provides a gradient overlay to indicate more content is available.
+ * - Button text changes between "Expand" and "Collapse" based on state.
+ * - Uses DynamicCodeBlock for syntax highlighting with TypeScript language.
+ * - Responsive design with smooth transitions.
+ * @example
+ *
+ * <ComponentSource
+ *   code="const Button = () => <button>Click me</button>;"
+ *   highlightedCode="<span>const Button = () => <button>Click me</button>;</span>"
+ *   expandButtonTitle="View Code"
+ *   maxHeight="600px"
+ *   className="custom-code-block"
+ * />
+ *
+ */
 export function ComponentSource({
   className,
   code,

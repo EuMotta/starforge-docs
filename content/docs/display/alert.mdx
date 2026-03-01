@@ -52,16 +52,8 @@ import { status } from '@/constants';
 />
 
 <DrawerCodePreview
-  name="alert-5"
-  title="Success Alert"
-  classNameComponentContainer="py-20"
-  code={(await extractSourceCode('alert-5')).code}
-  lang="tsx"
-/>
-
-<DrawerCodePreview
   name="alert-6"
-  title="Warning Alert"
+  title="Success Alert"
   classNameComponentContainer="py-20"
   code={(await extractSourceCode('alert-6')).code}
   lang="tsx"
@@ -69,7 +61,7 @@ import { status } from '@/constants';
 
 <DrawerCodePreview
   name="alert-7"
-  title="Info Alert"
+  title="Warning Alert"
   classNameComponentContainer="py-20"
   code={(await extractSourceCode('alert-7')).code}
   lang="tsx"
@@ -77,9 +69,17 @@ import { status } from '@/constants';
 
 <DrawerCodePreview
   name="alert-8"
-  title="Error Alert"
+  title="Info Alert"
   classNameComponentContainer="py-20"
   code={(await extractSourceCode('alert-8')).code}
+  lang="tsx"
+/>
+
+<DrawerCodePreview
+  name="alert-9"
+  title="Error Alert"
+  classNameComponentContainer="py-20"
+  code={(await extractSourceCode('alert-9')).code}
   lang="tsx"
 />
 
@@ -90,18 +90,18 @@ import { status } from '@/constants';
 <div className="grid gap-5 gap-y-8 md:grid-cols-2">
 
 <DrawerCodePreview
-  name="alert-theme-1-variant"
+  name="alert-5"
   isImproved
   classNameComponentContainer="py-20"
-  code={(await extractSourceCode('alert-theme-1-variant')).code}
+  code={(await extractSourceCode('alert-5')).code}
   lang="tsx"
 />
 
 <DrawerCodePreview
-  name="alert-theme-2-variant"
+  name="alert-10"
   isImproved
   classNameComponentContainer="py-20"
-  code={(await extractSourceCode('alert-theme-2-variant')).code}
+  code={(await extractSourceCode('alert-10')).code}
   lang="tsx"
 />
 

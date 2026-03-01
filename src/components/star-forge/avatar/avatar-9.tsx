@@ -17,7 +17,7 @@ interface Component {
   name: string;
 }
 
-const Component = ({ name = 'John Doe' }: Component) => {
+const Avatar9 = ({ name = 'John Doe' }: Component) => {
   return (
     <div className="flex -space-x-4">
       <Avatar className="border-background size-14 border">
@@ -40,4 +40,4 @@ const Component = ({ name = 'John Doe' }: Component) => {
   );
 };
 
-export default Component;
+export default Avatar9;
