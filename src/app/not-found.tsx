@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import Logo from '@/components/common/logo';
 import { SearchTriggerButton } from '@/components/common/search';
-import { Typography } from '@/components/star-forge/typography';
+import { Typography1 } from '@/components/star-forge/typography-1';
 import { Button } from '@/components/ui/button';
 import { source } from '@/lib/source';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
@@ -18,13 +18,13 @@ const Error = () => {
             <Logo />
           </div>
 
-          <Typography.H1 className="mb-3 text-3xl font-semibold">
+          <Typography1.H1 className="mb-3 text-3xl font-semibold">
             Page not found
-          </Typography.H1>
+          </Typography1.H1>
 
-          <Typography.P className="text-muted-foreground mx-auto mb-10 max-w-md">
+          <Typography1.P className="text-muted-foreground mx-auto mb-10 max-w-md">
             {`No worries — maybe the link is incorrect or the page has been moved. You can go back to a safe place or search the documentation.`}
-          </Typography.P>
+          </Typography1.P>
 
           <div className="mx-auto flex w-full max-w-sm flex-col gap-3">
             <Button asChild className="w-full">

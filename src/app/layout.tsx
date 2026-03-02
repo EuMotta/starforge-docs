@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: `${siteConfig.site.name} — UI components para React e Next.js`,
-    template: `%s | ${siteConfig.site.name}`
+    template: `%s`
   },
   description: siteConfig.site.description,
   keywords: [

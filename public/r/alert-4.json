@@ -7,8 +7,8 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/components/star-forge/alerts/theme-1/alert-4.tsx",
-      "content": "import React from 'react';\r\n\r\nimport { XCircle, X } from 'lucide-react';\r\n\r\nconst Component = () => {\r\n  return (\r\n    <div className=\"flex w-full items-center space-x-3 rounded-lg border border-red-200 bg-red-50 p-4\">\r\n      <div className=\"flex-shrink-0\">\r\n        <div className=\"flex size-10 items-center justify-center rounded-full bg-red-500\">\r\n          <XCircle />\r\n        </div>\r\n      </div>\r\n      <div className=\"flex-1\">\r\n        <h3 className=\"text-sm font-semibold text-red-800\">Error!</h3>\r\n        <p className=\"mt-1 text-sm text-red-700\">\r\n          Something went wrong. Please try again.\r\n        </p>\r\n      </div>\r\n      <button className=\"text-red-400 transition-colors duration-200 hover:text-red-600\">\r\n        <X />\r\n      </button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Component;\r\n",
+      "path": "src/components/star-forge/alerts/alert-4.tsx",
+      "content": "import React from 'react';\r\n\r\nimport { XCircle, X } from 'lucide-react';\r\n\r\nconst Alert4 = () => {\r\n  return (\r\n    <div className=\"flex w-full items-center space-x-3 rounded-lg border border-red-200 bg-red-50 p-4\">\r\n      <div className=\"flex-shrink-0\">\r\n        <div className=\"flex size-10 items-center justify-center rounded-full bg-red-500\">\r\n          <XCircle />\r\n        </div>\r\n      </div>\r\n      <div className=\"flex-1\">\r\n        <h3 className=\"text-sm font-semibold text-red-800\">Error!</h3>\r\n        <p className=\"mt-1 text-sm text-red-700\">\r\n          Something went wrong. Please try again.\r\n        </p>\r\n      </div>\r\n      <button className=\"text-red-400 transition-colors duration-200 hover:text-red-600\">\r\n        <X />\r\n      </button>\r\n    </div>\r\n  );\r\n};\r\n\r\nexport default Alert4;\r\n",
       "type": "registry:ui"
     }
   ],

@@ -21,7 +21,7 @@ interface User {
   status: 0 | 1 | 2 | 3;
 }
 
-const Component = () => {
+const Avatar6 = () => {
   const user: User = {
     name: 'John Doe',
     avatar: 'https://i.pravatar.cc/150?img=52',
@@ -46,4 +46,4 @@ const Component = () => {
   );
 };
 
-export default Component;
+export default Avatar6;

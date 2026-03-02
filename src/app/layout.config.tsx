@@ -11,6 +11,7 @@ import { Home } from 'lucide-react';
  * Docs Layout: app/docs/layout.tsx
  */
 export const baseOptions: BaseLayoutProps = {
+  githubUrl: 'https://github.com/eumotta/starforge-docs',
   nav: {
     title: (
       <>

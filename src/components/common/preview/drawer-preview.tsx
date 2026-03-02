@@ -40,6 +40,42 @@ type DrawerCodePreviewProps = {
   responsive?: boolean;
 };
 
+/**
+ * A comprehensive drawer-style component preview with code display, CLI installation, and preset selection.
+ *
+ * @param {string} name - The name of the component to load and display.
+ * @param {string} code - The component usage code to display in dialogs.
+ * @param {string} sourceCode - The source code of the component.
+ * @param {boolean} isImproved - Whether this is an improved version of the component.
+ * @param {string} title - The title to display in the card header.
+ * @param {string} [lang='tsx'] - The programming language for syntax highlighting.
+ * @param {string} [classNameComponentContainer] - CSS classes for the component container.
+ * @param {boolean} [hasReTrigger=false] - Whether the component has restart animation functionality.
+ * @param {boolean} [fromDocs=false] - Whether rendering in documentation context.
+ * @param {boolean} [responsive=true] - Whether the component preview should be responsive.
+ * @returns {JSX.Element} A card with component preview, controls, and optional preset selection.
+ * @remarks
+ * - Displays component preview in a styled card with gradient background.
+ * - Provides CLI installation button with copy functionality and visual feedback.
+ * - Includes separate dialogs for viewing code and source code.
+ * - Shows an improved indicator (diamond icon) for enhanced components.
+ * - Supports preset selection for components with multiple variations.
+ * - Uses Framer Motion for smooth animations on copy feedback.
+ * - Responsive design with mobile-friendly layout.
+ * @example
+ *
+ * <DrawerCodePreview
+ *   name="Button"
+ *   code="<Button variant="primary">Click me</Button>"
+ *   sourceCode="const Button = ({ variant }) => <button className={variant}>Click me</button>;"
+ *   isImproved={true}
+ *   title="Enhanced Button"
+ *   lang="tsx"
+ *   hasReTrigger={true}
+ *   responsive={true}
+ * />
+ *
+ */
 export function DrawerCodePreview({
   name,
   code,

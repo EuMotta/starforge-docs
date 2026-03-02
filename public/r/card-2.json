@@ -1,0 +1,18 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-2",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "src/components/star-forge/cards/card-2.tsx",
+      "content": "'use client';\n\nimport React from 'react';\n\nimport { AlertCircle } from 'lucide-react';\n\nimport { cn } from '@/lib/utils';\n\ninterface BenefitsCardProps {\n  icon?: React.ReactNode;\n  title: string;\n  text: string;\n  className?: string;\n}\n\nexport const Component = ({\n  icon = <AlertCircle size={30} />,\n  title = 'High Performance',\n  text = 'Optimized components that deliver exceptional speed and efficiency for your applications.',\n  className\n}: BenefitsCardProps) => {\n  return (\n    <div\n      className={cn(\n        'relative flex flex-col items-center p-8 text-center md:w-[calc(50%-1rem)] md:p-[2.8125rem_2rem] lg:w-[calc(33%-20px)] lg:p-[2.8125rem_3rem]',\n        'before:absolute before:-top-px before:-left-px before:-z-10 before:h-[calc(100%+2px)] before:w-[calc(100%+2px)] before:bg-cyan-600 before:content-[\"\"] before:[clip-path:polygon(0_25px,25px_0,calc(100%-25px)_0,100%_25px,100%_calc(100%-25px),calc(100%-25px)_100%,25px_100%,0_calc(100%-25px))] dark:before:bg-cyan-900',\n        'after:absolute after:top-0 after:left-0 after:-z-10 after:h-full after:w-full after:bg-cyan-50 after:content-[\"\"] after:[clip-path:polygon(0_25px,25px_0,calc(100%-25px)_0,100%_25px,100%_calc(100%-25px),calc(100%-25px)_100%,25px_100%,0_calc(100%-25px))] dark:after:bg-gray-950',\n        className\n      )}\n    >\n      {icon && (\n        <div className=\"flex items-center justify-center text-cyan-700 dark:text-cyan-500\">\n          {icon}\n        </div>\n      )}\n      <h3 className=\"mt-6 max-w-[185px] text-center text-2xl leading-[150%] font-bold text-cyan-700 uppercase dark:text-cyan-500\">\n        {title}\n      </h3>\n      <p className=\"mt-6 text-center text-base leading-[150%] text-cyan-700 dark:text-cyan-50\">\n        {text}\n      </p>\n    </div>\n  );\n};\n\nexport default Component;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1,6 +1,17 @@
 import * as z from 'zod';
 
-export const registryItemTypeSchema = z.enum(['registry:component']);
+export const registryItemTypeSchema = z.enum([
+  'registry:block',
+  'registry:component',
+  'registry:lib',
+  'registry:hook',
+  'registry:ui',
+  'registry:page',
+  'registry:file',
+  'registry:style',
+  'registry:theme',
+  'registry:item'
+]);
 
 export const registryItemPreviewPresetSchema = z.object({
   label: z.string(),

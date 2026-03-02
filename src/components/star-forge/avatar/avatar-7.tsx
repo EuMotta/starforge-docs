@@ -3,7 +3,7 @@ import React from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ShieldCheck } from 'lucide-react';
 
-const Component = () => {
+const Avatar7 = () => {
   return (
     <div className="relative">
       <Avatar className="size-14">
@@ -22,4 +22,4 @@ const Component = () => {
   );
 };
 
-export default Component;
+export default Avatar7;
