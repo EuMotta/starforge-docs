@@ -1,4 +1,4 @@
-import { Password1 } from '@/components/star-forge/inputs/password/password-1';
+import { Password1 } from '@/components/star-forge';
 
 const PasswordInputPreview = () => {
   return <Password1 />;

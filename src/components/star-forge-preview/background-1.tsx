@@ -1,15 +1,15 @@
 import React from 'react';
 
-import Component from '../star-forge/backgrounds/background-1';
+import { Background1 } from '@/components/star-forge';
 
 const BackgroundPreview = () => {
   return (
     <>
-      <Component className="h-[40rem]">
+      <Background1 className="h-[40rem]">
         <div className="flex items-center gap-2">
           <h1 className="text-5xl">StarForge</h1>
         </div>
-      </Component>
+      </Background1>
     </>
   );
 };

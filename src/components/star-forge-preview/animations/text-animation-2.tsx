@@ -1,16 +1,16 @@
 import React from 'react';
 
-import TextAnimation from '@/components/star-forge/animations/text-animation-2';
+import { TextAnimation2 } from '@/components/star-forge';
 
-const TextAnimation1 = () => {
+const TextAnimation2Preview = () => {
   return (
     <div className="w-3/4">
-      <TextAnimation>
+      <TextAnimation2>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque non
         deserunt magnam nobis hic vel sequi facere eveniet, officia voluptas.
-      </TextAnimation>
+      </TextAnimation2>
     </div>
   );
 };
 
-export default TextAnimation1;
+export default TextAnimation2Preview;

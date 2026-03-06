@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import Logo from '@/components/common/logo';
 import { SearchTriggerButton } from '@/components/common/search';
-import { Typography1 } from '@/components/star-forge/typography-1';
+import { Typography1 } from '@/components/star-forge';
 import { Button } from '@/components/ui/button';
 import { source } from '@/lib/source';
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';

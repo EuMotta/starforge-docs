@@ -1,9 +1,6 @@
 'use client';
 
-import {
-  Search1Input,
-  Search1InputOption
-} from '@/components/star-forge/inputs/search/search-1';
+import { Search1Input, Search1InputOption } from '@/components/star-forge';
 
 // Mock search function for demo
 const mockSearch = async (query: string): Promise<Search1InputOption[]> => {
