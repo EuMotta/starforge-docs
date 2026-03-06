@@ -1,0 +1,10 @@
+export { default as Avatar1 } from './avatar-1';
+export { default as Avatar2 } from './avatar-2';
+export { default as Avatar3 } from './avatar-3';
+export { default as Avatar4 } from './avatar-4';
+export { default as Avatar5 } from './avatar-5';
+export { default as Avatar6 } from './avatar-6';
+export { default as Avatar7 } from './avatar-7';
+export { default as Avatar8 } from './avatar-8';
+export { default as Avatar9 } from './avatar-9';
+export { default as Avatar10 } from './avatar-10';

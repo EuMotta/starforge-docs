@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography1 } from '@/components/star-forge/typography-1';
+import { Typography1 } from '@/components/star-forge';
 
 const Typography1Component = () => {
   return (

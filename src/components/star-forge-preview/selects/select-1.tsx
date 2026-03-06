@@ -1,11 +1,11 @@
 'use client';
 
-import CustomSelect from '@/components/star-forge/selects/select-1';
+import { CustomSelect1 } from '@/components/star-forge';
 
 const CustomSelectComponent = () => {
   return (
     <section>
-      <CustomSelect formName="user" label="Select User" className="w-52" />
+      <CustomSelect1 formName="user" label="Select User" className="w-52" />
     </section>
   );
 };

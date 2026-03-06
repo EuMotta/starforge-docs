@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Section1 } from '@/components/star-forge/layout/section-1';
+import { Section1 } from '@/components/star-forge';
 
 const Section1Preview = () => {
   return (

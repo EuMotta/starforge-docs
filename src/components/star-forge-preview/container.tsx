@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Container1 from '../star-forge/layout/container-1';
+import { Container1 } from '@/components/star-forge';
 
 const container = () => {
   return (

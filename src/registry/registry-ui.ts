@@ -915,5 +915,49 @@ export const ui: Registry = [
         })
       )
     )
+  },
+  {
+    name: 'stars-rating-1',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['class-variance-authority', 'lucide-react'],
+    description:
+      'Interactive star rating component with hover effects, read-only mode, and multiple sizes. Features yellow stars with fill animations and numeric value display.',
+    files: [
+      {
+        path: 'src/components/star-forge/others/stars-rating-1.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/others/stars-rating-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/others/stars-rating-1').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'stars-rating-2',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['class-variance-authority', 'lucide-react'],
+    description:
+      'Elegant star rating component with refined amber styling, hover effects, and optional value display. Supports read-only mode and multiple sizes with smooth transitions.',
+    files: [
+      {
+        path: 'src/components/star-forge/others/stars-rating-2.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/others/stars-rating-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/others/stars-rating-2').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
   }
 ];

@@ -1,0 +1,10 @@
+export { default as Alert1 } from './alert-1';
+export { default as Alert2 } from './alert-2';
+export { default as Alert3 } from './alert-3';
+export { default as Alert4 } from './alert-4';
+export { default as Alert5 } from './alert-5';
+export { default as Alert6 } from './alert-6';
+export { default as Alert7 } from './alert-7';
+export { default as Alert8 } from './alert-8';
+export { default as Alert9 } from './alert-9';
+export { default as Alert10 } from './alert-10';
