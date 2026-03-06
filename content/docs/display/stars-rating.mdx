@@ -1,0 +1,110 @@
+---
+title: Stars Rating
+description: Interactive star rating components for user feedback and evaluation
+new: true
+showToc: false
+---
+
+import { ComponentPreview } from '@/components/common/preview/component-preview';
+import { extractSourceCode } from '@/lib/code';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { status } from '@/constants';
+
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
+</Callout>
+
+## Stars Rating 1
+
+<ComponentPreview
+  name="stars-rating-1"
+  classNameComponentContainer="min-h-[400px]"
+  code={(await extractSourceCode('stars-rating-1')).code}
+  sourceCode={(await extractSourceCode('stars-rating-1')).sourceCode}
+  lang="tsx"
+/>
+
+## Stars Rating 2
+
+<ComponentPreview
+  name="stars-rating-2"
+  classNameComponentContainer="min-h-[400px]"
+  code={(await extractSourceCode('stars-rating-2')).code}
+  sourceCode={(await extractSourceCode('stars-rating-2')).sourceCode}
+  lang="tsx"
+/>
+
+## Props Reference
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `rating` | `number` | `0` | Current rating value (0 to maxRating) |
+| `maxRating` | `number` | `5` | Maximum number of stars |
+| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the stars |
+| `readonly` | `boolean` | `false` | Whether the rating is interactive |
+| `onChange` | `(rating: number) => void` | `undefined` | Callback when rating changes |
+| `className` | `string` | `undefined` | Additional CSS classes |
+| `showValue` | `boolean` | `true` (Stars Rating 2 only) | Whether to display numeric value |
+
+## Usage Examples
+
+### Basic Interactive Rating
+```tsx
+import { useState } from 'react';
+import StarsRating1 from '@/components/star-forge/others/stars-rating-1';
+
+export default function Example() {
+  const [rating, setRating] = useState(3);
+
+  return (
+    <StarsRating1
+      rating={rating}
+      onChange={setRating}
+      size="md"
+    />
+  );
+}
+```
+
+### Read-only Display
+```tsx
+import StarsRating2 from '@/components/star-forge/others/stars-rating-2';
+
+export default function Example() {
+  return (
+    <StarsRating2
+      rating={4.5}
+      readonly
+      size="lg"
+      showValue
+    />
+  );
+}
+```
+
+### Custom Styling
+```tsx
+import StarsRating1 from '@/components/star-forge/others/stars-rating-1';
+
+export default function Example() {
+  return (
+    <StarsRating1
+      rating={2.5}
+      onChange={(rating) => console.log('New rating:', rating)}
+      size="sm"
+      className="my-custom-class"
+    />
+  );
+}
+```
+
+## Features
+
+- **Interactive Mode**: Click to set rating, hover for preview
+- **Read-only Mode**: Display rating without interaction
+- **Multiple Sizes**: Small, medium, and large star sizes
+- **Smooth Animations**: Hover effects and transitions
+- **Accessibility**: Proper focus management and keyboard support
+- **TypeScript**: Full type safety with IntelliSense support
+- **Customizable**: Additional CSS classes and callbacks
