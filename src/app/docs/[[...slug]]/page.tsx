@@ -68,7 +68,7 @@ export default async function Page(props: {
         <h3 className="mb-1 font-medium">{FOOTER_CONTENTS.title}</h3>
         <div className="flex flex-col space-y-2">
           <a
-            href={`https://github.com/eumotta/star-forge/issues/new?labels=bug&template=bug_report.md&title=${encodeURIComponent(FOOTER_CONTENTS.reportBug.template.title(currentSlug))}&body=${encodeURIComponent(FOOTER_CONTENTS.reportBug.template.body(currentSlug))}`}
+            href={`https://github.com/eumotta/starforge-docs/issues/new?labels=bug&template=bug_report.md&title=${encodeURIComponent(FOOTER_CONTENTS.reportBug.template.title(currentSlug))}&body=${encodeURIComponent(FOOTER_CONTENTS.reportBug.template.body(currentSlug))}`}
             target="_blank"
             rel="noreferrer noopener"
             className="text-muted-foreground hover:text-foreground flex items-center gap-2 text-sm transition-colors"
