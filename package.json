@@ -11,7 +11,8 @@
     "postinstall": "fumadocs-mdx",
     "prepare": "husky",
     "postbuild": "next-sitemap",
-    "build:components": "node scripts/build-registry.js && npx shadcn@latest build"
+    "build:components": "node scripts/build-registry.js && npx shadcn@latest build",
+    "audit:registry": "node scripts/audit-registry.js"
   },
   "lint-staged": {
     "*.{js,jsx,md,ts,tsx,html,css,scss}": "npm run format",

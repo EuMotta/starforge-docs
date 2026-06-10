@@ -1,0 +1,147 @@
+---
+title: Architecture
+description: Technical overview of the Star Forge dual-engine primitive architecture and file-level adapter pattern.
+icon: GitBranch
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# Dual-Engine Architecture
+
+Star Forge components are built on top of **headless UI primitives** from either **Radix UI** or **Base UI**. The architecture uses a **file-level adapter pattern**: each primitive lives in two parallel folders with identical public APIs.
+
+<Callout>
+  The choice between Radix UI and Base UI is made at **install time**, not at runtime. There is no engine detection logic in any component.
+</Callout>
+
+---
+
+## Folder Structure
+
+```
+src/components/ui/
+  primitives/
+    radix/        ← Radix UI implementations
+      avatar.tsx
+      badge.tsx
+      button.tsx
+      collapsible.tsx
+      dialog.tsx
+      label.tsx
+      popover.tsx
+      select.tsx
+      tabs.tsx
+    base/         ← Base UI implementations (same API)
+      avatar.tsx
+      badge.tsx
+      button.tsx
+      collapsible.tsx
+      dialog.tsx
+      label.tsx
+      popover.tsx
+      select.tsx
+      tabs.tsx
+  _lib/
+    slot-polyfill.tsx  ← asChild support for Base UI
+  avatar.tsx    ← barrel: export * from './primitives/radix/avatar'
+  badge.tsx     ← barrel: export * from './primitives/radix/badge'
+  button.tsx    ← barrel: export * from './primitives/radix/button'
+  ...
+```
+
+### Barrel Files
+
+Barrel files in `src/components/ui/*.tsx` re-export from `primitives/radix/` by default. This preserves backward compatibility: existing blocks continue to work unchanged.
+
+To switch a primitive to Base UI, change the barrel file:
+
+```tsx
+// src/components/ui/select.tsx
+// export * from './primitives/radix/select';   // Radix (default)
+export * from './primitives/base/select';       // Base UI
+```
+
+### Slot Polyfill
+
+Base UI does not provide a `Slot` primitive. `src/components/ui/_lib/slot-polyfill.tsx` implements `asChild` behavior using `mergeProps` + `cloneElement`, enabling `Button` and `Badge` to support `asChild` in both engines.
+
+---
+
+## Public API Contract
+
+Both `radix/` and `base/` variants of every primitive export the **exact same names**:
+
+| Primitive | Exports (identical in both engines) |
+|-----------|--------------------------------------|
+| Avatar | `Avatar`, `AvatarImage`, `AvatarFallback` |
+| Badge | `Badge`, `badgeVariants` |
+| Button | `Button`, `buttonVariants` |
+| Collapsible | `Collapsible`, `CollapsibleTrigger`, `CollapsibleContent` |
+| Dialog | `Dialog`, `DialogTrigger`, `DialogContent`, `DialogHeader`, `DialogFooter`, `DialogTitle`, `DialogDescription`, `DialogClose`, `DialogOverlay` |
+| Label | `Label` |
+| Popover | `Popover`, `PopoverTrigger`, `PopoverContent`, `PopoverAnchor` |
+| Select | `Select`, `SelectContent`, `SelectGroup`, `SelectItem`, `SelectLabel`, `SelectScrollDownButton`, `SelectScrollUpButton`, `SelectSeparator`, `SelectTrigger`, `SelectValue` |
+| Tabs | `Tabs`, `TabsContent`, `TabsList`, `TabsTrigger`, `TabsIndicator` (bonus in Base UI) |
+
+> **Tabs Indicator** is exported by both variants, but only Base UI has a real implementation. The Radix variant exports an empty placeholder to keep imports identical.
+
+---
+
+## Tailwind Data Attributes
+
+Radix UI and Base UI use different data-attribute conventions. Both variants ship with the correct Tailwind classes:
+
+| State | Radix | Base UI |
+|-------|-------|---------|
+| Open | `data-[state=open]` | `data-open` |
+| Closed | `data-[state=closed]` | `data-closed` |
+| Checked | `data-[state=checked]` | `data-checked` |
+| Disabled | `data-disabled` | `data-disabled` |
+
+---
+
+## Engine-Specific Differences
+
+### Popover Anchor
+
+Base UI does not expose a standalone `Anchor` component. The Base UI adapter uses a native `<div>` with the same `data-slot="popover-anchor"`, preserving the public API.
+
+### Select `alignItemWithTrigger`
+
+Base UI Select defaults to aligning the selected item with the trigger text. In the Base UI adapter, `position="item-aligned"` maps to `alignItemWithTrigger` on the internal `Positioner`.
+
+### Button / Badge `asChild`
+
+Radix UI uses `@radix-ui/react-slot`. Base UI uses the custom `Slot` polyfill in `_lib/slot-polyfill.tsx`. Both support `asChild` with identical behavior for single-element children.
+
+---
+
+## How Blocks Consume Primitives
+
+Block components in `src/components/star-forge/` never import `@radix-ui/react-*` or `@base-ui/react` directly. They always use the barrel files:
+
+```tsx
+// src/components/star-forge/selects/select-1.tsx
+import {
+  Select,
+  SelectTrigger,
+  SelectContent,
+  SelectItem
+} from '@/components/ui/select';
+```
+
+This means a block works with **both engines** without any code changes.
+
+---
+
+## Adding a New Dual Primitive
+
+1. Create `src/components/ui/primitives/radix/<name>.tsx` using the Radix package.
+2. Create `src/components/ui/primitives/base/<name>.tsx` with the identical export names.
+3. Update `src/components/ui/<name>.tsx` barrel to re-export from `primitives/radix/`.
+4. Add entries to `src/registry/registry-primitives.ts`:
+   - `radix-<name>` with Radix dependencies
+   - `base-<name>` with Base UI dependencies
+   - `<name>` (alias, default = Radix)
+5. Run `npm run build:components` to regenerate `registry.json`.
+6. Verify with `npm run audit:registry`.

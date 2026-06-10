@@ -58,7 +58,8 @@ function getFilesFromArrayLiteral(node) {
 
 function parseRegistryItemsFromTsSource(
   content,
-  filePathForErrors = 'registry-ui.ts'
+  filePathForErrors = 'registry-ui.ts',
+  exportName = 'ui'
 ) {
   const sourceFile = ts.createSourceFile(
     filePathForErrors,
@@ -68,7 +69,7 @@ function parseRegistryItemsFromTsSource(
     ts.ScriptKind.TS
   );
 
-  let uiArray;
+  let targetArray;
 
   for (const statement of sourceFile.statements) {
     if (!ts.isVariableStatement(statement)) continue;
@@ -78,19 +79,22 @@ function parseRegistryItemsFromTsSource(
     if (!isExported) continue;
 
     for (const decl of statement.declarationList.declarations) {
-      if (!ts.isIdentifier(decl.name) || decl.name.text !== 'ui') continue;
+      if (!ts.isIdentifier(decl.name) || decl.name.text !== exportName)
+        continue;
       if (!decl.initializer || !ts.isArrayLiteralExpression(decl.initializer))
         continue;
-      uiArray = decl.initializer;
+      targetArray = decl.initializer;
     }
   }
 
-  if (!uiArray) {
-    throw new Error('Export `ui` not found or not an array literal.');
+  if (!targetArray) {
+    throw new Error(
+      `Export \`${exportName}\` not found or not an array literal in ${filePathForErrors}.`
+    );
   }
 
   const items = [];
-  for (const el of uiArray.elements) {
+  for (const el of targetArray.elements) {
     if (!ts.isObjectLiteralExpression(el)) continue;
 
     let name;
@@ -130,28 +134,56 @@ function parseRegistryItemsFromTsSource(
 
 function generateRegistry() {
   try {
-    console.log('🔧 Generating registry.json from registry-ui.ts...');
+    console.log('🔧 Generating registry.json...');
 
     const registryUiPath = path.join(
       __dirname,
       '../src/registry/registry-ui.ts'
     );
+    const registryPrimitivesPath = path.join(
+      __dirname,
+      '../src/registry/registry-primitives.ts'
+    );
     const registryJsonPath = path.join(__dirname, '../registry.json');
 
-    if (!fs.existsSync(registryUiPath)) {
-      throw new Error(`File not found: ${registryUiPath}`);
+    let allItems = [];
+
+    if (fs.existsSync(registryUiPath)) {
+      const uiContent = fs.readFileSync(registryUiPath, 'utf-8');
+      const uiItems = parseRegistryItemsFromTsSource(
+        uiContent,
+        registryUiPath,
+        'ui'
+      );
+      allItems = allItems.concat(uiItems);
+      console.log(`📦 Found ${uiItems.length} UI items from registry-ui.ts`);
+    } else {
+      console.warn(`⚠️ File not found: ${registryUiPath}`);
     }
 
-    const content = fs.readFileSync(registryUiPath, 'utf-8');
-    const items = parseRegistryItemsFromTsSource(content, registryUiPath);
-
-    console.log(`📦 Found ${items.length} components`);
+    if (fs.existsSync(registryPrimitivesPath)) {
+      const primitivesContent = fs.readFileSync(
+        registryPrimitivesPath,
+        'utf-8'
+      );
+      const primitiveItems = parseRegistryItemsFromTsSource(
+        primitivesContent,
+        registryPrimitivesPath,
+        'primitives'
+      );
+      allItems = allItems.concat(primitiveItems);
+      console.log(
+        `📦 Found ${primitiveItems.length} primitive items from registry-primitives.ts`
+      );
+    } else {
+      console.warn(`⚠️ File not found: ${registryPrimitivesPath}`);
+    }
 
     const registry = {
       $schema: 'https://ui.shadcn.com/schema/registry.json',
       name: 'star-forge',
       homepage: 'https://www.starforge-docs.com',
-      items: items
+      items: allItems
     };
 
     const jsonContent = JSON.stringify(registry, null, 2);
@@ -159,13 +191,15 @@ function generateRegistry() {
 
     console.log('✅ registry.json generated successfully!');
     console.log(`📍 Saved to: ${registryJsonPath}`);
-    console.log(`📊 Total items: ${items.length}`);
+    console.log(`📊 Total items: ${allItems.length}`);
 
-    const withDeps = items.filter((item) => item.dependencies?.length).length;
-    const withRegDeps = items.filter(
+    const withDeps = allItems.filter(
+      (item) => item.dependencies?.length
+    ).length;
+    const withRegDeps = allItems.filter(
       (item) => item.registryDependencies?.length
     ).length;
-    const withFiles = items.filter((item) => item.files?.length).length;
+    const withFiles = allItems.filter((item) => item.files?.length).length;
 
     console.log('\n📈 Statistics:');
     console.log(`  • With dependencies: ${withDeps}`);

@@ -1,0 +1,139 @@
+---
+title: Adding a New Block
+description: Step-by-step guide for adding a new block component to Star Forge.
+icon: Component
+---
+
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# Adding a New Block
+
+Blocks are the high-level components users copy into their projects. A block depends on primitives (via barrel files) and may have its own styling logic.
+
+---
+
+## Prerequisites
+
+- The primitive(s) the block depends on already exist in `src/components/ui/`.
+- You understand the [Registry System](/docs/registry-system).
+
+---
+
+## Step-by-Step
+
+<Steps>
+
+<Step>
+### Create the block source
+
+Create `src/components/star-forge/<category>/<name>.tsx`.
+
+Import primitives from the barrel files, never from `@radix-ui/react-*` or `@base-ui/react` directly:
+
+```tsx
+import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+```
+
+Keep the component focused on a single responsibility. Export a named function at the end.
+</Step>
+
+<Step>
+### Create the preview
+
+Create `src/components/star-forge-preview/<category>/<name>.tsx`.
+
+The preview is a demo page that wraps the block in a realistic context (e.g., a form, a card). It must have a `default` export that renders the component.
+
+```tsx
+import MyBlock from '@/components/star-forge/<category>/<name>';
+
+export default function Preview() {
+  return (
+    <div className="p-8">
+      <MyBlock />
+    </div>
+  );
+}
+```
+</Step>
+
+<Step>
+### Register in `registry-ui.ts`
+
+Open `src/registry/registry-ui.ts` and add an entry:
+
+```ts
+{
+  name: '<name>',
+  author: 'EuMotta',
+  type: 'registry:ui',
+  registryDependencies: ['button', 'select'],
+  dependencies: ['lucide-react'],
+  description: 'Short description of what this block does.',
+  files: [
+    {
+      path: 'src/components/star-forge/<category>/<name>.tsx',
+      type: 'registry:ui'
+    }
+  ],
+  example: 'src/components/star-forge-preview/<category>/<name>.tsx',
+  component: React.lazy(() =>
+    import('@/components/star-forge-preview/<category>/<name>').then((mod) => ({
+      default: mod.default
+    }))
+  )
+}
+```
+
+**Important:**
+- Use primitive **aliases** (no prefix) in `registryDependencies` (e.g., `select`, not `radix-select`).
+- Use the **preview path** in `example`, not the source path.
+- Add `dependencies` for any npm packages the block uses (e.g., `lucide-react`, `framer-motion`).
+</Step>
+
+<Step>
+### Add to documentation
+
+Create or update the MDX page in `content/docs/<category>/<page>.mdx`.
+
+Use `ComponentPreview` or `DrawerCodePreview` with `hasEngineChoice={true}` if the block depends on dual primitives:
+
+```mdx
+<ComponentPreview
+  name="<name>"
+  code={(await extractSourceCode('<name>')).code}
+  sourceCode={(await extractSourceCode('<name>')).sourceCode}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+```
+
+For blocks that do NOT depend on dual primitives (e.g., pure CSS components), omit `hasEngineChoice`.
+</Step>
+
+<Step>
+### Build and validate
+
+```bash
+npm run build:components
+npm run audit:registry
+```
+</Step>
+
+</Steps>
+
+---
+
+## Checklist
+
+- [ ] Block source created in `src/components/star-forge/<category>/<name>.tsx`
+- [ ] Preview created in `src/components/star-forge-preview/<category>/<name>.tsx`
+- [ ] Block uses barrel imports (`@/components/ui/*`) for primitives
+- [ ] Block registered in `src/registry/registry-ui.ts`
+- [ ] `registryDependencies` use alias names (no prefix)
+- [ ] MDX documentation page created/updated
+- [ ] `npm run build:components` succeeds
+- [ ] `npm run audit:registry` passes
+- [ ] `npx tsc --noEmit` has 0 errors
