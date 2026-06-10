@@ -37,38 +37,56 @@ Create your component in the appropriate directory within `src/components/star-f
 
 ```tsx
 // src/components/star-forge/my-component.tsx
-'use client';
+import * as React from 'react';
 
-import { useState } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+
 import { cn } from '@/lib/utils';
 
-export interface MyComponentProps {
-  // Define your props here
+const myComponentVariants = cva('base-component-styles', {
+  variants: {
+    variant: {
+      default: '',
+      secondary: 'secondary-styles'
+    },
+    size: {
+      sm: 'text-sm',
+      md: 'text-base',
+      lg: 'text-lg'
+    }
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'md'
+  }
+});
+
+interface MyComponentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof myComponentVariants> {
   children?: React.ReactNode;
-  className?: string;
-  variant?: 'default' | 'secondary';
 }
 
-export function MyComponent({
-  children,
-  className,
-  variant = 'default'
-}: MyComponentProps) {
-  return (
-    <div
-      className={cn(
-        'base-component-styles',
-        variant === 'secondary' && 'secondary-styles',
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-}
+const MyComponent = React.forwardRef<HTMLDivElement, MyComponentProps>(
+  ({ className, variant, size, children, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(myComponentVariants({ variant, size, className }))}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+
+MyComponent.displayName = 'MyComponent';
 
 export default MyComponent;
 ```
+
+> **Note:** Only add `'use client'` when the component uses React hooks or browser APIs. Many Star Forge components are server-safe by default.
 
 </Step>
 
@@ -244,6 +262,23 @@ npx shadcn@latest build
 
 - Use kebab-case for file names: `use-my-hook.ts`
 - Use camelCase for hook names: `useMyHook`
+
+### Barrel Exports
+
+Components are exposed through barrel `index.tsx` files. The naming convention depends on the file location:
+
+- **Components inside category folders** (`src/components/star-forge/alerts/`, `cards/`, etc.):
+  - Export as `{Category}{N}` — e.g. `Alert1`, `Card2`, `Hero3`
+  - Defined in `src/components/star-forge/{category}/index.tsx`
+
+- **Components at the root of `star-forge/`** (not inside a category folder):
+  - Export as the PascalCase file name — e.g. `Typography1`, `TypographyVariant1`
+  - Defined directly in `src/components/star-forge/index.tsx`
+
+- **Sub-components or hooks with suffixes**:
+  - Use descriptive suffixes — e.g. `Search1Input`, `Search1InputOption`
+
+This keeps imports predictable: `import { Alert1, Container1 } from '@/components/star-forge'`.
 
 ### Structure by Category
 

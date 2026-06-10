@@ -5,6 +5,9 @@ const withMDX = createMDX();
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
+  images: {
+    formats: ['image/avif', 'image/webp']
+  },
   env: {
     SITE_URL: process.env.SITE_URL || 'http://localhost:3000'
   },

@@ -46,7 +46,7 @@ npx shadcn@latest init
 2. **Add components to your project:**
 
 ```bash
-npx shadcn@latest add https://star-forge-components.vercel.app/projects/r/text.json
+npx shadcn@latest add https://www.starforge-docs.com/r/registry.json
 ```
 
 3. **Use the component:**
@@ -68,6 +68,7 @@ npx create-next-app@latest
 ```
 
 During installation, select:
+
 - ✅ TypeScript
 - ✅ Tailwind CSS
 - ✅ App Router
@@ -75,7 +76,7 @@ During installation, select:
 
 ## 📚 Documentation
 
-- **[Installation Guide](https://starforge-docs.vercel.app/docs/instalation)** - Complete setup instructions
+- **[Installation Guide](https://starforge-docs.vercel.app/docs/installation)** - Complete setup instructions
 - **[Components](https://starforge-docs.vercel.app/docs/components)** - Explore all available components
 
 ## 🎯 Why Star Forge?

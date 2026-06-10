@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.site.name} — UI components para React e Next.js`,
+    default: `${siteConfig.site.name} — UI components for React and Next.js`,
     template: `%s`
   },
   description: siteConfig.site.description,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     canonical: siteConfig.site.url
   },
   openGraph: {
-    title: `${siteConfig.site.name} — UI components para React e Next.js`,
+    title: `${siteConfig.site.name} — UI components for React and Next.js`,
     description: siteConfig.site.description,
     url: siteConfig.site.url,
     siteName: siteConfig.site.name,
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
         url: '/ogimage.png',
         width: 1200,
         height: 630,
-        alt: `${siteConfig.site.name} — UI components para React e Next.js`
+        alt: `${siteConfig.site.name} — UI components for React and Next.js`
       }
     ],
-    locale: 'pt_BR',
+    locale: 'en_US',
     type: 'website'
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${siteConfig.site.name} — UI components para React e Next.js`,
+    title: `${siteConfig.site.name} — UI components for React and Next.js`,
     description: siteConfig.site.description,
     creator: siteConfig.personalInfo.name,
     images: ['/ogimage.png']
@@ -70,7 +70,11 @@ export const metadata: Metadata = {
   }
 };
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function Layout({
+  children
+}: Readonly<{
+  children: ReactNode;
+}>) {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
