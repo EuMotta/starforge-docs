@@ -15,22 +15,22 @@ module.exports = {
 
       [
         'feat',
-
         'fix',
-
-        'docs',
-
+        'tweak',
         'style',
-
         'refactor',
-
         'perf',
-
         'test',
-
+        'docs',
         'chore',
-
-        'revert'
+        'ci',
+        'build',
+        'revert',
+        'hotfix',
+        'init',
+        'merge',
+        'wip',
+        'release'
       ]
     ]
   }
