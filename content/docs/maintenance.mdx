@@ -1,0 +1,126 @@
+---
+title: Maintenance & Registry
+description: How to keep the Star Forge registry healthy and up to date.
+icon: Wrench
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# Maintenance & Registry
+
+This page covers the commands and workflows needed to keep the Star Forge registry consistent after any change.
+
+---
+
+## Build the Registry
+
+After modifying `registry-ui.ts` or `registry-primitives.ts`, regenerate `registry.json`:
+
+```bash
+npm run build:components
+```
+
+This command:
+1. Parses both TypeScript registry files using the compiler API.
+2. Extracts item metadata (name, dependencies, files, example, etc.).
+3. Writes `registry.json` at the project root.
+
+<Callout type="warning">
+  Never edit `registry.json` manually. It is a build artifact.
+</Callout>
+
+---
+
+## Audit the Registry
+
+After every build, run the audit to catch broken dependencies:
+
+```bash
+npm run audit:registry
+```
+
+The audit checks:
+- That every `registryDependency` points to an item that actually exists in `registry.json`.
+- That no item references a missing primitive or block.
+
+If the audit fails, it prints the orphan dependencies and exits with code `1`.
+
+---
+
+## Verify TypeScript
+
+Before committing, always verify the project compiles:
+
+```bash
+npx tsc --noEmit
+```
+
+---
+
+## Pre-Commit Workflow
+
+After any registry change, run these three commands in order:
+
+```bash
+npm run build:components
+npm run audit:registry
+npx tsc --noEmit
+```
+
+Only commit when all three pass.
+
+---
+
+## Common Issues
+
+### "Cannot find module" in registry-ui.ts
+
+The `component` field uses `React.lazy(() => import(...))`. If the path does not exist, TypeScript will report an error. Verify the preview file exists in `src/components/star-forge-preview/`.
+
+### Orphan dependency on `input` or `combobox`
+
+These are UI helpers, not dual primitives. They must be registered in `registry-primitives.ts` if any block depends on them. See `content/docs/registry-system.mdx` for the list of UI helpers.
+
+### Missing `-base` variant
+
+If a user reports that a block does not offer a Base UI install option, check:
+1. Does the block depend on a dual primitive? (avatar, select, button, etc.)
+2. Is there a `<block>-base` entry in `registry-ui.ts`?
+3. Does the MDX docs page have `hasEngineChoice={true}`?
+
+---
+
+## Registry Statistics
+
+Run this to see the current state of the registry:
+
+```bash
+npm run audit:registry
+```
+
+Example output:
+
+```
+=== REGISTRY AUDIT ===
+Total items: 88
+Primitives: 9
+Base block variants: 15
+Items with registryDependencies: 36
+
+No orphan dependencies found.
+```
+
+---
+
+## Adding New Scripts
+
+If you create a new registry-related script, add it to `package.json`:
+
+```json
+{
+  "scripts": {
+    "build:components": "node scripts/build-registry.js && npx shadcn@latest build",
+    "audit:registry": "node scripts/audit-registry.js"
+  }
+}
+```

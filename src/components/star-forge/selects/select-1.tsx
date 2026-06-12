@@ -141,7 +141,7 @@ const CustomSelect1 = ({
   const [internalValue, setInternalValue] = React.useState(
     value || existingValues
   );
-  const selectedValue = value !== undefined ? value : internalValue;
+  const selectedValue = value ?? internalValue;
 
   const handleValueChange = (newValue: string) => {
     if (value === undefined) {

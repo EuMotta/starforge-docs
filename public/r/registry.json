@@ -600,6 +600,715 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "stars-rating-1",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/others/stars-rating-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stars-rating-2",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/others/stars-rating-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select-1-base",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "base-select"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/selects/select-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-1-base",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-2-base",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-3-base",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-3.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-4-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-4.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-5-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-5.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-6-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-6.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-7-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-7.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-8-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-8.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-9-base",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-9.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar-10-base",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "base-avatar"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/avatar/avatar-10.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card-1-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "base-button"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/cards/card-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card-2-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "base-button"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/cards/card-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "password-1-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "base-button"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/password/password-1.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "password-2-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input",
+        "base-button"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/password/password-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-avatar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-avatar"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-avatar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-label",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-label",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-button",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/button.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/_lib/slot-polyfill.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "radix-badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/badge.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/ui/_lib/slot-polyfill.tsx",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "radix-collapsible",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-collapsible"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-collapsible",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-select",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-select"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-select",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/base/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-avatar"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-label"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-collapsible"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-tabs"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-dialog"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-popover"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-select"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/primitives/radix/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "input",
+        "textarea",
+        "button"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "input-group"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

@@ -116,7 +116,7 @@ const CTA = () => {
             transition={{ duration: 0.6, delay: 0.8 }}
           >
             <Link
-              href="/docs/instalation"
+              href="/docs/installation"
               className={cn(
                 buttonVariants({
                   size: 'lg',

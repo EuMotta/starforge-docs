@@ -1,0 +1,73 @@
+---
+title: Colors
+description: Star Forge design tokens and color system
+icon: Palette
+---
+
+import { ColorsPreview } from '@/components/common/color-swatch';
+
+Star Forge uses CSS custom properties (variables) for its design tokens. These variables are defined in `src/app/global.css` and mapped to Tailwind CSS utilities via the `@theme inline` directive.
+
+## Color System
+
+The color system follows the shadcn/ui convention with semantic tokens for both **light** and **dark** modes. All components consume these variables, ensuring consistent theming across the entire library.
+
+### How it works
+
+Each semantic token is defined as a CSS variable:
+
+```css
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  /* ... */
+}
+```
+
+Tailwind maps these variables to utility classes:
+
+```css
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  /* ... */
+}
+```
+
+This allows usage like `bg-primary`, `text-muted-foreground`, `border-input`, etc.
+
+### Preview
+
+<ColorsPreview />
+
+## How Colors are Defined
+
+The palette is defined in `src/app/global.css` using CSS custom properties:
+
+- **`:root`** — Light mode values
+- **`.dark`** — Dark mode values
+
+Tailwind CSS v4 maps these variables to utility classes via the `@theme inline` directive, so every component uses the same semantic tokens consistently.
+
+## Theme Reference
+
+| Token | Purpose |
+|-------|---------|
+| `--background` | Page background |
+| `--foreground` | Primary text color |
+| `--card` / `--card-foreground` | Card surfaces and text |
+| `--popover` / `--popover-foreground` | Popover/dropdown surfaces |
+| `--primary` / `--primary-foreground` | Primary action color (buttons, links) |
+| `--secondary` / `--secondary-foreground` | Secondary action color |
+| `--muted` / `--muted-foreground` | Subdued backgrounds and helper text |
+| `--accent` / `--accent-foreground` | Highlight and focus states |
+| `--destructive` / `--destructive-foreground` | Error and danger states |
+| `--border` | Default border color |
+| `--input` | Form input borders |
+| `--ring` | Focus ring outline |
+| `--chart-1` … `--chart-5` | Data visualization palette |
+| `--sidebar-*` | Sidebar-specific tokens |

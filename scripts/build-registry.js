@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import ts from 'typescript';
-import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -56,9 +56,70 @@ function getFilesFromArrayLiteral(node) {
   return files;
 }
 
+function findExportedArray(sourceFile, exportName) {
+  for (const statement of sourceFile.statements) {
+    if (!ts.isVariableStatement(statement)) continue;
+
+    const isExported = (statement.modifiers || []).some(
+      (m) => m.kind === ts.SyntaxKind.ExportKeyword
+    );
+    if (!isExported) continue;
+
+    for (const decl of statement.declarationList.declarations) {
+      if (!ts.isIdentifier(decl.name) || decl.name.text !== exportName) {
+        continue;
+      }
+      if (!decl.initializer || !ts.isArrayLiteralExpression(decl.initializer)) {
+        continue;
+      }
+      return decl.initializer;
+    }
+  }
+
+  return undefined;
+}
+
+function getPropertyInitializer(objLiteral, keyName) {
+  for (const prop of objLiteral.properties) {
+    if (!ts.isPropertyAssignment(prop)) continue;
+
+    const key =
+      prop.name && ts.isIdentifier(prop.name) ? prop.name.text : undefined;
+    if (key === keyName) return prop.initializer;
+  }
+
+  return undefined;
+}
+
+function parseRegistryItem(el) {
+  if (!ts.isObjectLiteralExpression(el)) return null;
+
+  const name = getStringFromLiteral(getPropertyInitializer(el, 'name'));
+  const type = getStringFromLiteral(getPropertyInitializer(el, 'type'));
+
+  if (!name || !type) return null;
+
+  const dependencies = getStringArrayFromArrayLiteral(
+    getPropertyInitializer(el, 'dependencies')
+  );
+  const registryDependencies = getStringArrayFromArrayLiteral(
+    getPropertyInitializer(el, 'registryDependencies')
+  );
+  const files = getFilesFromArrayLiteral(getPropertyInitializer(el, 'files'));
+
+  return {
+    name,
+    type,
+    dependencies,
+    registryDependencies,
+    files
+  };
+}
+
 function parseRegistryItemsFromTsSource(
   content,
-  filePathForErrors = 'registry-ui.ts'
+  filePathForErrors = 'registry-ui.ts',
+  exportName = 'ui'
 ) {
   const sourceFile = ts.createSourceFile(
     filePathForErrors,
@@ -68,61 +129,18 @@ function parseRegistryItemsFromTsSource(
     ts.ScriptKind.TS
   );
 
-  let uiArray;
+  const targetArray = findExportedArray(sourceFile, exportName);
 
-  for (const statement of sourceFile.statements) {
-    if (!ts.isVariableStatement(statement)) continue;
-    const isExported = (statement.modifiers || []).some(
-      (m) => m.kind === ts.SyntaxKind.ExportKeyword
+  if (!targetArray) {
+    throw new Error(
+      `Export \`${exportName}\` not found or not an array literal in ${filePathForErrors}.`
     );
-    if (!isExported) continue;
-
-    for (const decl of statement.declarationList.declarations) {
-      if (!ts.isIdentifier(decl.name) || decl.name.text !== 'ui') continue;
-      if (!decl.initializer || !ts.isArrayLiteralExpression(decl.initializer))
-        continue;
-      uiArray = decl.initializer;
-    }
-  }
-
-  if (!uiArray) {
-    throw new Error('Export `ui` not found or not an array literal.');
   }
 
   const items = [];
-  for (const el of uiArray.elements) {
-    if (!ts.isObjectLiteralExpression(el)) continue;
-
-    let name;
-    let type;
-    let dependencies = [];
-    let registryDependencies = [];
-    let files = [];
-
-    for (const prop of el.properties) {
-      if (!ts.isPropertyAssignment(prop)) continue;
-      const key =
-        prop.name && ts.isIdentifier(prop.name) ? prop.name.text : undefined;
-
-      if (key === 'name') name = getStringFromLiteral(prop.initializer);
-      if (key === 'type') type = getStringFromLiteral(prop.initializer);
-      if (key === 'dependencies')
-        dependencies = getStringArrayFromArrayLiteral(prop.initializer);
-      if (key === 'registryDependencies') {
-        registryDependencies = getStringArrayFromArrayLiteral(prop.initializer);
-      }
-      if (key === 'files') files = getFilesFromArrayLiteral(prop.initializer);
-    }
-
-    if (!name || !type) continue;
-
-    items.push({
-      name,
-      type,
-      dependencies,
-      registryDependencies,
-      files
-    });
+  for (const el of targetArray.elements) {
+    const item = parseRegistryItem(el);
+    if (item) items.push(item);
   }
 
   return items;
@@ -130,28 +148,56 @@ function parseRegistryItemsFromTsSource(
 
 function generateRegistry() {
   try {
-    console.log('🔧 Generating registry.json from registry-ui.ts...');
+    console.log('🔧 Generating registry.json...');
 
     const registryUiPath = path.join(
       __dirname,
       '../src/registry/registry-ui.ts'
     );
+    const registryPrimitivesPath = path.join(
+      __dirname,
+      '../src/registry/registry-primitives.ts'
+    );
     const registryJsonPath = path.join(__dirname, '../registry.json');
 
-    if (!fs.existsSync(registryUiPath)) {
-      throw new Error(`File not found: ${registryUiPath}`);
+    let allItems = [];
+
+    if (fs.existsSync(registryUiPath)) {
+      const uiContent = fs.readFileSync(registryUiPath, 'utf-8');
+      const uiItems = parseRegistryItemsFromTsSource(
+        uiContent,
+        registryUiPath,
+        'ui'
+      );
+      allItems = allItems.concat(uiItems);
+      console.log(`📦 Found ${uiItems.length} UI items from registry-ui.ts`);
+    } else {
+      console.warn(`⚠️ File not found: ${registryUiPath}`);
     }
 
-    const content = fs.readFileSync(registryUiPath, 'utf-8');
-    const items = parseRegistryItemsFromTsSource(content, registryUiPath);
-
-    console.log(`📦 Found ${items.length} components`);
+    if (fs.existsSync(registryPrimitivesPath)) {
+      const primitivesContent = fs.readFileSync(
+        registryPrimitivesPath,
+        'utf-8'
+      );
+      const primitiveItems = parseRegistryItemsFromTsSource(
+        primitivesContent,
+        registryPrimitivesPath,
+        'primitives'
+      );
+      allItems = allItems.concat(primitiveItems);
+      console.log(
+        `📦 Found ${primitiveItems.length} primitive items from registry-primitives.ts`
+      );
+    } else {
+      console.warn(`⚠️ File not found: ${registryPrimitivesPath}`);
+    }
 
     const registry = {
       $schema: 'https://ui.shadcn.com/schema/registry.json',
       name: 'star-forge',
       homepage: 'https://www.starforge-docs.com',
-      items: items
+      items: allItems
     };
 
     const jsonContent = JSON.stringify(registry, null, 2);
@@ -159,13 +205,15 @@ function generateRegistry() {
 
     console.log('✅ registry.json generated successfully!');
     console.log(`📍 Saved to: ${registryJsonPath}`);
-    console.log(`📊 Total items: ${items.length}`);
+    console.log(`📊 Total items: ${allItems.length}`);
 
-    const withDeps = items.filter((item) => item.dependencies?.length).length;
-    const withRegDeps = items.filter(
+    const withDeps = allItems.filter(
+      (item) => item.dependencies?.length
+    ).length;
+    const withRegDeps = allItems.filter(
       (item) => item.registryDependencies?.length
     ).length;
-    const withFiles = items.filter((item) => item.files?.length).length;
+    const withFiles = allItems.filter((item) => item.files?.length).length;
 
     console.log('\n📈 Statistics:');
     console.log(`  • With dependencies: ${withDeps}`);

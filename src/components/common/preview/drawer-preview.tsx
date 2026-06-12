@@ -38,6 +38,7 @@ type DrawerCodePreviewProps = {
   hasReTrigger?: boolean;
   fromDocs?: boolean;
   responsive?: boolean;
+  hasEngineChoice?: boolean;
 };
 
 /**
@@ -86,7 +87,8 @@ export function DrawerCodePreview({
   classNameComponentContainer,
   hasReTrigger = false,
   fromDocs = false,
-  responsive = true
+  responsive = true,
+  hasEngineChoice = false
 }: DrawerCodePreviewProps) {
   const [dialogOpen, setDialogOpen] = useState(false);
   const [sourceDialogOpen, setSourceDialogOpen] = useState(false);
@@ -94,6 +96,10 @@ export function DrawerCodePreview({
   const [selectedPresetLabel, setSelectedPresetLabel] = useState<
     string | undefined
   >(undefined);
+  const [engine, setEngine] = useState<'radix' | 'base'>('radix');
+
+  const resolvedName =
+    engine === 'base' && hasEngineChoice ? `${name}-base` : name;
 
   const previewPresets = getComponentByName(name)?.previewPresets;
   const selectedPreset = previewPresets?.find(
@@ -104,7 +110,7 @@ export function DrawerCodePreview({
   const selectedProps = effectivePreset?.props;
 
   const handleCopy = () => {
-    const cli = `npx shadcn@latest add ${siteConfig.site.url}/r/${name}.json`;
+    const cli = `npx shadcn@latest add ${siteConfig.site.url}/r/${resolvedName}.json`;
     navigator.clipboard.writeText(cli);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
@@ -127,6 +133,26 @@ export function DrawerCodePreview({
               <div className="text-destructive h-8 gap-1.5 text-xs">
                 <DiamondPlus />
               </div>
+            </div>
+          )}
+          {hasEngineChoice && (
+            <div className="flex items-center rounded-md border">
+              <Button
+                size="sm"
+                variant={engine === 'radix' ? 'default' : 'ghost'}
+                onClick={() => setEngine('radix')}
+                className="h-7 rounded-none rounded-l-md px-2 text-xs"
+              >
+                Radix
+              </Button>
+              <Button
+                size="sm"
+                variant={engine === 'base' ? 'default' : 'ghost'}
+                onClick={() => setEngine('base')}
+                className="h-7 rounded-none rounded-r-md px-2 text-xs"
+              >
+                Base
+              </Button>
             </div>
           )}
           <Button

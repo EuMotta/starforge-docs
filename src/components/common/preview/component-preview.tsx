@@ -55,14 +55,19 @@ export function ComponentPreview({
   lang,
   sourceCode,
   name,
-  fromDocs
+  fromDocs,
+  hasEngineChoice = false
 }: any) {
   const componentRef = useRef<HTMLDivElement>(null);
   const [activeTab, setActiveTab] = useState('preview');
   const [isTerminalCopied, setIsTerminalCopied] = useState(false);
+  const [engine, setEngine] = useState<'radix' | 'base'>('radix');
+
+  const resolvedName =
+    engine === 'base' && hasEngineChoice ? `${name}-base` : name;
 
   const handleTerminalClick = () => {
-    const COPY = `npx shadcn@latest add ${siteConfig.site.url}/r/${name}.json`;
+    const COPY = `npx shadcn@latest add ${siteConfig.site.url}/r/${resolvedName}.json`;
     navigator.clipboard.writeText(COPY);
     setIsTerminalCopied(true);
     setTimeout(() => {
@@ -102,6 +107,26 @@ export function ComponentPreview({
           <div className="grow"></div>
 
           <div className="align-center mb-2 hidden flex-row gap-2 lg:flex">
+            {hasEngineChoice && (
+              <div className="flex items-center rounded-md border">
+                <Button
+                  size="sm"
+                  variant={engine === 'radix' ? 'default' : 'ghost'}
+                  onClick={() => setEngine('radix')}
+                  className="h-7 rounded-none rounded-l-md px-2 text-xs"
+                >
+                  Radix
+                </Button>
+                <Button
+                  size="sm"
+                  variant={engine === 'base' ? 'default' : 'ghost'}
+                  onClick={() => setEngine('base')}
+                  className="h-7 rounded-none rounded-r-md px-2 text-xs"
+                >
+                  Base
+                </Button>
+              </div>
+            )}
             <Button
               size="sm"
               onClick={handleTerminalClick}
@@ -123,7 +148,9 @@ export function ComponentPreview({
                   />
                 </>
               )}
-              <span className="font-mono">npx shadcn add {name}</span>{' '}
+              <span className="font-mono">
+                npx shadcn add {resolvedName}
+              </span>{' '}
             </Button>
           </div>
 
@@ -135,6 +162,26 @@ export function ComponentPreview({
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="flex w-80 flex-col gap-2">
+                {hasEngineChoice && (
+                  <div className="flex items-center rounded-md border">
+                    <Button
+                      size="sm"
+                      variant={engine === 'radix' ? 'default' : 'ghost'}
+                      onClick={() => setEngine('radix')}
+                      className="h-7 flex-1 rounded-none rounded-l-md px-2 text-xs"
+                    >
+                      Radix
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant={engine === 'base' ? 'default' : 'ghost'}
+                      onClick={() => setEngine('base')}
+                      className="h-7 flex-1 rounded-none rounded-r-md px-2 text-xs"
+                    >
+                      Base
+                    </Button>
+                  </div>
+                )}
                 <Button
                   size="sm"
                   onClick={handleTerminalClick}
@@ -156,7 +203,9 @@ export function ComponentPreview({
                       />
                     </>
                   )}
-                  <span className="font-mono">Install with CLI</span>{' '}
+                  <span className="font-mono">
+                    npx shadcn add {resolvedName}
+                  </span>{' '}
                 </Button>
               </PopoverContent>
             </Popover>

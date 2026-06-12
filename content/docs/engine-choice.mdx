@@ -1,0 +1,133 @@
+---
+title: Choosing Your Engine
+description: Star Forge supports both Radix UI and Base UI primitives. Choose the engine that best fits your project.
+icon: ToggleLeft
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+# Choosing Your Engine
+
+Star Forge components are built on top of **headless UI primitives**. Every component that relies on a primitive is available in two flavors:
+
+- **Radix UI** — Battle-tested, granular packages, excellent accessibility.
+- **Base UI** — Modern, tree-shakeable monorepo, evolving API from the Radix team.
+
+> The choice is yours. Both variants share the **exact same public API**, so your block components never change.
+
+---
+
+## Supported Primitives
+
+| Primitive | Radix Package | Base UI Source |
+|-----------|--------------|----------------|
+| Avatar | `@radix-ui/react-avatar` | `@base-ui/react/avatar` |
+| Button | `@radix-ui/react-slot` | Polyfilled Slot |
+| Badge | `@radix-ui/react-slot` | Polyfilled Slot |
+| Collapsible | `@radix-ui/react-collapsible` | `@base-ui/react/collapsible` |
+| Dialog | `@radix-ui/react-dialog` | `@base-ui/react/dialog` |
+| Label | `@radix-ui/react-label` | Native `<label>` |
+| Popover | `@radix-ui/react-popover` | `@base-ui/react/popover` |
+| Select | `@radix-ui/react-select` | `@base-ui/react/select` |
+| Tabs | `@radix-ui/react-tabs` | `@base-ui/react/tabs` |
+
+### UI Helpers (Non-dual)
+
+These components are used by blocks but are not part of the dual-engine layer:
+
+| Component | Source | Used By |
+|-----------|--------|---------|
+| `input` | Native `<input>` | `password-*`, `input-group` |
+| `textarea` | Native `<textarea>` | `input-group` |
+| `input-group` | Custom composite | `combobox` |
+| `combobox` | `@base-ui/react` | `search-*` |
+
+---
+
+## How to Choose
+
+<Tabs items={['Radix UI', 'Base UI']}>
+
+<Tab value="Radix UI">
+
+**Best for:**
+- Production apps requiring maximum stability
+- Teams already invested in the Radix ecosystem
+- Fine-grained dependency control (install only what you need)
+
+**Install a primitive:**
+
+```bash
+npx shadcn@latest add https://starforge-docs.vercel.app/r/radix-avatar.json
+```
+
+**Dependencies installed:**
+- `@radix-ui/react-avatar`
+
+</Tab>
+
+<Tab value="Base UI">
+
+**Best for:**
+- Greenfield projects wanting a single dependency
+- Teams preferring modern APIs (e.g., `data-open` instead of `data-[state=open]`)
+- Smaller lockfiles (one `@base-ui/react` package)
+
+**Install a primitive:**
+
+```bash
+npx shadcn@latest add https://starforge-docs.vercel.app/r/base-avatar.json
+```
+
+**Dependencies installed:**
+- `@base-ui/react`
+
+</Tab>
+
+</Tabs>
+
+---
+
+## Architecture
+
+Star Forge uses a **file-level adapter pattern**.
+
+```
+src/components/ui/primitives/
+  radix/     ← Radix implementations
+  base/      ← Base UI implementations
+```
+
+Both folders export the **same names** with **compatible props**. When you copy a block component, you only need to install the primitive variant you prefer:
+
+```tsx
+// This import path never changes, regardless of engine
+import { Button } from '@/components/ui/button';
+import { Select, SelectTrigger, SelectContent } from '@/components/ui/select';
+```
+
+---
+
+## Compatibility Notes
+
+### Data Attributes
+- **Radix** uses `data-[state=open]`, `data-[state=closed]`, etc.
+- **Base UI** uses `data-open`, `data-closed`, etc.
+
+Both variants ship with the correct Tailwind classes, so animations and states work out of the box.
+
+### Popover Anchor
+Base UI Popover does not expose a standalone `Anchor` component. The Base UI adapter uses a native `<div>` with the same `data-slot`, preserving the public API.
+
+### Tabs Indicator
+Base UI Tabs includes an optional `TabsIndicator` component (sliding highlight) that Radix lacks. This is exported as a bonus in the Base UI variant without breaking existing code.
+
+### Select `alignItemWithTrigger`
+Base UI Select defaults to aligning the selected item with the trigger text. This behavior is controlled by the `alignItemWithTrigger` prop on `Positioner` and is enabled automatically when `position="item-aligned"`.
+
+---
+
+<Callout type="info">
+  You can mix Radix and Base UI primitives in the same project. There is no runtime engine lock-in — the choice is made per primitive at install time.
+</Callout>

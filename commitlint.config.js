@@ -2,7 +2,7 @@ module.exports = {
   extends: ['@commitlint/config-conventional'],
 
   rules: {
-    'header-max-length': [2, 'always', 70],
+    'header-max-length': [2, 'always', 100],
 
     'subject-case': [2, 'always', 'lower-case'],
 
@@ -15,22 +15,22 @@ module.exports = {
 
       [
         'feat',
-
         'fix',
-
-        'docs',
-
+        'tweak',
         'style',
-
         'refactor',
-
         'perf',
-
         'test',
-
+        'docs',
         'chore',
-
-        'revert'
+        'ci',
+        'build',
+        'revert',
+        'hotfix',
+        'init',
+        'merge',
+        'wip',
+        'release'
       ]
     ]
   }

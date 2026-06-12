@@ -86,7 +86,7 @@ export default function StarForgeHero() {
             >
               Reusable UI components for React and Next.js. Inspired by
               shadcn/ui, copy-paste ready, fully customizable. Built with
-              Tailwind CSS and Radix UI for accessibility.
+              Tailwind CSS and dual-engine primitives — Radix UI or Base UI.
             </motion.p>
 
             <motion.div

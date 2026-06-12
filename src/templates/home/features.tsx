@@ -22,10 +22,10 @@ const FEATURES_DATA: FeatureItem[] = [
     icon: Settings,
     title: 'Fully Customizable',
     description:
-      'Each component is built with Tailwind CSS and Radix UI for ' +
-      'accessibility. Use as-is or adjust styles and behaviors ' +
-      'to match your brand. Perfect for startups, agencies and ' +
-      'developers who value flexibility.'
+      'Each component is built with Tailwind CSS and dual-engine ' +
+      'primitives (Radix UI or Base UI). Use as-is or adjust styles ' +
+      'and behaviors to match your brand. Perfect for startups, ' +
+      'agencies and developers who value flexibility.'
   },
   {
     icon: Code,
@@ -40,9 +40,9 @@ const FEATURES_DATA: FeatureItem[] = [
     icon: Shield,
     title: 'Accessibility First',
     description:
-      'Built on Radix UI, ensuring all components follow ' +
-      'accessibility best practices. Full support for screen readers, ' +
-      'keyboard navigation and proper contrast.'
+      'Built on headless primitives (Radix UI or Base UI), ensuring ' +
+      'all components follow accessibility best practices. Full ' +
+      'support for screen readers, keyboard navigation and proper contrast.'
   }
 ];
 

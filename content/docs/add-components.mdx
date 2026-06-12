@@ -5,6 +5,11 @@ icon: Plus
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+<Callout type="info">
+  This guide is for **contributors** who want to add new components to the Star Forge library itself. If you are a user looking to install components in your own project, see the [Installation](/docs/installation) guide.
+</Callout>
 
 ## Directory Structure
 
@@ -36,92 +41,118 @@ src/
 Create your component in the appropriate directory within `src/components/star-forge/`:
 
 ```tsx
-// src/components/star-forge/my-component.tsx
-'use client';
+// src/components/star-forge/<category>/my-component.tsx
+import * as React from 'react';
 
-import { useState } from 'react';
+import { cva, type VariantProps } from 'class-variance-authority';
+
 import { cn } from '@/lib/utils';
 
-export interface MyComponentProps {
-  // Define your props here
+const myComponentVariants = cva('base-component-styles', {
+  variants: {
+    variant: {
+      default: '',
+      secondary: 'secondary-styles'
+    },
+    size: {
+      sm: 'text-sm',
+      md: 'text-base',
+      lg: 'text-lg'
+    }
+  },
+  defaultVariants: {
+    variant: 'default',
+    size: 'md'
+  }
+});
+
+interface MyComponentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof myComponentVariants> {
   children?: React.ReactNode;
-  className?: string;
-  variant?: 'default' | 'secondary';
 }
 
-export function MyComponent({
-  children,
-  className,
-  variant = 'default'
-}: MyComponentProps) {
-  return (
-    <div
-      className={cn(
-        'base-component-styles',
-        variant === 'secondary' && 'secondary-styles',
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-}
+const MyComponent = React.forwardRef<HTMLDivElement, MyComponentProps>(
+  ({ className, variant, size, children, ...props }, ref) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(myComponentVariants({ variant, size, className }))}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+
+MyComponent.displayName = 'MyComponent';
 
 export default MyComponent;
 ```
 
+> **Note:** Only add `'use client'` when the component uses React hooks or browser APIs. Many Star Forge components are server-safe by default.
+
+> **Important:** Do not import `@radix-ui/react-*` or `@base-ui/react` directly. Always use barrel files: `import { Button } from '@/components/ui/button'`.
+
 </Step>
 
 <Step>
-### Create Hooks (if necessary)
+### Create the Preview
 
-If your component needs custom hooks, create them in `src/hooks/star-forge/`:
+Create a demo page in `src/components/star-forge-preview/<category>/my-component.tsx`:
 
 ```tsx
-// src/hooks/star-forge/use-my-hook.ts
-import { useState, useEffect } from 'react';
+import MyComponent from '@/components/star-forge/<category>/my-component';
 
-export function useMyHook(initialValue: string) {
-  const [value, setValue] = useState(initialValue);
-
-  // Your hook logic here
-
-  return { value, setValue };
+export default function Preview() {
+  return (
+    <div className="p-8">
+      <MyComponent />
+    </div>
+  );
 }
 ```
+
+The preview must have a `default` export.
 
 </Step>
 
 <Step>
-### Add to Registry.json
+### Register in `registry-ui.ts`
 
-Add your component to the `registry.json` in the project root:
+Add your component to `src/registry/registry-ui.ts`:
 
-```json
+```ts
 {
-  "name": "my-component",
-  "type": "registry:ui",
-  "dependencies": ["lucide-react"], // External dependencies
-  "registryDependencies": ["button"], // Dependencies on other shadcn components
-  "files": [
+  name: 'my-component',
+  author: 'EuMotta',
+  type: 'registry:ui',
+  registryDependencies: ['button'],
+  dependencies: ['lucide-react'],
+  description: 'Short description of what this block does.',
+  files: [
     {
-      "path": "src/components/star-forge/my-component.tsx",
-      "type": "registry:ui"
-    },
-    {
-      "path": "src/hooks/star-forge/use-my-hook.ts",
-      "type": "registry:hook"
+      path: 'src/components/star-forge/<category>/my-component.tsx',
+      type: 'registry:ui'
     }
-  ]
+  ],
+  example: 'src/components/star-forge-preview/<category>/my-component.tsx',
+  component: React.lazy(() =>
+    import('@/components/star-forge-preview/<category>/my-component').then(
+      (mod) => ({
+        default: mod.default
+      })
+    )
+  )
 }
 ```
 
-#### Type Options
-
-- **`registry:ui`** - Use for UI components (React components, visual elements)
-- **`registry:hook`** - Use for custom React hooks
-- **`registry:lib`** - Use for utility functions, constants, or helper libraries
-- **`registry:component`** - Use for complete component packages with multiple files
+**Important:**
+- `registryDependencies` use **alias names** (e.g., `button`, not `radix-button`).
+- `files` points to the **source** component.
+- `example` points to the **preview** component.
+- `component` must be a `React.lazy(() => import(...))` pointing to the preview.
 
 </Step>
 
@@ -131,30 +162,28 @@ Add your component to the `registry.json` in the project root:
 If your component uses external dependencies, install them:
 
 ```bash
-npm install lucide-react
-# or
-yarn add lucide-react
-# or
-pnpm add lucide-react
+npm install <package>
 ```
+
+Then add them to the `dependencies` array in the registry entry.
 
 </Step>
 
 <Step>
 ### Create MDX Documentation
 
-Create an MDX file to document your component in `content/docs/components/`:
+Create an MDX file in `content/docs/<category>/my-component.mdx`:
 
 ```mdx
 ---
-title: Section
-description: Component for organizing sections
+title: My Component
+description: What this component does
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
 import { extractSourceCode } from '@/lib/code';
 
-## Section
+## My Component
 
 <ComponentPreview
   name="my-component"
@@ -162,72 +191,27 @@ import { extractSourceCode } from '@/lib/code';
   code={(await extractSourceCode('my-component')).code}
   sourceCode={(await extractSourceCode('my-component')).sourceCode}
   lang="tsx"
-/>
-
-### or use DrawerCodePreview
-
-<DrawerCodePreview
-  name="my-component"
-  classNameComponentContainer="p-20"
-  code={(await extractSourceCode('my-component')).code}
-  lang="tsx"
+  hasEngineChoice={true}
 />
 ```
 
-## Basic Usage
-
-```tsx
-<Badge>Default Badge</Badge>
-```
-
-## Variants
-
-### Default
-
-```tsx
-<Badge>Default</Badge>
-```
-
-### Secondary
-
-```tsx
-<Badge variant="secondary">Secondary</Badge>
-```
-
-### Destructive
-
-```tsx
-<Badge variant="destructive">Destructive</Badge>
-```
-
-### Outline
-
-```tsx
-<Badge variant="outline">Outline</Badge>
-```
-
-
-## Props
-
-| Prop      | Type                                                     | Default     | Description                 |
-| --------- | -------------------------------------------------------- | ----------- | --------------------------- |
-| variant   | `'default' \| 'secondary' \| 'destructive' \| 'outline'` | `'default'` | Visual variant of the badge |
-| className | `string`                                                 | -           | Additional CSS classes      |
-| children  | `React.ReactNode`                                        | -           | Badge content               |
-
+Add `hasEngineChoice={true}` when the block depends on dual primitives (select, avatar, button, etc.).
 
 </Step>
 
 <Step>
+### Build and Validate
 
-
-### 6. Build the Registry
-
-Run the shadcn build to update the registry:
+Run these three commands in order:
 
 ```bash
-npx shadcn@latest build
+npm run build:components
+npm run audit:registry
+npx tsc --noEmit
 ```
+
+All three must pass before committing.
+
 </Step>
 
 </Steps>
@@ -244,6 +228,23 @@ npx shadcn@latest build
 
 - Use kebab-case for file names: `use-my-hook.ts`
 - Use camelCase for hook names: `useMyHook`
+
+### Barrel Exports
+
+Components are exposed through barrel `index.tsx` files. The naming convention depends on the file location:
+
+- **Components inside category folders** (`src/components/star-forge/alerts/`, `cards/`, etc.):
+  - Export as `{Category}{N}` — e.g. `Alert1`, `Card2`, `Hero3`
+  - Defined in `src/components/star-forge/{category}/index.tsx`
+
+- **Components at the root of `star-forge/`** (not inside a category folder):
+  - Export as the PascalCase file name — e.g. `Typography1`, `TypographyVariant1`
+  - Defined directly in `src/components/star-forge/index.tsx`
+
+- **Sub-components or hooks with suffixes**:
+  - Use descriptive suffixes — e.g. `Search1Input`, `Search1InputOption`
+
+This keeps imports predictable: `import { Alert1, Container1 } from '@/components/star-forge'`.
 
 ### Structure by Category
 
@@ -272,30 +273,34 @@ After adding your component:
 1. **Check if TypeScript compiles**:
 
    ```bash
-   npm run type-check
+   npx tsc --noEmit
    ```
 
-2. **Test the component locally**:
+2. **Build the registry**:
 
+   ```bash
+   npm run build:components
+   ```
+
+3. **Audit for orphan dependencies**:
+
+   ```bash
+   npm run audit:registry
+   ```
+
+4. **Test the component locally**:
    ```bash
    npm run dev
    ```
 
-3. **Check the build**:
+## Related Guides
 
-   ```bash
-   npm run build
-   ```
+Depending on what you are contributing, see the specialized guides in the **Advanced** section:
 
-4. **Test the registry**:
-   ```bash
-   npx shadcn@latest add badge-1
-   ```
-
-## Next Steps
-
-- [ ] Create documentation for your component
-- [ ] Add usage examples
+- [Adding a New Primitive](/docs/adding-primitives) — for dual-engine primitives (Radix UI + Base UI)
+- [Adding a New Block](/docs/adding-blocks) — for high-level UI components
+- [Adding Base Variants](/docs/adding-base-variants) — for Base UI install paths of existing blocks
+- [Maintenance & Registry](/docs/maintenance) — for registry builds and audits
 
 ## Reusing Existing Libraries
 

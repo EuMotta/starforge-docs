@@ -3,8 +3,8 @@
   "pages": [
     "---Getting Started---",
     "index",
-    "instalation",
-    "add-components",
+    "installation",
+    "engine-choice",
     "---Components---",
     "animations",
     "background",
@@ -13,6 +13,15 @@
     "form",
     "layout",
     "media",
-    "navigation"
+    "navigation",
+    "---Advanced---",
+    "architecture",
+    "registry-system",
+    "add-components",
+    "adding-primitives",
+    "adding-blocks",
+    "colors",
+    "adding-base-variants",
+    "maintenance"
   ]
 }

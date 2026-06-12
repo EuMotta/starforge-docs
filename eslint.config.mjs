@@ -1,3 +1,4 @@
+import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import importHelpers from 'eslint-plugin-import-helpers';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
@@ -5,7 +6,16 @@ import pluginReact from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import { defineConfig } from 'eslint/config';
 import globals from 'globals';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import tseslint from 'typescript-eslint';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname
+});
 
 export default defineConfig([
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
@@ -25,6 +35,7 @@ export default defineConfig([
     extends: ['js/recommended']
   },
   tseslint.configs.recommended,
+  ...compat.extends('next/core-web-vitals'),
   pluginReact.configs.flat.recommended,
   eslintPluginPrettierRecommended,
   {

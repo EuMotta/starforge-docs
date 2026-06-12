@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { siteConfig } from '@/settings';
 import { motion } from 'framer-motion';
-import { BarChart3, BookOpen, Package, Plus } from 'lucide-react';
+import { BarChart3, Package, Plus, ToggleLeft } from 'lucide-react';
 
 const ResourcesNav = () => {
   const resources = [
@@ -16,17 +16,17 @@ const ResourcesNav = () => {
       color: 'from-blue-500 to-blue-600'
     },
     {
-      href: '/docs/instalation',
+      href: '/docs/installation',
       icon: Plus,
       title: 'Installation',
       description: 'Quick guide',
       color: 'from-green-500 to-green-600'
     },
     {
-      href: '/docs',
-      icon: BookOpen,
-      title: 'Documentation',
-      description: 'Complete guides',
+      href: '/docs/engine-choice',
+      icon: ToggleLeft,
+      title: 'Engine Choice',
+      description: 'Radix UI or Base UI',
       color: 'from-purple-500 to-purple-600'
     },
     {

@@ -1,12 +1,11 @@
 ---
 title: Select
 description: Advanced select dropdown components with search and multi-select capabilities
-updated: true
+updated: false
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
 import { extractSourceCode } from '@/lib/code';
-import { Steps, Step } from 'fumadocs-ui/components/steps';
 import { Callout } from 'fumadocs-ui/components/callout';
 import { status } from '@/constants';
 
@@ -25,4 +24,5 @@ Selection component with name, email, status and role.
   code={(await extractSourceCode('select-1')).code}
   sourceCode={(await extractSourceCode('select-1')).sourceCode}
   lang="tsx"
+  hasEngineChoice={true}
 />
