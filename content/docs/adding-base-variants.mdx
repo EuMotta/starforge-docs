@@ -1,0 +1,140 @@
+---
+title: Adding Base Variants
+description: How to create a Base UI install path for an existing block component.
+icon: GitCompareArrows
+---
+
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# Adding Base Variants for Existing Blocks
+
+When a new dual primitive is added, existing blocks that depend on it need a **Base UI install path**. This is done by creating a `<block>-base` variant in the registry.
+
+<Callout type="info">
+  The block source code does not change. Only the registry entry changes to point at Base UI dependencies.
+</Callout>
+
+---
+
+## When to Add a Base Variant
+
+Add a `-base` variant when:
+- The block depends on a primitive that has both Radix and Base UI implementations.
+- You want users to be able to choose the engine from the component documentation page.
+
+Do NOT add a `-base` variant when:
+- The block uses only pure CSS / no primitives (e.g., simple alerts, backgrounds).
+- The block depends on a primitive that is not dual-engine (e.g., `combobox`).
+
+---
+
+## Step-by-Step
+
+<Steps>
+
+<Step>
+### Identify the block's primitive dependencies
+
+Look at the block's `registryDependencies` in `src/registry/registry-ui.ts`.
+
+Example: `avatar-1` depends on `avatar`.
+</Step>
+
+<Step>
+### Check if the primitive has a Base UI variant
+
+Look in `src/registry/registry-primitives.ts` for `base-<primitive>`. If it exists, proceed.
+</Step>
+
+<Step>
+### Create the `-base` registry entry
+
+In `src/registry/registry-ui.ts`, add a new entry **after** the original block:
+
+```ts
+{
+  name: '<block>-base',
+  author: 'EuMotta',
+  type: 'registry:ui',
+  registryDependencies: ['base-<primitive>'],
+  dependencies: [], // same as original, or adjust
+  description: '<Same description> (Base UI variant).',
+  files: [
+    {
+      path: 'src/components/star-forge/<category>/<block>.tsx', // same source
+      type: 'registry:ui'
+    }
+  ],
+  example: 'src/components/star-forge/<category>/<block>.tsx', // same example path as original
+  component: React.lazy(() =>
+    import('@/components/star-forge/<category>/<block>').then((mod) => ({
+      default: mod.default
+    }))
+  )
+}
+```
+
+**Rules:**
+- `name` must end with `-base`.
+- `files.path` points to the **same source file** as the original block.
+- `example` points to the **same preview** as the original block.
+- `registryDependencies` uses `base-*` prefixed primitives.
+- Add `(Base UI variant)` to the description.
+</Step>
+
+<Step>
+### Add engine choice to the docs page
+
+In the block's MDX documentation, add `hasEngineChoice={true}` to the `ComponentPreview` or `DrawerCodePreview`:
+
+```mdx
+<ComponentPreview
+  name="<block>"
+  ...
+  hasEngineChoice={true}
+/>
+```
+
+This renders a **Radix | Base** toggle next to the install button.
+</Step>
+
+<Step>
+### Build and validate
+
+```bash
+npm run build:components
+npm run audit:registry
+```
+
+Verify:
+- `audit:registry` exits with code `0`.
+- The install command for the Base variant copies `<block>-base`.
+</Step>
+
+</Steps>
+
+---
+
+## Existing Base Variants
+
+These blocks already have `-base` variants:
+
+| Block | Base Variant | Base Dependencies |
+|-------|--------------|-------------------|
+| `select-1` | `select-1-base` | `base-select` |
+| `avatar-1` to `avatar-10` | `avatar-1-base` to `avatar-10-base` | `base-avatar` |
+| `card-1`, `card-2` | `card-1-base`, `card-2-base` | `base-button` |
+| `password-1`, `password-2` | `password-1-base`, `password-2-base` | `input`, `base-button` |
+
+---
+
+## Checklist
+
+- [ ] Identified all dual primitives the block depends on
+- [ ] Created `<block>-base` entry in `registry-ui.ts`
+- [ ] `registryDependencies` uses `base-*` prefixes
+- [ ] `files` and `example` point to the same paths as the original
+- [ ] Added `hasEngineChoice={true}` to the MDX docs
+- [ ] `npm run build:components` succeeds
+- [ ] `npm run audit:registry` passes

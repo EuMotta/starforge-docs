@@ -1,0 +1,184 @@
+---
+title: Adding a New Primitive
+description: Step-by-step guide for adding a new dual-engine primitive to Star Forge.
+icon: Puzzle
+---
+
+import { Steps, Step } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# Adding a New Dual-Engine Primitive
+
+Every primitive that depends on a headless UI library must have both a **Radix UI** and a **Base UI** variant. Both must export the **exact same names** with compatible prop types.
+
+<Callout type="warning">
+  Never add runtime engine detection. The choice is made at install time by the user.
+</Callout>
+
+---
+
+## Prerequisites
+
+- You have read the [Architecture](/docs/architecture) overview.
+- You understand the [Registry System](/docs/registry-system).
+- The Radix and Base UI packages are installed.
+
+---
+
+## Step-by-Step
+
+<Steps>
+
+<Step>
+### Create the Radix implementation
+
+Create `src/components/ui/primitives/radix/<name>.tsx`.
+
+Use the official Radix primitive, wrap each part with `data-slot` attributes and `cn()` for class merging.
+
+```tsx
+import * as React from 'react';
+import { <Primitive> as Primitive } from '@radix-ui/react-<primitive>';
+import { cn } from '@/lib/utils';
+
+function <Part>({ className, ...props }: React.ComponentProps<typeof Primitive.<Part>>) {
+  return (
+    <Primitive.<Part>
+      data-slot="<part>"
+      className={cn('...', className)}
+      {...props}
+    />
+  );
+}
+
+export { <Part>, ... };
+```
+</Step>
+
+<Step>
+### Create the Base UI adapter
+
+Create `src/components/ui/primitives/base/<name>.tsx`.
+
+The file must export the **same names** as the Radix variant. Use Base UI equivalents. If a part is missing (e.g., PopoverAnchor), provide a fallback with the same `data-slot`.
+
+Key differences to handle:
+- **Data attributes**: Base UI uses `data-open` instead of `data-[state=open]` — update Tailwind classes.
+- **Missing parts**: Use native elements with the same `data-slot` when Base UI lacks a component.
+- **`asChild`**: Use `Slot` from `@radix-ui/react-slot` for Radix; use `Slot` from `@/components/ui/_lib/slot-polyfill` for Base UI.
+
+```tsx
+import { <Primitive> as Primitive } from '@base-ui/react';
+
+function <Part>({ className, ...props }: Primitive.<Part>.Props) {
+  return (
+    <Primitive.<Part>
+      data-slot="<part>"
+      className={cn('...', className)}
+      {...props}
+    />
+  );
+}
+
+export { <Part>, ... };
+```
+</Step>
+
+<Step>
+### Update the barrel file
+
+In `src/components/ui/<name>.tsx`, ensure it re-exports from `primitives/radix/`:
+
+```tsx
+export * from './primitives/radix/<name>';
+```
+
+This is the default engine. Users who want Base UI will change this line in their project.
+</Step>
+
+<Step>
+### Register in `registry-primitives.ts`
+
+Open `src/registry/registry-primitives.ts` and add **three entries**:
+
+**1. Radix variant:**
+```ts
+{
+  name: 'radix-<name>',
+  author: 'EuMotta',
+  type: 'registry:ui',
+  dependencies: ['@radix-ui/react-<primitive>'],
+  description: '<Name> primitive (Radix UI).',
+  files: [{ path: 'src/components/ui/primitives/radix/<name>.tsx', type: 'registry:ui' }],
+  example: 'src/components/ui/primitives/radix/<name>.tsx',
+  component: React.lazy(() =>
+    import('@/components/ui/primitives/radix/<name>').then((mod) => ({
+      default: mod.<MainExport>
+    }))
+  )
+}
+```
+
+**2. Base UI variant:**
+```ts
+{
+  name: 'base-<name>',
+  author: 'EuMotta',
+  type: 'registry:ui',
+  dependencies: ['@base-ui/react'],
+  description: '<Name> primitive (Base UI).',
+  files: [{ path: 'src/components/ui/primitives/base/<name>.tsx', type: 'registry:ui' }],
+  example: 'src/components/ui/primitives/base/<name>.tsx',
+  component: React.lazy(() =>
+    import('@/components/ui/primitives/base/<name>').then((mod) => ({
+      default: mod.<MainExport>
+    }))
+  )
+}
+```
+
+**3. Alias (default = Radix):**
+```ts
+{
+  name: '<name>',
+  author: 'EuMotta',
+  type: 'registry:ui',
+  dependencies: ['@radix-ui/react-<primitive>'],
+  description: '<Name> primitive (Radix UI default).',
+  files: [{ path: 'src/components/ui/primitives/radix/<name>.tsx', type: 'registry:ui' }],
+  example: 'src/components/ui/primitives/radix/<name>.tsx',
+  component: React.lazy(() =>
+    import('@/components/ui/primitives/radix/<name>').then((mod) => ({
+      default: mod.<MainExport>
+    }))
+  )
+}
+```
+</Step>
+
+<Step>
+### Build and validate
+
+```bash
+npm run build:components
+npm run audit:registry
+```
+
+Ensure `audit:registry` exits with code `0` (no orphan dependencies).
+</Step>
+
+</Steps>
+
+---
+
+## Checklist
+
+- [ ] Radix implementation created in `primitives/radix/<name>.tsx`
+- [ ] Base UI adapter created in `primitives/base/<name>.tsx`
+- [ ] Both export the **exact same names**
+- [ ] Tailwind classes use correct data attributes per engine
+- [ ] Barrel file updated (`src/components/ui/<name>.tsx`)
+- [ ] Three registry entries added (`radix-<name>`, `base-<name>`, `<name>`)
+- [ ] `npm run build:components` succeeds
+- [ ] `npm run audit:registry` passes
+- [ ] `npx tsc --noEmit` has 0 errors

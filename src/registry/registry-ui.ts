@@ -959,5 +959,318 @@ export const ui: Registry = [
         })
       )
     )
+  },
+  // ─── Base UI engine variants ───
+  // These mirror the blocks above but resolve to Base UI primitives via registryDependencies.
+  {
+    name: 'select-1-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-select'],
+    dependencies: [],
+    description: 'Select with label and rich items (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/selects/select-1.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/selects/select-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/selects/select-1').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'avatar-1-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: [],
+    description: 'Basic avatar with initials fallback (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-1.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-2-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: [],
+    description: 'Avatar with online status indicator (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-2.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-2').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-3-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: [],
+    description: 'Avatar with status indicator (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-3.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-3.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-3').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-4-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: ['lucide-react'],
+    description: 'Avatar with verified badge (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-4.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-4.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-4').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-5-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: ['lucide-react'],
+    description:
+      'Avatar with verified badge controlled by boolean (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-5.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-5.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-5').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-6-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: ['lucide-react'],
+    description:
+      'Avatar with status indicator and verified badge (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-6.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-6.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-6').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-7-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: ['lucide-react'],
+    description:
+      'Avatar with verified badge and status indicator (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-7.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-7.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-7').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-8-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: ['lucide-react'],
+    description:
+      'Avatar with dynamic status and conditional verified badge (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-8.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-8.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-8').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-9-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: [],
+    description: 'Stacked avatar group (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-9.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-9.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-9').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'avatar-10-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-avatar'],
+    dependencies: [],
+    description: 'Stacked avatar group from user list (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/avatar/avatar-10.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/avatar/avatar-10.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/avatar/avatar-10').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'card-1-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-button'],
+    dependencies: ['lucide-react'],
+    description: 'Promotional card with action button (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/cards/card-1.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/cards/card-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/cards/card-1').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'card-2-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-button'],
+    dependencies: ['lucide-react'],
+    description: 'Benefit/feature card with button (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/cards/card-2.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/cards/card-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/cards/card-2').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'password-1-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['input', 'base-button'],
+    dependencies: ['lucide-react'],
+    description: 'Password input with show/hide button (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/password/password-1.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/inputs/password-1.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/inputs/password-1').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'password-2-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['input', 'base-button'],
+    dependencies: ['lucide-react'],
+    description:
+      'Registration password input with strength meter (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/password/password-2.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/inputs/password-2.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/inputs/password-2').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
   }
 ];

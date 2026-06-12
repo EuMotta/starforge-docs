@@ -12,7 +12,10 @@ interface AuthorBadgeProps {
   className?: string;
 }
 
-export function AuthorBadge({ username, className }: AuthorBadgeProps) {
+export function AuthorBadge({
+  username,
+  className
+}: Readonly<AuthorBadgeProps>) {
   const initials = username
     .split(/[^a-zA-Z0-9]/)
     .map((part) => part[0])
