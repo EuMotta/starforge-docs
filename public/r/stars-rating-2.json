@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stars-rating-2",
+  "dependencies": [
+    "class-variance-authority",
+    "lucide-react"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/others/stars-rating-2.tsx",
+      "content": "'use client';\n\nimport React, { useState } from 'react';\n\nimport { cx } from 'class-variance-authority';\nimport { Star } from 'lucide-react';\n\ninterface StarsRatingProps {\n  rating?: number;\n  maxRating?: number;\n  size?: 'sm' | 'md' | 'lg';\n  readonly?: boolean;\n  onChange?: (rating: number) => void;\n  className?: string;\n  showValue?: boolean;\n}\n\nconst StarsRating2 = ({\n  rating = 0,\n  maxRating = 5,\n  size = 'md',\n  readonly = false,\n  onChange,\n  className,\n  showValue = true\n}: StarsRatingProps) => {\n  const [currentRating, setCurrentRating] = useState(rating);\n  const [tempRating, setTempRating] = useState(0);\n\n  const sizeClasses = {\n    sm: 'w-3 h-3',\n    md: 'w-4 h-4',\n    lg: 'w-5 h-5'\n  };\n\n  const containerSizeClasses = {\n    sm: 'gap-0.5',\n    md: 'gap-1',\n    lg: 'gap-1.5'\n  };\n\n  const handleRatingChange = (newRating: number) => {\n    if (readonly) return;\n\n    setCurrentRating(newRating);\n    onChange?.(newRating);\n  };\n\n  const handleMouseEnter = (starValue: number) => {\n    if (readonly) return;\n    setTempRating(starValue);\n  };\n\n  const handleMouseLeave = () => {\n    if (readonly) return;\n    setTempRating(0);\n  };\n\n  const activeRating = tempRating || currentRating;\n\n  return (\n    <div\n      className={cx('flex items-center', containerSizeClasses[size], className)}\n    >\n      <div className=\"flex items-center\">\n        {[...Array(maxRating)].map((_, index) => {\n          const starValue = index + 1;\n          const isActive = starValue <= activeRating;\n\n          return (\n            <button\n              key={index}\n              type=\"button\"\n              disabled={readonly}\n              onClick={() => handleRatingChange(starValue)}\n              onMouseEnter={() => handleMouseEnter(starValue)}\n              onMouseLeave={handleMouseLeave}\n              className={cx(\n                'relative transition-transform duration-200',\n                readonly ? 'cursor-default' : 'cursor-pointer hover:scale-105',\n                !readonly && 'rounded'\n              )}\n            >\n              <Star\n                className={cx(\n                  sizeClasses[size],\n                  'transition-all duration-300',\n                  isActive ? 'text-amber-500' : 'text-gray-300',\n                  !readonly && 'hover:text-amber-400'\n                )}\n                fill={isActive ? 'currentColor' : 'none'}\n              />\n            </button>\n          );\n        })}\n      </div>\n\n      {showValue && (\n        <div className=\"ml-2 flex items-center\">\n          <span\n            className={cx(\n              'font-medium',\n              size === 'sm'\n                ? 'text-xs'\n                : size === 'md'\n                  ? 'text-sm'\n                  : 'text-base',\n              activeRating > 0 ? 'text-amber-600' : 'text-muted-foreground'\n            )}\n          >\n            {activeRating.toFixed(1)}\n          </span>\n        </div>\n      )}\n    </div>\n  );\n};\n\nexport default StarsRating2;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

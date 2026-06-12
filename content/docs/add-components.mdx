@@ -5,6 +5,11 @@ icon: Plus
 ---
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
+import { Callout } from 'fumadocs-ui/components/callout';
+
+<Callout type="info">
+  This guide is for **contributors** who want to add new components to the Star Forge library itself. If you are a user looking to install components in your own project, see the [Installation](/docs/installation) guide.
+</Callout>
 
 ## Directory Structure
 
@@ -288,10 +293,14 @@ After adding your component:
    npm run dev
    ```
 
-## Next Steps
+## Related Guides
 
-- [ ] Create documentation for your component
-- [ ] Add usage examples
+Depending on what you are contributing, see the specialized guides in the **Advanced** section:
+
+- [Adding a New Primitive](/docs/adding-primitives) — for dual-engine primitives (Radix UI + Base UI)
+- [Adding a New Block](/docs/adding-blocks) — for high-level UI components
+- [Adding Base Variants](/docs/adding-base-variants) — for Base UI install paths of existing blocks
+- [Maintenance & Registry](/docs/maintenance) — for registry builds and audits
 
 ## Reusing Existing Libraries
 

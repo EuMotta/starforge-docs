@@ -1,9 +1,9 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "select-1",
+  "name": "select-1-base",
   "dependencies": [],
   "registryDependencies": [
-    "select"
+    "base-select"
   ],
   "files": [
     {
