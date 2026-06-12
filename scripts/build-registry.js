@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import ts from 'typescript';
-import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -56,6 +56,66 @@ function getFilesFromArrayLiteral(node) {
   return files;
 }
 
+function findExportedArray(sourceFile, exportName) {
+  for (const statement of sourceFile.statements) {
+    if (!ts.isVariableStatement(statement)) continue;
+
+    const isExported = (statement.modifiers || []).some(
+      (m) => m.kind === ts.SyntaxKind.ExportKeyword
+    );
+    if (!isExported) continue;
+
+    for (const decl of statement.declarationList.declarations) {
+      if (!ts.isIdentifier(decl.name) || decl.name.text !== exportName) {
+        continue;
+      }
+      if (!decl.initializer || !ts.isArrayLiteralExpression(decl.initializer)) {
+        continue;
+      }
+      return decl.initializer;
+    }
+  }
+
+  return undefined;
+}
+
+function getPropertyInitializer(objLiteral, keyName) {
+  for (const prop of objLiteral.properties) {
+    if (!ts.isPropertyAssignment(prop)) continue;
+
+    const key =
+      prop.name && ts.isIdentifier(prop.name) ? prop.name.text : undefined;
+    if (key === keyName) return prop.initializer;
+  }
+
+  return undefined;
+}
+
+function parseRegistryItem(el) {
+  if (!ts.isObjectLiteralExpression(el)) return null;
+
+  const name = getStringFromLiteral(getPropertyInitializer(el, 'name'));
+  const type = getStringFromLiteral(getPropertyInitializer(el, 'type'));
+
+  if (!name || !type) return null;
+
+  const dependencies = getStringArrayFromArrayLiteral(
+    getPropertyInitializer(el, 'dependencies')
+  );
+  const registryDependencies = getStringArrayFromArrayLiteral(
+    getPropertyInitializer(el, 'registryDependencies')
+  );
+  const files = getFilesFromArrayLiteral(getPropertyInitializer(el, 'files'));
+
+  return {
+    name,
+    type,
+    dependencies,
+    registryDependencies,
+    files
+  };
+}
+
 function parseRegistryItemsFromTsSource(
   content,
   filePathForErrors = 'registry-ui.ts',
@@ -69,23 +129,7 @@ function parseRegistryItemsFromTsSource(
     ts.ScriptKind.TS
   );
 
-  let targetArray;
-
-  for (const statement of sourceFile.statements) {
-    if (!ts.isVariableStatement(statement)) continue;
-    const isExported = (statement.modifiers || []).some(
-      (m) => m.kind === ts.SyntaxKind.ExportKeyword
-    );
-    if (!isExported) continue;
-
-    for (const decl of statement.declarationList.declarations) {
-      if (!ts.isIdentifier(decl.name) || decl.name.text !== exportName)
-        continue;
-      if (!decl.initializer || !ts.isArrayLiteralExpression(decl.initializer))
-        continue;
-      targetArray = decl.initializer;
-    }
-  }
+  const targetArray = findExportedArray(sourceFile, exportName);
 
   if (!targetArray) {
     throw new Error(
@@ -95,38 +139,8 @@ function parseRegistryItemsFromTsSource(
 
   const items = [];
   for (const el of targetArray.elements) {
-    if (!ts.isObjectLiteralExpression(el)) continue;
-
-    let name;
-    let type;
-    let dependencies = [];
-    let registryDependencies = [];
-    let files = [];
-
-    for (const prop of el.properties) {
-      if (!ts.isPropertyAssignment(prop)) continue;
-      const key =
-        prop.name && ts.isIdentifier(prop.name) ? prop.name.text : undefined;
-
-      if (key === 'name') name = getStringFromLiteral(prop.initializer);
-      if (key === 'type') type = getStringFromLiteral(prop.initializer);
-      if (key === 'dependencies')
-        dependencies = getStringArrayFromArrayLiteral(prop.initializer);
-      if (key === 'registryDependencies') {
-        registryDependencies = getStringArrayFromArrayLiteral(prop.initializer);
-      }
-      if (key === 'files') files = getFilesFromArrayLiteral(prop.initializer);
-    }
-
-    if (!name || !type) continue;
-
-    items.push({
-      name,
-      type,
-      dependencies,
-      registryDependencies,
-      files
-    });
+    const item = parseRegistryItem(el);
+    if (item) items.push(item);
   }
 
   return items;

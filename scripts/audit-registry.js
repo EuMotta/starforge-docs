@@ -29,9 +29,28 @@ const withRegistryDeps = r.filter(
 const allNames = new Set(r.map((i) => i.name));
 const orphanDeps = [];
 
+function extractItemNameFromUrl(url) {
+  try {
+    const parsed = new URL(url);
+    const match = /\/r\/(.+)\.json$/.exec(parsed.pathname);
+    return match ? match[1] : null;
+  } catch {
+    return null;
+  }
+}
+
 for (const item of withRegistryDeps) {
   for (const dep of item.registryDependencies) {
-    if (dep.startsWith('http')) continue;
+    if (dep.startsWith('http')) {
+      const itemName = extractItemNameFromUrl(dep);
+      if (itemName && !allNames.has(itemName)) {
+        orphanDeps.push({
+          item: item.name,
+          missing: dep + ' (extracted: ' + itemName + ')'
+        });
+      }
+      continue;
+    }
     if (!allNames.has(dep)) {
       orphanDeps.push({ item: item.name, missing: dep });
     }

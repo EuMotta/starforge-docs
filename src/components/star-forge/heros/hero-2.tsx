@@ -91,8 +91,8 @@ const HeroSection = () => {
         <div className="z-10 mx-auto my-10 flex max-w-7xl flex-1 flex-col items-center px-6 py-12 md:flex-row md:py-0">
           <div className="mb-10 w-full space-y-6 text-center md:mb-0 md:w-1/2 md:text-left">
             <h1 className="text-foreground text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-              Transform Your Business with
-              <span className="text-primary"> Solutions</span>
+              Transform Your Business with{' '}
+              <span className="text-primary">Solutions</span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-xl text-lg md:mx-0">
               Unlock your companys full potential with our cutting-edge platform
