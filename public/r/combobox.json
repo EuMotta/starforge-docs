@@ -6,7 +6,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "input-group"
+    "https://starforge-docs.com/r/input-group.json"
   ],
   "files": [
     {

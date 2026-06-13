@@ -91,6 +91,15 @@ function getPropertyInitializer(objLiteral, keyName) {
   return undefined;
 }
 
+const REGISTRY_BASE_URL = 'https://starforge-docs.com/r';
+
+function resolveRegistryDependencies(deps) {
+  return deps.map((dep) => {
+    if (dep.startsWith('http')) return dep;
+    return `${REGISTRY_BASE_URL}/${dep}.json`;
+  });
+}
+
 function parseRegistryItem(el) {
   if (!ts.isObjectLiteralExpression(el)) return null;
 
@@ -102,8 +111,11 @@ function parseRegistryItem(el) {
   const dependencies = getStringArrayFromArrayLiteral(
     getPropertyInitializer(el, 'dependencies')
   );
-  const registryDependencies = getStringArrayFromArrayLiteral(
+  const rawRegistryDependencies = getStringArrayFromArrayLiteral(
     getPropertyInitializer(el, 'registryDependencies')
+  );
+  const registryDependencies = resolveRegistryDependencies(
+    rawRegistryDependencies
   );
   const files = getFilesFromArrayLiteral(getPropertyInitializer(el, 'files'));
 

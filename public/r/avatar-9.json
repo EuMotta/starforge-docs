@@ -3,7 +3,7 @@
   "name": "avatar-9",
   "dependencies": [],
   "registryDependencies": [
-    "avatar"
+    "https://starforge-docs.com/r/avatar.json"
   ],
   "files": [
     {

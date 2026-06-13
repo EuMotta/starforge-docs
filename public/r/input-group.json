@@ -5,9 +5,9 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "input",
-    "textarea",
-    "button"
+    "https://starforge-docs.com/r/input.json",
+    "https://starforge-docs.com/r/textarea.json",
+    "https://starforge-docs.com/r/button.json"
   ],
   "files": [
     {

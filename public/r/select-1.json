@@ -3,7 +3,7 @@
   "name": "select-1",
   "dependencies": [],
   "registryDependencies": [
-    "select"
+    "https://starforge-docs.com/r/select.json"
   ],
   "files": [
     {

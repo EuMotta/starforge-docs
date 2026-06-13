@@ -51,7 +51,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "select"
+        "https://starforge-docs.com/r/select.json"
       ],
       "files": [
         {
@@ -124,7 +124,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -138,7 +138,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -152,7 +152,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -168,7 +168,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -184,7 +184,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -200,7 +200,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -216,7 +216,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -232,7 +232,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -246,7 +246,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -260,7 +260,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "avatar"
+        "https://starforge-docs.com/r/avatar.json"
       ],
       "files": [
         {
@@ -276,7 +276,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button"
+        "https://starforge-docs.com/r/button.json"
       ],
       "files": [
         {
@@ -292,7 +292,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "button"
+        "https://starforge-docs.com/r/button.json"
       ],
       "files": [
         {
@@ -514,7 +514,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "combobox"
+        "https://starforge-docs.com/r/combobox.json"
       ],
       "files": [
         {
@@ -534,7 +534,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "combobox"
+        "https://starforge-docs.com/r/combobox.json"
       ],
       "files": [
         {
@@ -554,7 +554,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "combobox"
+        "https://starforge-docs.com/r/combobox.json"
       ],
       "files": [
         {
@@ -574,8 +574,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "input",
-        "button"
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/button.json"
       ],
       "files": [
         {
@@ -591,8 +591,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "input",
-        "button"
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/button.json"
       ],
       "files": [
         {
@@ -636,7 +636,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "base-select"
+        "https://starforge-docs.com/r/base-select.json"
       ],
       "files": [
         {
@@ -650,7 +650,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -664,7 +664,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -678,7 +678,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -694,7 +694,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -710,7 +710,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -726,7 +726,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -742,7 +742,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -758,7 +758,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -772,7 +772,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -786,7 +786,7 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "base-avatar"
+        "https://starforge-docs.com/r/base-avatar.json"
       ],
       "files": [
         {
@@ -802,7 +802,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "base-button"
+        "https://starforge-docs.com/r/base-button.json"
       ],
       "files": [
         {
@@ -818,7 +818,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "base-button"
+        "https://starforge-docs.com/r/base-button.json"
       ],
       "files": [
         {
@@ -834,8 +834,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "input",
-        "base-button"
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/base-button.json"
       ],
       "files": [
         {
@@ -851,8 +851,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "input",
-        "base-button"
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/base-button.json"
       ],
       "files": [
         {
@@ -870,7 +870,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/avatar.tsx",
+          "path": "src/components/ui/radix/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -884,7 +884,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/avatar.tsx",
+          "path": "src/components/ui/base/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -898,7 +898,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/label.tsx",
+          "path": "src/components/ui/radix/label.tsx",
           "type": "registry:ui"
         }
       ]
@@ -912,7 +912,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/label.tsx",
+          "path": "src/components/ui/base/label.tsx",
           "type": "registry:ui"
         }
       ]
@@ -927,7 +927,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/button.tsx",
+          "path": "src/components/ui/radix/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -941,7 +941,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/button.tsx",
+          "path": "src/components/ui/base/button.tsx",
           "type": "registry:ui"
         },
         {
@@ -960,7 +960,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/badge.tsx",
+          "path": "src/components/ui/radix/badge.tsx",
           "type": "registry:ui"
         }
       ]
@@ -974,7 +974,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/badge.tsx",
+          "path": "src/components/ui/base/badge.tsx",
           "type": "registry:ui"
         },
         {
@@ -992,7 +992,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/collapsible.tsx",
+          "path": "src/components/ui/radix/collapsible.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1006,7 +1006,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/collapsible.tsx",
+          "path": "src/components/ui/base/collapsible.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1020,7 +1020,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/tabs.tsx",
+          "path": "src/components/ui/radix/tabs.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1034,7 +1034,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/tabs.tsx",
+          "path": "src/components/ui/base/tabs.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1048,7 +1048,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/dialog.tsx",
+          "path": "src/components/ui/radix/dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1062,7 +1062,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/dialog.tsx",
+          "path": "src/components/ui/base/dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1076,7 +1076,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/popover.tsx",
+          "path": "src/components/ui/radix/popover.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1090,7 +1090,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/popover.tsx",
+          "path": "src/components/ui/base/popover.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1104,7 +1104,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/select.tsx",
+          "path": "src/components/ui/radix/select.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1118,7 +1118,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/base/select.tsx",
+          "path": "src/components/ui/base/select.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1132,7 +1132,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/avatar.tsx",
+          "path": "src/components/ui/radix/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1146,7 +1146,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/label.tsx",
+          "path": "src/components/ui/radix/label.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1161,7 +1161,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/button.tsx",
+          "path": "src/components/ui/radix/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1176,7 +1176,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/badge.tsx",
+          "path": "src/components/ui/radix/badge.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1190,7 +1190,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/collapsible.tsx",
+          "path": "src/components/ui/radix/collapsible.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1204,7 +1204,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/tabs.tsx",
+          "path": "src/components/ui/radix/tabs.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1218,7 +1218,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/dialog.tsx",
+          "path": "src/components/ui/radix/dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1232,7 +1232,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/popover.tsx",
+          "path": "src/components/ui/radix/popover.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1246,7 +1246,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/primitives/radix/select.tsx",
+          "path": "src/components/ui/radix/select.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1282,9 +1282,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "input",
-        "textarea",
-        "button"
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/textarea.json",
+        "https://starforge-docs.com/r/button.json"
       ],
       "files": [
         {
@@ -1301,7 +1301,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "input-group"
+        "https://starforge-docs.com/r/input-group.json"
       ],
       "files": [
         {
