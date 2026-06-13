@@ -5,7 +5,7 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "combobox"
+    "https://starforge-docs.com/r/combobox.json"
   ],
   "files": [
     {

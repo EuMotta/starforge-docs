@@ -7,7 +7,7 @@
   "registryDependencies": [],
   "files": [
     {
-      "path": "src/components/ui/primitives/base/collapsible.tsx",
+      "path": "src/components/ui/base/collapsible.tsx",
       "content": "'use client';\r\n\r\nimport * as React from 'react';\r\n\r\nimport { Collapsible as CollapsiblePrimitive } from '@base-ui/react/collapsible';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\nfunction Collapsible({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {\r\n  return (\r\n    <CollapsiblePrimitive.Root\r\n      data-slot=\"collapsible\"\r\n      className={cn(className)}\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nfunction CollapsibleTrigger({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof CollapsiblePrimitive.Trigger>) {\r\n  return (\r\n    <CollapsiblePrimitive.Trigger\r\n      data-slot=\"collapsible-trigger\"\r\n      className={cn(className)}\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nfunction CollapsibleContent({\r\n  className,\r\n  ...props\r\n}: React.ComponentProps<typeof CollapsiblePrimitive.Panel>) {\r\n  return (\r\n    <CollapsiblePrimitive.Panel\r\n      data-slot=\"collapsible-content\"\r\n      className={cn(className)}\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nexport { Collapsible, CollapsibleTrigger, CollapsibleContent };\r\n",
       "type": "registry:ui"
     }
