@@ -70,7 +70,7 @@ export const ui: Registry = [
     name: 'select-1',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['select'],
+    registryDependencies: ['select', 'label'],
     dependencies: [],
     description:
       'Select with label and rich items (user with avatar, role, status, email), supporting controlled or internal state.',
@@ -966,7 +966,7 @@ export const ui: Registry = [
     name: 'select-1-base',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['base-select'],
+    registryDependencies: ['base-select', 'base-label'],
     dependencies: [],
     description: 'Select with label and rich items (Base UI variant).',
     files: [

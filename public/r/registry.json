@@ -51,7 +51,8 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "https://starforge-docs.com/r/select.json"
+        "https://starforge-docs.com/r/select.json",
+        "https://starforge-docs.com/r/label.json"
       ],
       "files": [
         {
@@ -636,7 +637,8 @@
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [
-        "https://starforge-docs.com/r/base-select.json"
+        "https://starforge-docs.com/r/base-select.json",
+        "https://starforge-docs.com/r/base-label.json"
       ],
       "files": [
         {

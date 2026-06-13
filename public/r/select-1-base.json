@@ -3,7 +3,8 @@
   "name": "select-1-base",
   "dependencies": [],
   "registryDependencies": [
-    "https://starforge-docs.com/r/base-select.json"
+    "https://starforge-docs.com/r/base-select.json",
+    "https://starforge-docs.com/r/base-label.json"
   ],
   "files": [
     {
