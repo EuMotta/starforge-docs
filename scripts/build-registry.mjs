@@ -208,7 +208,7 @@ function generateRegistry() {
     const registry = {
       $schema: 'https://ui.shadcn.com/schema/registry.json',
       name: 'star-forge',
-      homepage: 'https://www.starforge-docs.com',
+      homepage: 'https://starforge-docs.com',
       items: allItems
     };
 

@@ -93,9 +93,7 @@ export const ui: Registry = [
     name: 'background-1',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: [
-      'https://www.starforge-docs.com/r/typography-1.json'
-    ],
+    registryDependencies: ['https://starforge-docs.com/r/typography-1.json'],
     dependencies: ['class-variance-authority', 'react-icons'],
     description:
       'Wrapper with CSS-generated grid background, keeping content highlighted (layer above).',
