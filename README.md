@@ -46,7 +46,7 @@ npx shadcn@latest init
 2. **Add components to your project:**
 
 ```bash
-npx shadcn@latest add https://www.starforge-docs.com/r/registry.json
+npx shadcn@latest add https://starforge-docs.com/r/registry.json
 ```
 
 3. **Use the component:**
