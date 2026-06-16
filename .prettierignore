@@ -1,5 +1,6 @@
 # Ignore public/r folder to prevent formatting registry JSON files
 public/r/
+registry.json
 
 # Other common ignores
 node_modules/

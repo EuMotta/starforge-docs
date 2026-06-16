@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "star-forge",
-  "homepage": "https://www.starforge-docs.com",
+  "homepage": "https://starforge-docs.com",
   "items": [
     {
       "name": "typography-1",
@@ -69,7 +69,7 @@
         "react-icons"
       ],
       "registryDependencies": [
-        "https://www.starforge-docs.com/r/typography-1.json"
+        "https://starforge-docs.com/r/typography-1.json"
       ],
       "files": [
         {

@@ -12,11 +12,30 @@ const raw = JSON.parse(
 );
 const r = Array.isArray(raw) ? raw : raw.items || [];
 
-const primitives = r.filter((i) =>
-  /^(radix-|base-|avatar|badge|button|collapsible|dialog|label|popover|select|tabs)$/.test(
-    i.name
-  )
+const dualPrimitiveNames = [
+  'avatar',
+  'badge',
+  'button',
+  'collapsible',
+  'dialog',
+  'label',
+  'popover',
+  'select',
+  'tabs'
+];
+
+const dualPrimitiveNameSet = new Set(dualPrimitiveNames);
+
+const radixPrimitives = r.filter((i) => i.name.startsWith('radix-'));
+const basePrimitives = r.filter((i) => i.name.startsWith('base-'));
+const defaultPrimitiveAliases = r.filter((i) =>
+  dualPrimitiveNameSet.has(i.name)
 );
+const primitives = [
+  ...radixPrimitives,
+  ...basePrimitives,
+  ...defaultPrimitiveAliases
+];
 
 const baseVariants = r.filter(
   (i) => i.name.endsWith('-base') && !/^(radix|base)/.test(i.name)
@@ -60,6 +79,9 @@ for (const item of withRegistryDeps) {
 console.log('=== REGISTRY AUDIT ===\n');
 console.log('Total items:', r.length);
 console.log('Primitives:', primitives.length);
+console.log('  • Radix primitives:', radixPrimitives.length);
+console.log('  • Base primitives:', basePrimitives.length);
+console.log('  • Default primitive aliases:', defaultPrimitiveAliases.length);
 console.log('Base block variants:', baseVariants.length);
 console.log('Items with registryDependencies:', withRegistryDeps.length);
 
