@@ -1,6 +1,7 @@
 ---
 title: Text Animations
 description: Engaging text animation components with various effects
+new: true
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
@@ -14,7 +15,9 @@ import { status } from '@/constants';
   sure Tailwind is configured in your project to use them.
 </Callout>
 
-## Text Component
+## Character Reveal
+
+A smooth character-by-character reveal animation where each letter fades in and drops into place with a subtle bounce effect. Perfect for hero headings, announcements, or any text that needs to make a dramatic entrance.
 
 <ComponentPreview
   name="text-animation-1"
@@ -25,8 +28,19 @@ import { status } from '@/constants';
   hasReTrigger
 />
 
+### Props Reference
 
-## Text Variant
+| Prop      | Type                              | Description                        | Default     |
+| --------- | --------------------------------- | ---------------------------------- | ----------- |
+| `text`    | `string`                          | The text content to animate        | required    |
+| `variant` | `'default' \| 'primary' \| 'secondary'` | Color variant of the animated text | `'default'` |
+| `className` | `string`                        | Additional CSS classes for styling | `undefined` |
+
+---
+
+## Word Slide-In
+
+An elegant word-by-word slide-in animation where each word drops down from above with a smooth back-out easing. Great for subtitles, taglines, or paragraph text that needs to feel alive without being overly flashy.
 
 <ComponentPreview
   name="text-animation-2"
@@ -37,3 +51,46 @@ import { status } from '@/constants';
   hasReTrigger
 />
 
+### Props Reference
+
+| Prop      | Type                              | Description                        | Default     |
+| --------- | --------------------------------- | ---------------------------------- | ----------- |
+| `children` | `React.ReactNode`                | The text content to animate        | required    |
+| `variant` | `'default' \| 'primary' \| 'secondary'` | Color variant of the animated text | `'default'` |
+| `className` | `string`                        | Additional CSS classes for styling | `undefined` |
+
+---
+
+## Typewriter Effect
+
+A classic typewriter animation that types out text character by character with a blinking cursor. Fully configurable speed, delay, and looping support. Ideal for terminal-style intros, code snippets, or any content that benefits from a reading-paced reveal.
+
+<ComponentPreview
+  name="text-animation-3"
+  classNameComponentContainer="min-h-[600px]"
+  code={(await extractSourceCode('text-animation-3')).code}
+  sourceCode={(await extractSourceCode('text-animation-3')).sourceCode}
+  lang="tsx"
+  hasReTrigger
+/>
+
+### Props Reference
+
+| Prop            | Type         | Description                                         | Default     |
+| --------------- | ------------ | --------------------------------------------------- | ----------- |
+| `text`          | `string`     | The text content to type out                        | required    |
+| `as`            | `ElementType` | HTML element to render as (e.g., `span`, `p`, `h1`) | `'span'`    |
+| `speed`         | `number`     | Delay in milliseconds between each character        | `50`        |
+| `delay`         | `number`     | Delay in milliseconds before typing starts            | `0`         |
+| `enabled`       | `boolean`    | Whether the typewriter effect is active             | `true`      |
+| `cursor`        | `boolean`    | Whether to show the blinking cursor                 | `true`      |
+| `cursorClassName` | `string`   | Additional CSS classes for the cursor               | `undefined` |
+| `loop`          | `boolean`    | Whether to restart the animation when finished        | `false`     |
+| `className`     | `string`     | Additional CSS classes for styling                  | `undefined` |
+
+**Speed Guide:**
+
+- `10` — Fast typing (10 ms per character)
+- `50` — Medium pace (default)
+- `100` — Slow, deliberate typing
+- `0.1` — Nearly instant

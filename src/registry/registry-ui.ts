@@ -156,6 +156,34 @@ export const ui: Registry = [
     )
   },
   {
+    name: 'text-animation-3',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [],
+    dependencies: [],
+    description:
+      'Typewriter text animation with configurable speed, delay, cursor, and loop support. Types text character by character with a blinking cursor.',
+    files: [
+      {
+        path: 'src/components/star-forge/animations/text-animation-3.tsx',
+        type: 'registry:ui'
+      },
+      {
+        path: 'src/hooks/star-forge/use-typewriter.ts',
+        type: 'registry:hook'
+      }
+    ],
+    example:
+      'src/components/star-forge-preview/animations/text-animation-3.tsx',
+    component: React.lazy(() =>
+      import(
+        '@/components/star-forge-preview/animations/text-animation-3'
+      ).then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
     name: 'text-animation-2',
     author: 'EuMotta',
     type: 'registry:ui',
