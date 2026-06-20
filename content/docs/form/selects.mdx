@@ -1,6 +1,6 @@
 ---
 title: Select
-description: Advanced select dropdown components with search and multi-select capabilities
+description: Rich dropdown select with user avatars, role, status badges, and email display.
 updated: false
 ---
 
@@ -14,9 +14,9 @@ import { status } from '@/constants';
   sure Tailwind is configured in your project to use them.
 </Callout>
 
-## Custom Select
+## User Select with Avatar and Status
 
-Selection component with name, email, status and role.
+A rich dropdown select that displays user profiles inside both the trigger and each option. Each item shows an avatar image, name, role, colored status badge (online/away/busy/offline), and email address. The selected user is rendered in the trigger with the same avatar and role info. Supports controlled and uncontrolled modes with an optional label.
 
 <ComponentPreview
   name="select-1"
@@ -26,3 +26,14 @@ Selection component with name, email, status and role.
   lang="tsx"
   hasEngineChoice={true}
 />
+
+### Props Reference
+
+| Prop             | Type                       | Description                                          | Default          |
+| ---------------- | -------------------------- | ---------------------------------------------------- | ---------------- |
+| `formName`       | `string`                   | Unique identifier used for the label `htmlFor`       | required         |
+| `label`          | `string`                   | Label text displayed above the select                | `'Users'`        |
+| `value`          | `string`                   | Controlled selected value (user ID)                  | `undefined`      |
+| `onValueChange`  | `(value: string) => void` | Callback fired when a user is selected                | `undefined`      |
+| `existingValues` | `string`                   | Pre-selected user ID when using uncontrolled mode    | `''`             |
+| `className`      | `string`                   | Additional CSS classes for the trigger               | `undefined` |

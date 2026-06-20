@@ -1,6 +1,6 @@
 ---
 title: Card
-description: Card components
+description: Promotional and feature cards with cover images, ratings, action buttons, and decorative clipped borders.
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
@@ -13,7 +13,9 @@ import { status } from '@/constants';
   sure Tailwind is configured in your project to use them.
 </Callout>
 
-## Basic Card with Image
+## Promotional Card with Image
+
+A media-rich promotional card featuring a gradient cover image, overlay title, rating badge with star icon, and a call-to-action button. The card includes hover shadow elevation for subtle interactivity. Use as a starting template for product showcases, event cards, or portfolio items.
 
 <ComponentPreview
   name="card-1"
@@ -23,7 +25,12 @@ import { status } from '@/constants';
   hasEngineChoice={true}
 />
 
-## Neon Card
+---
+
+## Feature Card with Clipped Border
+
+A benefit/feature card with a distinctive clipped-corner border effect using CSS `clip-path`. Displays an optional icon, bold uppercase title, and centered description text. The card adapts between light (cyan theme) and dark (gray/cyan theme) modes automatically. Ideal for feature grids, service listings, or benefit highlights.
+
 <ComponentPreview
   name="card-2"
   classNameComponentContainer="py-10"
@@ -31,3 +38,12 @@ import { status } from '@/constants';
   lang="tsx"
   hasEngineChoice={true}
 />
+
+### Props Reference
+
+| Prop       | Type              | Description                                    | Default     |
+| ---------- | ----------------- | ---------------------------------------------- | ----------- |
+| `title`    | `string`          | Card heading displayed in uppercase            | `'High Performance'` |
+| `text`     | `string`          | Description paragraph                          | `'Optimized components that deliver exceptional speed and efficiency for your applications.'` |
+| `icon`     | `React.ReactNode` | Icon element displayed above the title         | `<AlertCircle size={30} />` |
+| `className` | `string`         | Additional CSS classes for the wrapper         | `undefined` |

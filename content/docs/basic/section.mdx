@@ -1,7 +1,6 @@
 ---
 title: Section
-description: Component for organizing sections
-
+description: Compound component for structuring page sections with header, title, subtitle, description, content, and footer slots.
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
@@ -14,7 +13,9 @@ import { status } from '@/constants';
   sure Tailwind is configured in your project to use them.
 </Callout>
 
-## Section
+## Section Layout
+
+A compound component that provides a structured layout for page sections. It wraps your content in a consistent container with optional header, title, subtitle, description, content body, and footer areas. Each sub-component can be used independently or composed together for a complete section block.
 
 <ComponentPreview
   name="section-1"
@@ -23,3 +24,31 @@ import { status } from '@/constants';
   sourceCode={(await extractSourceCode('section-1')).sourceCode}
   lang="tsx"
 />
+
+### Sub-Components
+
+| Component | Description |
+|-----------|-------------|
+| `Section1.Root` | Outer wrapper with margin and optional custom classes |
+| `Section1.Header` | Header area with bottom border and spacing |
+| `Section1.Title` | Section title (`h1`) with semibold styling |
+| `Section1.SubTitle` | Subtitle (`h1`) with optional icon support |
+| `Section1.Description` | Muted description paragraph |
+| `Section1.Content` | Main content body area |
+| `Section1.Footer` | Footer area with flex layout |
+
+### Props Reference
+
+All sub-components share these base props:
+
+| Prop       | Type              | Description                                    | Default     |
+| ---------- | ----------------- | ---------------------------------------------- | ----------- |
+| `children` | `React.ReactNode` | Content to render inside the element           | required    |
+| `className` | `string`         | Additional CSS classes                         | `undefined` |
+
+`SubTitle` also accepts:
+
+| Prop        | Type              | Description                              | Default     |
+| ----------- | ----------------- | ---------------------------------------- | ----------- |
+| `defaultIcon` | `boolean`       | Show the default chevron-double-right icon | `undefined` |
+| `icon`        | `React.ReactNode` | Custom icon element to display           | `undefined` |
