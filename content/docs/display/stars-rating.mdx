@@ -1,7 +1,6 @@
 ---
 title: Stars Rating
-description: Interactive star rating components for user feedback and evaluation
-new: true
+description: Interactive star rating components with hover preview, read-only mode, and numeric value display for user feedback.
 showToc: false
 ---
 
@@ -15,7 +14,9 @@ import { status } from '@/constants';
   sure Tailwind is configured in your project to use them.
 </Callout>
 
-## Stars Rating 1
+## Yellow Fill Rating
+
+An interactive star rating with filled yellow stars and hover scale effects. Shows the current numeric value next to the stars when in interactive mode. Supports click-to-set, hover-to-preview, and read-only display. Best for review forms, product ratings, and feedback collection.
 
 <ComponentPreview
   name="stars-rating-1"
@@ -25,7 +26,22 @@ import { status } from '@/constants';
   lang="tsx"
 />
 
-## Stars Rating 2
+### Props Reference
+
+| Prop       | Type                              | Default | Description                                |
+| ---------- | --------------------------------- | ------- | ------------------------------------------ |
+| `rating`   | `number`                          | `0`     | Current rating value (0 to maxRating)      |
+| `maxRating` | `number`                         | `5`     | Maximum number of stars                    |
+| `size`     | `'sm' \| 'md' \| 'lg'`            | `'md'`  | Size of the stars                          |
+| `readonly` | `boolean`                         | `false` | Whether the rating is interactive          |
+| `onChange` | `(rating: number) => void`       | `undefined` | Callback when rating changes             |
+| `className` | `string`                         | `undefined` | Additional CSS classes                   |
+
+---
+
+## Amber Outline Rating
+
+A refined star rating with amber outline/fill styling and optional numeric value display. Features smooth transitions, hover preview, and responsive text sizing that matches the star scale. The `showValue` prop allows toggling the numeric score independently. Ideal for reviews, testimonials, and score displays where a more elegant aesthetic is desired.
 
 <ComponentPreview
   name="stars-rating-2"
@@ -35,17 +51,17 @@ import { status } from '@/constants';
   lang="tsx"
 />
 
-## Props Reference
+### Props Reference
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `rating` | `number` | `0` | Current rating value (0 to maxRating) |
-| `maxRating` | `number` | `5` | Maximum number of stars |
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the stars |
-| `readonly` | `boolean` | `false` | Whether the rating is interactive |
-| `onChange` | `(rating: number) => void` | `undefined` | Callback when rating changes |
-| `className` | `string` | `undefined` | Additional CSS classes |
-| `showValue` | `boolean` | `true` (Stars Rating 2 only) | Whether to display numeric value |
+| Prop       | Type                              | Default | Description                                |
+| ---------- | --------------------------------- | ------- | ------------------------------------------ |
+| `rating`   | `number`                          | `0`     | Current rating value (0 to maxRating)      |
+| `maxRating` | `number`                         | `5`     | Maximum number of stars                    |
+| `size`     | `'sm' \| 'md' \| 'lg'`            | `'md'`  | Size of the stars                          |
+| `readonly` | `boolean`                         | `false` | Whether the rating is interactive          |
+| `onChange` | `(rating: number) => void`       | `undefined` | Callback when rating changes             |
+| `className` | `string`                         | `undefined` | Additional CSS classes                   |
+| `showValue` | `boolean`                        | `true`  | Whether to display the numeric score       |
 
 ## Usage Examples
 
