@@ -1,13 +1,15 @@
 ---
 title: Typography
-description: Typography components with different structures.
+description: Pre-styled typographic elements including headings, paragraphs, inline text, and links with consistent sizing and spacing.
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { extractSourceCode } from '@/lib/code';
 
-## Typography Component
+## Multi-Element Typography Set
+
+A comprehensive set of pre-styled typographic components covering all common HTML text elements. Each element comes with consistent font weight, sizing, and responsive spacing out of the box. Use individual components like `Typography1.H1`, `Typography1.P`, `Typography1.Strong`, etc., to keep your markup semantic while maintaining a unified visual style.
 
 <ComponentPreview
   name="typography-1"
@@ -17,7 +19,45 @@ import { extractSourceCode } from '@/lib/code';
   lang="tsx"
 />
 
-## Typography Variant
+### Available Elements
+
+| Element | HTML Tag | Description |
+|---------|----------|-------------|
+| `Header` | `h1` | Large page header with extra spacing |
+| `H1` – `H6` | `h1` – `h6` | Standard heading levels with responsive sizing |
+| `P` | `p` | Body paragraph |
+| `Span` | `span` | Inline text wrapper |
+| `Small` | `small` | Small/muted text |
+| `Strong` | `strong` | Bold emphasis |
+| `Em` | `em` | Italic emphasis |
+| `Blockquote` | `blockquote` | Quoted block with left border |
+| `Cite` | `cite` | Citation/source reference |
+| `Q` | `q` | Inline quotation |
+| `Abbr` | `abbr` | Abbreviation with dotted underline |
+| `Del` | `del` | Strikethrough (deleted text) |
+| `Ins` | `ins` | Underlined (inserted text) |
+| `Link` | `a` | Styled anchor with hover underline |
+
+### Props Reference
+
+All elements share the same base props:
+
+| Prop       | Type              | Description                                    | Default     |
+| ---------- | ----------------- | ---------------------------------------------- | ----------- |
+| `children` | `React.ReactNode` | Text content                                   | required    |
+| `className` | `string`         | Additional CSS classes                         | `undefined` |
+
+`Link` also accepts:
+
+| Prop   | Type     | Description        | Default     |
+| ------ | -------- | ------------------ | ----------- |
+| `href` | `string` | Destination URL    | required    |
+
+---
+
+## Single-Component Typography
+
+A unified typography component that renders different HTML elements based on a `variant` prop. Instead of importing multiple named components, use a single `TypographyVariant1` with `variant="h1"`, `variant="p"`, etc. The `as` prop allows overriding the rendered tag when needed, and `href` is automatically passed for link variants.
 
 <ComponentPreview
   name="typography-variant-1"
@@ -26,3 +66,14 @@ import { extractSourceCode } from '@/lib/code';
   sourceCode={(await extractSourceCode('typography-variant-1')).sourceCode}
   lang="tsx"
 />
+
+### Props Reference
+
+| Prop       | Type                                                  | Description                                            | Default     |
+| ---------- | ----------------------------------------------------- | ------------------------------------------------------ | ----------- |
+| `variant`  | `'header' \| 'h1' \| 'h2' \| 'h3' \| 'h4' \| 'h5' \| 'h6' \| 'p' \| 'span' \| 'a' \| 'small' \| 'strong' \| 'em' \| 'blockquote' \| 'cite' \| 'q' \| 'abbr' \| 'del' \| 'ins'` | Visual style and default HTML element | `'p'`       |
+| `as`       | `ElementType`                                         | Override the rendered HTML tag                         | `undefined` |
+| `children` | `React.ReactNode`                                     | Text content                                           | required    |
+| `href`     | `string`                                              | URL for link variants (`a`, `ins`, etc.)               | `undefined` |
+| `title`    | `string`                                              | Tooltip text for `abbr` variant                        | `undefined` |
+| `className` | `string`                                             | Additional CSS classes                                 | `undefined` |
