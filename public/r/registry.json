@@ -107,6 +107,22 @@
       ]
     },
     {
+      "name": "text-animation-3",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/animations/text-animation-3.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/star-forge/use-typewriter.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
       "name": "text-animation-2",
       "type": "registry:ui",
       "dependencies": [
@@ -859,6 +875,30 @@
       "files": [
         {
           "path": "src/components/star-forge/inputs/password/password-2.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scifi-button",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/sci-fi/scifi-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scifi-card",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/sci-fi/scifi-card.tsx",
           "type": "registry:ui"
         }
       ]
