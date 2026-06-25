@@ -1,0 +1,116 @@
+---
+title: Dialog
+description: A collection of ready-to-use dialog examples triggered from a drawer launcher.
+new: true
+---
+
+import { DrawerCodePreview } from '@/components/common/preview/drawer-preview';
+import { extractSourceCode } from '@/lib/code';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { status } from '@/constants';
+
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
+</Callout>
+
+## Dialog Examples
+
+A collection of 10 ready-to-use dialog examples built on top of the Star Forge primitives. Click the button on each card to open the dialog.
+
+<div className="grid gap-5 gap-y-8 lg:grid-cols-2 xl:grid-cols-3">
+
+<DrawerCodePreview
+  name="terms-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('terms-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="login-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('login-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="confirmation-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('confirmation-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="delete-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('delete-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="subscribe-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('subscribe-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="share-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('share-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="feedback-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('feedback-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="settings-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('settings-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="payment-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('payment-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+<DrawerCodePreview
+  name="welcome-dialog"
+  classNameComponentContainer="p-20"
+  code={(await extractSourceCode('welcome-dialog')).code}
+  lang="tsx"
+  hasEngineChoice={true}
+/>
+
+</div>
+
+### Included Dialogs
+
+- **Terms of Service** — Scrollable legal text with an accept action.
+- **Login** — Email and password form.
+- **Confirmation** — Generic confirm/cancel action.
+- **Delete Project** — Destructive alert dialog for irreversible actions.
+- **Subscribe** — Newsletter email capture.
+- **Share** — Read-only project link with copy button.
+- **Feedback** — Textarea for user feedback.
+- **Settings** — Toggles for notifications and public profile.
+- **Payment** — Credit card form with name, number, expiry and CVC.
+- **Welcome** — Onboarding steps overview.

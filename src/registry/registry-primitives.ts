@@ -286,6 +286,44 @@ export const primitives: Registry = [
     )
   },
   {
+    name: 'radix-alert-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@radix-ui/react-alert-dialog'],
+    description: 'Radix UI Alert Dialog primitive with Star Forge styling.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/alert-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/alert-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/alert-dialog').then((mod) => ({
+        default: mod.AlertDialog
+      }))
+    )
+  },
+  {
+    name: 'base-alert-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@base-ui/react'],
+    description: 'Base UI Alert Dialog primitive with Star Forge styling.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/base/alert-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/base/alert-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/base/alert-dialog').then((mod) => ({
+        default: mod.AlertDialog
+      }))
+    )
+  },
+  {
     name: 'radix-popover',
     author: 'EuMotta',
     type: 'registry:ui',
@@ -532,23 +570,289 @@ export const primitives: Registry = [
       }))
     )
   },
+  {
+    name: 'alert-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@radix-ui/react-alert-dialog'],
+    description: 'Alert Dialog primitive (Radix UI default).',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/alert-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/alert-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/alert-dialog').then((mod) => ({
+        default: mod.AlertDialog
+      }))
+    )
+  },
   // UI helpers (non-dual, used by block components)
+  {
+    name: 'radix-scroll-area',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@radix-ui/react-scroll-area'],
+    description: 'Radix UI Scroll Area primitive with custom scrollbar.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/scroll-area.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/scroll-area.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/scroll-area').then((mod) => ({
+        default: mod.ScrollArea
+      }))
+    )
+  },
+  {
+    name: 'base-scroll-area',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@base-ui/react'],
+    description: 'Base UI Scroll Area primitive with custom scrollbar.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/base/scroll-area.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/base/scroll-area.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/base/scroll-area').then((mod) => ({
+        default: mod.ScrollArea
+      }))
+    )
+  },
+  {
+    name: 'radix-switch',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@radix-ui/react-switch'],
+    description: 'Radix UI Switch primitive with Star Forge styling.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/switch.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/switch.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/switch').then((mod) => ({
+        default: mod.Switch
+      }))
+    )
+  },
+  {
+    name: 'base-switch',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@base-ui/react'],
+    description: 'Base UI Switch primitive with Star Forge styling.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/base/switch.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/base/switch.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/base/switch').then((mod) => ({
+        default: mod.Switch
+      }))
+    )
+  },
+  {
+    name: 'radix-checkbox',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@radix-ui/react-checkbox', 'lucide-react'],
+    description: 'Radix UI Checkbox primitive with Star Forge styling.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/checkbox.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/checkbox.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/checkbox').then((mod) => ({
+        default: mod.Checkbox
+      }))
+    )
+  },
+  {
+    name: 'base-checkbox',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@base-ui/react', 'lucide-react'],
+    description: 'Base UI Checkbox primitive with Star Forge styling.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/base/checkbox.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/base/checkbox.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/base/checkbox').then((mod) => ({
+        default: mod.Checkbox
+      }))
+    )
+  },
+  {
+    name: 'scroll-area',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@radix-ui/react-scroll-area'],
+    description: 'Scroll Area primitive (Radix UI default).',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/scroll-area.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/scroll-area.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/scroll-area').then((mod) => ({
+        default: mod.ScrollArea
+      }))
+    )
+  },
+  {
+    name: 'switch',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@radix-ui/react-switch'],
+    description: 'Switch primitive (Radix UI default).',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/switch.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/switch.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/switch').then((mod) => ({
+        default: mod.Switch
+      }))
+    )
+  },
+  {
+    name: 'checkbox',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: ['@radix-ui/react-checkbox', 'lucide-react'],
+    description: 'Checkbox primitive (Radix UI default).',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/checkbox.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/checkbox.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/checkbox').then((mod) => ({
+        default: mod.Checkbox
+      }))
+    )
+  },
+  {
+    name: 'radix-input',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: [],
+    description: 'Radix UI styled input primitive.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/input.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/input.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/input').then((mod) => ({
+        default: mod.Input
+      }))
+    )
+  },
+  {
+    name: 'base-input',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: [],
+    description: 'Base UI styled input primitive.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/base/input.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/base/input.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/base/input').then((mod) => ({
+        default: mod.Input
+      }))
+    )
+  },
   {
     name: 'input',
     author: 'EuMotta',
     type: 'registry:ui',
     dependencies: [],
-    description: 'Basic styled input component.',
+    description: 'Input primitive (Radix UI default).',
     files: [
       {
-        path: 'src/components/ui/input.tsx',
+        path: 'src/components/ui/primitives/radix/input.tsx',
         type: 'registry:ui'
       }
     ],
-    example: 'src/components/ui/input.tsx',
+    example: 'src/components/ui/primitives/radix/input.tsx',
     component: React.lazy(() =>
-      import('@/components/ui/input').then((mod) => ({
+      import('@/components/ui/primitives/radix/input').then((mod) => ({
         default: mod.Input
+      }))
+    )
+  },
+  {
+    name: 'radix-textarea',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: [],
+    description: 'Radix UI styled textarea primitive.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/radix/textarea.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/radix/textarea.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/radix/textarea').then((mod) => ({
+        default: mod.Textarea
+      }))
+    )
+  },
+  {
+    name: 'base-textarea',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: [],
+    description: 'Base UI styled textarea primitive.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/base/textarea.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/base/textarea.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/base/textarea').then((mod) => ({
+        default: mod.Textarea
       }))
     )
   },
@@ -557,16 +861,16 @@ export const primitives: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     dependencies: [],
-    description: 'Basic styled textarea component.',
+    description: 'Textarea primitive (Radix UI default).',
     files: [
       {
-        path: 'src/components/ui/textarea.tsx',
+        path: 'src/components/ui/primitives/radix/textarea.tsx',
         type: 'registry:ui'
       }
     ],
-    example: 'src/components/ui/textarea.tsx',
+    example: 'src/components/ui/primitives/radix/textarea.tsx',
     component: React.lazy(() =>
-      import('@/components/ui/textarea').then((mod) => ({
+      import('@/components/ui/primitives/radix/textarea').then((mod) => ({
         default: mod.Textarea
       }))
     )
