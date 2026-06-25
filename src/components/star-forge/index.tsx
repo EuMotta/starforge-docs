@@ -8,6 +8,7 @@ export * from './heros';
 export * from './inputs';
 export * from './layout';
 export * from './others';
+export * from './sci-fi';
 export * from './selects';
 
 export { default as Typography1 } from './typography-1';

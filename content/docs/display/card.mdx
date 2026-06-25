@@ -1,6 +1,7 @@
 ---
 title: Card
 description: Promotional and feature cards with cover images, ratings, action buttons, and decorative clipped borders.
+new: true
 ---
 
 import { ComponentPreview } from '@/components/common/preview/component-preview';
@@ -47,3 +48,30 @@ A benefit/feature card with a distinctive clipped-corner border effect using CSS
 | `text`     | `string`          | Description paragraph                          | `'Optimized components that deliver exceptional speed and efficiency for your applications.'` |
 | `icon`     | `React.ReactNode` | Icon element displayed above the title         | `<AlertCircle size={30} />` |
 | `className` | `string`         | Additional CSS classes for the wrapper         | `undefined` |
+
+---
+
+## Sci-Fi Card
+
+A sci-fi styled card with clip-path shapes, accent corner lines, and multiple variants (default, ghost, nested). Fully editable copy-paste component that adapts to any theme.
+
+<ComponentPreview
+  name="scifi-card"
+  classNameComponentContainer="py-10"
+  code={(await extractSourceCode('scifi-card')).code}
+  sourceCode={(await extractSourceCode('scifi-card')).sourceCode}
+  lang="tsx"
+/>
+
+### Props Reference
+
+| Prop | Type | Description | Default |
+|------|------|-------------|---------|
+| `variant` | `"default" \| "ghost" \| "nested"` | Visual variant of the card | `"default"` |
+| `shape` | `"octagon" \| "slash-tl" \| "slash-tr"` | Optional clip-path shape | `undefined` |
+| `cut` | `string` | Size of the corner cut for shapes | `"9px"` |
+| `cornerPos` | `Partial<Record<CornerPos, boolean>>` | Decorative corner triangles | `undefined` |
+| `accent` | `string` | Accent color for lines and corners | `"#00d4ff"` |
+| `borderColor` | `string` | Border color for default variant | `"rgba(0, 212, 255, 0.2)"` |
+| `background` | `string` | Background color for default variant | `"rgba(0, 212, 255, 0.04)"` |
+| `className` | `string` | Additional Tailwind classes | `""` |

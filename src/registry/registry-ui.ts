@@ -1298,5 +1298,45 @@ export const ui: Registry = [
         })
       )
     )
+  },
+  {
+    name: 'scifi-button',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: [],
+    description:
+      'Sci-fi styled button with clip-path shapes (octagon, slash), glow effects, scanner, shine sweep, accent bars and corner decorations.',
+    files: [
+      {
+        path: 'src/components/star-forge/sci-fi/scifi-button.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/sci-fi-button.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/sci-fi-button').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'scifi-card',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    dependencies: [],
+    description:
+      'Sci-fi styled card with clip-path shapes, accent corner lines, ghost and nested variants. Fully editable copy-paste component.',
+    files: [
+      {
+        path: 'src/components/star-forge/sci-fi/scifi-card.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/sci-fi-card.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/sci-fi-card').then((mod) => ({
+        default: mod.default
+      }))
+    )
   }
 ];

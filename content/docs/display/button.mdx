@@ -1,0 +1,46 @@
+---
+title: Button
+description: Sci-fi styled button with clip-path shapes, glow effects, shine sweep, scanner line, accent bars and corner decorations.
+new: true
+---
+
+import { ComponentPreview } from '@/components/common/preview/component-preview';
+import { extractSourceCode } from '@/lib/code';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { status } from '@/constants';
+
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
+</Callout>
+
+## Sci-Fi Button
+
+A sci-fi styled button with configurable clip-path shapes (octagon, slash-tl, slash-tr), glow effects, shine sweep, scanner line, accent bars and corner decorations. Works as a `<button>`, internal `<Link>` or external `<a>`.
+
+<ComponentPreview
+  name="scifi-button"
+  classNameComponentContainer="py-10"
+  code={(await extractSourceCode('scifi-button')).code}
+  sourceCode={(await extractSourceCode('scifi-button')).sourceCode}
+  lang="tsx"
+/>
+
+### Props Reference
+
+| Prop | Type | Description | Default |
+|------|------|-------------|---------|
+| `shape` | `"octagon" \| "slash-tl" \| "slash-tr"` | Clip-path shape of the button | `"octagon"` |
+| `cut` | `string` | Size of the corner cut (e.g. `"9px"`) | `"9px"` |
+| `cornerPos` | `Partial<Record<CornerPos, boolean>>` | Which corners get a decorative triangle | `undefined` |
+| `bars` | `boolean` | Show vertical accent bars on each side | `false` |
+| `scanner` | `boolean` | Animate a horizontal scanner line | `false` |
+| `shine` | `boolean` | Show a sweeping shine effect | `true` |
+| `disabled` | `boolean` | Disable the button | `false` |
+| `accent` | `string` | Accent color (CSS color value) | `"#00d4ff"` |
+| `bg` | `string` | Inner background color | `"#0d1117"` |
+| `borderPx` | `string` | Inset border thickness | `"1px"` |
+| `borderHover` | `boolean` | Show accent border on hover | `false` |
+| `className` | `string` | Additional Tailwind classes | `""` |
+| `onClick` | `() => void` | Click handler (button mode) | `undefined` |
+| `href` | `string` | Render as link when provided | `undefined` |
