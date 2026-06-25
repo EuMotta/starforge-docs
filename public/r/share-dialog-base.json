@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "share-dialog-base",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://starforge-docs.com/r/base-dialog.json",
+    "https://starforge-docs.com/r/base-button.json",
+    "https://starforge-docs.com/r/base-input.json",
+    "https://starforge-docs.com/r/base-label.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/star-forge/dialogs/share-dialog.tsx",
+      "content": "'use client';\n\nimport { Button } from '@/components/ui/button';\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger\n} from '@/components/ui/dialog';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport { Share2 } from 'lucide-react';\n\nexport function ShareDialog() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">\n          <Share2 className=\"mr-2 h-4 w-4\" />\n          Share\n        </Button>\n      </DialogTrigger>\n      <DialogContent className=\"sm:max-w-[425px]\">\n        <DialogHeader>\n          <DialogTitle>Share this project</DialogTitle>\n          <DialogDescription>\n            Anyone with the link can view this project. Copy the link below to\n            share.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"grid gap-4 py-4\">\n          <div className=\"grid gap-2\">\n            <Label htmlFor=\"share-link\">Project link</Label>\n            <div className=\"flex gap-2\">\n              <Input\n                id=\"share-link\"\n                readOnly\n                value=\"https://starforge.dev/p/abc123\"\n              />\n              <Button variant=\"secondary\">Copy</Button>\n            </div>\n          </div>\n        </div>\n      </DialogContent>\n    </Dialog>\n  );\n}\n\nexport default ShareDialog;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

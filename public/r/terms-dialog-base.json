@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "terms-dialog-base",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://starforge-docs.com/r/base-dialog.json",
+    "https://starforge-docs.com/r/base-button.json",
+    "https://starforge-docs.com/r/base-scroll-area.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/star-forge/dialogs/terms-dialog.tsx",
+      "content": "'use client';\n\nimport { Button } from '@/components/ui/button';\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger\n} from '@/components/ui/dialog';\nimport { ScrollArea } from '@/components/ui/scroll-area';\nimport { FileText } from 'lucide-react';\n\nexport function TermsDialog() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">\n          <FileText className=\"mr-2 h-4 w-4\" />\n          Terms of Service\n        </Button>\n      </DialogTrigger>\n      <DialogContent className=\"max-h-[80vh] max-w-2xl\">\n        <DialogHeader>\n          <DialogTitle>Terms of Service</DialogTitle>\n          <DialogDescription>\n            Last updated: June 24, 2026. Please read these terms carefully\n            before using the platform.\n          </DialogDescription>\n        </DialogHeader>\n        <ScrollArea className=\"h-[50vh] pr-4\">\n          <div className=\"text-muted-foreground space-y-4 text-sm\">\n            <p>\n              <strong>1. Acceptance of Terms</strong>\n              <br />\n              By accessing or using our services, you agree to be bound by these\n              Terms of Service.\n            </p>\n            <p>\n              <strong>2. Use of Services</strong>\n              <br />\n              You agree to use the services only for lawful purposes and in\n              accordance with these Terms.\n            </p>\n            <p>\n              <strong>3. User Accounts</strong>\n              <br />\n              You are responsible for maintaining the confidentiality of your\n              account credentials.\n            </p>\n            <p>\n              <strong>4. Limitation of Liability</strong>\n              <br />\n              We shall not be liable for any indirect, incidental, or\n              consequential damages arising from your use of the services.\n            </p>\n            <p>\n              <strong>5. Changes to Terms</strong>\n              <br />\n              We reserve the right to modify these terms at any time. Continued\n              use constitutes acceptance of the revised terms.\n            </p>\n          </div>\n        </ScrollArea>\n        <DialogFooter>\n          <Button>Accept Terms</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n\nexport default TermsDialog;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

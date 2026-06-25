@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "login-dialog",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://starforge-docs.com/r/dialog.json",
+    "https://starforge-docs.com/r/button.json",
+    "https://starforge-docs.com/r/input.json",
+    "https://starforge-docs.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/star-forge/dialogs/login-dialog.tsx",
+      "content": "'use client';\n\nimport { Button } from '@/components/ui/button';\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger\n} from '@/components/ui/dialog';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport { LogIn } from 'lucide-react';\n\nexport function LoginDialog() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">\n          <LogIn className=\"mr-2 h-4 w-4\" />\n          Login\n        </Button>\n      </DialogTrigger>\n      <DialogContent className=\"sm:max-w-[425px]\">\n        <DialogHeader>\n          <DialogTitle>Login</DialogTitle>\n          <DialogDescription>\n            Enter your credentials to access your account.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"grid gap-4 py-4\">\n          <div className=\"grid gap-2\">\n            <Label htmlFor=\"email\">Email</Label>\n            <Input id=\"email\" type=\"email\" placeholder=\"name@example.com\" />\n          </div>\n          <div className=\"grid gap-2\">\n            <Label htmlFor=\"password\">Password</Label>\n            <Input id=\"password\" type=\"password\" placeholder=\"••••••••\" />\n          </div>\n        </div>\n        <DialogFooter className=\"flex-col gap-2 sm:flex-row\">\n          <Button type=\"submit\" className=\"w-full sm:w-auto\">\n            Sign In\n          </Button>\n          <Button variant=\"link\" className=\"w-full sm:w-auto\">\n            Forgot password?\n          </Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n\nexport default LoginDialog;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
