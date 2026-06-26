@@ -1258,7 +1258,13 @@ export const ui: Registry = [
     name: 'terms-dialog',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['dialog', 'button', 'scroll-area'],
+    registryDependencies: [
+      'dialog',
+      'button',
+      'scroll-area',
+      'checkbox',
+      'label'
+    ],
     dependencies: ['lucide-react'],
     description:
       'Terms of Service dialog with scrollable content and accept action.',
@@ -1279,7 +1285,13 @@ export const ui: Registry = [
     name: 'terms-dialog-base',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['base-dialog', 'base-button', 'base-scroll-area'],
+    registryDependencies: [
+      'base-dialog',
+      'base-button',
+      'base-scroll-area',
+      'base-checkbox',
+      'base-label'
+    ],
     dependencies: ['lucide-react'],
     description:
       'Terms of Service dialog with scrollable content and accept action (Base UI variant).',

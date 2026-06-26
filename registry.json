@@ -854,7 +854,9 @@
       "registryDependencies": [
         "https://starforge-docs.com/r/dialog.json",
         "https://starforge-docs.com/r/button.json",
-        "https://starforge-docs.com/r/scroll-area.json"
+        "https://starforge-docs.com/r/scroll-area.json",
+        "https://starforge-docs.com/r/checkbox.json",
+        "https://starforge-docs.com/r/label.json"
       ],
       "files": [
         {
@@ -872,7 +874,9 @@
       "registryDependencies": [
         "https://starforge-docs.com/r/base-dialog.json",
         "https://starforge-docs.com/r/base-button.json",
-        "https://starforge-docs.com/r/base-scroll-area.json"
+        "https://starforge-docs.com/r/base-scroll-area.json",
+        "https://starforge-docs.com/r/base-checkbox.json",
+        "https://starforge-docs.com/r/base-label.json"
       ],
       "files": [
         {
