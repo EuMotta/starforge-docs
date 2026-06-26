@@ -1255,6 +1255,468 @@ export const ui: Registry = [
     )
   },
   {
+    name: 'terms-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [
+      'dialog',
+      'button',
+      'scroll-area',
+      'checkbox',
+      'label'
+    ],
+    dependencies: ['lucide-react'],
+    description:
+      'Terms of Service dialog with scrollable content and accept action.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/terms-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/terms-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/terms-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'terms-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [
+      'base-dialog',
+      'base-button',
+      'base-scroll-area',
+      'base-checkbox',
+      'base-label'
+    ],
+    dependencies: ['lucide-react'],
+    description:
+      'Terms of Service dialog with scrollable content and accept action (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/terms-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/terms-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/terms-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'login-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button', 'input', 'label'],
+    dependencies: ['lucide-react'],
+    description: 'Login dialog with email and password form.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/login-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/login-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/login-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'login-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [
+      'base-dialog',
+      'base-button',
+      'base-input',
+      'base-label'
+    ],
+    dependencies: ['lucide-react'],
+    description: 'Login dialog with email and password form (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/login-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/login-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/login-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'confirmation-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button'],
+    dependencies: ['lucide-react'],
+    description:
+      'Generic confirmation dialog with cancel and continue actions.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/confirmation-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/confirmation-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/confirmation-dialog').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'confirmation-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-dialog', 'base-button'],
+    dependencies: ['lucide-react'],
+    description:
+      'Generic confirmation dialog with cancel and continue actions (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/confirmation-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/confirmation-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/confirmation-dialog').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'delete-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['alert-dialog', 'button'],
+    dependencies: ['lucide-react'],
+    description: 'Destructive alert dialog for irreversible delete actions.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/delete-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/delete-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/delete-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'delete-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-alert-dialog', 'base-button'],
+    dependencies: ['lucide-react'],
+    description:
+      'Destructive alert dialog for irreversible delete actions (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/delete-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/delete-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/delete-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'subscribe-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button', 'input', 'label'],
+    dependencies: ['lucide-react'],
+    description: 'Newsletter subscription dialog with email capture.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/subscribe-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/subscribe-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/subscribe-dialog').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'subscribe-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [
+      'base-dialog',
+      'base-button',
+      'base-input',
+      'base-label'
+    ],
+    dependencies: ['lucide-react'],
+    description:
+      'Newsletter subscription dialog with email capture (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/subscribe-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/subscribe-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/subscribe-dialog').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'share-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button', 'input', 'label'],
+    dependencies: ['lucide-react'],
+    description: 'Share dialog with read-only project link and copy button.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/share-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/share-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/share-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'share-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [
+      'base-dialog',
+      'base-button',
+      'base-input',
+      'base-label'
+    ],
+    dependencies: ['lucide-react'],
+    description:
+      'Share dialog with read-only project link and copy button (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/share-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/share-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/share-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'feedback-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button', 'label', 'textarea'],
+    dependencies: ['lucide-react'],
+    description: 'Feedback dialog with textarea for user comments.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/feedback-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/feedback-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/feedback-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'feedback-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [
+      'base-dialog',
+      'base-button',
+      'base-label',
+      'base-textarea'
+    ],
+    dependencies: ['lucide-react'],
+    description:
+      'Feedback dialog with textarea for user comments (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/feedback-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/feedback-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/feedback-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'settings-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button', 'label', 'switch'],
+    dependencies: ['lucide-react'],
+    description:
+      'Settings dialog with toggles for notifications and public profile.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/settings-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/settings-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/settings-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'settings-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [
+      'base-dialog',
+      'base-button',
+      'base-label',
+      'base-switch'
+    ],
+    dependencies: ['lucide-react'],
+    description:
+      'Settings dialog with toggles for notifications and public profile (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/settings-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/settings-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/settings-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'payment-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button', 'input', 'label'],
+    dependencies: ['lucide-react'],
+    description: 'Payment method dialog with credit card form.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/payment-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/payment-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/payment-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'payment-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [
+      'base-dialog',
+      'base-button',
+      'base-input',
+      'base-label'
+    ],
+    dependencies: ['lucide-react'],
+    description:
+      'Payment method dialog with credit card form (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/payment-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/payment-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/payment-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'welcome-dialog',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button'],
+    dependencies: ['lucide-react'],
+    description: 'Welcome onboarding dialog with step overview.',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/welcome-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/welcome-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/welcome-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'welcome-dialog-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-dialog', 'base-button'],
+    dependencies: ['lucide-react'],
+    description:
+      'Welcome onboarding dialog with step overview (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/dialogs/welcome-dialog.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge/dialogs/welcome-dialog.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge/dialogs/welcome-dialog').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
     name: 'password-1-base',
     author: 'EuMotta',
     type: 'registry:ui',

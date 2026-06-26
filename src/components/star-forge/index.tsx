@@ -3,6 +3,7 @@ export * from './animations';
 export * from './avatar';
 export * from './backgrounds';
 export * from './cards';
+export * from './dialogs';
 export * from './footer';
 export * from './heros';
 export * from './inputs';

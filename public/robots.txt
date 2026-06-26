@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.starforge-docs.com/
+Host: https://starforge-docs.com
 
 # Sitemaps
-Sitemap: https://www.starforge-docs.com/sitemap.xml
+Sitemap: https://starforge-docs.com/sitemap.xml

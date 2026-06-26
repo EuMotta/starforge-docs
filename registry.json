@@ -846,6 +846,376 @@
       ]
     },
     {
+      "name": "terms-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json",
+        "https://starforge-docs.com/r/scroll-area.json",
+        "https://starforge-docs.com/r/checkbox.json",
+        "https://starforge-docs.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/terms-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "terms-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json",
+        "https://starforge-docs.com/r/base-scroll-area.json",
+        "https://starforge-docs.com/r/base-checkbox.json",
+        "https://starforge-docs.com/r/base-label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/terms-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "login-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json",
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/login-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "login-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json",
+        "https://starforge-docs.com/r/base-input.json",
+        "https://starforge-docs.com/r/base-label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/login-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "confirmation-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/confirmation-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "confirmation-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/confirmation-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "delete-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/alert-dialog.json",
+        "https://starforge-docs.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/delete-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "delete-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-alert-dialog.json",
+        "https://starforge-docs.com/r/base-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/delete-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "subscribe-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json",
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/subscribe-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "subscribe-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json",
+        "https://starforge-docs.com/r/base-input.json",
+        "https://starforge-docs.com/r/base-label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/subscribe-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "share-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json",
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/share-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "share-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json",
+        "https://starforge-docs.com/r/base-input.json",
+        "https://starforge-docs.com/r/base-label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/share-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "feedback-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json",
+        "https://starforge-docs.com/r/label.json",
+        "https://starforge-docs.com/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/feedback-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "feedback-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json",
+        "https://starforge-docs.com/r/base-label.json",
+        "https://starforge-docs.com/r/base-textarea.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/feedback-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "settings-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json",
+        "https://starforge-docs.com/r/label.json",
+        "https://starforge-docs.com/r/switch.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/settings-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "settings-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json",
+        "https://starforge-docs.com/r/base-label.json",
+        "https://starforge-docs.com/r/base-switch.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/settings-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "payment-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json",
+        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/payment-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "payment-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json",
+        "https://starforge-docs.com/r/base-input.json",
+        "https://starforge-docs.com/r/base-label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/payment-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "welcome-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/welcome-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "welcome-dialog-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/dialogs/welcome-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "password-1-base",
       "type": "registry:ui",
       "dependencies": [
@@ -1110,6 +1480,34 @@
       ]
     },
     {
+      "name": "radix-alert-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-alert-dialog"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-alert-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/base/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radix-popover",
       "type": "registry:ui",
       "dependencies": [
@@ -1294,13 +1692,204 @@
       ]
     },
     {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-alert-dialog"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-scroll-area",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-scroll-area",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/base/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-switch",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-switch",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/base/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-checkbox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-checkbox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/base/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-checkbox",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-input",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-input",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/base/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input",
       "type": "registry:ui",
       "dependencies": [],
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/input.tsx",
+          "path": "src/components/ui/radix/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radix-textarea",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/radix/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "base-textarea",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/base/textarea.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1312,7 +1901,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/textarea.tsx",
+          "path": "src/components/ui/radix/textarea.tsx",
           "type": "registry:ui"
         }
       ]

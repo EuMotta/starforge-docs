@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "subscribe-dialog-base",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "https://starforge-docs.com/r/base-dialog.json",
+    "https://starforge-docs.com/r/base-button.json",
+    "https://starforge-docs.com/r/base-input.json",
+    "https://starforge-docs.com/r/base-label.json"
+  ],
+  "files": [
+    {
+      "path": "src/components/star-forge/dialogs/subscribe-dialog.tsx",
+      "content": "'use client';\n\nimport { Button } from '@/components/ui/button';\nimport {\n  Dialog,\n  DialogContent,\n  DialogDescription,\n  DialogFooter,\n  DialogHeader,\n  DialogTitle,\n  DialogTrigger\n} from '@/components/ui/dialog';\nimport { Input } from '@/components/ui/input';\nimport { Label } from '@/components/ui/label';\nimport { Mail } from 'lucide-react';\n\nexport function SubscribeDialog() {\n  return (\n    <Dialog>\n      <DialogTrigger asChild>\n        <Button variant=\"outline\">\n          <Mail className=\"mr-2 h-4 w-4\" />\n          Subscribe\n        </Button>\n      </DialogTrigger>\n      <DialogContent className=\"sm:max-w-[425px]\">\n        <DialogHeader>\n          <DialogTitle>Subscribe to our newsletter</DialogTitle>\n          <DialogDescription>\n            Get the latest updates, tips, and resources delivered straight to\n            your inbox.\n          </DialogDescription>\n        </DialogHeader>\n        <div className=\"grid gap-4 py-4\">\n          <div className=\"grid gap-2\">\n            <Label htmlFor=\"subscribe-email\">Email address</Label>\n            <Input id=\"subscribe-email\" placeholder=\"you@example.com\" />\n          </div>\n        </div>\n        <DialogFooter>\n          <Button className=\"w-full\">Subscribe</Button>\n        </DialogFooter>\n      </DialogContent>\n    </Dialog>\n  );\n}\n\nexport default SubscribeDialog;\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
