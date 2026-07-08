@@ -1,12 +1,12 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
-  "name": "combobox",
+  "name": "base-combobox",
   "dependencies": [
     "@base-ui/react",
     "lucide-react"
   ],
   "registryDependencies": [
-    "https://starforge-docs.com/r/base-combobox.json"
+    "https://starforge-docs.com/r/input-group.json"
   ],
   "files": [
     {

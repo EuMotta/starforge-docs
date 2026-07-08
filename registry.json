@@ -96,7 +96,8 @@
       "name": "text-animation-1",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "framer-motion"
       ],
       "registryDependencies": [],
       "files": [
@@ -126,7 +127,8 @@
       "name": "text-animation-2",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority"
+        "class-variance-authority",
+        "framer-motion"
       ],
       "registryDependencies": [],
       "files": [
@@ -1222,7 +1224,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/base-input.json",
         "https://starforge-docs.com/r/base-button.json"
       ],
       "files": [
@@ -1239,7 +1241,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://starforge-docs.com/r/input.json",
+        "https://starforge-docs.com/r/base-input.json",
         "https://starforge-docs.com/r/base-button.json"
       ],
       "files": [
@@ -1270,6 +1272,66 @@
         {
           "path": "src/components/star-forge/sci-fi/scifi-card.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "search-1-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-combobox.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/search/search-1.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/star-forge/use-debounce.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "search-2-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-combobox.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/search/search-1.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/star-forge/use-debounce.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "search-3-base",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-combobox.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/inputs/search/search-1.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/hooks/star-forge/use-debounce.ts",
+          "type": "registry:hook"
         }
       ]
     },
@@ -1925,7 +1987,7 @@
       ]
     },
     {
-      "name": "combobox",
+      "name": "base-combobox",
       "type": "registry:ui",
       "dependencies": [
         "@base-ui/react",
@@ -1933,6 +1995,23 @@
       ],
       "registryDependencies": [
         "https://starforge-docs.com/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-combobox.json"
       ],
       "files": [
         {

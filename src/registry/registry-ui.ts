@@ -136,7 +136,7 @@ export const ui: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     registryDependencies: [],
-    dependencies: ['class-variance-authority'],
+    dependencies: ['class-variance-authority', 'framer-motion'],
     description:
       'Character-by-character text animation using framer-motion (fade/slide), with color variants (default/primary/secondary).',
     files: [
@@ -188,7 +188,7 @@ export const ui: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     registryDependencies: [],
-    dependencies: ['class-variance-authority'],
+    dependencies: ['class-variance-authority', 'framer-motion'],
     description:
       'Word-by-word text animation using framer-motion (sequential fade-in), with color variants (default/primary/secondary).',
     files: [
@@ -1720,7 +1720,7 @@ export const ui: Registry = [
     name: 'password-1-base',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['input', 'base-button'],
+    registryDependencies: ['base-input', 'base-button'],
     dependencies: ['lucide-react'],
     description: 'Password input with show/hide button (Base UI variant).',
     files: [
@@ -1742,7 +1742,7 @@ export const ui: Registry = [
     name: 'password-2-base',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['input', 'base-button'],
+    registryDependencies: ['base-input', 'base-button'],
     dependencies: ['lucide-react'],
     description:
       'Registration password input with strength meter (Base UI variant).',
@@ -1797,6 +1797,84 @@ export const ui: Registry = [
     example: 'src/components/star-forge-preview/sci-fi-card.tsx',
     component: React.lazy(() =>
       import('@/components/star-forge-preview/sci-fi-card').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  } /*   
+   ─── Search Base UI variants ───
+   Combobox is Base UI only (Radix UI has no native Combobox primitive).
+   These variants explicitly resolve to base-combobox for users who choose Base UI engine. */,
+  {
+    name: 'search-1-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-combobox'],
+    dependencies: ['lucide-react'],
+    description:
+      'Complete search with autocomplete, debounce, async results, recent searches and trending searches (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/search/search-1.tsx',
+        type: 'registry:ui'
+      },
+      {
+        path: 'src/hooks/star-forge/use-debounce.ts',
+        type: 'registry:hook'
+      }
+    ],
+    example: 'src/components/star-forge-preview/search-complete.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/search-complete').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'search-2-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-combobox'],
+    dependencies: ['lucide-react'],
+    description:
+      'Search with autocomplete showing only trending suggestions (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/search/search-1.tsx',
+        type: 'registry:ui'
+      },
+      {
+        path: 'src/hooks/star-forge/use-debounce.ts',
+        type: 'registry:hook'
+      }
+    ],
+    example: 'src/components/star-forge-preview/search-trending.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/search-trending').then((mod) => ({
+        default: mod.default
+      }))
+    )
+  },
+  {
+    name: 'search-3-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-combobox'],
+    dependencies: ['lucide-react'],
+    description:
+      'Minimalist search with autocomplete, without suggestion blocks (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/inputs/search/search-1.tsx',
+        type: 'registry:ui'
+      },
+      {
+        path: 'src/hooks/star-forge/use-debounce.ts',
+        type: 'registry:hook'
+      }
+    ],
+    example: 'src/components/star-forge-preview/search-minimal.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/search-minimal').then((mod) => ({
         default: mod.default
       }))
     )

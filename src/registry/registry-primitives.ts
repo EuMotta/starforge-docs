@@ -896,12 +896,34 @@ export const primitives: Registry = [
     )
   },
   {
-    name: 'combobox',
+    name: 'base-combobox',
     author: 'EuMotta',
     type: 'registry:ui',
     registryDependencies: ['input-group'],
     dependencies: ['@base-ui/react', 'lucide-react'],
-    description: 'Combobox autocomplete component powered by Base UI.',
+    description:
+      'Combobox autocomplete component powered by Base UI. No Radix variant exists — Radix UI does not provide a native Combobox primitive.',
+    files: [
+      {
+        path: 'src/components/ui/combobox.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/combobox.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/combobox').then((mod) => ({
+        default: mod.Combobox
+      }))
+    )
+  },
+  {
+    name: 'combobox',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-combobox'],
+    dependencies: ['@base-ui/react', 'lucide-react'],
+    description:
+      'Combobox primitive (Base UI only). Alias for base-combobox — Radix UI does not provide a native Combobox primitive.',
     files: [
       {
         path: 'src/components/ui/combobox.tsx',

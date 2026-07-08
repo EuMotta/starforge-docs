@@ -16,12 +16,17 @@ const dualPrimitiveNames = [
   'avatar',
   'badge',
   'button',
+  'checkbox',
   'collapsible',
   'dialog',
+  'input',
   'label',
   'popover',
+  'scroll-area',
   'select',
-  'tabs'
+  'switch',
+  'tabs',
+  'textarea'
 ];
 
 const dualPrimitiveNameSet = new Set(dualPrimitiveNames);

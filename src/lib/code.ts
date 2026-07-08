@@ -16,9 +16,8 @@
  */
 
 import { getComponentByName } from '@/registry';
-import { promises as fs } from 'fs';
-import path from 'path';
-import '../registry/';
+import { promises as fs } from 'node:fs';
+import path from 'node:path';
 
 export async function extractSourceCode(
   componentName: string
