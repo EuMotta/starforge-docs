@@ -2,11 +2,12 @@
 
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import { FaGithub } from 'react-icons/fa';
 
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/settings';
 import { motion } from 'framer-motion';
-import { Construction, Github } from 'lucide-react';
+import { Construction } from 'lucide-react';
 
 export interface ErrorProps {
   title?: string;
@@ -108,7 +109,7 @@ const EmptyState: React.FC<ErrorProps> = ({
               rel="noopener noreferrer"
               className="flex items-center gap-2 no-underline"
             >
-              <Github className="h-4 w-4" />
+              <FaGithub className="h-4 w-4" />
               Contribute on GitHub
             </a>
           </Button>

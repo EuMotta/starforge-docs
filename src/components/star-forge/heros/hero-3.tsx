@@ -14,8 +14,8 @@ const HeroSection = () => {
           </h1>
           <ul className="mb-8 space-y-3">
             <li className="flex items-center">
-              <span className="mr-2 text-green-400">✔</span> Increase
-              efficiency and optimize processes
+              <span className="mr-2 text-green-400">✔</span> Increase efficiency
+              and optimize processes
             </li>
             <li className="flex items-center">
               <span className="mr-2 text-green-400">✔</span> High-quality

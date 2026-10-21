@@ -2,7 +2,7 @@
 import { MdSearch } from 'react-icons/md';
 
 import { Button } from '@/components/ui/button';
-import { useSearchContext } from 'fumadocs-ui/provider';
+import { useSearchContext } from 'fumadocs-ui/contexts/search';
 
 export function SearchTriggerButton() {
   const { setOpenSearch } = useSearchContext();

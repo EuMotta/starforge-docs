@@ -20,8 +20,7 @@ const textAnimationVariants = cva('inline', {
 });
 
 interface TextAnimation1Props
-  extends HTMLMotionProps<'span'>,
-    VariantProps<typeof textAnimationVariants> {
+  extends HTMLMotionProps<'span'>, VariantProps<typeof textAnimationVariants> {
   text: string;
 }
 

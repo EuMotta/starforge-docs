@@ -1,8 +1,6 @@
 import { primitives } from './registry-primitives.ts';
 import { ui } from './registry-ui.ts';
-import * as schema from './schema.ts';
-
-type Registry = typeof schema.registrySchema._type;
+import type { Registry } from './schema.ts';
 
 const ensureArray = <T>(items: T | T[]): T[] =>
   Array.isArray(items) ? items : Object.values(items as object);

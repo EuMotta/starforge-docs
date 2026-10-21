@@ -17,14 +17,17 @@ function ColorGroup({ title, colors }: ColorGroupProps) {
   const [resolved, setResolved] = useState<Record<string, string>>({});
 
   useEffect(() => {
-    const map: Record<string, string> = {};
-    colors.forEach((c) => {
-      const value = getComputedStyle(document.documentElement).getPropertyValue(
-        c.cssVar
-      );
-      map[c.name] = value.trim();
+    const id = requestAnimationFrame(() => {
+      const map: Record<string, string> = {};
+      colors.forEach((c) => {
+        const value = getComputedStyle(
+          document.documentElement
+        ).getPropertyValue(c.cssVar);
+        map[c.name] = value.trim();
+      });
+      setResolved(map);
     });
-    setResolved(map);
+    return () => cancelAnimationFrame(id);
   }, [colors]);
 
   return (

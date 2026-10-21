@@ -21,8 +21,7 @@ const textAnimationVariants = cva('inline', {
 });
 
 interface TextAnimation2Props
-  extends HTMLMotionProps<'span'>,
-    VariantProps<typeof textAnimationVariants> {
+  extends HTMLMotionProps<'span'>, VariantProps<typeof textAnimationVariants> {
   children: React.ReactNode;
 }
 

@@ -8,8 +8,7 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
-export interface Password1InputProps
-  extends React.ComponentPropsWithoutRef<'input'> {}
+export interface Password1InputProps extends React.ComponentPropsWithoutRef<'input'> {}
 
 const Password1 = React.forwardRef<HTMLInputElement, Password1InputProps>(
   ({ className, ...props }, ref) => {

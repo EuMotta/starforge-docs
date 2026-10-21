@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 interface UseTypewriterOptions {
   text: string;
@@ -35,55 +35,52 @@ export function useTypewriter({
   const rafRef = useRef<number | null>(null);
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const startTyping = useCallback(() => {
-    setIsTyping(true);
-    setIsDone(false);
-    setDisplayText('');
+  useEffect(() => {
+    if (!enabled) return;
 
-    const startTime = performance.now() + delay;
+    let cancelled = false;
 
-    const tick = (now: number) => {
-      const elapsed = now - startTime;
+    const startTyping = () => {
+      setIsTyping(true);
+      setIsDone(false);
+      setDisplayText('');
 
-      if (elapsed < 0) {
-        rafRef.current = requestAnimationFrame(tick);
-        return;
-      }
+      const startTime = performance.now() + delay;
 
-      const visibleChars = Math.min(text.length, Math.floor(elapsed / speed));
-      const nextText = text.slice(0, visibleChars);
+      const tick = (now: number) => {
+        const elapsed = now - startTime;
 
-      setDisplayText(nextText);
-
-      if (visibleChars >= text.length) {
-        setIsDone(true);
-        setIsTyping(false);
-
-        if (loop) {
-          timeoutRef.current = setTimeout(() => {
-            startTyping();
-          }, loopDelay);
+        if (elapsed < 0) {
+          rafRef.current = requestAnimationFrame(tick);
+          return;
         }
-        return;
-      }
+
+        const visibleChars = Math.min(text.length, Math.floor(elapsed / speed));
+
+        setDisplayText(text.slice(0, visibleChars));
+
+        if (visibleChars >= text.length) {
+          setIsDone(true);
+          setIsTyping(false);
+
+          if (loop) {
+            timeoutRef.current = setTimeout(() => {
+              if (!cancelled) startTyping();
+            }, loopDelay);
+          }
+          return;
+        }
+
+        rafRef.current = requestAnimationFrame(tick);
+      };
 
       rafRef.current = requestAnimationFrame(tick);
     };
 
-    rafRef.current = requestAnimationFrame(tick);
-  }, [text, speed, delay, loop, loopDelay]);
-
-  useEffect(() => {
-    if (!enabled) {
-      setDisplayText(text);
-      setIsDone(true);
-      setIsTyping(false);
-      return;
-    }
-
-    startTyping();
+    rafRef.current = requestAnimationFrame(startTyping);
 
     return () => {
+      cancelled = true;
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
       }
@@ -91,7 +88,11 @@ export function useTypewriter({
         clearTimeout(timeoutRef.current);
       }
     };
-  }, [enabled, startTyping, text]);
+  }, [enabled, text, speed, delay, loop, loopDelay]);
 
-  return { displayText, isDone, isTyping };
+  return {
+    displayText: enabled ? displayText : text,
+    isDone: enabled ? isDone : true,
+    isTyping: enabled && isTyping
+  };
 }

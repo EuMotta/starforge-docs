@@ -1,7 +1,7 @@
 /* eslint-disable import-helpers/order-imports */
 import { siteConfig } from '@/settings';
 import './global.css';
-import { RootProvider } from 'fumadocs-ui/provider';
+import { RootProvider } from 'fumadocs-ui/provider/next';
 import NextTopLoader from 'nextjs-toploader';
 import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
