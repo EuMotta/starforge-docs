@@ -1,10 +1,11 @@
 'use client';
 
 import { BsWhatsapp } from 'react-icons/bs';
+import { FaLinkedin } from 'react-icons/fa';
 
 import { siteConfig } from '@/settings';
 import { motion } from 'framer-motion';
-import { Linkedin, Share2, Heart } from 'lucide-react';
+import { Share2, Heart } from 'lucide-react';
 
 const SocialShare = () => {
   const shareText = encodeURIComponent(
@@ -21,7 +22,7 @@ const SocialShare = () => {
     },
     {
       href: `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}&summary=${shareText}`,
-      icon: Linkedin,
+      icon: FaLinkedin,
       label: 'LinkedIn',
       color: 'from-blue-600 to-blue-700'
     },

@@ -57,11 +57,19 @@ export async function extractSourceCode(
     };
   }
 
-  const exampleSanitizedFilePath = exampleComponentFile.replace(/^@/, '');
-  const sourceSanitizedFilePath = sourceComponentFile.replace(/^@/, '');
+  const toSrcRelative = (filePath: string) =>
+    filePath.replace(/^@/, '').replace(/^src\//, '');
 
-  const fullExamplePath = path.join(basePath, exampleSanitizedFilePath);
-  const fullSourcePath = path.join(basePath, sourceSanitizedFilePath);
+  const fullExamplePath = path.join(
+    basePath,
+    'src',
+    toSrcRelative(exampleComponentFile)
+  );
+  const fullSourcePath = path.join(
+    basePath,
+    'src',
+    toSrcRelative(sourceComponentFile)
+  );
 
   try {
     const code = await fs.readFile(fullExamplePath, 'utf8');

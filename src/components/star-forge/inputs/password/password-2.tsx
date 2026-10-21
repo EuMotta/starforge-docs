@@ -15,8 +15,10 @@ interface PasswordRule {
   validator: (password: string) => boolean;
 }
 
-export interface Password2InputProps
-  extends Omit<React.ComponentPropsWithoutRef<'input'>, 'onChange'> {
+export interface Password2InputProps extends Omit<
+  React.ComponentPropsWithoutRef<'input'>,
+  'onChange'
+> {
   minLength?: number;
   maxLength?: number;
   requireUppercase?: boolean;

@@ -504,7 +504,8 @@
       "name": "footer-1",
       "type": "registry:ui",
       "dependencies": [
-        "lucide-react"
+        "lucide-react",
+        "react-icons"
       ],
       "registryDependencies": [],
       "files": [

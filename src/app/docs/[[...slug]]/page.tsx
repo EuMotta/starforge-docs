@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { FaGithub } from 'react-icons/fa';
 
 import { createMetadata } from '@/lib/create-metadata';
 import { source } from '@/lib/source';
@@ -10,7 +11,7 @@ import {
   DocsDescription,
   DocsTitle
 } from 'fumadocs-ui/page';
-import { AlertCircle, Lightbulb, Github } from 'lucide-react';
+import { AlertCircle, Lightbulb } from 'lucide-react';
 
 const FOOTER_CONTENTS = {
   title: 'Contribute to Star Forge',
@@ -91,7 +92,7 @@ export default async function Page(props: {
             rel="noreferrer noopener"
             className="text-muted-foreground hover:text-foreground flex items-center gap-2 text-sm transition-colors"
           >
-            <Github className="size-4" />
+            <FaGithub className="size-4" />
             {FOOTER_CONTENTS.viewOnGithub}
           </a>
         </div>
@@ -108,15 +109,13 @@ export default async function Page(props: {
     <DocsPage
       toc={page.data.toc}
       full={page.data.full}
-      footer={footer}
+      footer={{ component: footer }}
       tableOfContent={
         page.data.showToc
           ? { footer, single: false, style: 'clerk' }
           : undefined
       }
-      article={{
-        className: 'w-full max-w-screen-xl px-4 max-sm:pb-16'
-      }}
+      className="w-full max-w-screen-xl px-4 max-sm:pb-16"
     >
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>

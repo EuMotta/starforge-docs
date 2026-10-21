@@ -1,11 +1,12 @@
 'use client';
 
 import Link from 'next/link';
+import { FaGithub } from 'react-icons/fa';
 
 import { buttonVariants } from '@/components/ui/button';
 import { siteConfig } from '@/settings';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
@@ -124,7 +125,7 @@ export default function StarForgeHero() {
                   })
                 )}
               >
-                <Github className="mr-2 h-4 w-4" />
+                <FaGithub className="mr-2 h-4 w-4" />
                 GitHub
               </a>
             </motion.div>

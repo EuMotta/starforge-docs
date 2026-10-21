@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { Button } from '@/components/ui/button';
 import { getComponentByName } from '@/registry';
@@ -18,29 +18,6 @@ interface ComponentLoaderProps {
   fromDocs?: boolean;
   props?: Record<string, unknown>;
 }
-
-/**
- * Renders a loading spinner component for component loading states.
- *
- * @returns {JSX.Element} A centered loading spinner with rotation animation.
- * @remarks
- * - Uses RotateCw icon from lucide-react with continuous spin animation.
- * - Displays in a full-height, full-width container with centered content.
- * - Has transparent background to blend with parent container.
- * @example
- *
- * <LoadingComponent />
- *
- */
-const LoadingComponent = () => (
-  <div className="flex h-full w-full items-center justify-center p-16">
-    <div className="flex h-full w-full flex-col items-center justify-center bg-transparent p-4">
-      <div className="rounded-full p-3">
-        <RotateCw className="text-foreground h-6 w-6 animate-spin" />
-      </div>
-    </div>
-  </div>
-);
 
 /**
  * Dynamically loads and displays a React component from the component registry.
@@ -76,33 +53,14 @@ export function ComponentLoader({
   fromDocs,
   props
 }: ComponentLoaderProps) {
-  const [Component, setComponent] = useState<React.ComponentType | null>(null);
-  const [reTriggerKey, setReTriggerKey] = useState<number>(Date.now());
-  const [loading, setLoading] = useState(true);
-  const [author, setAuthor] = useState<string | null>(null);
-
-  useEffect(() => {
-    const componentInfo = getComponentByName(name);
-    const component = componentInfo?.component;
-
-    if (component) {
-      setComponent(() => component);
-    }
-
-    if (componentInfo?.author) {
-      setAuthor(componentInfo.author);
-    }
-
-    setLoading(false);
-  }, [name]);
+  const componentInfo = getComponentByName(name);
+  const Component = componentInfo?.component as React.ComponentType | undefined;
+  const author = componentInfo?.author ?? null;
+  const [reTriggerKey, setReTriggerKey] = useState(0);
 
   const reTrigger = () => {
-    setReTriggerKey(Date.now());
+    setReTriggerKey((key) => key + 1);
   };
-
-  if (loading) {
-    return <LoadingComponent />;
-  }
 
   if (!Component) {
     return <ComponentError componentName={name} />;

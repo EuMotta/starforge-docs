@@ -1,14 +1,7 @@
 import React from 'react';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin
-} from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 
 interface LinkItem {
   label: string;
@@ -38,10 +31,10 @@ const footerLinks: LinkItem[] = [
 ];
 
 const socialLinks = [
-  { Icon: Facebook, href: '#', color: 'text-blue-600' },
-  { Icon: Twitter, href: '#', color: 'text-sky-500' },
-  { Icon: Linkedin, href: '#', color: 'text-blue-700' },
-  { Icon: Instagram, href: '#', color: 'text-pink-600' }
+  { Icon: FaFacebook, href: '#', color: 'text-blue-600' },
+  { Icon: FaTwitter, href: '#', color: 'text-sky-500' },
+  { Icon: FaLinkedin, href: '#', color: 'text-blue-700' },
+  { Icon: FaInstagram, href: '#', color: 'text-pink-600' }
 ];
 
 const companyInformations = {

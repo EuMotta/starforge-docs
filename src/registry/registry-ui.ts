@@ -148,11 +148,11 @@ export const ui: Registry = [
     example:
       'src/components/star-forge-preview/animations/text-animation-1.tsx',
     component: React.lazy(() =>
-      import(
-        '@/components/star-forge-preview/animations/text-animation-1'
-      ).then((mod) => ({
-        default: mod.default
-      }))
+      import('@/components/star-forge-preview/animations/text-animation-1').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
     )
   },
   {
@@ -176,11 +176,11 @@ export const ui: Registry = [
     example:
       'src/components/star-forge-preview/animations/text-animation-3.tsx',
     component: React.lazy(() =>
-      import(
-        '@/components/star-forge-preview/animations/text-animation-3'
-      ).then((mod) => ({
-        default: mod.default
-      }))
+      import('@/components/star-forge-preview/animations/text-animation-3').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
     )
   },
   {
@@ -200,11 +200,11 @@ export const ui: Registry = [
     example:
       'src/components/star-forge-preview/animations/text-animation-2.tsx',
     component: React.lazy(() =>
-      import(
-        '@/components/star-forge-preview/animations/text-animation-2'
-      ).then((mod) => ({
-        default: mod.default
-      }))
+      import('@/components/star-forge-preview/animations/text-animation-2').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
     )
   },
   {
@@ -784,7 +784,7 @@ export const ui: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     registryDependencies: [],
-    dependencies: ['lucide-react'],
+    dependencies: ['lucide-react', 'react-icons'],
     description:
       'Full footer with multiple link columns, contact info and social media icons.',
     files: [

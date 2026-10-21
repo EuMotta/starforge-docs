@@ -14,11 +14,10 @@ import {
 
 import { cn } from '@/lib/utils';
 
-export interface CustomSelect1Props
-  extends Omit<
-    React.ComponentPropsWithoutRef<typeof Select>,
-    'value' | 'onValueChange' | 'children' | 'className'
-  > {
+export interface CustomSelect1Props extends Omit<
+  React.ComponentPropsWithoutRef<typeof Select>,
+  'value' | 'onValueChange' | 'children' | 'className'
+> {
   formName: string;
   label?: string;
   value?: string;

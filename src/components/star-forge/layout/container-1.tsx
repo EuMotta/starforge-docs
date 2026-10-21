@@ -26,7 +26,8 @@ const containerVariants = cva('container mx-auto', {
 });
 
 interface Container1Props
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends
+    React.HTMLAttributes<HTMLDivElement>,
     VariantProps<typeof containerVariants> {
   children?: React.ReactNode;
 }

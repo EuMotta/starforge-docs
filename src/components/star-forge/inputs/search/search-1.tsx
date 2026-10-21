@@ -136,13 +136,14 @@ export function Search1Input({
   const debouncedQuery = useDebounce(query, 300);
 
   useEffect(() => {
-    const saved = localStorage.getItem('recent-searches');
-    if (saved) {
-      try {
-        setRecentSearches(JSON.parse(saved));
-      } catch (e) {
-        console.error('Failed to load recent searches:', e);
+    try {
+      const saved = localStorage.getItem('recent-searches');
+      if (saved) {
+        const parsed = JSON.parse(saved) as string[];
+        queueMicrotask(() => setRecentSearches(parsed));
       }
+    } catch (e) {
+      console.error('Failed to load recent searches:', e);
     }
   }, []);
 
@@ -179,8 +180,10 @@ export function Search1Input({
 
       performSearch();
     } else {
-      setResults([]);
-      setLoading(false);
+      queueMicrotask(() => {
+        setResults([]);
+        setLoading(false);
+      });
     }
   }, [debouncedQuery, onSearch]);
 
