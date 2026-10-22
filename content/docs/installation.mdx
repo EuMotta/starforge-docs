@@ -81,18 +81,18 @@ This file will be created in the root directory of your project and will define 
 Once configuration is complete, you can start adding components to your project:
 
 ```bash
-npx shadcn@latest add https://starforge-docs.vercel.app/r/typography.json
+npx shadcn@latest add https://starforge-docs.com/r/typography-1.json
 ```
 
-The command above will add the `Typography` component to the `components/star-forge` directory. You can import it like this:
+The command above will add the `Typography1` component to the `components/ui` directory. You can import it like this:
 
 ```tsx title="index.tsx"
-import { Typography } from '@/components/star-forge/typorgaphy';
+import Typography1 from '@/components/ui/typography-1';
 
 export default function Home() {
   return (
     <>
-      <Typography.H1> Hello World </Typography.H1>
+      <Typography1.H1> Hello World </Typography1.H1>
     </>
   );
 }

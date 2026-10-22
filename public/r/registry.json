@@ -35,7 +35,6 @@
       "name": "section-1",
       "type": "registry:ui",
       "dependencies": [
-        "class-variance-authority",
         "react-icons"
       ],
       "registryDependencies": [],
@@ -64,10 +63,7 @@
     {
       "name": "background-1",
       "type": "registry:ui",
-      "dependencies": [
-        "class-variance-authority",
-        "react-icons"
-      ],
+      "dependencies": [],
       "registryDependencies": [
         "https://starforge-docs.com/r/typography-1.json"
       ],
@@ -1381,9 +1377,7 @@
     {
       "name": "base-label",
       "type": "registry:ui",
-      "dependencies": [
-        "@base-ui/react"
-      ],
+      "dependencies": [],
       "registryDependencies": [],
       "files": [
         {
@@ -1518,7 +1512,8 @@
       "name": "radix-dialog",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog"
+        "@radix-ui/react-dialog",
+        "lucide-react"
       ],
       "registryDependencies": [],
       "files": [
@@ -1532,7 +1527,8 @@
       "name": "base-dialog",
       "type": "registry:ui",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [],
       "files": [
@@ -1548,7 +1544,9 @@
       "dependencies": [
         "@radix-ui/react-alert-dialog"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/radix-button.json"
+      ],
       "files": [
         {
           "path": "src/components/ui/primitives/radix/alert-dialog.tsx",
@@ -1562,7 +1560,9 @@
       "dependencies": [
         "@base-ui/react"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-button.json"
+      ],
       "files": [
         {
           "path": "src/components/ui/primitives/base/alert-dialog.tsx",
@@ -1602,7 +1602,8 @@
       "name": "radix-select",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-select"
+        "@radix-ui/react-select",
+        "lucide-react"
       ],
       "registryDependencies": [],
       "files": [
@@ -1616,7 +1617,8 @@
       "name": "base-select",
       "type": "registry:ui",
       "dependencies": [
-        "@base-ui/react"
+        "@base-ui/react",
+        "lucide-react"
       ],
       "registryDependencies": [],
       "files": [
@@ -1716,7 +1718,8 @@
       "name": "dialog",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-dialog"
+        "@radix-ui/react-dialog",
+        "lucide-react"
       ],
       "registryDependencies": [],
       "files": [
@@ -1744,7 +1747,8 @@
       "name": "select",
       "type": "registry:ui",
       "dependencies": [
-        "@radix-ui/react-select"
+        "@radix-ui/react-select",
+        "lucide-react"
       ],
       "registryDependencies": [],
       "files": [
@@ -1760,7 +1764,9 @@
       "dependencies": [
         "@radix-ui/react-alert-dialog"
       ],
-      "registryDependencies": [],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/button.json"
+      ],
       "files": [
         {
           "path": "src/components/ui/primitives/radix/alert-dialog.tsx",
@@ -1970,6 +1976,24 @@
       ]
     },
     {
+      "name": "radix-input-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/radix-input.json",
+        "https://starforge-docs.com/r/radix-textarea.json",
+        "https://starforge-docs.com/r/radix-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "input-group",
       "type": "registry:ui",
       "dependencies": [
@@ -1988,6 +2012,24 @@
       ]
     },
     {
+      "name": "base-input-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-input.json",
+        "https://starforge-docs.com/r/base-textarea.json",
+        "https://starforge-docs.com/r/base-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "base-combobox",
       "type": "registry:ui",
       "dependencies": [
@@ -1995,7 +2037,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://starforge-docs.com/r/input-group.json"
+        "https://starforge-docs.com/r/base-input-group.json"
       ],
       "files": [
         {

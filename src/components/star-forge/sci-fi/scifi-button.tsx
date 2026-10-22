@@ -1,6 +1,5 @@
 'use client';
 
-import Link from 'next/link';
 import React from 'react';
 
 const DEFAULT_ACCENT = '#00d4ff';
@@ -186,23 +185,19 @@ function SciFiBtn({
 
   const baseClasses = `group relative inline-flex items-center gap-2 border-0 bg-transparent px-[22px] py-[10px] font-mono text-[13px] tracking-[0.5px] text-white no-underline [word-spacing:3px] select-none transition-[filter,transform] duration-300 hover:-translate-y-px hover:brightness-125 active:translate-y-0 active:brightness-110 disabled:pointer-events-none disabled:opacity-40 ${className}`;
 
+  const isExternal =
+    href?.startsWith(EXTERNAL_URL_PREFIX) ||
+    href?.startsWith(PROTOCOL_RELATIVE_URL_PREFIX);
   const element = href ? (
-    href.startsWith(EXTERNAL_URL_PREFIX) ||
-    href.startsWith(PROTOCOL_RELATIVE_URL_PREFIX) ? (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={baseClasses}
-        style={buttonStyle}
-      >
-        {content}
-      </a>
-    ) : (
-      <Link href={href} className={baseClasses} style={buttonStyle}>
-        {content}
-      </Link>
-    )
+    <a
+      href={href}
+      target={isExternal ? '_blank' : undefined}
+      rel={isExternal ? 'noopener noreferrer' : undefined}
+      className={baseClasses}
+      style={buttonStyle}
+    >
+      {content}
+    </a>
   ) : (
     <button
       type="button"

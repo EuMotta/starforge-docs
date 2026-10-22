@@ -2,7 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "radix-select",
   "dependencies": [
-    "@radix-ui/react-select"
+    "@radix-ui/react-select",
+    "lucide-react"
   ],
   "registryDependencies": [],
   "files": [
