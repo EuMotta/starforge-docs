@@ -4,7 +4,9 @@
   "dependencies": [
     "@base-ui/react"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "https://starforge-docs.com/r/base-button.json"
+  ],
   "files": [
     {
       "path": "src/components/ui/base/alert-dialog.tsx",

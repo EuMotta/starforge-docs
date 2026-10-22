@@ -4,7 +4,9 @@
   "dependencies": [
     "@radix-ui/react-alert-dialog"
   ],
-  "registryDependencies": [],
+  "registryDependencies": [
+    "https://starforge-docs.com/r/button.json"
+  ],
   "files": [
     {
       "path": "src/components/ui/radix/alert-dialog.tsx",

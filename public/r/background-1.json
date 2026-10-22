@@ -1,10 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "background-1",
-  "dependencies": [
-    "class-variance-authority",
-    "react-icons"
-  ],
+  "dependencies": [],
   "registryDependencies": [
     "https://starforge-docs.com/r/typography-1.json"
   ],

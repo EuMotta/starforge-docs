@@ -1,6 +1,6 @@
 {
   "name": "starforge-app",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "private": true,
   "engines": {
     "node": ">=20.9.0"
@@ -15,7 +15,8 @@
     "prepare": "husky",
     "postbuild": "next-sitemap",
     "build:components": "node scripts/build-registry.mjs && npx shadcn@latest build && node scripts/flatten-registry-paths.mjs",
-    "audit:registry": "node scripts/audit-registry.mjs"
+    "audit:registry": "node scripts/audit-registry.mjs",
+    "test:registry": "node --test tests/registry-install/harness.test.mjs tests/registry-install/registry.test.mjs"
   },
   "lint-staged": {
     "*.{js,jsx,md,ts,tsx,html,css,scss}": "npm run format",

@@ -50,7 +50,7 @@ export const ui: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     registryDependencies: [],
-    dependencies: ['class-variance-authority', 'react-icons'],
+    dependencies: ['react-icons'],
     description:
       'Composite component for structuring sections (Root/Header/Title/SubTitle/Description/Content/Footer), with optional iconed subtitle.',
     files: [
@@ -94,7 +94,7 @@ export const ui: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     registryDependencies: ['https://starforge-docs.com/r/typography-1.json'],
-    dependencies: ['class-variance-authority', 'react-icons'],
+    dependencies: [],
     description:
       'Wrapper with CSS-generated grid background, keeping content highlighted (layer above).',
     files: [
