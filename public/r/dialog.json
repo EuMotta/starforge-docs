@@ -2,7 +2,8 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog",
   "dependencies": [
-    "@radix-ui/react-dialog"
+    "@radix-ui/react-dialog",
+    "lucide-react"
   ],
   "registryDependencies": [],
   "files": [

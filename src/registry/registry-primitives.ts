@@ -66,7 +66,7 @@ export const primitives: Registry = [
     name: 'base-label',
     author: 'EuMotta',
     type: 'registry:ui',
-    dependencies: ['@base-ui/react'],
+    dependencies: [],
     description:
       'Base UI Label primitive (native <label>) with Star Forge styling.',
     files: [
@@ -251,7 +251,7 @@ export const primitives: Registry = [
     name: 'radix-dialog',
     author: 'EuMotta',
     type: 'registry:ui',
-    dependencies: ['@radix-ui/react-dialog'],
+    dependencies: ['@radix-ui/react-dialog', 'lucide-react'],
     description: 'Radix UI Dialog primitive with Star Forge styling.',
     files: [
       {
@@ -270,7 +270,7 @@ export const primitives: Registry = [
     name: 'base-dialog',
     author: 'EuMotta',
     type: 'registry:ui',
-    dependencies: ['@base-ui/react'],
+    dependencies: ['@base-ui/react', 'lucide-react'],
     description: 'Base UI Dialog primitive with Star Forge styling.',
     files: [
       {
@@ -290,6 +290,7 @@ export const primitives: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     dependencies: ['@radix-ui/react-alert-dialog'],
+    registryDependencies: ['radix-button'],
     description: 'Radix UI Alert Dialog primitive with Star Forge styling.',
     files: [
       {
@@ -309,6 +310,7 @@ export const primitives: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     dependencies: ['@base-ui/react'],
+    registryDependencies: ['base-button'],
     description: 'Base UI Alert Dialog primitive with Star Forge styling.',
     files: [
       {
@@ -365,7 +367,7 @@ export const primitives: Registry = [
     name: 'radix-select',
     author: 'EuMotta',
     type: 'registry:ui',
-    dependencies: ['@radix-ui/react-select'],
+    dependencies: ['@radix-ui/react-select', 'lucide-react'],
     description: 'Radix UI Select primitive with Star Forge styling.',
     files: [
       {
@@ -384,7 +386,7 @@ export const primitives: Registry = [
     name: 'base-select',
     author: 'EuMotta',
     type: 'registry:ui',
-    dependencies: ['@base-ui/react'],
+    dependencies: ['@base-ui/react', 'lucide-react'],
     description: 'Base UI Select primitive with Star Forge styling.',
     files: [
       {
@@ -517,7 +519,7 @@ export const primitives: Registry = [
     name: 'dialog',
     author: 'EuMotta',
     type: 'registry:ui',
-    dependencies: ['@radix-ui/react-dialog'],
+    dependencies: ['@radix-ui/react-dialog', 'lucide-react'],
     description: 'Dialog primitive (Radix UI default).',
     files: [
       {
@@ -555,7 +557,7 @@ export const primitives: Registry = [
     name: 'select',
     author: 'EuMotta',
     type: 'registry:ui',
-    dependencies: ['@radix-ui/react-select'],
+    dependencies: ['@radix-ui/react-select', 'lucide-react'],
     description: 'Select primitive (Radix UI default).',
     files: [
       {
@@ -575,6 +577,7 @@ export const primitives: Registry = [
     author: 'EuMotta',
     type: 'registry:ui',
     dependencies: ['@radix-ui/react-alert-dialog'],
+    registryDependencies: ['button'],
     description: 'Alert Dialog primitive (Radix UI default).',
     files: [
       {
@@ -876,6 +879,26 @@ export const primitives: Registry = [
     )
   },
   {
+    name: 'radix-input-group',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['radix-input', 'radix-textarea', 'radix-button'],
+    dependencies: ['class-variance-authority'],
+    description: 'Input group with addon and button slots.',
+    files: [
+      {
+        path: 'src/components/ui/input-group.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/input-group.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/input-group').then((mod) => ({
+        default: mod.InputGroup
+      }))
+    )
+  },
+  {
     name: 'input-group',
     author: 'EuMotta',
     type: 'registry:ui',
@@ -896,10 +919,30 @@ export const primitives: Registry = [
     )
   },
   {
+    name: 'base-input-group',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-input', 'base-textarea', 'base-button'],
+    dependencies: ['class-variance-authority'],
+    description: 'Input group with addon and button slots.',
+    files: [
+      {
+        path: 'src/components/ui/input-group.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/input-group.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/input-group').then((mod) => ({
+        default: mod.InputGroup
+      }))
+    )
+  },
+  {
     name: 'base-combobox',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['input-group'],
+    registryDependencies: ['base-input-group'],
     dependencies: ['@base-ui/react', 'lucide-react'],
     description:
       'Combobox autocomplete component powered by Base UI. No Radix variant exists — Radix UI does not provide a native Combobox primitive.',
