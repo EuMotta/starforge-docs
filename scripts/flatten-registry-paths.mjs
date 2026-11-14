@@ -9,8 +9,8 @@ const __dirname = path.dirname(__filename);
 
 function flattenPath(filePath) {
   return filePath
-    .replace('src/components/ui/primitives/radix/', 'src/components/ui/radix/')
-    .replace('src/components/ui/primitives/base/', 'src/components/ui/base/');
+    .replace('src/components/ui/primitives/radix/', 'src/components/ui/')
+    .replace('src/components/ui/primitives/base/', 'src/components/ui/');
 }
 
 function flattenRegistryItemPaths(item) {
