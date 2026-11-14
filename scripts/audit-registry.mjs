@@ -13,13 +13,16 @@ const raw = JSON.parse(
 const r = Array.isArray(raw) ? raw : raw.items || [];
 
 const dualPrimitiveNames = [
+  'alert-dialog',
   'avatar',
   'badge',
   'button',
   'checkbox',
   'collapsible',
+  'combobox',
   'dialog',
   'input',
+  'input-group',
   'label',
   'popover',
   'scroll-area',

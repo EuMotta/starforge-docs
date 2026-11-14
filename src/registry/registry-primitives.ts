@@ -939,22 +939,42 @@ export const primitives: Registry = [
     )
   },
   {
-    name: 'base-combobox',
+    name: 'radix-combobox',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['base-input-group'],
-    dependencies: ['@base-ui/react', 'lucide-react'],
+    registryDependencies: ['radix-input-group', 'radix-button'],
+    dependencies: ['@radix-ui/react-popover', 'cmdk', 'lucide-react'],
     description:
-      'Combobox autocomplete component powered by Base UI. No Radix variant exists — Radix UI does not provide a native Combobox primitive.',
+      'Combobox autocomplete component powered by Radix UI Popover and cmdk.',
     files: [
       {
-        path: 'src/components/ui/combobox.tsx',
+        path: 'src/components/ui/primitives/radix/combobox.tsx',
         type: 'registry:ui'
       }
     ],
-    example: 'src/components/ui/combobox.tsx',
+    example: 'src/components/ui/primitives/radix/combobox.tsx',
     component: React.lazy(() =>
-      import('@/components/ui/combobox').then((mod) => ({
+      import('@/components/ui/primitives/radix/combobox').then((mod) => ({
+        default: mod.Combobox
+      }))
+    )
+  },
+  {
+    name: 'base-combobox',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-input-group', 'base-button'],
+    dependencies: ['@base-ui/react', 'lucide-react'],
+    description: 'Combobox autocomplete component powered by Base UI.',
+    files: [
+      {
+        path: 'src/components/ui/primitives/base/combobox.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/ui/primitives/base/combobox.tsx',
+    component: React.lazy(() =>
+      import('@/components/ui/primitives/base/combobox').then((mod) => ({
         default: mod.Combobox
       }))
     )
@@ -963,19 +983,18 @@ export const primitives: Registry = [
     name: 'combobox',
     author: 'EuMotta',
     type: 'registry:ui',
-    registryDependencies: ['base-combobox'],
-    dependencies: ['@base-ui/react', 'lucide-react'],
-    description:
-      'Combobox primitive (Base UI only). Alias for base-combobox — Radix UI does not provide a native Combobox primitive.',
+    registryDependencies: ['input-group', 'button'],
+    dependencies: ['@radix-ui/react-popover', 'cmdk', 'lucide-react'],
+    description: 'Combobox primitive (Radix UI default).',
     files: [
       {
-        path: 'src/components/ui/combobox.tsx',
+        path: 'src/components/ui/primitives/radix/combobox.tsx',
         type: 'registry:ui'
       }
     ],
-    example: 'src/components/ui/combobox.tsx',
+    example: 'src/components/ui/primitives/radix/combobox.tsx',
     component: React.lazy(() =>
-      import('@/components/ui/combobox').then((mod) => ({
+      import('@/components/ui/primitives/radix/combobox').then((mod) => ({
         default: mod.Combobox
       }))
     )

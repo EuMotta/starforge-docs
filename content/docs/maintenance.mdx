@@ -77,7 +77,7 @@ Only commit when all three pass.
 
 The `component` field uses `React.lazy(() => import(...))`. If the path does not exist, TypeScript will report an error. Verify the preview file exists in `src/components/star-forge-preview/`.
 
-### Orphan dependency on `input` or `combobox`
+### Orphan dependency on `form` or `spinner`
 
 These are UI helpers, not dual primitives. They must be registered in `registry-primitives.ts` if any block depends on them. See `content/docs/registry-system.mdx` for the list of UI helpers.
 
