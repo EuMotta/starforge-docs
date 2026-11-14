@@ -1341,7 +1341,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/avatar.tsx",
+          "path": "src/components/ui/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1355,7 +1355,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/avatar.tsx",
+          "path": "src/components/ui/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1369,7 +1369,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/label.tsx",
+          "path": "src/components/ui/label.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1381,7 +1381,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/label.tsx",
+          "path": "src/components/ui/label.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1396,7 +1396,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/button.tsx",
+          "path": "src/components/ui/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1410,7 +1410,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/button.tsx",
+          "path": "src/components/ui/button.tsx",
           "type": "registry:ui"
         },
         {
@@ -1429,7 +1429,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/badge.tsx",
+          "path": "src/components/ui/badge.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1443,7 +1443,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/badge.tsx",
+          "path": "src/components/ui/badge.tsx",
           "type": "registry:ui"
         },
         {
@@ -1461,7 +1461,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/collapsible.tsx",
+          "path": "src/components/ui/collapsible.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1475,7 +1475,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/collapsible.tsx",
+          "path": "src/components/ui/collapsible.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1489,7 +1489,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/tabs.tsx",
+          "path": "src/components/ui/tabs.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1503,7 +1503,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/tabs.tsx",
+          "path": "src/components/ui/tabs.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1518,7 +1518,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/dialog.tsx",
+          "path": "src/components/ui/dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1533,7 +1533,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/dialog.tsx",
+          "path": "src/components/ui/dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1549,7 +1549,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/radix/alert-dialog.tsx",
+          "path": "src/components/ui/alert-dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1565,7 +1565,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/base/alert-dialog.tsx",
+          "path": "src/components/ui/alert-dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1579,7 +1579,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/popover.tsx",
+          "path": "src/components/ui/popover.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1593,7 +1593,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/popover.tsx",
+          "path": "src/components/ui/popover.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1608,7 +1608,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/select.tsx",
+          "path": "src/components/ui/select.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1623,7 +1623,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/select.tsx",
+          "path": "src/components/ui/select.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1637,7 +1637,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/avatar.tsx",
+          "path": "src/components/ui/avatar.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1651,7 +1651,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/label.tsx",
+          "path": "src/components/ui/label.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1666,7 +1666,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/button.tsx",
+          "path": "src/components/ui/button.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1681,7 +1681,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/badge.tsx",
+          "path": "src/components/ui/badge.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1695,7 +1695,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/collapsible.tsx",
+          "path": "src/components/ui/collapsible.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1709,7 +1709,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/tabs.tsx",
+          "path": "src/components/ui/tabs.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1724,7 +1724,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/dialog.tsx",
+          "path": "src/components/ui/dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1738,7 +1738,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/popover.tsx",
+          "path": "src/components/ui/popover.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1753,7 +1753,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/select.tsx",
+          "path": "src/components/ui/select.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1769,7 +1769,7 @@
       ],
       "files": [
         {
-          "path": "src/components/ui/radix/alert-dialog.tsx",
+          "path": "src/components/ui/alert-dialog.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1783,7 +1783,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/scroll-area.tsx",
+          "path": "src/components/ui/scroll-area.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1797,7 +1797,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/scroll-area.tsx",
+          "path": "src/components/ui/scroll-area.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1811,7 +1811,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/switch.tsx",
+          "path": "src/components/ui/switch.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1825,7 +1825,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/switch.tsx",
+          "path": "src/components/ui/switch.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1840,7 +1840,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/checkbox.tsx",
+          "path": "src/components/ui/checkbox.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1855,7 +1855,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/checkbox.tsx",
+          "path": "src/components/ui/checkbox.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1869,7 +1869,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/scroll-area.tsx",
+          "path": "src/components/ui/scroll-area.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1883,7 +1883,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/switch.tsx",
+          "path": "src/components/ui/switch.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1898,7 +1898,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/checkbox.tsx",
+          "path": "src/components/ui/checkbox.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1910,7 +1910,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/input.tsx",
+          "path": "src/components/ui/input.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1922,7 +1922,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/input.tsx",
+          "path": "src/components/ui/input.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1934,7 +1934,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/input.tsx",
+          "path": "src/components/ui/input.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1946,7 +1946,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/textarea.tsx",
+          "path": "src/components/ui/textarea.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1958,7 +1958,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/base/textarea.tsx",
+          "path": "src/components/ui/textarea.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1970,7 +1970,7 @@
       "registryDependencies": [],
       "files": [
         {
-          "path": "src/components/ui/radix/textarea.tsx",
+          "path": "src/components/ui/textarea.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2030,6 +2030,25 @@
       ]
     },
     {
+      "name": "radix-combobox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@radix-ui/react-popover",
+        "cmdk",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/radix-input-group.json",
+        "https://starforge-docs.com/r/radix-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "base-combobox",
       "type": "registry:ui",
       "dependencies": [
@@ -2037,7 +2056,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://starforge-docs.com/r/base-input-group.json"
+        "https://starforge-docs.com/r/base-input-group.json",
+        "https://starforge-docs.com/r/base-button.json"
       ],
       "files": [
         {
@@ -2050,11 +2070,13 @@
       "name": "combobox",
       "type": "registry:ui",
       "dependencies": [
-        "@base-ui/react",
+        "@radix-ui/react-popover",
+        "cmdk",
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://starforge-docs.com/r/base-combobox.json"
+        "https://starforge-docs.com/r/input-group.json",
+        "https://starforge-docs.com/r/button.json"
       ],
       "files": [
         {
