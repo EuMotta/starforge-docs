@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "card-stack",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/transitions/card-stack.tsx",
+      "content": "'use client';\r\n\r\nimport React from 'react';\r\n\r\nimport { AnimatePresence, motion, type PanInfo } from 'framer-motion';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\ninterface CardStackItem {\r\n  id: React.Key;\r\n  content: React.ReactNode;\r\n}\r\n\r\ninterface CardStackProps {\r\n  items: CardStackItem[];\r\n  visibleCount?: number;\r\n  dismissOffset?: number;\r\n  dismissVelocity?: number;\r\n  recycle?: boolean;\r\n  onDismiss?: (id: React.Key) => void;\r\n  className?: string;\r\n  cardClassName?: string;\r\n}\r\n\r\nconst STACK_GAP_PX = 12;\r\nconst STACK_SCALE_STEP = 0.05;\r\nconst EXIT_DISTANCE_PX = 400;\r\n\r\nfunction CardStack({\r\n  items,\r\n  visibleCount = 3,\r\n  dismissOffset = 100,\r\n  dismissVelocity = 500,\r\n  recycle = true,\r\n  onDismiss,\r\n  className,\r\n  cardClassName\r\n}: CardStackProps) {\r\n  const [order, setOrder] = React.useState<React.Key[]>(() =>\r\n    items.map((item) => item.id)\r\n  );\r\n\r\n  const itemById = new Map(items.map((item) => [item.id, item]));\r\n  const orderedItems = order\r\n    .map((itemId) => itemById.get(itemId))\r\n    .filter((item): item is CardStackItem => item !== undefined)\r\n    .slice(0, visibleCount);\r\n\r\n  const dismissFront = () => {\r\n    const front = order[0];\r\n    if (front === undefined) return;\r\n    setOrder(([first, ...rest]) =>\r\n      recycle && first !== undefined ? [...rest, first] : rest\r\n    );\r\n    onDismiss?.(front);\r\n  };\r\n\r\n  const handleDragEnd = (_: unknown, info: PanInfo) => {\r\n    if (info.offset.y > dismissOffset || info.velocity.y > dismissVelocity) {\r\n      dismissFront();\r\n    }\r\n  };\r\n\r\n  return (\r\n    <div className={cn('relative', className)}>\r\n      <AnimatePresence mode=\"popLayout\">\r\n        {orderedItems.map((item, index) => (\r\n          <motion.div\r\n            key={item.id}\r\n            initial={false}\r\n            animate={{\r\n              y: -index * STACK_GAP_PX,\r\n              scale: 1 - index * STACK_SCALE_STEP\r\n            }}\r\n            exit={{ y: EXIT_DISTANCE_PX, opacity: 0 }}\r\n            transition={{ type: 'spring', stiffness: 300, damping: 30 }}\r\n            style={{ zIndex: items.length - index }}\r\n            drag={index === 0 ? 'y' : false}\r\n            dragConstraints={{ top: 0 }}\r\n            dragElastic={0.6}\r\n            onDragEnd={index === 0 ? handleDragEnd : undefined}\r\n            className={cn(\r\n              'absolute inset-0',\r\n              index === 0 && 'cursor-grab active:cursor-grabbing',\r\n              cardClassName\r\n            )}\r\n          >\r\n            {item.content}\r\n          </motion.div>\r\n        ))}\r\n      </AnimatePresence>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default CardStack;\r\nexport type { CardStackItem, CardStackProps };\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

@@ -1333,6 +1333,105 @@
       ]
     },
     {
+      "name": "view-transition",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/transitions/view-transition.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "expandable-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion",
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/transitions/expandable-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "modal-sheet",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/dialog.json",
+        "https://starforge-docs.com/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/transitions/modal-sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "modal-sheet-base",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [
+        "https://starforge-docs.com/r/base-dialog.json",
+        "https://starforge-docs.com/r/base-button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/star-forge/transitions/modal-sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "flip-card",
+      "type": "registry:ui",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/transitions/flip-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "circle-reveal",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/transitions/circle-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card-stack",
+      "type": "registry:ui",
+      "dependencies": [
+        "framer-motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/components/star-forge/transitions/card-stack.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "radix-avatar",
       "type": "registry:ui",
       "dependencies": [

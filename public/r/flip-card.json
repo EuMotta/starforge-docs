@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "flip-card",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/transitions/flip-card.tsx",
+      "content": "'use client';\r\n\r\nimport React from 'react';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\ntype FlipAxis = 'x' | 'y';\r\n\r\ninterface FlipCardProps extends Omit<\r\n  React.HTMLAttributes<HTMLDivElement>,\r\n  'children'\r\n> {\r\n  front: React.ReactNode;\r\n  back: React.ReactNode;\r\n  flipped?: boolean;\r\n  defaultFlipped?: boolean;\r\n  onFlippedChange?: (flipped: boolean) => void;\r\n  axis?: FlipAxis;\r\n}\r\n\r\nfunction FlipCard({\r\n  front,\r\n  back,\r\n  flipped,\r\n  defaultFlipped = false,\r\n  onFlippedChange,\r\n  axis = 'y',\r\n  className,\r\n  onClick,\r\n  onKeyDown,\r\n  ...props\r\n}: FlipCardProps) {\r\n  const isControlled = flipped !== undefined;\r\n  const [internalFlipped, setInternalFlipped] = React.useState(defaultFlipped);\r\n  const isFlipped = isControlled ? flipped : internalFlipped;\r\n\r\n  const toggle = () => {\r\n    if (!isControlled) setInternalFlipped((value) => !value);\r\n    onFlippedChange?.(!isFlipped);\r\n  };\r\n\r\n  const rotateClass =\r\n    axis === 'y'\r\n      ? '[transform:rotateY(180deg)]'\r\n      : '[transform:rotateX(180deg)]';\r\n\r\n  return (\r\n    <div\r\n      role=\"button\"\r\n      tabIndex={0}\r\n      aria-pressed={isFlipped}\r\n      className={cn(\r\n        'cursor-pointer select-none [perspective:1200px] focus-visible:outline-2 focus-visible:outline-offset-2',\r\n        className\r\n      )}\r\n      onClick={(event) => {\r\n        toggle();\r\n        onClick?.(event);\r\n      }}\r\n      onKeyDown={(event) => {\r\n        if (event.key === 'Enter' || event.key === ' ') {\r\n          event.preventDefault();\r\n          toggle();\r\n        }\r\n        onKeyDown?.(event);\r\n      }}\r\n      {...props}\r\n    >\r\n      <div\r\n        className={cn(\r\n          'relative h-full w-full transition-transform duration-500 [transform-style:preserve-3d]',\r\n          isFlipped && rotateClass\r\n        )}\r\n      >\r\n        <div className=\"h-full w-full [backface-visibility:hidden]\">\r\n          {front}\r\n        </div>\r\n        <div\r\n          className={cn(\r\n            'absolute inset-0 [backface-visibility:hidden]',\r\n            rotateClass\r\n          )}\r\n        >\r\n          {back}\r\n        </div>\r\n      </div>\r\n    </div>\r\n  );\r\n}\r\n\r\nexport default FlipCard;\r\nexport type { FlipAxis, FlipCardProps };\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
