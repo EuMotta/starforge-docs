@@ -13,6 +13,8 @@ import {
 } from 'fumadocs-ui/page';
 import { AlertCircle, Lightbulb } from 'lucide-react';
 
+import pkg from '../../../../package.json';
+
 const FOOTER_CONTENTS = {
   title: 'Contribute to Star Forge',
   reportBug: {
@@ -50,7 +52,7 @@ Attach any relevant context, mockups, or additional information that helps clari
     }
   },
   viewOnGithub: 'View on GitHub',
-  builtWith: 'Built with ❤️ using React, Next.js, TypeScript, and Tailwind CSS'
+  version: `v${pkg.version}`
 } as const;
 
 export default async function Page(props: {
@@ -100,7 +102,7 @@ export default async function Page(props: {
 
       <div className="flex flex-col space-y-2 border-t pt-4">
         <p className="text-muted-foreground text-xs">
-          {FOOTER_CONTENTS.builtWith}
+          {FOOTER_CONTENTS.version}
         </p>
       </div>
     </div>
