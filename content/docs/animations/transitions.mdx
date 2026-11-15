@@ -1,0 +1,170 @@
+---
+title: View Transitions
+description: Screen-to-screen transition components for moving between views
+new: true
+---
+
+import { ComponentPreview } from '@/components/common/preview/component-preview';
+import { extractSourceCode } from '@/lib/code';
+import { Callout } from 'fumadocs-ui/components/callout';
+import { status } from '@/constants';
+
+<Callout title={status.tailwind_note.title}>
+  All presented components are responsive and compatible with Tailwind CSS. Make
+  sure Tailwind is configured in your project to use them.
+</Callout>
+
+<Callout type="warn" title="View transitions, not route transitions">
+  These components animate between views inside a shared layout (tabs, steps,
+  card states). Transitions between routes are framework-specific — in the
+  Next.js App Router, pair them with `template.tsx` or the View Transitions API.
+</Callout>
+
+## Slide, Fade & Zoom
+
+A keyed view switcher: change `transitionKey` and the outgoing view animates out while the new one animates in. Three variants cover the most common navigation metaphors — `slide` for drilling in, `fade` for tabs and settings, `zoom` for opening an item from a grid. `direction` controls whether the slide moves forward or backward.
+
+<ComponentPreview
+  name="view-transition"
+  classNameComponentContainer="min-h-[500px]"
+  code={(await extractSourceCode('view-transition')).code}
+  sourceCode={(await extractSourceCode('view-transition')).sourceCode}
+  lang="tsx"
+  hasReTrigger
+/>
+
+### Props Reference
+
+| Prop            | Type                          | Description                                  | Default    |
+| --------------- | ----------------------------- | -------------------------------------------- | ---------- |
+| `transitionKey` | `React.Key`                   | Key identifying the current view — changing it triggers the transition | required |
+| `variant`       | `'slide' \| 'fade' \| 'zoom'` | Transition style                             | `'slide'`  |
+| `direction`     | `1 \| -1`                     | Slide direction (forward / backward)         | `1`        |
+| `duration`      | `number`                      | Animation duration in seconds                | `0.25`     |
+| `className`     | `string`                      | Additional CSS classes                       | `undefined`|
+
+---
+
+## Shared Element (Expandable Card)
+
+A card that morphs into an expanded detail overlay. The card container, media, and title share `layoutId`s between collapsed and expanded states, so framer-motion interpolates them — keeping the user oriented about where the content came from. Dismiss with `Esc`, the close button, or the backdrop.
+
+<ComponentPreview
+  name="expandable-card"
+  classNameComponentContainer="min-h-[500px]"
+  code={(await extractSourceCode('expandable-card')).code}
+  sourceCode={(await extractSourceCode('expandable-card')).sourceCode}
+  lang="tsx"
+  hasReTrigger
+/>
+
+### Props Reference
+
+| Prop             | Type              | Description                                      | Default     |
+| ---------------- | ----------------- | ------------------------------------------------ | ----------- |
+| `id`             | `string`          | Unique namespace for the shared layout ids       | required    |
+| `title`          | `string`          | Card title (shared between states)               | required    |
+| `description`    | `string`          | Supporting text under the title                  | `undefined` |
+| `media`          | `React.ReactNode` | Media content (image, gradient, etc.)            | `undefined` |
+| `mediaClassName` | `string`          | Classes applied to the media area in both states | `undefined` |
+| `children`       | `React.ReactNode` | Extra body shown only in the expanded state      | `undefined` |
+
+---
+
+## Modal Sheet
+
+A bottom sheet built on the `dialog` primitive — slides up from the screen edge with a drag handle. Best for tasks the user finishes and dismisses. Inherits focus trap, `Esc` close, and overlay behavior from the dialog primitive.
+
+<ComponentPreview
+  name="modal-sheet"
+  classNameComponentContainer="min-h-[400px]"
+  code={(await extractSourceCode('modal-sheet')).code}
+  sourceCode={(await extractSourceCode('modal-sheet')).sourceCode}
+  lang="tsx"
+  hasReTrigger
+  hasEngineChoice={true}
+/>
+
+### Props Reference
+
+| Prop         | Type      | Description                              | Default |
+| ------------ | --------- | ---------------------------------------- | ------- |
+| `showHandle` | `boolean` | Renders the drag handle bar on top       | `true`  |
+
+`ModalSheetContent` also accepts all props from the underlying `DialogContent` (including `showCloseButton`).
+
+---
+
+## Flip Card
+
+A two-sided card that flips between front and back with a pure CSS 3D transform — no animation library needed. Works controlled (`flipped` + `onFlippedChange`) or uncontrolled (`defaultFlipped`), and toggles on click, `Enter`, or `Space`.
+
+<ComponentPreview
+  name="flip-card"
+  classNameComponentContainer="min-h-[400px]"
+  code={(await extractSourceCode('flip-card')).code}
+  sourceCode={(await extractSourceCode('flip-card')).sourceCode}
+  lang="tsx"
+  hasReTrigger
+/>
+
+### Props Reference
+
+| Prop              | Type                          | Description                            | Default     |
+| ----------------- | ----------------------------- | -------------------------------------- | ----------- |
+| `front`           | `React.ReactNode`             | Content of the front face              | required    |
+| `back`            | `React.ReactNode`             | Content of the back face               | required    |
+| `flipped`         | `boolean`                     | Controlled flipped state               | `undefined` |
+| `defaultFlipped`  | `boolean`                     | Initial state when uncontrolled        | `false`     |
+| `onFlippedChange` | `(flipped: boolean) => void`  | Called whenever the card flips         | `undefined` |
+| `axis`            | `'x' \| 'y'`                  | Rotation axis (horizontal / vertical)  | `'y'`       |
+
+---
+
+## Circle Reveal
+
+A clip-path transition that reveals a view as an expanding circle starting from the tapped point. Pass the click coordinates as `origin` (any CSS units) and toggle `open` — the overlay animates from `0%` to `150%` radius at that spot.
+
+<ComponentPreview
+  name="circle-reveal"
+  classNameComponentContainer="min-h-[500px]"
+  code={(await extractSourceCode('circle-reveal')).code}
+  sourceCode={(await extractSourceCode('circle-reveal')).sourceCode}
+  lang="tsx"
+  hasReTrigger
+/>
+
+### Props Reference
+
+| Prop        | Type                          | Description                                   | Default             |
+| ----------- | ----------------------------- | --------------------------------------------- | ------------------- |
+| `open`      | `boolean`                     | Whether the reveal overlay is expanded        | required            |
+| `origin`    | `{ x: string; y: string }`    | Circle origin (CSS units, e.g. `'24px'`, `'50%'`) | `{ x: '50%', y: '50%' }` |
+| `duration`  | `number`                      | Animation duration in seconds                 | `0.5`               |
+| `className` | `string`                      | Additional CSS classes                        | `undefined`         |
+
+---
+
+## Card Stack
+
+Depth-stacked cards, iOS-sheets style: cards behind the front peek out scaled and offset. Drag the front card down past the threshold to dismiss it — with `recycle` it springs to the back of the stack.
+
+<ComponentPreview
+  name="card-stack"
+  classNameComponentContainer="min-h-[500px] overflow-hidden"
+  code={(await extractSourceCode('card-stack')).code}
+  sourceCode={(await extractSourceCode('card-stack')).sourceCode}
+  lang="tsx"
+  hasReTrigger
+/>
+
+### Props Reference
+
+| Prop              | Type                                    | Description                                   | Default     |
+| ----------------- | --------------------------------------- | --------------------------------------------- | ----------- |
+| `items`           | `{ id: React.Key; content: ReactNode }[]` | Cards to stack, in front-to-back order      | required    |
+| `visibleCount`    | `number`                                | How many cards render in the stack            | `3`         |
+| `dismissOffset`   | `number`                                | Drag distance (px) that dismisses the front card | `100`    |
+| `dismissVelocity` | `number`                                | Flick velocity (px/s) that dismisses          | `500`       |
+| `recycle`         | `boolean`                               | Send dismissed card to the back vs. remove it | `true`      |
+| `onDismiss`       | `(id: React.Key) => void`               | Called with the dismissed card's id           | `undefined` |

@@ -1878,5 +1878,168 @@ export const ui: Registry = [
         default: mod.default
       }))
     )
+  },
+  {
+    name: 'view-transition',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [],
+    dependencies: ['framer-motion'],
+    description:
+      'Keyed view switcher with slide, fade, and zoom transition variants for moving between screens inside a shared layout.',
+    files: [
+      {
+        path: 'src/components/star-forge/transitions/view-transition.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example:
+      'src/components/star-forge-preview/transitions/view-transition.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/transitions/view-transition').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'expandable-card',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [],
+    dependencies: ['framer-motion', 'lucide-react'],
+    description:
+      'Shared-element transition: a card that morphs into an expanded detail overlay using framer-motion layout ids.',
+    files: [
+      {
+        path: 'src/components/star-forge/transitions/expandable-card.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example:
+      'src/components/star-forge-preview/transitions/expandable-card.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/transitions/expandable-card').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'modal-sheet',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['dialog', 'button'],
+    dependencies: [],
+    description:
+      'Bottom modal sheet built on the dialog primitive, sliding up from the screen edge with a drag handle.',
+    files: [
+      {
+        path: 'src/components/star-forge/transitions/modal-sheet.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/transitions/modal-sheet.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/transitions/modal-sheet').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'modal-sheet-base',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: ['base-dialog', 'base-button'],
+    dependencies: [],
+    description:
+      'Bottom modal sheet built on the dialog primitive, sliding up from the screen edge with a drag handle (Base UI variant).',
+    files: [
+      {
+        path: 'src/components/star-forge/transitions/modal-sheet.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/transitions/modal-sheet.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/transitions/modal-sheet').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'flip-card',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [],
+    dependencies: [],
+    description:
+      'Two-sided card that flips between front and back with a pure CSS 3D transform, controlled or uncontrolled.',
+    files: [
+      {
+        path: 'src/components/star-forge/transitions/flip-card.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/transitions/flip-card.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/transitions/flip-card').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'circle-reveal',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [],
+    dependencies: ['framer-motion'],
+    description:
+      'Clip-path transition that reveals a view as an expanding circle starting from the tapped point.',
+    files: [
+      {
+        path: 'src/components/star-forge/transitions/circle-reveal.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/transitions/circle-reveal.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/transitions/circle-reveal').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
+  },
+  {
+    name: 'card-stack',
+    author: 'EuMotta',
+    type: 'registry:ui',
+    registryDependencies: [],
+    dependencies: ['framer-motion'],
+    description:
+      'Depth-stacked cards where the front card can be dragged down to dismiss and recycle to the back, iOS-sheet style.',
+    files: [
+      {
+        path: 'src/components/star-forge/transitions/card-stack.tsx',
+        type: 'registry:ui'
+      }
+    ],
+    example: 'src/components/star-forge-preview/transitions/card-stack.tsx',
+    component: React.lazy(() =>
+      import('@/components/star-forge-preview/transitions/card-stack').then(
+        (mod) => ({
+          default: mod.default
+        })
+      )
+    )
   }
 ];

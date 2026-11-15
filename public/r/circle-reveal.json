@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "circle-reveal",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/transitions/circle-reveal.tsx",
+      "content": "'use client';\r\n\r\nimport React from 'react';\r\n\r\nimport { motion, type HTMLMotionProps } from 'framer-motion';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\ninterface CircleRevealOrigin {\r\n  x: string;\r\n  y: string;\r\n}\r\n\r\ninterface CircleRevealProps extends Omit<HTMLMotionProps<'div'>, 'children'> {\r\n  open: boolean;\r\n  origin?: CircleRevealOrigin;\r\n  duration?: number;\r\n  className?: string;\r\n  children: React.ReactNode;\r\n}\r\n\r\nconst DEFAULT_ORIGIN: CircleRevealOrigin = { x: '50%', y: '50%' };\r\nconst REVEAL_RADIUS_PERCENT = 150;\r\n\r\nfunction CircleReveal({\r\n  open,\r\n  origin = DEFAULT_ORIGIN,\r\n  duration = 0.5,\r\n  className,\r\n  style,\r\n  children,\r\n  ...props\r\n}: CircleRevealProps) {\r\n  const clipPath = `circle(${open ? REVEAL_RADIUS_PERCENT : 0}% at ${origin.x} ${origin.y})`;\r\n\r\n  return (\r\n    <motion.div\r\n      aria-hidden={!open}\r\n      inert={!open}\r\n      initial={false}\r\n      animate={{ clipPath }}\r\n      transition={{ duration, ease: 'easeInOut' }}\r\n      style={{ pointerEvents: open ? 'auto' : 'none', ...style }}\r\n      className={cn('absolute inset-0', className)}\r\n      {...props}\r\n    >\r\n      {children}\r\n    </motion.div>\r\n  );\r\n}\r\n\r\nexport default CircleReveal;\r\nexport type { CircleRevealOrigin, CircleRevealProps };\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

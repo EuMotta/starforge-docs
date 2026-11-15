@@ -11,6 +11,7 @@ export * from './layout';
 export * from './others';
 export * from './sci-fi';
 export * from './selects';
+export * from './transitions';
 
 export { default as Typography1 } from './typography-1';
 export { default as TypographyVariant1 } from './typography-variant-1';

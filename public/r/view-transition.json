@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "view-transition",
+  "dependencies": [
+    "framer-motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/components/star-forge/transitions/view-transition.tsx",
+      "content": "'use client';\r\n\r\nimport React from 'react';\r\n\r\nimport { AnimatePresence, motion, type HTMLMotionProps } from 'framer-motion';\r\n\r\nimport { cn } from '@/lib/utils';\r\n\r\ntype ViewTransitionVariant = 'slide' | 'fade' | 'zoom';\r\n\r\nconst SLIDE_OFFSET_PX = 48;\r\nconst ZOOM_EXIT_SCALE = 1.05;\r\nconst ZOOM_ENTER_SCALE = 0.92;\r\n\r\ninterface ViewTransitionProps extends Omit<HTMLMotionProps<'div'>, 'children'> {\r\n  transitionKey: React.Key;\r\n  variant?: ViewTransitionVariant;\r\n  direction?: 1 | -1;\r\n  duration?: number;\r\n  className?: string;\r\n  children: React.ReactNode;\r\n}\r\n\r\nfunction ViewTransition({\r\n  transitionKey,\r\n  variant = 'slide',\r\n  direction = 1,\r\n  duration = 0.25,\r\n  className,\r\n  children,\r\n  ...props\r\n}: ViewTransitionProps) {\r\n  const states = {\r\n    slide: {\r\n      initial: { x: SLIDE_OFFSET_PX * direction, opacity: 0 },\r\n      animate: { x: 0, opacity: 1 },\r\n      exit: { x: -SLIDE_OFFSET_PX * direction, opacity: 0 }\r\n    },\r\n    fade: {\r\n      initial: { opacity: 0 },\r\n      animate: { opacity: 1 },\r\n      exit: { opacity: 0 }\r\n    },\r\n    zoom: {\r\n      initial: { scale: ZOOM_ENTER_SCALE, opacity: 0 },\r\n      animate: { scale: 1, opacity: 1 },\r\n      exit: { scale: ZOOM_EXIT_SCALE, opacity: 0 }\r\n    }\r\n  }[variant];\r\n\r\n  return (\r\n    <AnimatePresence mode=\"wait\" initial={false}>\r\n      <motion.div\r\n        key={transitionKey}\r\n        initial={states.initial}\r\n        animate={states.animate}\r\n        exit={states.exit}\r\n        transition={{ duration, ease: 'easeOut' }}\r\n        className={cn('h-full w-full', className)}\r\n        {...props}\r\n      >\r\n        {children}\r\n      </motion.div>\r\n    </AnimatePresence>\r\n  );\r\n}\r\n\r\nexport default ViewTransition;\r\nexport type { ViewTransitionProps, ViewTransitionVariant };\r\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
