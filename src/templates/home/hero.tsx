@@ -21,10 +21,10 @@ import { ArrowRight, Check, Copy } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
 
-const INSTALL_COMMAND = `npx shadcn@latest add ${siteConfig.site.url.replace(/\/$/, '')}/r/button.json`;
+const INSTALL_COMMAND = `npx shadcn@latest add ${siteConfig.site.url}/r/button.json`;
 
 const SPEC_ITEMS = [
-  '56 components',
+  '78 components',
   'Radix UI or Base UI',
   'TypeScript strict',
   'MIT licensed'
@@ -153,7 +153,7 @@ export default function StarForgeHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
         >
-          56 copy-paste components for React and Next.js. Installed into your
+          78 copy-paste components for React and Next.js. Installed into your
           project — not imported from a package — on the primitive engine you
           choose: Radix UI or Base UI.
         </motion.p>

@@ -14,6 +14,11 @@
       "type": "registry:ui"
     },
     {
+      "path": "src/components/star-forge/inputs/search/search-2.tsx",
+      "content": "'use client';\r\n\r\nimport { Search1Input, type Search1InputProps } from './search-1';\r\n\r\nexport type Search2InputProps = Search1InputProps;\r\n\r\nexport function Search2Input(props: Search2InputProps) {\r\n  return (\r\n    <Search1Input\r\n      placeholder=\"Search without recent searches...\"\r\n      showRecentSearches={false}\r\n      {...props}\r\n    />\r\n  );\r\n}\r\n\r\nexport default Search2Input;\r\n",
+      "type": "registry:ui"
+    },
+    {
       "path": "src/hooks/star-forge/use-debounce.ts",
       "content": "import { useState, useEffect } from 'react';\r\n\r\n/**\r\n * A custom hook that debounces a value.\r\n *\r\n * @param value - The value to debounce\r\n * @param delay - The delay in milliseconds\r\n * @returns The debounced value\r\n */\r\nexport function useDebounce<T>(value: T, delay: number): T {\r\n  const [debouncedValue, setDebouncedValue] = useState<T>(value);\r\n\r\n  useEffect(() => {\r\n    const handler = setTimeout(() => {\r\n      setDebouncedValue(value);\r\n    }, delay);\r\n\r\n    return () => {\r\n      clearTimeout(handler);\r\n    };\r\n  }, [value, delay]);\r\n\r\n  return debouncedValue;\r\n}\r\n",
       "type": "registry:hook"

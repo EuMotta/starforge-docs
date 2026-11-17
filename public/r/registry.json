@@ -558,6 +558,10 @@
           "type": "registry:ui"
         },
         {
+          "path": "src/components/star-forge/inputs/search/search-2.tsx",
+          "type": "registry:ui"
+        },
+        {
           "path": "src/hooks/star-forge/use-debounce.ts",
           "type": "registry:hook"
         }
@@ -575,6 +579,10 @@
       "files": [
         {
           "path": "src/components/star-forge/inputs/search/search-1.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/star-forge/inputs/search/search-3.tsx",
           "type": "registry:ui"
         },
         {
@@ -1307,6 +1315,10 @@
           "type": "registry:ui"
         },
         {
+          "path": "src/components/star-forge/inputs/search/search-2.tsx",
+          "type": "registry:ui"
+        },
+        {
           "path": "src/hooks/star-forge/use-debounce.ts",
           "type": "registry:hook"
         }
@@ -1324,6 +1336,10 @@
       "files": [
         {
           "path": "src/components/star-forge/inputs/search/search-1.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "src/components/star-forge/inputs/search/search-3.tsx",
           "type": "registry:ui"
         },
         {
@@ -1428,6 +1444,30 @@
         {
           "path": "src/components/star-forge/transitions/card-stack.tsx",
           "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "use-debounce",
+      "type": "registry:hook",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/hooks/star-forge/use-debounce.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "use-typewriter",
+      "type": "registry:hook",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/hooks/star-forge/use-typewriter.ts",
+          "type": "registry:hook"
         }
       ]
     },
