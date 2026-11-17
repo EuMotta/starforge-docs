@@ -26,7 +26,7 @@ Provide a clear and detailed explanation of the issue encountered.
 
 **Steps to Reproduce**
 Detailed steps to replicate the problem:
-1. Navigate to 'https://starforge-docs.vercel.app/docs/${slug}'
+1. Navigate to 'https://starforge-docs.com/docs/${slug}'
 2. Perform the following action: '....'
 3. Continue with: '....'
 

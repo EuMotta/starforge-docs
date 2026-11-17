@@ -1,0 +1,83 @@
+---
+title: Primitives
+description: Headless UI primitives for Radix UI or Base UI, installable standalone through the registry
+icon: Layers
+---
+
+import { Callout } from 'fumadocs-ui/components/callout';
+
+# Primitives
+
+Every interactive Star Forge block is built on a headless UI primitive. All primitives are published as standalone registry items — install one directly when you want the styled primitive without a full block.
+
+## Registry names
+
+Each primitive is published under three names:
+
+| Name | Engine | Example |
+| ---- | ------ | ------- |
+| `<name>` | Radix UI (default) | `dialog` |
+| `radix-<name>` | Radix UI (explicit) | `radix-dialog` |
+| `base-<name>` | Base UI | `base-dialog` |
+
+```bash
+npx shadcn@latest add https://starforge-docs.com/r/dialog.json        # Radix UI (default)
+npx shadcn@latest add https://starforge-docs.com/r/radix-dialog.json  # Radix UI (explicit)
+npx shadcn@latest add https://starforge-docs.com/r/base-dialog.json   # Base UI
+```
+
+<Callout title="Engine choice is made at install time">
+  The default name always resolves to the Radix UI implementation. There is no
+  runtime engine detection — pick the variant when you install. See [Choosing
+  Your Engine](/docs/engine-choice).
+</Callout>
+
+## Available primitives
+
+| Primitive | Radix UI dependency | Base UI dependency |
+| --------- | ------------------- | ------------------ |
+| `alert-dialog` | `@radix-ui/react-alert-dialog` | `@base-ui/react` |
+| `avatar` | `@radix-ui/react-avatar` | `@base-ui/react` |
+| `badge` | `@radix-ui/react-slot` | none (slot polyfill) |
+| `button` | `@radix-ui/react-slot` | none (slot polyfill) |
+| `checkbox` | `@radix-ui/react-checkbox` | `@base-ui/react` |
+| `collapsible` | `@radix-ui/react-collapsible` | `@base-ui/react` |
+| `combobox` | `@radix-ui/react-popover` + `cmdk` | `@base-ui/react` |
+| `dialog` | `@radix-ui/react-dialog` | `@base-ui/react` |
+| `label` | `@radix-ui/react-label` | none (native `<label>`) |
+| `popover` | `@radix-ui/react-popover` | `@base-ui/react` |
+| `scroll-area` | `@radix-ui/react-scroll-area` | `@base-ui/react` |
+| `select` | `@radix-ui/react-select` | `@base-ui/react` |
+| `switch` | `@radix-ui/react-switch` | `@base-ui/react` |
+| `tabs` | `@radix-ui/react-tabs` | `@base-ui/react` |
+
+### Engine-agnostic primitives
+
+These components have no headless dependency — the `radix-`, `base-` and default variants ship the same file:
+
+| Primitive | Implementation |
+| --------- | -------------- |
+| `input` | Styled native `<input>` |
+| `textarea` | Styled native `<textarea>` |
+| `input-group` | Custom composite |
+
+## Install everything for one engine
+
+```bash
+# Radix UI
+npx shadcn@latest add https://starforge-docs.com/r/button.json https://starforge-docs.com/r/dialog.json
+
+# Base UI — add the base- prefix to every name
+npx shadcn@latest add https://starforge-docs.com/r/base-button.json https://starforge-docs.com/r/base-dialog.json
+```
+
+## Blocks that use primitives
+
+Blocks that depend on a primitive also ship a Base UI variant under the `<block>-base` name:
+
+```bash
+npx shadcn@latest add https://starforge-docs.com/r/login-dialog.json       # Radix UI
+npx shadcn@latest add https://starforge-docs.com/r/login-dialog-base.json  # Base UI
+```
+
+The block source code is identical in both variants — only the resolved primitive dependencies change.

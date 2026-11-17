@@ -1,0 +1,14 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "use-typewriter",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/hooks/star-forge/use-typewriter.ts",
+      "content": "'use client';\n\nimport { useState, useEffect, useRef } from 'react';\n\ninterface UseTypewriterOptions {\n  text: string;\n  speed?: number;\n  delay?: number;\n  enabled?: boolean;\n  loop?: boolean;\n  loopDelay?: number;\n}\n\ninterface UseTypewriterReturn {\n  displayText: string;\n  isDone: boolean;\n  isTyping: boolean;\n}\n\nconst DEFAULT_SPEED = 50;\nconst DEFAULT_DELAY = 0;\nconst DEFAULT_LOOP_DELAY = 2000;\n\nexport function useTypewriter({\n  text,\n  speed = DEFAULT_SPEED,\n  delay = DEFAULT_DELAY,\n  enabled = true,\n  loop = false,\n  loopDelay = DEFAULT_LOOP_DELAY\n}: UseTypewriterOptions): UseTypewriterReturn {\n  const [displayText, setDisplayText] = useState('');\n  const [isDone, setIsDone] = useState(false);\n  const [isTyping, setIsTyping] = useState(false);\n  const rafRef = useRef<number | null>(null);\n  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);\n\n  useEffect(() => {\n    if (!enabled) return;\n\n    let cancelled = false;\n\n    const startTyping = () => {\n      setIsTyping(true);\n      setIsDone(false);\n      setDisplayText('');\n\n      const startTime = performance.now() + delay;\n\n      const tick = (now: number) => {\n        const elapsed = now - startTime;\n\n        if (elapsed < 0) {\n          rafRef.current = requestAnimationFrame(tick);\n          return;\n        }\n\n        const visibleChars = Math.min(text.length, Math.floor(elapsed / speed));\n\n        setDisplayText(text.slice(0, visibleChars));\n\n        if (visibleChars >= text.length) {\n          setIsDone(true);\n          setIsTyping(false);\n\n          if (loop) {\n            timeoutRef.current = setTimeout(() => {\n              if (!cancelled) startTyping();\n            }, loopDelay);\n          }\n          return;\n        }\n\n        rafRef.current = requestAnimationFrame(tick);\n      };\n\n      rafRef.current = requestAnimationFrame(tick);\n    };\n\n    rafRef.current = requestAnimationFrame(startTyping);\n\n    return () => {\n      cancelled = true;\n      if (rafRef.current) {\n        cancelAnimationFrame(rafRef.current);\n      }\n      if (timeoutRef.current) {\n        clearTimeout(timeoutRef.current);\n      }\n    };\n  }, [enabled, text, speed, delay, loop, loopDelay]);\n\n  return {\n    displayText: enabled ? displayText : text,\n    isDone: enabled ? isDone : true,\n    isTyping: enabled && isTyping\n  };\n}\n",
+      "type": "registry:hook"
+    }
+  ],
+  "type": "registry:hook"
+}

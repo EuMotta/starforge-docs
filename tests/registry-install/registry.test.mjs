@@ -20,6 +20,7 @@ test('published catalog matches the root catalog', () => {
 });
 
 test('published payloads are verbatim copies of current source files', () => {
+  const toLf = (text) => text.replace(/\r\n?/g, '\n');
   const sourceHashes = new Set();
   const collect = (dir) => {
     for (const entry of readdirSync(dir, { withFileTypes: true })) {
@@ -27,7 +28,9 @@ test('published payloads are verbatim copies of current source files', () => {
       if (entry.isDirectory()) collect(path);
       else if (/\.[jt]sx?$/.test(entry.name)) {
         sourceHashes.add(
-          createHash('sha256').update(readFileSync(path)).digest('hex')
+          createHash('sha256')
+            .update(toLf(readFileSync(path, 'utf8')))
+            .digest('hex')
         );
       }
     }
@@ -36,7 +39,9 @@ test('published payloads are verbatim copies of current source files', () => {
   for (const item of items.values()) {
     for (const file of item.files) {
       if (!/\.[jt]sx?$/.test(file.path)) continue;
-      const hash = createHash('sha256').update(file.content).digest('hex');
+      const hash = createHash('sha256')
+        .update(toLf(file.content))
+        .digest('hex');
       assert.ok(
         sourceHashes.has(hash),
         `${item.name}: stale payload for ${file.path} — run build:components`

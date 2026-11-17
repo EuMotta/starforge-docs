@@ -91,5 +91,17 @@ export default defineConfig([
         }
       ]
     }
+  },
+  {
+    // Blocks must stay framework-agnostic: next/image and next/link are
+    // intentionally avoided in copy-paste component sources and previews.
+    files: [
+      'src/components/star-forge/**/*.{ts,tsx}',
+      'src/components/star-forge-preview/**/*.{ts,tsx}'
+    ],
+    rules: {
+      '@next/next/no-img-element': 'off',
+      '@next/next/no-html-link-for-pages': 'off'
+    }
   }
 ]);
