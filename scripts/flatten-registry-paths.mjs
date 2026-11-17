@@ -13,12 +13,17 @@ function flattenPath(filePath) {
     .replace('src/components/ui/primitives/base/', 'src/components/ui/');
 }
 
+function normalizeFileContent(file) {
+  if (typeof file.content !== 'string' || !/\r/.test(file.content)) return file;
+  return { ...file, content: file.content.replace(/\r\n?/g, '\n') };
+}
+
 function flattenRegistryItemPaths(item) {
   if (!item.files || !Array.isArray(item.files)) return item;
 
   const files = item.files.map((file) => {
     if (!file.path) return file;
-    return { ...file, path: flattenPath(file.path) };
+    return normalizeFileContent({ ...file, path: flattenPath(file.path) });
   });
 
   return { ...item, files };
@@ -70,7 +75,9 @@ function processRegistryFiles() {
       const flattenedItem = flattenRegistryItemPaths(item);
 
       const needsUpdate = item.files?.some(
-        (f, i) => f.path !== flattenedItem.files[i]?.path
+        (f, i) =>
+          f.path !== flattenedItem.files[i]?.path ||
+          f.content !== flattenedItem.files[i]?.content
       );
 
       if (needsUpdate) {

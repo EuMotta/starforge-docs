@@ -860,6 +860,10 @@ export const ui: Registry = [
         type: 'registry:ui'
       },
       {
+        path: 'src/components/star-forge/inputs/search/search-2.tsx',
+        type: 'registry:ui'
+      },
+      {
         path: 'src/hooks/star-forge/use-debounce.ts',
         type: 'registry:hook'
       }
@@ -882,6 +886,10 @@ export const ui: Registry = [
     files: [
       {
         path: 'src/components/star-forge/inputs/search/search-1.tsx',
+        type: 'registry:ui'
+      },
+      {
+        path: 'src/components/star-forge/inputs/search/search-3.tsx',
         type: 'registry:ui'
       },
       {
@@ -1843,6 +1851,10 @@ export const ui: Registry = [
         type: 'registry:ui'
       },
       {
+        path: 'src/components/star-forge/inputs/search/search-2.tsx',
+        type: 'registry:ui'
+      },
+      {
         path: 'src/hooks/star-forge/use-debounce.ts',
         type: 'registry:hook'
       }
@@ -1865,6 +1877,10 @@ export const ui: Registry = [
     files: [
       {
         path: 'src/components/star-forge/inputs/search/search-1.tsx',
+        type: 'registry:ui'
+      },
+      {
+        path: 'src/components/star-forge/inputs/search/search-3.tsx',
         type: 'registry:ui'
       },
       {
@@ -2041,5 +2057,39 @@ export const ui: Registry = [
         })
       )
     )
+  },
+  // ─── Standalone hooks ───
+  // Shipped inside blocks (e.g. search-1, text-animation-3) but also installable alone.
+  {
+    name: 'use-debounce',
+    author: 'EuMotta',
+    type: 'registry:hook',
+    registryDependencies: [],
+    dependencies: [],
+    description:
+      'Hook that debounces a changing value by a configurable delay.',
+    files: [
+      {
+        path: 'src/hooks/star-forge/use-debounce.ts',
+        type: 'registry:hook'
+      }
+    ],
+    example: 'src/hooks/star-forge/use-debounce.ts'
+  },
+  {
+    name: 'use-typewriter',
+    author: 'EuMotta',
+    type: 'registry:hook',
+    registryDependencies: [],
+    dependencies: [],
+    description:
+      'Hook that types out a string character by character, with optional loop.',
+    files: [
+      {
+        path: 'src/hooks/star-forge/use-typewriter.ts',
+        type: 'registry:hook'
+      }
+    ],
+    example: 'src/hooks/star-forge/use-typewriter.ts'
   }
 ];

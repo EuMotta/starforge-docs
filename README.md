@@ -1,5 +1,6 @@
 # 🌟 Star Forge
 
+[![CI](https://github.com/EuMotta/starforge-docs/actions/workflows/ci.yml/badge.svg)](https://github.com/EuMotta/starforge-docs/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
@@ -13,7 +14,7 @@ Star Forge is a collection of user interface components that simplifies the deve
 
 - **🎨 Reusable**: Copy and paste directly into your project, with no unnecessary dependencies
 - **🔧 Customizable**: Adjust styles and behavior with Tailwind CSS or edit the TypeScript/React code directly
-- **♿ Accessible**: Built with Radix UI, ensuring compliance with ARIA standards
+- **♿ Accessible**: Built on headless primitives — Radix UI or Base UI, your choice at install time — ensuring compliance with ARIA standards
 - **🤖 AI-ready**: Structured and readable code, ideal for integration with artificial intelligence tools
 - **🚀 Simple Integration**: Add components via CLI or copy and paste manually
 - **📦 Zero Abstraction**: Modify every component to reflect your design vision, with no abstraction layers
@@ -21,18 +22,19 @@ Star Forge is a collection of user interface components that simplifies the deve
 ## 🛠️ Tech Stack
 
 - **React 19** - User interface library
-- **Next.js 15** - Full-stack React framework
+- **Next.js 16** - Full-stack React framework
 - **TypeScript** - Type safety and better developer experience
-- **Tailwind CSS** - Utility-first CSS framework for styling
-- **Radix UI** - Unstyled, accessible components
+- **Tailwind CSS v4** - Utility-first CSS framework for styling
+- **Radix UI or Base UI** - Unstyled, accessible primitives (dual-engine, chosen at install)
 - **Framer Motion** - Animation library
+- **Fumadocs** - Documentation framework
 - **Lucide React** - Beautiful icons
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- [Node.js 20](https://nodejs.org/) or later
+- [Node.js 22](https://nodejs.org/) or later
 - [Next.js](https://nextjs.org/) project with TypeScript and Tailwind CSS
 
 ### Installation
@@ -43,19 +45,21 @@ Star Forge is a collection of user interface components that simplifies the deve
 npx shadcn@latest init
 ```
 
-2. **Add components to your project:**
+2. **Add a component to your project:**
 
 ```bash
-npx shadcn@latest add https://starforge-docs.com/r/registry.json
+npx shadcn@latest add https://starforge-docs.com/r/button.json
 ```
+
+By default components install the **Radix UI** engine. For **Base UI**, use the `base-` prefix on primitives or the `-base` suffix on blocks (e.g. `r/login-dialog-base.json`).
 
 3. **Use the component:**
 
 ```tsx
-import { Text } from '@/components/star-forge/text';
+import { Button } from '@/components/ui/button';
 
 export default function Home() {
-  return <Text.H1>Hello World</Text.H1>;
+  return <Button variant="outline">Hello World</Button>;
 }
 ```
 
@@ -76,8 +80,9 @@ During installation, select:
 
 ## 📚 Documentation
 
-- **[Installation Guide](https://starforge-docs.vercel.app/docs/installation)** - Complete setup instructions
-- **[Components](https://starforge-docs.vercel.app/docs/components)** - Explore all available components
+- **[Installation Guide](https://starforge-docs.com/docs/installation)** - Complete setup instructions
+- **[Components](https://starforge-docs.com/docs)** - Explore all available components
+- **[Engine Choice](https://starforge-docs.com/docs/engine-choice)** - Radix UI or Base UI
 
 ## 🎯 Why Star Forge?
 
@@ -110,17 +115,17 @@ npm run dev              # Start development server
 npm run build            # Build for production
 npm run lint             # Run ESLint
 npm run format           # Format code with Prettier
+npm run build:components # Regenerate registry.json and public/r/*.json
+npm run audit:registry   # Validate registry dependency resolution
+npm run test:registry    # Run registry install simulation tests
+npm test                 # Run component tests (vitest)
 ```
 
 ## 🤝 Contributing
 
 We welcome contributions! Whether you're fixing a bug, improving documentation, or adding a new component, your help is appreciated.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the full development workflow, including how to add components and dual-engine primitives.
 
 ## 📄 License
 
