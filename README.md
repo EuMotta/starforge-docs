@@ -34,7 +34,7 @@ Star Forge is a collection of user interface components that simplifies the deve
 
 ### Prerequisites
 
-- [Node.js 20](https://nodejs.org/) or later
+- [Node.js 22](https://nodejs.org/) or later
 - [Next.js](https://nextjs.org/) project with TypeScript and Tailwind CSS
 
 ### Installation

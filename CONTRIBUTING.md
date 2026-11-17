@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Node.js 20 or later is required.
+Node.js 22 or later is required.
 
 ## Workflow
 

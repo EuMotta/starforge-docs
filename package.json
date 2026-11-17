@@ -1,9 +1,9 @@
 {
   "name": "starforge-app",
-  "version": "2.2.13",
+  "version": "2.2.14",
   "private": true,
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.22.2"
   },
   "scripts": {
     "build": "next build",
